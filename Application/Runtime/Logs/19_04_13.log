@@ -1,0 +1,1073 @@
+[ 2019-04-13T04:39:29+08:00 ] 139.162.113.204 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001131s ]
+
+[ 2019-04-13T08:04:18+08:00 ] 107.170.250.60 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001163s ]
+
+[ 2019-04-13T08:33:19+08:00 ] 10.10.14.1 /index.php/conist/Public/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010997s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001170s ]
+
+[ 2019-04-13T08:33:19+08:00 ] 10.10.14.1 /index.php/conist/Public/verify_code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000998s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001151s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001242s ]
+
+[ 2019-04-13T08:33:47+08:00 ] 10.10.14.1 /index.php/conist/Public/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001190s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_admin` [ RunTime:0.002085s ]
+SQL: SHOW COLUMNS FROM `pa_admin` [ RunTime:0.001726s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_admin` WHERE ( `email`='bigqig@126.com' ) LIMIT 1   [ RunTime:0.000539s ]
+SQL: SELECT * FROM `pa_admin` WHERE ( `email`='bigqig@126.com' ) LIMIT 1   [ RunTime:0.000488s ]
+SQL: SELECT * FROM `pa_admin` WHERE ( `email` = 'bigqig@126.com' ) LIMIT 1   [ RunTime:0.000488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001168s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001279s ]
+
+[ 2019-04-13T08:33:49+08:00 ] 10.10.14.1 /index.php/conist/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001130s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001636s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000325s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Index/myInfo /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Index/cache /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [8] Undefined variable: caches /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000728s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001117s ]
+
+[ 2019-04-13T08:33:49+08:00 ] 10.10.14.1 /index.php/conist/SysData/backup
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001176s ]
+ERR: 无法加载控制器:SysData
+
+[ 2019-04-13T08:33:58+08:00 ] 10.10.14.1 /index.php/conist/Judicial/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001112s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001651s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000344s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001821s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_judicial` LIMIT 1   [ RunTime:0.000329s ]
+SQL: SELECT * FROM `pa_judicial` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001504s ]
+SQL: SELECT * FROM `pa_judicial_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `pa_qy` [ RunTime:0.001489s ]
+SQL: SELECT * FROM `pa_qy` WHERE ( id = 13 ) LIMIT 1   [ RunTime:0.000394s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024941s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000738s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001426s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001149s ]
+
+[ 2019-04-13T08:34:06+08:00 ] 10.10.14.1 /index.php/conist/Affair/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001675s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000376s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Affair/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Affair/affair_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Affair/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_affair` [ RunTime:0.001766s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_affair` LIMIT 1   [ RunTime:0.000374s ]
+SQL: SELECT * FROM `pa_affair` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000442s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/AffairController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025318s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025399s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000745s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001073s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001152s ]
+
+[ 2019-04-13T08:34:09+08:00 ] 10.10.14.1 /index.php/conist/Popularizelaw/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001611s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000328s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: index?cate=1 /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 209 行.
+NOTIC: [8] Undefined index: index?cate=2 /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 209 行.
+NOTIC: [8] Undefined index: Popularizelaw/exam_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Popularizelaw/text_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Popularizelaw/video_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Popularizelaw/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: cate /www/wwwroot/sf.t7c.net/Application/Admin/Controller/PopularizelawController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `pa_popularizelaw` [ RunTime:0.001793s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_popularizelaw` LIMIT 1   [ RunTime:0.000332s ]
+SQL: SELECT * FROM `pa_popularizelaw` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000456s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/PopularizelawController.class.php 第 19 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000700s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001160s ]
+
+[ 2019-04-13T08:34:13+08:00 ] 10.10.14.1 /index.php/conist/Case/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001131s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001635s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000366s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Case/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Case/case_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_case` [ RunTime:0.001793s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_case` LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT * FROM `pa_case` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000449s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CaseController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024694s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024776s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000733s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001121s ]
+
+[ 2019-04-13T08:34:15+08:00 ] 10.10.14.1 /index.php/conist/Institution/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001645s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000335s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Institution/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/ls /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/yz /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/tj /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/fw /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/jd /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/sfs /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Institution/xzjg /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_gzc` [ RunTime:0.002197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_gzc` LIMIT 1   [ RunTime:0.000330s ]
+SQL: SELECT * FROM `pa_gzc` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000564s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/InstitutionController.class.php 第 74 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000253s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022475s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000781s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001141s ]
+
+[ 2019-04-13T08:34:18+08:00 ] 10.10.14.1 /index.php/conist/Judicial/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001159s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001609s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000366s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001797s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_judicial` LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT * FROM `pa_judicial` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001463s ]
+SQL: SELECT * FROM `pa_judicial_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `pa_qy` [ RunTime:0.001465s ]
+SQL: SELECT * FROM `pa_qy` WHERE ( id = 13 ) LIMIT 1   [ RunTime:0.000425s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025050s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000755s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001141s ]
+
+[ 2019-04-13T08:34:21+08:00 ] 10.10.14.1 /index.php/conist/Judicial/judicial_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001720s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000376s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: id /www/wwwroot/sf.t7c.net/Application/Admin/Controller/JudicialController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001585s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `pa_qy` [ RunTime:0.001419s ]
+SQL: SELECT * FROM `pa_qy`  [ RunTime:0.000464s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 83 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 91 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 91 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 91 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 104 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 121 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 127 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 131 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001435s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001146s ]
+
+[ 2019-04-13T09:27:35+08:00 ] 10.10.14.1 /index.php/conist/Judicial/judicial_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001508s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000332s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001643s ]
+SQL: SELECT * FROM `pa_judicial` WHERE ( id =  ) LIMIT 1   [ RunTime:0.000240s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `pa_judicial` WHERE ( id =  ) LIMIT 1  
+NOTIC: [8] Undefined index: img_url /www/wwwroot/sf.t7c.net/Application/Admin/Controller/JudicialController.class.php 第 29 行.
+
+[ 2019-04-13T09:29:54+08:00 ] 10.10.14.1 /index.php/conist/Judicial/judicial_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001453s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000332s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001657s ]
+SQL: SELECT * FROM `pa_judicial` WHERE ( id =  ) LIMIT 1   [ RunTime:0.000279s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `pa_judicial` WHERE ( id =  ) LIMIT 1  
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Upload.class.php 第 167 行.
+
+[ 2019-04-13T09:30:11+08:00 ] 10.10.14.1 /index.php/conist/Judicial/judicial_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001118s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001507s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000330s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001677s ]
+SQL: SELECT * FROM `pa_judicial` WHERE ( id =  ) LIMIT 1   [ RunTime:0.000241s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `pa_judicial` WHERE ( id =  ) LIMIT 1  
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Upload.class.php 第 167 行.
+SQL: INSERT INTO `pa_judicial` (`title`,`type_id`,`qy`,`intro`,`content`,`id`,`img_url`,`createtime`) VALUES ('全文来了！国家主席习近平发表二〇一九年新年贺词',1,13,'新年前夕，国家主席习近平通过中央广播电视总台和互联网，发表了二〇一九年新年贺词。','<div class=\"rich_media_content \" id=\"js_content\" style=\"margin:0px;padding:0px;color:#333333;font-size:17px;text-align:justify;font-family:-apple-system-font, BlinkMacSystemFont, \'Helvetica Neue\', \'PingFang SC\', \'Hiragino Sans GB\', \'Microsoft YaHei UI\', \'Microsoft YaHei\', Arial, sans-serif;background-color:#FFFFFF;\">\r\n	<p style=\"text-align:center;\">\r\n		<span style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;line-height:1.5;background-color:#F6F6F6;\">新年前夕，国家主席习近平通过中央广播电视总台和互联网，发表了二〇一九年新年贺词。全文如下：</span>\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		大家好！“岁月不居，时节如流。”2019年马上就要到了，我在北京向大家致以新年的美好祝福！\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		2018年，我们过得很充实、走得很坚定。这一年，我们战胜各种风险挑战，推动经济高质量发展，加快新旧动能转换，保持经济运行在合理区间。蓝天、碧水、净土保卫战顺利推进，各项民生事业加快发展，人民生活持续改善。京津冀协同发展、长江经济带发展、粤港澳大湾区建设等国家战略稳步实施。我在各地考察时欣喜地看到：长江两岸绿意盎然，建三江万亩大地号稻浪滚滚，深圳前海生机勃勃，上海张江活力四射，港珠澳大桥飞架三地……这些成就是全国各族人民撸起袖子干出来的，是新时代奋斗者挥洒汗水拼出来的。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		这一年，中国制造、中国创造、中国建造共同发力，继续改变着中国的面貌。嫦娥四号探测器成功发射，第二艘航母出海试航，国产大型水陆两栖飞机水上首飞，北斗导航向全球组网迈出坚实一步。在此，我要向每一位科学家、每一位工程师、每一位“大国工匠”、每一位建设者和参与者致敬！\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		这一年，脱贫攻坚传来很多好消息。全国又有125个贫困县通过验收脱贫，1000万农村贫困人口摆脱贫困。17种抗癌药降价并纳入医保目录，因病致贫问题正在进一步得到解决。我时常牵挂着奋战在脱贫一线的同志们，280多万驻村干部、第一书记，工作很投入、很给力，一定要保重身体。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		我始终惦记着困难群众。在四川凉山三河村，我看望了彝族村民吉好也求、节列俄阿木两家人。在山东济南三涧溪村，我和赵顺利一家围坐一起拉家常。在辽宁抚顺东华园社区，我到陈玉芳家里了解避险搬迁安置情况。在广东清远连樟村，我和贫困户陆奕和交谈脱贫之计。他们真诚朴实的面容至今浮现在我的脑海。新年之际，祝乡亲们的生活蒸蒸日上，越过越红火。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		这一年，我们隆重庆祝改革开放40周年，对党和国家机构进行了系统性、整体性、重构性的改革，推出100多项重要改革举措，举办首届中国国际进口博览会，启动建设海南自由贸易试验区。世界看到了改革开放的中国加速度，看到了将改革开放进行到底的中国决心。我们改革的脚步不会停滞，开放的大门只会越开越大。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		我注意到，今年，恢复高考后的第一批大学生大多已经退休，大批“00后”进入高校校园。1亿多非户籍人口在城市落户的行动正在继续，1300万人在城镇找到了工作，解决棚户区问题的住房开工了580万套，新市民有了温暖的家。很多港澳台居民拿到了居住证，香港进入了全国高铁网。一个流动的中国，充满了繁荣发展的活力。我们都在努力奔跑，我们都是追梦人。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		此时此刻，我特别要提到一些闪亮的名字。今年，天上多了颗“南仁东星”，全军英模挂像里多了林俊德和张超两位同志。我们要记住守岛卫国32年的王继才同志，为保护试验平台挺身而出、壮烈牺牲的黄群、宋月才、姜开斌同志，以及其他为国为民捐躯的英雄们。他们是新时代最可爱的人，永远值得我们怀念和学习。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		这一年，又有很多新老朋友来到中国。我们举办了博鳌亚洲论坛年会、上海合作组织青岛峰会、中非合作论坛北京峰会等主场外交活动，提出了中国主张，发出了中国声音。我和同事们出访五大洲，参加了许多重要外交活动，同各国领导人进行了广泛交流，巩固了友谊，增进了信任，扩大了我们的朋友圈。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		2019年，我们将隆重庆祝中华人民共和国70周年华诞。70年披荆斩棘，70年风雨兼程。人民是共和国的坚实根基，人民是我们执政的最大底气。一路走来，中国人民自力更生、艰苦奋斗，创造了举世瞩目的中国奇迹。新征程上，不管乱云飞渡、风吹浪打，我们都要紧紧依靠人民，坚持自力更生、艰苦奋斗，以坚如磐石的信心、只争朝夕的劲头、坚韧不拔的毅力，一步一个脚印把前无古人的伟大事业推向前进。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		2019年，有机遇也有挑战，大家还要一起拼搏、一起奋斗。减税降费政策措施要落地生根，让企业轻装上阵。要真诚尊重各种人才，充分激发他们创新创造活力。要倾听基层干部心声，让敢担当有作为的干部有干劲、有奔头。农村1000多万贫困人口的脱贫任务要如期完成，还得咬定目标使劲干。要关爱退役军人，他们为保家卫国作出了贡献。这个时候，快递小哥、环卫工人、出租车司机以及千千万万的劳动者，还在辛勤工作，我们要感谢这些美好生活的创造者、守护者。大家辛苦了。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		放眼全球，我们正面临百年未有之大变局。无论国际风云如何变幻，中国维护国家主权和安全的信心和决心不会变，中国维护世界和平、促进共同发展的诚意和善意不会变。我们将积极推动共建“一带一路”，继续推动构建人类命运共同体，为建设一个更加繁荣美好的世界而不懈努力。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		新年的钟声即将敲响，让我们满怀信心和期待，一同迎接2019年的到来。\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		祝福中国！祝福世界！\r\n	</p>\r\n	<p style=\"color:#2F2F2F;font-family:PingFangSC-Regular, STXihei, Verdana, Calibri, Helvetica, Arial, sans-serif;font-size:18px;text-indent:2em;background-color:#F6F6F6;\">\r\n		谢谢大家！\r\n	</p>\r\n</div>',0,'/Uploads/Judicial/2019-04-13/5cb13ba32447d.png',1555119011) [ RunTime:0.001008s ]
+NOTIC: [2] unlink(/www/wwwroot/sf.t7c.net): Is a directory /www/wwwroot/sf.t7c.net/Application/Admin/Controller/JudicialController.class.php 第 52 行.
+
+[ 2019-04-13T09:30:13+08:00 ] 10.10.14.1 /index.php/conist/Judicial/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001483s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000327s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001670s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pa_judicial` LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT * FROM `pa_judicial` ORDER BY createtime desc LIMIT 0,15   [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001380s ]
+SQL: SELECT * FROM `pa_judicial_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `pa_qy` [ RunTime:0.001364s ]
+SQL: SELECT * FROM `pa_qy` WHERE ( id = 13 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT * FROM `pa_judicial_type` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.000375s ]
+SQL: SELECT * FROM `pa_qy` WHERE ( id = 13 ) LIMIT 1   [ RunTime:0.000408s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000717s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001441s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001117s ]
+
+[ 2019-04-13T09:30:39+08:00 ] 10.10.14.1 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002977s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001799s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000456s ]
+
+[ 2019-04-13T09:30:39+08:00 ] 10.10.14.1 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003189s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000251s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000880s ]
+
+[ 2019-04-13T09:30:42+08:00 ] 10.10.14.1 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002900s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000249s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 2 ) LIMIT 1   [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001946s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 2 ) [ RunTime:0.000626s ]
+
+[ 2019-04-13T09:30:45+08:00 ] 10.10.14.1 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002888s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001748s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000410s ]
+
+[ 2019-04-13T09:30:45+08:00 ] 10.10.14.1 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001202s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003257s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000242s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000852s ]
+
+[ 2019-04-13T09:30:47+08:00 ] 10.10.14.1 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002882s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000238s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 1 ) LIMIT 1   [ RunTime:0.000793s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001781s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 1 ) [ RunTime:0.000631s ]
+
+[ 2019-04-13T09:30:55+08:00 ] 10.10.14.1 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002919s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.002145s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000480s ]
+
+[ 2019-04-13T09:30:55+08:00 ] 10.10.14.1 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002945s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000262s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.001020s ]
+
+[ 2019-04-13T09:31:16+08:00 ] 10.10.14.1 /index.php/conist/Judicial/judicial_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001098s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_model` [ RunTime:0.001496s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pa_model`
+SQL: SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 )  [ RunTime:0.000327s ]
+ERR: 1146:Table 'sf_t7c_net.pa_model' doesn't exist
+ [ SQL语句 ] : SELECT `tbl_name`,`menu_name` FROM `pa_model` WHERE ( is_inner=0 ) 
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 126 行.
+NOTIC: [8] Undefined index: Judicial/index /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/judicial_type /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: Judicial/image /www/wwwroot/sf.t7c.net/Application/Admin/Controller/CommonController.class.php 第 204 行.
+NOTIC: [8] Undefined index: id /www/wwwroot/sf.t7c.net/Application/Admin/Controller/JudicialController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001423s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `pa_qy` [ RunTime:0.001447s ]
+SQL: SELECT * FROM `pa_qy`  [ RunTime:0.000427s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 83 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 91 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 91 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 91 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 104 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 114 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 121 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 127 行.
+NOTIC: [8] Undefined variable: list /www/wwwroot/sf.t7c.net/Application/Runtime/Cache/Admin/c389d814f13f3d3265c8a67f1934a687.php 第 131 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028468s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000739s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001071s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001149s ]
+
+[ 2019-04-13T09:33:34+08:00 ] 10.10.14.1 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002969s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001787s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000436s ]
+
+[ 2019-04-13T09:33:34+08:00 ] 10.10.14.1 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002921s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000236s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000892s ]
+
+[ 2019-04-13T09:33:36+08:00 ] 10.10.14.1 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002962s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000297s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 2 ) LIMIT 1   [ RunTime:0.000803s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001811s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 2 ) [ RunTime:0.000607s ]
+
+[ 2019-04-13T09:33:45+08:00 ] 10.10.14.1 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002935s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000261s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.001032s ]
+
+[ 2019-04-13T09:33:45+08:00 ] 10.10.14.1 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002986s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001643s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000394s ]
+
+[ 2019-04-13T09:54:54+08:00 ] 221.206.49.162 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001101s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003168s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001701s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000452s ]
+
+[ 2019-04-13T09:54:54+08:00 ] 221.206.49.162 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001041s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003034s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000245s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000849s ]
+
+[ 2019-04-13T09:54:56+08:00 ] 221.206.49.162 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002945s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000254s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 2 ) LIMIT 1   [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001796s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 2 ) [ RunTime:0.000604s ]
+
+[ 2019-04-13T10:16:09+08:00 ] 221.206.49.162 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002917s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001779s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000440s ]
+
+[ 2019-04-13T10:16:09+08:00 ] 221.206.49.162 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002936s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000238s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000881s ]
+
+[ 2019-04-13T10:16:10+08:00 ] 221.206.49.162 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000247s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 2 ) LIMIT 1   [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001832s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 2 ) [ RunTime:0.000629s ]
+
+[ 2019-04-13T10:16:21+08:00 ] 221.206.49.162 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002877s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000253s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 1 ) LIMIT 1   [ RunTime:0.000868s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001802s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 1 ) [ RunTime:0.000629s ]
+
+[ 2019-04-13T10:54:45+08:00 ] 221.206.204.88 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002941s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001700s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000402s ]
+
+[ 2019-04-13T10:54:45+08:00 ] 221.206.204.88 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002972s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000292s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000984s ]
+
+[ 2019-04-13T11:02:29+08:00 ] 221.206.49.162 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003008s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000258s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 2 ) LIMIT 1   [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.001792s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 2 ) [ RunTime:0.000596s ]
+
+[ 2019-04-13T11:13:26+08:00 ] 117.179.133.75 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003070s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001695s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000450s ]
+
+[ 2019-04-13T11:13:26+08:00 ] 117.179.133.75 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002932s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000290s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000973s ]
+
+[ 2019-04-13T11:14:23+08:00 ] 117.179.133.75 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001027s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002936s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001793s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000406s ]
+
+[ 2019-04-13T11:14:23+08:00 ] 117.179.133.75 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003057s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000237s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000897s ]
+
+[ 2019-04-13T16:00:03+08:00 ] 117.179.177.40 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003152s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000257s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000956s ]
+
+[ 2019-04-13T16:00:03+08:00 ] 117.179.177.40 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001566s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003769s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001746s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000410s ]
+
+[ 2019-04-13T17:54:01+08:00 ] 117.136.57.179 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003007s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001693s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000414s ]
+
+[ 2019-04-13T17:54:01+08:00 ] 117.136.57.179 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003035s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000271s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000781s ]
+
+[ 2019-04-13T19:17:27+08:00 ] 122.158.148.234 /index.php/home/Data/judicial_type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003025s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `pa_judicial_type` [ RunTime:0.001737s ]
+SQL: SELECT * FROM `pa_judicial_type`  [ RunTime:0.000416s ]
+
+[ 2019-04-13T19:17:27+08:00 ] 122.158.148.234 /index.php/home/News/judicial
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003044s ]
+NOTIC: [8] Undefined index: title /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 9 行.
+NOTIC: [8] Undefined index: type /www/wwwroot/sf.t7c.net/Application/Home/Controller/NewsController.class.php 第 12 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000242s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( `status` = 1 ) ORDER BY j.createtime desc  [ RunTime:0.000952s ]
+
+[ 2019-04-13T22:36:59+08:00 ] 172.104.100.219 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001073s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001157s ]
+
+[ 2019-04-13T23:09:58+08:00 ] 51.38.12.13 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002982s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001250s ]
+

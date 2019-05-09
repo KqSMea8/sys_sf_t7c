@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查询列表</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reserve.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+</head>
+<body>
+    <div id="header">
+        <span>查询列表</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="table_down" id="_20">
+        <!-- <a href="biddintgquery.html" title="">
+            <div class="each">
+                <span>调解类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="biddintgquery.html" title="">
+            <div class="each">
+                <span>调解类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="biddintgquery.html" title="">
+            <div class="each">
+                <span>调解类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a> -->
+    </div>
+<div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".footer").load("footer2.html")
+     var access_token=localStorage.getItem("access_token");
+    // ===============列表接口
+    $.ajax({
+        type:'post',
+        url:'http://sf.wokerr.com/index.php/home/Handle/tj_bid_list',
+        data:{
+            access_token:access_token
+        },
+        dataType:'json', 
+        async: true,   //同步异步
+        success:function(data){
+            console.log(data);
+            var html="";
+            for(var i=0;i<data.data.length;i++){
+                if(data.data[i].name==null){
+                    data.data[i].name="为上传数据";
+                }
+                html+=`<a class="list" title="" id="${data.data[i].id}">
+                        <div class="each">
+                            <span>${data.data[i].name}</span>
+                           
+                            <span class="right">${data.data[i].ct_time}</span>
+                        </div>
+                    </a>`;   
+            }
+            $(".table_down").html(html);
+            $(".list").each(function(){
+                $(this).click(function(){
+                    var id=$(this).attr("id");
+                    //localStorage.setItem("gz_id",id);
+                    window.location.href="biddintgquery.html?id="+id;
+                })
+            })
+        }
+    })
+</script>
+</html>

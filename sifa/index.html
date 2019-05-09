@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css"/>
+	<link rel="stylesheet" href="css/sale.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/fooder.css">
+	<style>
+		body{
+			background-color: #f2f2f2;
+			position: relative;
+		}
+		.header{
+			background-color: #196394;
+			height: 0.9rem;
+			width: 100%;
+			display: flex;
+			position: relative;
+			padding:0  0.15rem;font-size: 0.32rem;
+			line-height: 0.9rem;
+}
+		input{
+			position: absolute;
+			left:1.25rem;
+			right:1rem;
+			top: 0;
+			bottom: 0;
+			margin:auto;
+			color: #000000;
+			text-align: left;
+			outline: none;
+			width: 70%;
+			border: 0;
+			height: 0.6rem;
+			line-height: 0.6rem;
+			border-radius: 5px;
+			padding-left: 0.6rem;
+			background-image: url(img/sousuo.png);
+			background-size: 0.4rem 0.4rem;
+			background-repeat: no-repeat;
+			background-position: .1rem 0.1rem;
+		} input::-webkit-input-placeholder {
+            color: #dcdcdc;
+        }
+		.nav_txt_zuo{
+			position: absolute;
+			left: 0.2rem;
+			color: white;
+		}.nav_txt_you{
+			position: absolute;
+			right: 0.2rem;
+			color: white;
+		}
+		   .swiper-container {
+      width: 100%;
+      height: 100%;
+
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+		.xinxi{
+			width: 100%;
+			height: 3.5rem;
+			background-color: white;
+			padding-top: 0.2rem;
+			margin-bottom: 0.1rem;
+		}
+		.item{
+			padding: 0 0.35rem;
+		}
+		.item>li{
+		madding-top: 0.2rem;
+		}
+		.item>li>a{
+			text-align: center;
+			width: 1.7rem;
+			height: 1.7rem;
+			float: left;
+			padding: auto;
+		}
+		.item>li>a>img,span{
+			width: 1rem;
+			height: 1rem;
+		}
+		.item>li>a>span{
+			color: #000000;
+		}
+		.haoping{
+			background-color: white;
+			height: 0.9rem;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			line-height: 0.9rem;
+			margin-bottom: 0.05rem;
+		}
+		.haoping>div>span{
+			color: #000000;
+			margin: 0 0.1rem;
+			padding-bottom: 0.2rem;
+		}
+		.haoping>div>img{
+	vertical-align:middle;
+		}
+		.xinwen{
+			background-color: white;
+			width: 100%;
+			height: 0.8rem;
+			display: flex;
+			padding: 0 0.2rem;
+			margin-bottom: 0.01rem;
+		}
+		.xinwen>div{
+				line-height: 0.8rem;
+		}
+		.xinwenxinxi{
+			display: flex;
+			width: 70%;
+			margin-bottom: 0.05rem;
+			justify-content:space-around;
+			margin-left: 0.1rem;
+
+		}
+		.xinwenxinxi>div{
+			width: auto;
+			height: 0.5rem;
+			border: 1px solid #dcdcdc;
+			border-radius: 5px;
+			flex: 1;
+			padding: 0 0.1rem;
+			color: #000;
+			line-height: 0.5rem;
+			background-color: white;
+			margin-top: 0.15rem;
+			margin-left: 0.1rem;
+			text-align: center;
+			font-size: 0.2rem;
+			overflow: hidden;
+		}.xinwenxinxi>div:nth-child(3){
+			border:0;
+		}
+		.daka{
+			position: fixed;
+			bottom: 2.7rem;
+			right: 0.2rem;
+		}
+		.xinximulu{
+			margin-top: 0.03rem;
+		}
+		.xinximulu>div{
+			background-color: white;
+			height: 1.75rem;
+			width: 100%;
+			padding-left: 0.1rem;
+			padding-right: 0.1rem;
+			display: flex;
+	}
+		.xinximulu>div>div>img{
+			width: 2.4rem;
+			height: 1.5rem;
+			margin: 0.1rem;
+		}.xinximulu>div>div>img:nth-child(2){
+			position: absolute;
+			width:0.7rem;
+			height: 0.7rem;
+			margin:0.1rem;
+			left:0;
+			right:0;
+			top: 0;
+			bottom: 0;
+			margin:auto;
+		}
+		.xinwentit{
+			font-size: 0.32rem;
+			color: #333;
+			font-weight: bold;
+		}
+		.xinwentit span{
+			display: inline-block;
+			width: 100%;
+		}
+		p{
+			overflow: hidden;
+			height: 0.75rem;
+			color: #666666;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+		}
+		.xinwentit .bfsj{
+			bottom: 0.1rem;
+		}
+	</style>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+  　　document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+    </script>
+    <title>司法</title>
+</head>
+<body>
+<header class="header">
+	<div class="nav_txt_zuo" style="margin-right: 0.2rem">牡丹江</div>
+	<input type="text" placeholder="请输入关键字/律师名">
+	<div class="nav_txt_you" >搜索</div>
+</header>
+	<div class="content">
+		<div class="swiper-container">
+    		<div class="swiper-wrapper">
+      			<!-- <div class="swiper-slide">
+      				<img src="img/shifa.png" alt="" style="width: 7.5rem;">
+      			</div>
+      			<div class="swiper-slide">
+      				<img src="img/shifa.png" alt="" style="width: 7.5rem;">
+      			</div>
+      			<div class="swiper-slide">
+      				<img src="img/shifa.png" alt="" style="width: 7.5rem;">
+      			</div>
+      			<div class="swiper-slide">
+      				<img src="img/shifa.png" alt="" style="width: 7.5rem;">
+      			</div>
+      			<div class="swiper-slide">
+      				<img src="img/shifa.png" alt="" style="width: 7.5rem;">
+      			</div>-->
+      	    </div> 
+    		<div class="swiper-pagination"></div>
+  		</div>
+		<div class="xinxi">
+			<ul class="item">
+				<li>
+					<a href="sifayaowen.html">
+						<img src="img/xiaoxi2.png" alt="司法要闻">
+						<br>
+						<span>司法要闻</span>
+					</a>
+				</li>
+				<li>
+					<a href="pufaxuanchuan.html">
+						<img src="img/chaxun2.png" alt="普法宣传">
+						<br>
+						<span>普法宣传</span>
+					</a>
+				</li>
+				<li>
+					<a href="gongshi1.html">
+						<img src="img/xiangguanxianzai.png" alt="政务公开"><br>
+						<span>政务公开</span>
+					</a>
+				</li>
+				<li>
+					<a href="daka.html">
+						<img src="img/zaixian.png" alt="社矫打卡">
+						<br>
+						<span>社矫打卡</span>
+					</a>
+				</li>
+				<li>
+					<a href="soujibanli.html">
+						<img src="img/shipin.png" alt="手机办理">
+						<br>
+						<span>手机办理</span>
+					</a>
+				</li>
+				<li>
+					<a href="shipinfuwu.html">
+						<img src="img/xinwen.png" alt="视频服务">
+						<br>
+						<span>视频服务</span>
+					</a>
+				</li>
+				<li>
+					<a href="chaxun.html">
+						<img src="img/wode.png" alt="查询服务">
+						<br>
+						<span>查询服务</span>
+					</a>
+				</li>
+				<li>
+					<a class="tz" href="zaixainjieda.html">
+						<img src="img/zaixianshenban.png" alt="咨询解答">
+						<br>
+						<span class="zt">咨询解答</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="xinwen" >
+			<div class="rolling">
+		        <div class="roll-title roll-title clearfix">
+		            <h2>
+		            	新闻推荐
+		            </h2>
+		            <a href="xinwenzhongxin.html" class="rolling-more">更多</a>
+		        </div>
+		        <div class="content">
+		            <ul class="roll-list">
+		                <!--<li>-->
+		                    <!--<a href="#" >新闻头条</a>-->
+		                <!--</li>-->
+		                <li>
+		                    <a href="sifayaowen.html">司法行政要闻</a>
+		                </li>
+		                <li>
+		                    <a href="pufaxuanchuan.html" >普法宣传</a>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		<div class="xinximulu">
+			<!-- <div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+				<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+				<img src="img/bofangslt.png" alt="" >
+				<img src="img/bofang2.png" alt="">
+				</div>
+				<div style="position: relative;padding-top: 0.05rem">
+				<span class="xinwentit">标题</span>
+					<p>新闻内容概述新闻内容概述新闻内容概述新闻内容概述新闻内容概述</p>
+					<p class="bfsj">上传日期：
+						<span style="color: #666666">2018-10-10</span>
+					</p>
+				</div>
+			</div>
+			<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+				<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+					<img src="img/bofangslt.png" alt="" >
+					<img src="img/bofang2.png" alt="">
+				</div>
+				<div style="position: relative;padding-top: 0.05rem">
+					<span class="xinwentit">标题</span>
+					<p>新闻内容概述新闻内容概述新闻内容概述新闻内容概述新闻内容概述</p>
+					<p class="bfsj">上传日期：
+						<span style="color: #666666">2018-10-10</span>
+					</p>
+				</div>
+			</div>
+			<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+				<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+					<img src="img/bofangslt.png" alt="" >
+					<img src="img/bofang2.png" alt="">
+				</div>
+				<div style="position: relative;padding-top: 0.05rem">
+					<span class="xinwentit">标题</span>
+					<p>新闻内容概述新闻内容概述新闻内容概述新闻内容概述新闻内容概述</p>
+					<p class="bfsj">上传日期：
+						<span style="color: #666666">2018-10-10</span>
+					</p>
+				</div>
+			</div>
+			<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+				<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+					<img src="img/bofangslt.png" alt="" >
+					<img src="img/bofang2.png" alt="">
+				</div>
+				<div style="position: relative;padding-top: 0.05rem">
+					<span class="xinwentit">标题</span>
+					<p>新闻内容概述新闻内容概述新闻内容概述新闻内容概述新闻内容概述</p>
+					<p class="bfsj">上传日期：
+						<span style="color: #666666">2018-10-10</span>
+					</p>
+				</div>
+			</div>
+			<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+				<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+					<img src="img/bofangslt.png" alt="" >
+					<img src="img/bofang2.png" alt="">
+				</div>
+				<div style="position: relative;padding-top: 0.05rem">
+					<span class="xinwentit">标题</span>
+					<p>新闻内容概述新闻内容概述新闻内容概述新闻内容概述新闻内容概述</p>
+					<p class="bfsj">上传日期：
+						<span style="color: #666666">2018-10-10</span>
+					</p>
+				</div>
+			</div> -->
+		</div>
+	</div>
+<div style="width: 100%;height: 1rem"></div>
+
+<div class="footer">
+
+</div>
+</body>
+</html>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script>
+//banner
+ 	var splx=localStorage.getItem("splx");
+ 	var yhlx=localStorage.getItem("yhlx");
+ 	if(splx==1&&yhlx==2){
+ 		$(".tz").attr("href","fair1.html");
+ 		$(".zt").text("在线审批")
+ 	}else{
+ 		$(".tz").attr("href","zaixainjieda.html")
+ 		$(".zt").text("咨询解答")
+ 	}
+	$.ajax({
+	        type:'post',
+	        url:'http://sf.wokerr.com/index.php/home/Data/banner',
+	        data:{
+	           
+	        },
+	        dataType:'json', 
+	        async: false,   //同步异步
+	        success:function(data){
+	          console.log(data);
+	          var html="";
+	          for(var i=0;i<data.data.length;i++){
+                 html+=`<div class="swiper-slide" style="width:100%;height:155px;">
+      				<img src="${data.data[i].ad_img}" alt="" style="width:100%;height:100%">
+      			</div>`
+	          }
+	          $(".swiper-wrapper").html(html);
+	        }
+	})
+	$(".footer").load("footer.html")
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 0,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+//      navigation: {
+//        nextEl: '.swiper-button-next',
+//        prevEl: '.swiper-button-prev',
+//      },
+    });
+    jQuery(".rolling").slide({titCell:".roll-title ul",mainCell:".content ul",autoPage:true,effect:"leftLoop",autoPlay:true,scroll:1,vis:1,delayTime:1000,trigger:"click"});
+    $.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Index/recommend",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			      console.log(data);
+			var html = "";
+			for(var i=0;i<data.data.length;i++){
+				html +="<div  class='bon' id='"+data.data[i].id+"'>"+
+				"<div style='position: relative;width: 2.5rem;margin-right: 0.1rem'><img src='"+data.data[i].img_url+
+				"' ><img src='img/bofang2.png' ></div><div style='position: relative;padding-top: 0.05rem'><span class='xinwentit'>"+data.data[i].title+
+				"</span><p>"+data.data[i].content+
+				"</p><p class='bfsj'>上传日期：<span style='color:#666666'>"+data.data[i].createtime+
+				"</span></p></div></div>"
+			}
+			console.log(html);
+			$(".xinximulu").html(html);
+		    $(".bon").click(function(){
+		    	var id=$(this).attr("id");
+		    	window.location.href='xinwenxiangqing.html?id='+id;
+		    })
+		    
+		}
+	})
+  </script>

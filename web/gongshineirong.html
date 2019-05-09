@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#F2F2F2;font-size: 50px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hdwt.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+    <title>抚养费</title>
+    <style>
+        .btns{
+                background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                left: 27px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" style="padding:0;">
+        <a href="javascript::">
+            <img class="nav_txt_zuo go_befer" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">抚养费</div>
+    </header>
+    <div class="content">
+        <div class="neirong_con">
+            <div class="sele_each">
+                <div class="question">1.被抚养人年龄（周岁）：</div>
+                <span type="text" style=" display: inline-block; margin-top: 10px;  line-height: 55px; text-align: center;" readonly id="rtyrt" class="user_select">请选择</span>
+                <button class="go_befer btns">返回</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">2.被抚养人性别：</div>
+                <div class="sele_each_list">男</div>
+                <div class="sele_each_list">女</div>
+                 <button class="go_befer btns">上一页</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">3.被抚养人与谁共同生活：</div>
+                <div class="sele_each_list">父亲</div>
+                <div class="sele_each_list">母亲</div>
+                <div class="sele_each_list">祖父母</div>
+                <div class="sele_each_list">外祖父母</div>
+                <button class="go_befer btns">上一页</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">4.被抚养人的父母婚姻关系状态：</div>
+                <div class="sele_each_list">离婚</div>
+                <div class="sele_each_list">未离婚</div>
+                <button class="go_befer btns">上一页</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">5.抚养义务人此前给付抚养费的状况：</div>
+                <div class="sele_each_list">从未支付</div>
+                <div class="sele_each_list">间断性不足额给付</div>
+                <div class="sele_each_list">按约定支付但数额过低不足以维持正常生活，要求增加</div>
+                <button class="go_befer btns">上一页</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">6.抚养义务人是否有稳定的经济收入来源：</div>
+                <div class="sele_each_list">有</div>
+                <div class="sele_each_list">没有</div>
+                <div class="sele_each_list">不清楚</div>
+                <button class="go_befer btns">上一页</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">7.此抚养纠纷此前是否经过司法程序处理：</div>
+                <div class="sele_each_list">有</div>
+                <div class="sele_each_list">没有</div>
+                <button class="go_befer btns">上一页</button><button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">8.此次主张抚养费纠纷是否已经进入司法程序：</div>
+                <div class="sele_each_list">已进入</div>
+                <div class="sele_each_list">未进入</div>
+                <button class="go_befer btns">上一页</button>
+                <button class="user_select_submit btns1" id="rtyrt" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem;">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">9.是否能提供抚养义务人的地址及联系方式：</div>
+                <div class="sele_each_list">能</div>
+                <div class="sele_each_list">不能</div>
+                <button class="go_befer btns">上一页</button><button id="chogntian" style="background: #fff !important;
+                color: #000 !important;
+                width: 80px;
+                height: 40px;
+                border-radius: 7px;
+                box-shadow: 0 0 10 #ccc;
+                box-shadow: 0px 0px 10px #ccc;
+                position: fixed;
+                bottom: 32px;
+                right: .6rem; display: none;">重填</button>
+            </div>
+        </div>
+    </div>
+    <p class="tishi"></p>
+</body>
+<script src="./js/mobileSelect.js"></script>
+<style>
+    .tishi {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 6rem;
+        height: auto;
+        padding: .5rem;
+        display: none;
+        background: rgba(0, 0, 0, .5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -3rem;
+        z-index: 999999;
+    }
+</style>
+<script src="./js/szl/qweq.js"></script>
+<script src="./js/szl/jsAddress.js"></script>
+
+<script>
+    // 下拉插件
+    // 周岁
+    var zs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18'];
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.user_select',
+        title: '请选择',
+        wheels: [{
+            data: zs
+        }],
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function(indexArr, data) {
+            //console.log(data);
+        },
+        callback: function(indexArr, data) {
+            console.log(data)
+        }
+    })
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        if ($('.form-contro').length) {
+            addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+        }
+    });
+</script>
+<script src="./js/szl/laydate.js"></script>
+<script>
+    lay('#version').html('-v' + laydate.v);
+    laydate.render({
+        elem: '.test1' 
+    });
+</script>
+<script src="./js/szl/werw.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script type="text/javascript" src="./js/szl/rolldate.js"></script>
+
+
+</html>

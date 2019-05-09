@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" type="text/css" href="css/gerenxinxi.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>信息</title>
+    <style>
+
+        .tou {
+            height: 2.7rem;
+            width: 100%;
+            background-color: #196394;
+            position: relative;
+            text-align: center;
+        }
+        
+        .tou>div>img:nth-child(1) {
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 1.4rem;
+        }
+        
+        .tou>img {
+            width: .4rem;
+            height: .4rem;
+            position: absolute;
+            bottom: 0.3rem;
+            right: 0.3rem;
+        }
+        
+        .nav_txt_you {
+            color: white;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            text-align: center;
+            height: 2rem;
+        }
+        
+        .container ul li span:nth-of-type(2) {
+            height: .6rem;
+            width: 50%;
+            text-align: right;
+            border: none;
+            color: #999999;
+            position: absolute;
+            right: .2rem;
+            top: 50%;
+            margin-top: -0.3rem;
+            line-height: .6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .3rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+        .amend{
+            width:1.5rem;
+            height:.5rem;
+            background:#196394;
+            border:0;
+            border-radius: 5px;
+            color:#fff;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <header class="header">
+        <a href="index.html">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <span class="shenban_title"></span>
+        <span class="nav_txt_you
+	">
+		<!--<a href="zaixianshenpi.html" style="color: white">在线审批</a>-->
+	</span>
+    </header>
+    <div class="tou">
+        <div>
+            <img src="" alt="" class="img">
+            <br>
+            <span style="font-size: 0.32rem;color: white" class="xm">名字</span>
+        </div>
+        <img src="img/bianji.png" alt="" class="addend">
+    </div>
+    <div class="container">
+        <ul>
+            <li>
+                <span>姓名</span>
+                <span class="xm"></span>
+            </li>
+            <li>
+                <span>手机号码</span>
+                <span class="phone"></span>
+            </li>
+            <li>
+                <span>邮箱</span>
+                <span class="email"></span>
+            </li>
+            <li>
+                <span>身份证号码</span>
+                <span class="ID"></span>
+            </li>
+            <li>
+                <span>QQ</span>
+                <span class="qq"></span>
+            </li>
+            <li>
+                <span>地址</span>
+                <span class="address"></span>
+            </li>
+            <li class="qc">
+                <span>清除缓存</span>
+               
+            </li>
+            <li>
+                <button class="amend">修改密码</button>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div class="quediv" style="margin-bottom:1.5rem">
+            <div class="queding success">
+                退出登录
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/jquery.js"></script>
+<script>
+    $(".footer").load("footer.html");
+
+    var access_token = localStorage.getItem("access_token");
+    var token;
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Personal/mine",
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+
+            if (data.state == 1) {
+                $(".img").attr("src", data.data.tx)
+                $(".xm").text(data.data.xm);
+                $(".phone").text(data.data.lxdh);
+                $(".email").text(data.data.yx);
+                $(".ID").text(data.data.zjh);
+                $(".qq").text(data.data.qq);
+                $(".address").text(data.data.lxdz);
+                /*$(".xm").text1(data.data.xm);*/
+                localStorage.setItem("name", data.data.xm)
+            } else if (data.state == -2) {
+                $(".tishi").text("请登录").fadeIn().delay(500).fadeOut();
+                setTimeout(function() {
+                    window.location.href = "./login.html";
+                }, 800);
+            }
+
+            // if(data.state==-2){
+            //   $(".queding").text("请登录")
+            // }
+
+        }
+    })
+    $(".qc").click(function(){
+        var u = navigator.userAgent;
+                      if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                          
+                         radio.clearcatch("100")
+                      } else if (u.indexOf('iPhone') > -1) {
+                          window.location.href = "objc://share"+":"+"100";
+                      };
+    })
+    if (access_token == "" || access_token == null || access_token == undefined) {
+        $(".queding").text("请登录")
+    } else {
+        $(".queding").text("退出登录")
+    }
+    $('.queding').click(function() {
+        localStorage.setItem('yhlx', '');
+        window.location.href = 'login.html';
+    })
+    $(".addend").click(function() {
+        var token = localStorage.getItem("access_token");
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/mine",
+            data: {
+                access_token: token
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                if (data.state == -2) {
+                    $(".tishi").text("请先登录");
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                } else if (data.state == 1) {
+                    window.location.href = "addend_geren.html";
+                }
+            }
+        });
+        // if(access_token==""||access_token==null||access_token==undefined){
+        // 	$(".tishi").text("请先登录");
+        //   $(".tishi").fadeIn().delay(500).fadeOut();
+        // }else{
+        // 	window.location.href="addend_geren.html";
+        // }
+
+    })
+    $(document).on("click",".amend",function(){
+        window.location.href="amend.html"
+    })
+</script>

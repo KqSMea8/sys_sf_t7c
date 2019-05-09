@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="renderer" content="ie-comp" />
+<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/sale.css">
+<link rel="stylesheet" href="css/header.css">
+<script type="text/javascript">
+ document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+    </script>
+<title></title>
+<style>
+html, body {
+	background-color: white;
+}
+.tou {
+	height: 1.7rem;
+	width: 100%;
+	background-color: #196394;
+	position: relative;
+	text-align: center;
+}
+.tou>div>img:nth-child(1) {
+	width: 1.4rem;
+	height: 1.4rem;
+}
+.act {
+	color: #196394;
+	border-bottom: #196394 2px solid;
+}
+.items {
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.25rem;
+	height: 0.8rem;
+	line-height: 0.7rem;
+}
+.items>li {
+	text-align: center;
+	padding: 0 0.1rem;
+}
+.hang {
+	height: 0.8rem;
+	width: 100%;
+	display: flex;
+}
+.zuo {
+	color: #000000;
+	height: 0.8rem;
+	width: 2.8rem;
+	text-align: right;
+	padding-right: 0.2rem;
+	line-height: 0.8rem;
+}
+.you {
+	height: 0.8rem;
+	width: 4.8rem;
+	line-height: 0.8rem;
+}
+	.hang1{
+		height: 0.8rem;
+	width: 100%;
+	display: flex;
+	padding: 0 0.15rem;
+		justify-content: space-between;		
+		margin-top: 1.5rem;
+		
+	}
+	.hang1>div{
+	border-radius: 5px;	
+	background-color:#196394 ;
+	color:#fff;
+		text-align: center;
+
+		padding: 0.2rem;
+		width:1.6rem;
+	}
+	.title{
+		font-size: 0.32rem;
+		margin: 0 auto;
+		line-height: 0.8rem;
+	}
+			textarea {
+	line-height: normal;
+	border: 1px solid #b5b5b5;
+	width: 100%;
+	height:2rem;
+	border-radius: 2px;
+	outline: none;
+	resize: none;
+	font-size: .25rem;
+	color: #999999;
+}
+.showImg{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.5);
+	position:fixed;
+	display:none;
+	top:0;
+	left:0;
+}
+.showImg img{
+	width:100%;
+	height:auto;
+	position:absolute;
+	top:50%;
+}
+.tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            margin-left: -1.5rem;
+            padding: .2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            border-radius: 0.1rem;
+            display: none;
+        }
+</style>
+</head>
+<body>
+<header class="header"> <a href="javascript:history.go(-1)"><img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;"></a>
+  <h3 class="shenban_title"></h3>
+  <span class="nav_txt_you"></span> </header>
+<div class="tou">
+  <div><img src="img/tx.png" alt=""><br>
+  </div>
+</div>
+<div class="container">
+	<div class="hang" ><div class="title"></div></div>
+  
+  <div>
+    <div class="hang">
+      <div class="zuo">申请人姓名</div>
+      <div class="you uname"> <span>张三丰</span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo">申请时间</div>
+      <div class="you utime"> <span>2018-8-5</span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo">申办详细信息</div>
+      <div class="you uinfo"> <span></span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo"></div>
+      <div class="you uadress"> <span></span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo"></div>
+      <div class="you utype"> <span></span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo"></div>
+      <div class="you uIs"> <span></span> </div>
+   
+    </div>
+    <div class="hang" style="height: 1.8rem">
+      <div class="zuo" style="line-height: 0;margin-top: 0.1rem">材料</div>
+      <div class="you uScience"><!-- <img src="img/tianjia.jpg" alt="" style="width: 2.8rem;height: 1.8rem"> --></div>
+    </div>
+   
+	   <div style="height: 1.8rem ;width: 100%;padding: 0 0.2rem;margin-top:3rem;">
+     
+	   <div class="hang1" >
+      <div class="adopt">通过</div>
+      <div class="refuse">拒绝</div>
+      <div class="supplement">补充</div>
+    </div>
+	  <div style="width: 100%;height: 1rem"></div>
+  </div>
+</div>
+ </div>
+<!-- <div style="width: 100%;height: 1rem;"></div> -->
+<div class="footer"></div>
+<div class="showImg">
+	<img src="">
+</div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+$(".footer").load("footer.html");
+	function showTips(text){
+		$('body').append('<p class="tishi">'+ text +'</p>');
+		if($('.tishi').css('display')=='none'){
+			$('.tishi').fadeIn();
+			setTimeout(function(){
+				$('.tishi').fadeOut();
+				$('.tishi').remove();
+			},3000)
+		}
+	}
+	function getUrlParms(name) {
+	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	    console.log(reg);
+	    var r = window.location.search.substr(1).match(reg);
+	    if (r != null)
+	    return unescape(r[2]);
+	    return null;
+	} 
+ 	var splx=localStorage.getItem("splx");
+ 	var yhlx=localStorage.getItem("yhlx");
+ 	var access_token=localStorage.getItem("access_token");
+	// 头像获取
+	$.ajax({
+		type:'post',
+		url:'http://sf.wokerr.com/index.php/home/Personal/mine',
+		data:{
+			access_token:access_token
+		},
+		dataType:'json', 
+        async: false,   //同步异步
+		success:function(data){
+			console.log(data);
+			$('.tou>div>img').attr('src','http://sf.wokerr.com'+data.data.tx);
+		}
+	})
+	var status=getUrlParms('status');
+	var statusId=getUrlParms('id');
+	var types=getUrlParms('type');
+	if(status==0){
+		status=1;
+	}
+	var tempURL;
+	if(splx==1){//公证
+		if(types==1){//申办
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/gzc_bid_list';
+		}else if(types==2){//投诉
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/complain_list';
+		}else if(types==3){//预约
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/order_list';
+		}
+	}else if(splx==2){//法律援助
+		if(types==1){//申办
+			// tempURL='http://sf.wokerr.com/index.php/home/Handle/complain_list';
+		}else if(types==2){//投诉
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/complain_list';
+		}else if(types==3){//预约
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/order_list';
+		}
+	}else if(splx==3){//人民调解
+		if(types==1){//申办
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/tj_bid_list';
+		}else if(types==2){//投诉
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/complain_list';
+		}else if(types==3){//预约
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/tj_order_list';
+		}
+	}else if(splx==4){//司法鉴定
+		if(types==1){//申办
+			// tempURL='http://sf.wokerr.com/index.php/home/Handle/tj_order_list';
+		}else if(types==2){//投诉
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/complain_list';
+		}else if(types==3){//预约
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/order_list';
+		}
+	}else if(splx==5){//律师预约
+		if(types==1){//申办
+			// tempURL='http://sf.wokerr.com/index.php/home/Handle/tj_order_list';
+		}else if(types==2){//投诉
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/complain_list';
+		}else if(types==3){//预约
+			tempURL='http://sf.wokerr.com/index.php/home/Handle/ls_order_list';
+		}
+	}
+	$.ajax({
+		type:'post',
+		url:tempURL,
+		data:{
+			access_token:access_token,
+			type:splx,
+			id:statusId
+		},
+		dataType:'json', 
+        async: false,   //同步异步
+		success:function(data){
+			console.log(data);
+			var term = data.data.ct_time;
+			var date = new Date(term * 1000);
+			Y = date.getFullYear() + '-';
+			M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+			D = date.getDate() + ' ';
+			var is_call;
+			if(data.data.is_call==1){
+				is_call='是';
+			}else{
+				is_call='否';
+			}
+			$('.title').html(data.data.proposer_name+'公证申办');
+			$('.uname>span').html(data.data.proposer_name);
+			$('.utime>span').html(Y+M+D);
+			$('.uinfo>span').html('公证处名称：'+data.data.jg_name);
+			$('.uadress>span').html('公证使用地：'+data.data.area);
+			$('.utype>span').html('公证业务类型：'+data.data.name);
+			$('.uIs>span').html('上门服务：'+is_call);
+			var imgHTML="";
+			var fileType="";
+			for(var i=0;i<data.data.replenish.length;i++){
+				fileType=data.data.replenish[i].savepath;
+				fileType=fileType.substr(fileType.lastIndexOf('.'));
+				fileType=fileType.substr(1);
+				if(fileType=='png'){
+					imgHTML+='<img src="'+ data.data.replenish[i].savepath +'" alt="" style="max-width: 1.5rem;max-height: 1.5rem">'
+				}else{
+					imgHTML+='<a href="'+ data.data.replenish[i].savepath +'"><img src="img/filePreview.png" style="max-width: 1.5rem;max-height: 1.5rem"></a>'
+				}
+			}
+			$('.uScience').html(imgHTML);
+		}
+	})
+	$('.uScience').on('click','img',function(){
+		var imgSRC=$(this).attr('src');
+		var imgWidth=$(this).width();
+		var imgHeight=$(this).height();
+		var Multiple=$(window).width()/imgWidth;
+		$('.showImg>img').attr('src',imgSRC);
+		$('.showImg>img').css('margin-top',-(imgHeight*Multiple/2)+'px');
+		if($('.showImg').css('display')=='none'){
+			$('.showImg').fadeIn();
+		}
+	})
+	$('.showImg').click(function(){
+		if($(this).css('display')=='block'){
+			$(this).fadeOut();
+		}
+	})
+	if(status==1){
+		showList(status,statusId);
+	}
+	function showList(status,id){
+		if(types==1){
+			url='http://sf.wokerr.com/index.php/home/Approval/tid_changeStatus';
+		}else if(types==2){
+			url='http://sf.wokerr.com/index.php/home/Approval/complain_changeStatus';
+		}else if(types==3){
+			url='http://sf.wokerr.com/index.php/home/Approval/order_changeStatus';
+		}
+		$.ajax({
+			type:'post',
+			url:url,
+			data:{
+				access_token:access_token,
+				type:splx,
+				status:status,
+				id:id
+			},
+			dataType:'json', 
+	        async: false,   //同步异步
+			success:function(data){
+				console.log(data);
+				if(status!=1){
+					if(data.status==1){
+						javascript:history.go(-1);
+					}else{
+						showTips(data.msg);
+					}
+				}	
+			}
+		})
+	}
+	$('.adopt').click(function(){
+		status=2;
+		showList(status,statusId);
+	})
+	$('.refuse').click(function(){
+		status=7;
+		showList(status,statusId);
+	})
+	$('.supplement').click(function(){
+		status=3;
+		showList(status,statusId);
+	})
+	// $('.adopt').click(function(){
+	// 	status=2;
+	// 	showList(status,statusId);
+	// })
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>援助人员列表-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='援助人员列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+                <div id="Right" style="float:none;width:100%">
+                    <div class="Item hr">
+                        <div class="current">援助人员列表</div>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>人员标识</td>
+                                <td>姓名</td>
+                                <td>执业机构</td>
+                                <td>执业证号</td>
+                                <td>性别</td>
+                                <td>人员类别</td>
+                                <td>添加时间</td>
+                                <td width="150">操作</td>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tr align="center" id="{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.xm}</td>
+                                <td>{$vo.ssjg}</td>
+                                <td>{$vo.zyzh}</td>
+                                <td>{$vo.xb}</td>
+                                <td>{$vo.rylb}</td>
+                                <td>{$vo.createtime|date="Y-m-d H:i:s",###}</td>
+                                <td>[ <a id="{$vo.id}" gid="{$gid}" class="edit_List_yz" href="javascript:;">编辑 </a> ] [ <a link="{:U('Institution/yz_member_del/',array('id'=>$vo['id'],'gid'=>$gid))}" href="javascript:void(0)" name="{$vo.xm}" class="del">删除 </a> ]</td>
+                            </tr>
+                        </volist>
+                        <tr><td colspan="6" align="right">{$page}</td></tr>
+                    </table>
+                </div>
+        <script type="text/javascript">
+            $(function(){
+                $(".del").click(function(){
+                    var delLink=$(this).attr("link");
+                    $this = $(this);
+                    popup.confirm('你真的打算删除【<b>'+$(this).attr("name")+'</b>】吗?','温馨提示',function(action){
+                        if(action == 'ok'){
+                            delByLink(delLink,$this);
+                            //top.window.location.href=delLink;
+                        }
+                    });
+                    return false;
+                });
+            });
+            $('body').on('click','.edit_List_yz',function(){
+                var id=$(this).attr('id');
+                var gid=$(this).attr('gid');
+                var url='__URL__/yz_member_add?id='+id+'&gid='+gid;
+                showFirme(url);
+            })
+            function changeAttr(id,v){
+                $.get('{:U("News/changeAttr")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+            function changeStatus(id,v){
+                $.get('{:U("News/changeStatus")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

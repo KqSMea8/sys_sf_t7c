@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>添加、编辑产品-后台管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='产品管理 > 添加编辑产品';
+        </php>
+        <include file="Common:intoHead" />
+        <style>
+            div.spot {
+                float: left;
+                margin: 0 20px 0 0;
+                width: 220px;
+                min-height: 160px;
+                border: 2px dashed #ddd;
+            }
+            .droparea {
+                position: relative;
+                text-align: center;
+            }
+            .droparea .instructions {
+                opacity: 0.8;
+                background-color: #cccccc;
+                height: 25px;
+                z-index: 10;
+                zoom: 1;
+                background-position: initial initial;
+                background-repeat: initial initial;
+                cursor: pointer;
+            }
+            .droparea div, .droparea input {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .droparea input {
+                cursor: pointer;
+                opacity: 0;
+            }
+            .droparea div, .droparea input {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #uparea1,#uparea2,#uparea3{
+                height: 170px;
+                cursor: pointer;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="./Public/Admin/Js/jquery.uploadify.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="./Public/Admin/Css/uploadify.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">添加编辑产品</div>
+                    </div>
+                    <form action="{:U('Product/bookadd')}" enctype="multipart/form-data" method="post">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                            <tr>
+                                <th>书籍名称：</th>
+                                <td>
+                                    <select name="info[cid]">
+                                        <volist name="list" id="vo">
+                                            <if condition="$vo[cid] eq $info[cid]">
+                                                <option value="{$vo.cid}" selected="selected">{$vo.fullname}</option>
+                                                <else/>
+                                                <option value="{$vo.cid}">{$vo.fullname}</option>
+                                            </if>
+                                        </volist>
+                                    </select>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <th width="100">章节：</th>
+                                <td><input id="title" type="text" class="input" size="60" name="info[title]" value="{$info.title}"/> <a href="javascript:void(0)" id="checkNewsTitle">检测是否重复</a></td>
+                            </tr> -->
+                            
+                            <tr>
+                                <th>章：</th>
+                                <td><input type="text" class="input" size="20" name="info[price]" value="{$info.price}"/></td>
+                            </tr>
+                            <tr>
+                                <th>节：</th>
+                                <td><input type="text" class="input" size="20" name="info[psize]" value="{$info.psize}"/></td>
+                            </tr>
+                            <tr>
+                                <th>上传视频：</th>
+                                <td><input id="file_video" name="file_video[]" type="file" multiple="true"></td>
+                            </tr>
+                            <!-- <tr>
+                                <th>上传文件：</th>
+                                <td><input id="file_upload" name="file_upload[]" type="file" multiple="true"></td>
+                            </tr> -->
+                            <!-- <tr>
+                                <th>产品图片：</th>
+                                <td>
+                                    <div class="droparea spot" id="image1" style="background-image: url('{$img_info[0]['savepath']}');background-size: 220px 160px;" ><div class="instructions" onclick="del_image('1')">删除</div><div id="uparea1"></div><input type="hidden" name="image_1[]" id="image_1" value="{$img_info[0]['savepath']}" /></div>
+                                    <div class="droparea spot" id="image2" style="background-image: url('{$img_info[1]['savepath']}');background-size: 220px 160px;" ><div class="instructions" onclick="del_image('2')">删除</div><div id="uparea2"></div><input type="hidden" name="image_1[]" id="image_2" value="{$img_info[1]['savepath']}" /></div>
+                                    <div class="droparea spot" id="image3" style="background-image: url('{$img_info[2]['savepath']}');background-size: 220px 160px;" ><div class="instructions" onclick="del_image('3')">删除</div><div id="uparea3"></div><input type="hidden" name="image_1[]" id="image_3" value="{$img_info[2]['savepath']}" /></div>
+                                </td>
+                            </tr> -->
+                            <!-- <tr>
+                                <th>课次：</th>
+                                <td><input type="text" class="input" size="40" name="time" value="{$info.time}"/> </td>
+                            </tr>
+                            <tr>
+                                <th>时间：</th>
+                                <td><input type="text" class="input" size="60" name="info[class_time]" value="{$info.keywords}"/> </td>
+                            </tr>
+                            <tr>
+                                <th>地点：</th>
+                                <td><input type="text" class="input" size="60" name="info[address]" value="{$info.keywords}"/> </td>
+                            </tr>
+                            <tr>
+                                <th>要求：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[require]">{$info.require}</textarea> </td>
+                            </tr>
+                            <tr>
+                                <th>产品描述：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[description]">{$info.description}</textarea> </td>
+                            </tr>
+                            <tr>
+                                <th>产品摘要：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[summary]">{$info.summary}</textarea> 如果不填写则系统自动截取文章前200个字符</td>
+                            </tr> -->
+                            <tr>
+                                <th>文字内容：</th>
+                                <td><textarea id="" class="" style="height: 300px; width: 80%;" name=""></textarea></td>
+                            </tr>
+                        </table>
+                    <div class="commonBtnArea" >
+                        <button class="btn submit">提交</button>
+                    </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+        <script type="text/javascript">
+            function del_image(num){
+                $('#image'+num).css('background-image','');
+                $('#image_'+num).val('');
+            }
+            $(function(){
+
+                var  content ;
+                KindEditor.ready(function(K) {
+                    content = K.create('#content',{
+                        allowFileManager : true,
+                        uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=product'
+                    });
+                });
+
+                KindEditor.ready(function(K) {
+                    K.create();
+                    var editor = K.editor({
+                        allowFileManager : true,
+                        uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=product'
+                        //sdl:false
+                    });
+                    K('#uparea1').click(function() {
+                        editor.loadPlugin('image', function() {
+                            editor.plugin.imageDialog({
+                                imageUrl : K('#image_1').val(),
+                                clickFn : function(url, title, width, height, border, align) {
+                                    $('#image1').css('background-image','url('+url+')').css('background-size','220px 160px');
+                                    K('#image_1').val(url);
+                                   // K('#getImgUrl').val(url);
+                                    editor.hideDialog();
+                                }
+                            });
+                        });
+                    });
+
+                    K('#uparea2').click(function() {
+                        editor.loadPlugin('image', function() {
+                            editor.plugin.imageDialog({
+                                imageUrl : K('#image_2').val(),
+                                clickFn : function(url, title, width, height, border, align) {
+                                    $('#image2').css('background-image','url('+url+')').css('background-size','220px 160px');
+                                    K('#image_2').val(url);
+                                    // K('#getImgUrl').val(url);
+                                    editor.hideDialog();
+                                }
+                            });
+                        });
+                    });
+
+                    K('#uparea3').click(function() {
+                        editor.loadPlugin('image', function() {
+                            editor.plugin.imageDialog({
+                                imageUrl : K('#image_3').val(),
+                                clickFn : function(url, title, width, height, border, align) {
+                                    $('#image3').css('background-image','url('+url+')').css('background-size','220px 160px');
+                                    K('#image_3').val(url);
+                                    // K('#getImgUrl').val(url);
+                                    editor.hideDialog();
+                                }
+                            });
+                        });
+                    });
+
+
+                });
+                $("#checkNewsTitle").click(function(){
+                    if($('#title').val()==''){
+                        popup.error('标题不能为空！');
+                        return false;
+                    }
+                    $.getJSON("__URL__/checkProductTitle", { title:$("#title").val(),id:"{$info.id}"}, function(json){
+                        $("#checkNewsTitle").css("color",json.status==1?"#0f0":"#f00").html(json.info);
+                    });
+                });
+                $(".submit").click(function(){
+                    if($('#title').val()==''){
+                        popup.error('标题不能为空！');
+                        return false;
+                    }
+                    content.sync();
+                    commonAjaxSubmit("{$action_url}");
+                    return false;
+                });
+            });
+
+            <?php $timestamp = time();?>
+            $(function() {
+                $('#file_upload').uploadify({
+                    'formData'     : {
+                        'timestamp' : '<?php echo $timestamp;?>',
+                        'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+                    },
+                    'swf'      : 'uploadify.swf',
+                    'uploader' : 'uploadify.php'
+                });
+            });
+        </script>
+    </body>
+</html>

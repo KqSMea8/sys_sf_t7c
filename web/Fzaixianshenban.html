@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/pretty.min.css">
+    <link rel="stylesheet" type="text/css" href="css/build.css">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link async="" rel="stylesheet" href="https://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
+    <link async="" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link async="" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.7/typicons.min.css">
+    <link async="" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <script src="./js/mobileSelect.js"></script>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <script>
+        function tishi(text) {
+            $(".tishi").text(text);
+            $(".tishi").fadeIn();
+            setTimeout(function() {
+                $(".tishi").fadeOut()
+            }, 1500)
+        }
+    </script>
+    <title>在线申办</title>
+    <style>
+        body,
+        html {
+            background-color: white;
+        }
+        
+        .act {
+            color: #196394;
+            border-bottom: #196394 2px solid;
+        }
+        
+        .items {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+        }
+        
+        .items>li {
+            width: 1.9rem;
+            text-align: center;
+        }
+        
+        .rengong {
+            width: 100%;
+            height: 0.6rem;
+            border-bottom: 1px solid #d3d1d1
+        }
+        
+        .item {
+            width: 6rem;
+            height: 2rem;
+            margin: 0 auto;
+        }
+        
+        .selects {
+            width: 6rem;
+            margin: 1rem 0.8rem;
+            height: 0.8rem;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            margin: auto 1rem;
+            text-align: center;
+            height: 2rem;
+        }
+        
+        .hang {
+            /* height: 0.8rem; */
+            width: 100%;
+            display: flex;
+        }
+        
+        .zuo {
+            color: #000000;
+            height: 0.8rem;
+            width: 2.5rem;
+            text-align: right;
+            padding-right: 0.2rem;
+            line-height: 0.8rem;
+        }
+        
+        .you {
+            /* height: 0.8rem; */
+            width: 4.8rem;
+            line-height: 0.8rem;
+        }
+        
+        .sbxm>div:nth-child(3) {
+            /* height: 0.5rem; */
+            line-height: 0.5rem;
+        }
+        
+        .sbxm>div:nth-child(4) {
+            /* height: 2rem; */
+            margin-bottom: .2rem;
+            line-height: 0.5rem;
+        }
+        
+        .sbxm>div:nth-child(4)>.you>div {
+            /* display: flex; */
+        }
+        
+        .sbxm>div:nth-child(4)>.you>div>div {
+            position: relative;
+            float: left
+        }
+        
+        .sbxm>div:nth-child(4)>.you>div>div>input.file {
+            position: absolute;
+            left: 0;
+        }
+        
+        .sbxm>div:nth-child(4)>.you>div>div>img {
+            width: 1.3rem;
+            height: 1.5rem;
+            margin-right: 0.2rem;
+            line-height: 0.5rem;
+            margin-top: 0.2rem;
+        }
+        
+        input.file {
+            width: 1rem;
+            opacity: 0;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            margin: 1.5rem auto 2rem;
+            text-align: center;
+        }
+        
+        .tankuang {
+            width: 100%;
+            /*	height: 100%;*/
+            background-color: white;
+            font-size: 0.24rem;
+            overflow: scroll;
+        }
+        
+        input {
+            border: 1px solid
+        }
+        
+        .hang_tan {
+            height: auto;
+            width: 100%;
+            padding: 0 0.15rem;
+            margin: 0.1rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .neirong {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0.05rem;
+        }
+        
+        .neirong>div {
+            min-width: 1.3rem;
+        }
+        
+        .neirong>div>input,
+        span {
+            vertical-align: middle;
+            margin-right: 0.1rem;
+        }
+        
+        .con {
+            position: relative;
+        }
+        
+        .tankuang_a1 {
+            width: 100%;
+            height: 95%;
+            background-color: white;
+            position: fixed;
+            top: 0rem;
+            z-index: 666;
+            margin-top: 1.6rem;
+        }
+        
+        .tankuang_a {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            top: 0rem;
+            margin-top: 1.6rem;
+        }
+        
+        .tankuang_a>div {
+            overflow: scroll;
+        }
+        
+        select {
+            border: 1px solid #999999;
+            width: 30%;
+        }
+        
+        option {
+            width: 4.3rem;
+            height: 0.5rem;
+        }
+        
+        a {
+            color: #333333;
+        }
+        
+        .pick-area {
+            display: inline-block;
+        }
+        
+        .a {
+            float: left;
+            width: 100%;
+            margin: 10px;
+        }
+        
+        .a a {
+            float: left;
+            margin: 10px;
+        }
+        
+        .a input {
+            float: left;
+            width: 400px;
+            padding: 10px;
+            margin: 10px;
+            outline-color: gold;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        h3 {
+            margin: 5px;
+            color: #333;
+        }
+        
+        h4 {
+            margin: 5px;
+            color: #666;
+            padding: 0 20px;
+            font-weight: 100;
+        }
+        
+        .blank {
+            float: left;
+            width: 50%;
+            height: 400px;
+            background: cyan;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+        
+        .blank2 {
+            float: left;
+            width: 50%;
+            height: 400px;
+            background: lightpink;
+            border-top: 1px solid #333;
+            padding-top: 50px;
+        }
+        
+        .box {
+            width: 100%;
+            overflow: hidden;
+            background: lightgreen;
+        }
+        
+        .you input {
+            width: 4.3rem;
+            height: 0.5rem;
+            border: 1px solid #999;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .25rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+        
+        .xinjia {
+            width: 100%;
+            padding-left: .22rem;
+            padding-right: .22rem;
+        }
+        
+        .xinjia span {
+            display: inline-block;
+            width: 1.6rem;
+            text-align: right;
+            margin-top: .15rem;
+        }
+        
+        .xinjia input[type="text"] {
+            margin-left: .66rem;
+            width: 4.3rem;
+            border: 1px solid rgb(153, 153, 153);
+            height: 0.7rem;
+            margin-top: .15rem;
+        }
+        
+        .xinjia input[type="button"] {
+            background: #fff;
+            border: 1px solid rgb(153, 153, 153);
+            border-radius: 5px;
+            margin-left: .2rem;
+        }
+    </style>
+</head>
+
+<body style="overflow: scroll">
+    <header class="header">
+        <a onclick="history.go(-1)">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">在线申办</div>
+    </header>
+    <div class="content">
+        <div class="rengong">
+            <ul class="items">
+                <li class="shenban act">申办项目</li>
+                <li class="xietong">司法协同</li>
+            </ul>
+            <div class="con">
+                <div class="con_1">
+                    <div class="xinjia">
+                        <span>姓名</span><input type="text" class="gz_lianxi1" readonly="readonly" onfocus='this.blur();' style="text-align: left;"><br>
+                        <span>身份证号</span><input type="text" class="gz_lianxi2" onblur="isCardNo($(this).val())" readonly="readonly" onfocus='this.blur();' style="text-align: left;"><br>
+                        <span>手机号</span><input type="text" class="gz_lianx3" onblur="checkMobile($(this).val())" readonly="readonly" onfocus='this.blur();' style=" text-align: left; width: 4.3rem;"><br>
+                        <span class="yanzhengma">验证码</span><input style="width: 2.4rem;" class="gz_lianxi4" type="text" style="text-align: left;"><input class="verify_f" style="width:5rem; height: .2rem;width: 1.6rem;height: .65rem;" type="button" value="发送验证码">
+                    </div>
+                    <div class="sbxm">
+                        <div class="hang">
+                            <div class="zuo">区域</div>
+                            <div class="you">
+                                <!-- <select name="" id="" class="select2" style="width: 4.3rem;height:  0.5rem">
+                            <option value="123">123</option>
+                            <option value="456">456</option>
+                            <option value="758">789</option>
+                        </select> -->
+                                <!-- <input type="text" readonly id="lkfd"> -->
+                                <span type="text" id="xzz1" readonly class="selectt" style="display: inline-block; border: 1px solid #999;width: 4.3rem;height:  0.7rem">请选择</span>
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">法律援助中心</div>
+                            <div class="you">
+                                <!-- <select name="" id="" class="select2" style="width: 4.3rem;height:  0.5rem">
+							<option value="123">123</option>
+							<option value="456">456</option>
+							<option value="758">789</option>
+						</select> -->
+                                <!-- <input type="text" readonly id="lkfd"> -->
+                                <span type="text" id="testd" readonly class="select3" style="display: inline-block; border: 1px solid #999;width: 4.3rem;height:  0.7rem">请选择</span>
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">申请人类型</div>
+                            <div class="you">
+                                <!-- <select name="" id="" class="select2" style="width: 4.3rem;height:  0.5rem">
+							<option value="123">123</option>
+							<option value="456">456</option>
+							<option value="758">789</option>
+						</select> -->
+                                <span type="text" id="testds" readonly class="select4 lex" style="    display: inline-block; border: 1px solid #999;width: 4.3rem;height:  0.7rem">请选择</span>
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo"></div>
+                            <div class="you" style="height: 0.5rem;line-height: 0.5rem">
+                                <p class="Certificates" style="width:4.3rem;color: #cccccc;font-size:0.24rem;">需要上传***证件,***证件,***证件</p>
+                            </div>
+                        </div>
+                        <!-- <div class="Enclosure"> -->
+                        <div class="hang Enclosure">
+                            <div class="zuo">上传附件</div>
+                            <div class="you">
+                                <div>
+                                    <!-- <div>
+                                    <img src="img/dagshirenzp.png" class="img1" alt="" class="avator-btn-fake">
+                                    <input type="file" name="file" class="file" style="width: 1rem; height: 1rem;" id="file1" accept="image/*" hidden>
+                                </div>
+                                <div>
+                                    <img src="img/dagshirenzp.png" class="img2" alt="" class="avator-btn-fake2">
+                                    <input type="file" name="file" class="file" style="width: 1rem; height: 1rem;" id="file2" accept="image/*" hidden>
+                                </div>
+                                <div>
+                                    <img src="img/dagshirenzp.png" class="img3" alt="" class="avator-btn-fake3">
+                                    <input type="file" name="file" class="file" style="width: 1rem; height: 1rem;" id="file3" accept="image/*" hidden>
+                                </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+
+                        <div class="hang">
+                            <div class="zuo">申请事项</div>
+                            <div class="you">
+                                <!-- <select name="" id="test" class="select2" style="width: 4.3rem;height:  0.7rem">
+							<option value="0">请选择</option>
+							<option value="1">抚养费</option>
+							<option value="2">工伤</option>
+							<option value="3">国家赔偿</option>
+							<option value="4">交通事故</option>
+							<option value="5">劳动报酬</option>
+							<option value="6">离婚</option>
+							<option value="7">赡养费</option>
+							<option value="8">刑事案件</option>
+							<option value="9">医疗纠纷</option>
+							<option value="10">主张因见义勇为行为产生的民事权益</option>
+                        </select> -->
+                                <span type="text" id="test" readonly class="select2 shix" style="display: inline-block; border: 1px solid #999;width: 4.3rem;height:  0.7rem">请选择</span>
+                            </div>
+                        </div>
+                        <div class="quediv">
+                            <!-- onclick="change(curTarget.options[curTarget.selectedIndex])" -->
+                            <div class="queding tijiaos" id="btn" style="cursor: pointer;">
+                                下一步
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="con_2" style="display:none">
+                    <div class="hang">
+                        <div class="zuo" style="text-align:right">机构名称：</div>
+                        <div class="you">
+                            <span type="text" readonly class="select3_name" style="display: inline-block;text-align: left; width: 4.3rem;height:  0.8rem"></span>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo" style="text-align:right">机构地址：</div>
+                        <div class="you">
+                            <span type="text" readonly class="select3_address" style="display: inline-block;text-align: left;width: 4.3rem;"></span>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo" style="text-align:right">机构联系电话：</div>
+                        <div class="you">
+                            <span type="text" readonly class="select3_tel" style="display: inline-block;text-align: left;width: 4.3rem;height:  0.8rem"></span>
+                        </div>
+                    </div>
+                    <div class="quediv">
+                        <!-- onclick="change(curTarget.options[curTarget.selectedIndex])" -->
+                        <div class="queding tijiao" id="btn">
+                            提交
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="con-xt" style="display: none;">
+                <style type="text/css">
+                    .hang {
+                        /* height: 0.8rem; */
+                        width: 100%;
+                        display: flex;
+                        padding-left: 0.2rem;
+                        padding-right: 0.2rem;
+                    }
+                    
+                    .hang_1 {
+                        height: 2.2rem;
+                        width: 100%;
+                        display: flex;
+                        padding-left: 0.2rem;
+                        padding-right: 0.2rem;
+                    }
+                    
+                    .hang_1>.you>div>div>img {
+                        width: 2.8rem;
+                        height: 2.3rem;
+                        position: absolute;
+                    }
+                    
+                    .zuo {
+                        color: #000000;
+                        height: 0.8rem;
+                        width: 2.4rem;
+                        text-align: left;
+                        padding-right: 0.2rem;
+                        line-height: 0.8rem;
+                    }
+                    
+                    .zuo_1 {
+                        color: #000000;
+                        height: 0.8rem;
+                        width: 100%;
+                        text-align: left;
+                        padding-right: 0.2rem;
+                        line-height: 0.8rem;
+                    }
+                    
+                    .you {
+                        /* height: 0.8rem; */
+                        width: 4.8rem;
+                        line-height: 0.8rem;
+                    }
+                    
+                    .sbxm>div:nth-child(3) {
+                        /* height: 0.5rem; */
+                        line-height: 0.5rem;
+                    }
+                    
+                    .sbxm>div:nth-child(4) {
+                        /*		height: 2rem;*/
+                        line-height: 0.5rem;
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div {
+                        /* display: flex; */
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div>div {
+                        position: relative
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div>div>input.file {
+                        position: absolute;
+                        left: 0;
+                        top: 0.5rem;
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div>div>img {
+                        width: 1.3rem;
+                        height: 1.5rem;
+                        margin-right: 0.2rem;
+                        line-height: 0.5rem;
+                        margin-top: 0.2rem;
+                    }
+                    
+                    input.file {
+                        width: 3rem;
+                        opacity: 0;
+                        position: absolute;
+                        height: 2rem;
+                    }
+                    
+                    .queding {
+                        width: 4rem;
+                        background-color: #196394;
+                        height: 0.8rem;
+                        text-align: center;
+                        color: white;
+                        font-size: 0.32rem;
+                        line-height: 0.8rem;
+                        border-radius: 5px;
+                        margin: 0 auto;
+                    }
+                    
+                    .quediv {
+                        /*margin: 3rem auto 1rem;*/
+                        text-align: center;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    th,
+                    td {
+                        text-align: center;
+                        height: 0.5rem;
+                    }
+                    
+                    #myselect {
+                        width: 4rem;
+                        height: 0.7rem;
+                        margin-top: 0.1rem;
+                    }
+                    
+                    .hang1_box {
+                        margin-top: 0.5rem;
+                    }
+                </style>
+                <div class="sbxm">
+                    <div class="hang">
+                        <div class="zuo">办案人员姓名</div>
+                        <div class="you">
+                            牡丹江
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">手机号</div>
+                        <div class="you">
+                            51651561231
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">协同机构</div>
+                        <span class="select9" id="myselect" style="display: inline-block; border: 1px solid #999;width: 4.3rem;height:  0.7rem">请选择</span>
+                    </div>
+                </div>
+                <div class="hang1_box"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <p class="tishi"></p>
+    <div class="load">
+        <img src="./img/jiazaia.png" alt="">
+    </div>
+</body>
+
+</html>
+<style>
+    .load {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .load div {
+        position: absolute;
+        width: 5rem;
+        top: 38%;
+        left: 50%;
+        margin-left: -2.5rem;
+    }
+    .img1{
+        width: 2rem;height: 2rem;
+    }
+</style>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    function checkMobile(val) {
+        // var sMobile = document.mobileform.mobile.value 
+        if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(val))) {
+            // showTips("请填写正确的手机号"); 
+            $(".tishi").text("请填写正确的手机号");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            $(".gz_lianx3").val("");
+            // document.mobileform.mobile.focus(); 
+            return false;
+        }
+    }
+
+    function isCardNo(card) {
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+        if (card.length != 0) {
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (reg.test(card) === false) {
+                $(".tishi").text("身份证号格式不正确");
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".gz_lianxi2").val("")
+                return false;
+            }
+        }
+    }
+    var access_token = localStorage.getItem("access_token");
+    var accessStatus;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Personal/mine',
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            accessStatus = data.state;
+            if (data.state != '-2') {
+                ID_number = data.data.zjh;
+                Full_name = data.data.xm;
+                phone_number = data.data.lxdh;
+                $(".verify_f").hide();
+                $(".gz_lianxi4").hide();
+                $(".yanzhengma").hide();
+                console.log(Full_name);
+                $(".xinjia input").removeAttr("readonly")
+                $(".gz_lianxi1").val(Full_name);
+                $(".gz_lianxi2").val(ID_number);
+                $(".gz_lianx3").val(phone_number);
+            } else {
+                // $('.gz_lianxi1').removeAttr('readonly');
+                $('.gz_lianxi1').removeAttr('onfocus');
+                // $('.gz_lianxi2').removeAttr('readonly');
+                $('.gz_lianxi2').removeAttr('onfocus');
+                // $('.gz_lianx3').removeAttr('readonly');
+                $('.gz_lianx3').removeAttr('onfocus');
+                $(".verify_f").show();
+                $(".gz_lianxi4").show();
+                // $(".gz_lianx3").css("width","2.5rem")
+            }
+
+        }
+    })
+    var tex = {};
+    // ============鉴定机构
+    var lk3 //下拉框id；
+    var xl3 = []; // 下拉框数组
+    var xzz1=[];
+    var qy;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/area',
+        data: {},
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // var html="";
+            var qk1 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].jgmc}</option>`;
+                xzz1.push(data.data[i].name);
+            }
+            // $(".select1").append(html);
+            
+            var mobileSelect = new MobileSelect({
+                trigger: '#xzz1',
+                title: '请选择',
+                wheels: [{
+                    data: xzz1
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                     $("#testd").text("")
+                    fgld = data + "";
+                    /*$(".q4").text(data);*/
+                    $("#xzz1").attr("value", data)
+                    for (var i = 0; i < qk1.length; i++) {
+                        if (data == qk1[i].name) {
+                            qy = qk1[i].id;
+                             $('.selectt').attr('index', qy);
+                        }
+                    }
+                     $.ajax({
+                        type: 'post',
+                        url: 'https://sys.t7c.net/index.php/home/Data/falvyz',
+                        data: {qy:qy},
+                        dataType: 'json',
+                        async: false, //同步异步
+                        success: function(data) {
+                            console.log(data);
+                            xl3=[];
+                            var tk3 = data.data;
+                            for (var i = 0; i < data.data.length; i++) {
+                                xl3.push(data.data[i].jgmc)
+                            }
+                            var mobileSelect3 = new MobileSelect({
+                                trigger: '#testd',
+                                title: '请选择法律援助中心',
+                                wheels: [{
+                                    data: xl3
+                                }],
+                                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                transitionEnd: function(indexArr, data) {
+                                    //console.log(data);
+                                },
+                                callback: function(indexArr, data) {
+
+                                    fgld = data + "";
+                                    $("#testd").attr("value", data)
+                                    for (var i = 0; i < tk3.length; i++) {
+                                        if (data == tk3[i].jgmc) {
+                                            lk3 = tk3[i].id;
+                                            $('.select3').attr('index', lk3);
+
+                                        }
+                                    }
+                                     $('.mobileSelect').prev('.mobileSelect-show').remove();
+                                }
+                            })
+
+                        }
+                    })
+                }
+            })
+        }
+    })
+   
+
+
+
+    //援助中心
+    var xl1_id;
+    var xl1 = [];
+    $.ajax({
+        type: "post",
+        url: "https://sys.t7c.net/index.php/home/Data/proposer_type",
+        data: {},
+        dataType: "json",
+        success: function(data) {
+            console.log(data)
+            var tk1 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                xl1.push(data.data[i].title);
+            }
+
+            var mobileSelect1 = new MobileSelect({
+                trigger: '#testds',
+                title: '请选择申请人类型',
+                wheels: [{
+                    data: xl1
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    var CertificatesHTML = "";
+                    $("#testds").attr("value", data);
+                    var file_num;
+                    var fileHTML = "";
+                    for (var i = 0; i < tk1.length; i++) {
+                        if (data == tk1[i].title) {
+                            xl1_id = tk1[i].id;
+                            $('.select4').attr('index', xl1_id);
+                            file_num = tk1[i].file_num;
+                            for (var j = 0; j < tk1[i].required_type.length; j++) {
+                                if (j == tk1[i].required_type.length - 1) {
+                                    CertificatesHTML += tk1[i].required_type[j] + '证件';
+                                } else {
+                                    CertificatesHTML += tk1[i].required_type[j] + '证件,';
+                                }
+
+                            }
+                            for (var x = 0; x < tk1[i].file_num; x++) {
+
+                                fileHTML += `<div style="position:relative">
+                                    <img src="img/dagshirenzp.png" class="img1" alt="" class="avator-btn-fake" style="width:2rem;height:2rem;">
+                                    <input type="file" name="file" class="file" style="width: 2rem; height: 2rem;display:block;position:absolute;left:0;top:0" id="file1" accept="image/*" hidden>
+                                </div>`;
+                            }
+                        }
+                    }
+                    $('.Certificates').html('需要上传' + CertificatesHTML);
+                    $('.Enclosure div div').html(fileHTML);
+
+                }
+            })
+        }
+    })
+
+
+    // ======图片上传
+    var imgde1;
+    var imgde2;
+    var imgde3;
+    $('.Enclosure .you div').on('change', '#file1', function() {
+        var file = this.files[0];
+        var img = $(this);
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde1 = e.target.result.split(",")[1];
+                var key = "imgde1";
+                var value = imgde1;
+                img.prev().attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file2").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde2 = e.target.result.split(",")[1];
+                var key = "imgde2";
+                var value = imgde2;
+                // tex[key] = value;
+                $(".img2").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file3").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde3 = e.target.result.split(",")[1];
+                var key = "imgde3";
+                var value = imgde3;
+                // tex[key] = value;
+                $(".img3").attr("src", e.target.result)
+            };
+        }
+    });
+
+
+    // ==================司法协同
+    var imgde4;
+    var imgde5;
+    var imgde6;
+    var imgde7;
+    var imgde8;
+    var imgde9;
+    var fileform;
+    var imgde10;
+    var imgde11;
+    var imgde12;
+    var imgde13;
+
+    var imgde15;
+    var imgde16;
+    var imgde17;
+    var arr = ["公安机关", "检查机关", "人民法院"]
+
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.select9',
+        title: '请选择',
+        wheels: [{
+            data: arr
+        }],
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function(indexArr, data) {
+            //console.log(data);
+        },
+        callback: function(indexArr, data) {
+            console.log(data);
+            fgld = data + "";
+            $(".select9").attr("value", data)
+            if (data == '公安机关') {
+                $.ajax({
+                    url: 'Fshifaxietong4.html',
+                    cache: true,
+                    async: false,
+                    success: function(html) {
+                        $(".hang1_box").html(html);
+                    }
+                })
+                $("#file4").on("change", function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            imgde4 = e.target.result.split(",")[1];
+                            console.log(imgde4)
+                            $(".img4").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#fileform").on("change", function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            fileform = e.target.result.split(",")[1];
+                            console.log(fileform)
+                            $(".imgform").attr("src", e.target.result)
+                        };
+                    }
+                });
+
+                $("#file5").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            imgde5 = e.target.result.split(",")[1];
+                            $(".img5").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file6").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde6 = e.target.result.split(",")[1];
+                            $(".img6").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file7").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde7 = e.target.result.split(",")[1];
+                            $(".img7").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file8").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde8 = e.target.result.split(",")[1];
+                            $(".img8").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file9").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde9 = e.target.result.split(",")[1];
+                            $(".img9").attr("src", e.target.result)
+                        };
+                    }
+                });
+
+                $(".hang1_box").show();
+                $(".jiguan").click(function() {
+                    if ($(".img4").attr("src").length < 40) {
+                        tishi("请选择措施决定书");
+                        return false;
+                    } else if ($(".imgform").attr("src").length < 40) {
+                        tishi("请选择立案登记表");
+                        return false;
+                    } else if ($(".img5").attr("src").length < 40) {
+                        tishi("请选择立案决定书");
+                        return false;
+                    } else if ($(".img6").attr("src").length < 40) {
+                        tishi("请选择义务告知书");
+                        return false;
+                    } else if ($(".img7").attr("src").length < 40) {
+                        tishi("请选择询问笔录");
+                        return false;
+                    } else if ($(".img8").attr("src").length < 40) {
+                        tishi("请选择援助报告书");
+                        return false;
+                    } else if ($(".img9").attr("src").length < 40) {
+                        tishi("请选择意见书");
+                        return false;
+                    } else
+                        $.ajax({
+                            type: 'post',
+                            url: 'https://sys.t7c.net/index.php/home/Handle/yz_synergy',
+                            data: {
+                                access_token: access_token,
+                                type: 1,
+                                ga_decide: imgde4,
+                                ga_decide2: imgde5,
+                                ga_inform: imgde6,
+                                ga_take_down: imgde7,
+                                ga_report: imgde8,
+                                ga_opinion: imgde9
+                            },
+                            dataType: 'json',
+                            async: false, //同步异步
+                            success: function(data) {
+                                    console.log(data);
+                                    if (data.state == 1) {
+                                        $(".tishi").text(data.msg);
+                                        $(".tishi").fadeIn().delay(500).fadeOut();
+                                        setTimeout(function() {
+                                            window.location.href = "falvyuanzu.html";
+                                        }, 1000)
+                                    } else {
+                                        $(".tishi").text(data.msg);
+                                        $(".tishi").fadeIn().delay(500).fadeOut();
+                                    }
+                                }
+                                // }
+                        })
+                })
+            } else if (data == '检查机关') {
+                $.ajax({
+                    url: 'Fshifaxietong2.html',
+                    cache: true,
+                    async: false,
+                    success: function(html) {
+                        $(".hang1_box").html(html);
+                    }
+                })
+                $("#file15").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde15 = e.target.result.split(",")[1];
+                            $(".img15").attr("src", e.target.result)
+                        };
+                    }
+                });
+
+                function isCardNo(card) {
+                    // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+                    if (card.length != 0) {
+                        var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+                        if (reg.test(card) === false) {
+                            tishi("身份证号格式不正确");
+                            // $(".tishi").fadeIn().delay(500).fadeOut();
+                            $(".xx2").val("")
+                            return false;
+                        }
+                    }
+                }
+
+                function checkMobile(val) {
+                    // var sMobile = document.mobileform.mobile.value 
+                    if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(val))) {
+                        tishi("请填写正确的手机号");
+                        $(".xx3").val("");
+                        // document.mobileform.mobile.focus(); 
+                        return false;
+                    }
+                }
+                $("#file16").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde16 = e.target.result.split(",")[1];
+                            $(".img16").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file17").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde17 = e.target.result.split(",")[1];
+                            $(".img17").attr("src", e.target.result)
+                        };
+                    }
+                });
+
+                $(".jiancha").click(function() {
+
+                    var xx1 = $(".xx1").val();
+                    var xx2 = $(".xx2").val();
+                    var xx3 = $(".xx3").val();
+                    if ($(".img15").attr("src").length < 40) {
+                        tishi("请选择援助通知书");
+                        return false;
+                    } else if ($(".img16").attr("src").length < 40) {
+                        tishi("请选择起诉意见书");
+                        return false;
+                    } else if ($(".img17").attr("src").length < 40) {
+                        tishi("请选择起诉起诉副本");
+                        return false;
+                    }
+                    $.ajax({
+                        type: 'post',
+                        url: 'https://sys.t7c.net/index.php/home/Handle/yz_synergy',
+                        data: {
+                            access_token: access_token,
+                            type: 2,
+                            jc_inform: imgde15,
+                            jc_opinion: imgde16,
+                            jc_prosecute: imgde17,
+                            jc_name: xx1,
+                            jc_idcard: xx2,
+                            jc_mobile: xx3
+
+                        },
+                        dataType: 'json',
+                        async: false, //同步异步
+                        success: function(data) {
+                                console.log(data);
+                                if (data.status == 1) {
+                                    $(".tishi").text(data.msg);
+                                    $(".tishi").fadeIn().delay(500).fadeOut();
+                                    setTimeout(function() {
+                                        window.location.href = "falvyuanzu.html";
+                                    }, 1000)
+                                } else {
+                                    $(".tishi").text(data.msg);
+                                    $(".tishi").fadeIn().delay(500).fadeOut();
+                                }
+                            }
+                            // }
+                    })
+                })
+
+            } else if (data == '人民法院') {
+                $.ajax({
+                    url: 'Fshifaxietong3.html',
+                    cache: true,
+                    async: false,
+                    success: function(html) {
+                        $(".hang1_box").html(html);
+                    }
+                })
+
+                $("#file10").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde10 = e.target.result.split(",")[1];
+                            $(".img10").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file11").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde11 = e.target.result.split(",")[1];
+                            $(".img11").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file12").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde12 = e.target.result.split(",")[1];
+                            $(".img12").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $("#file13").change(function() {
+                    var file = this.files[0];
+                    if (window.FileReader) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        //监听文件读取结束后事件    
+                        reader.onloadend = function(e) {
+                            // 图片base64
+                            imgde13 = e.target.result.split(",")[1];
+                            $(".img13").attr("src", e.target.result)
+                        };
+                    }
+                });
+                $(".renming").click(function() {
+                    if ($(".img10").attr("src").length < 40) {
+                        tishi("请选择辩护人通知书");
+                        return false;
+                    } else if ($(".img11").attr("src").length < 40) {
+                        tishi("请选择起诉书");
+                        return false;
+                    } else if ($(".img12").attr("src").length < 40) {
+                        tishi("请选择出庭通知书");
+                        return false;
+                    } else if ($(".img13").attr("src").length < 40) {
+                        tishi("请选择法律文书");
+                        return false;
+                    }
+                    $.ajax({
+                        type: 'post',
+                        url: 'https://sys.t7c.net/index.php/home/Handle/yz_synergy',
+                        data: {
+                            access_token: access_token,
+                            type: 3,
+                            rm_inform: imgde10,
+                            rm_prosecute: imgde11,
+                            rm_advice_note: imgde12,
+                            rm_writ: imgde13
+                        },
+                        dataType: 'json',
+                        async: false, //同步异步
+                        success: function(data) {
+                                console.log(data);
+                                if (data.status == 1) {
+                                    $(".tishi").text(data.msg);
+                                    $(".tishi").fadeIn().delay(500).fadeOut();
+                                    setTimeout(function() {
+                                        window.location.href = "falvyuanzu.html";
+                                    }, 1000)
+                                } else {
+                                    $(".tishi").text(data.msg);
+                                    $(".tishi").fadeIn().delay(500).fadeOut();
+                                }
+                            }
+                            // }
+                    })
+                })
+            }
+        }
+    })
+
+    function tishi(text) {
+        // body...
+        $(".tishi").text(text);
+        $(".tishi").fadeIn().delay(500).fadeOut();
+    }
+
+    $(function() {
+            $(".items li").click(function() {
+                $(this).addClass("act").siblings().removeClass();
+            })
+            $(".shenban").click(function() {
+                $(".con-xt").hide();
+                $(".con").show();
+            })
+            $(".xietong").click(function() {
+                $(".con").hide();
+                $(".con-xt").show();
+            })
+        })
+        //, "工伤", "国家赔偿", "交通事故", "劳动报酬", "离婚", "赡养费", "刑事案件", "医疗纠纷", "主张因见义勇为行为产生的民事权益"
+  	//获取援助类别
+  	var sqsx = ["抚养费"];
+  	$.ajax({
+        type: "post",
+        url: "https://sys.t7c.net/index.php/home/Handle/get_yuanzhu_types",
+        data: {},
+        dataType: "json",
+        success: function(data) {
+          	sqsx = data.data.title;
+          	var sqid;
+    		var mobileSelect1 = new MobileSelect({
+        	trigger: '#test',
+        	title: '请选择',
+        	wheels: [{
+            	data: sqsx
+        	}],
+        	position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        	transitionEnd: function(indexArr, data) {
+            	//console.log(data);
+        	},
+        	callback: function(indexArr, data) {
+              
+        	}
+    	})
+          	
+        },
+    });
+
+    $('.tijiaos').click(function() {
+        if (accessStatus == -2) {
+            var name = $(".gz_lianxi1").val();
+            var id_card = $(".gz_lianxi2").val();
+            var verify_code = $(".gz_lianxi4").val();
+            var mobile = $(".gz_lianx3").val();
+            if (!name) {
+                tishi("请填写姓名");
+                return false;
+            }
+            if (!id_card) {
+                tishi("请填写身份证号");
+                return false;
+            }
+            if (!mobile) {
+                tishi("请填写联系方式");
+                return false;
+            }
+            if (!verify_code) {
+                tishi("请填写验证码");
+                return false;
+            }
+
+            var key1 = "name";
+            var value1 = name;
+            tex[key1] = value1;
+
+            var key2 = "id_card";
+            var value2 = id_card;
+            tex[key2] = value2;
+
+            var key3 = "verify_code";
+            var value3 = verify_code;
+            tex[key3] = value3;
+
+            var key4 = "mobile";
+            var value4 = mobile;
+            tex[key4] = value4;
+
+
+        }
+        var key = "sx";
+        var value = $('#test').html();
+        tex[key] = value;
+
+        var key5 = "jg_id";
+        var value5 = $('.select3').attr('index');
+        tex[key5] = value5;
+
+        var key7 = "sqr_id";
+        var value7 = $('.select4').attr('index');
+        tex[key7] = value7;
+
+        var key8 = "jg_name";
+        var value8 = $('.select3').html();
+        tex[key8] = value8;
+
+        var key9 = "sqr_name";
+        var value9 = $('.select4').html();
+        tex[key9] = value9;
+
+        var imgFile = "";
+        console.log($('.img1').length);
+        for (var i = 0; i < $('.img1').length; i++) {
+            if ($('.img1').eq(i).attr('src') != "img/dagshirenzp.png") {
+                if (i == $('.img1').length - 1) {
+                    imgFile += $('.img1').eq(i).attr('src').split(',')[1];
+                } else {
+                    imgFile += $('.img1').eq(i).attr('src').split(',')[1] + ';';
+                }
+            } else {
+                tishi("请完善附件信息");
+                return false;
+            }
+        }
+        var key6 = "imgFile";
+        var value6 = imgFile;
+        tex[key6] = value6;
+        if ($('#testd').html() == "请选择") {
+            tishi("请选择法律援助中心");
+            return false;
+        } else if ($('#testds').html() == "请选择") {
+            tishi("请选择类型");
+            return false;
+        } else if ($('#test').html() == "请选择") {
+            tishi("请选择类型");
+            return false;
+        }
+        var obj = JSON.stringify(tex);
+
+        localStorage.setItem("tex", obj);
+        for (var i = 0; i < sqsx.length; i++) {
+            if ($('#test').html() == sqsx[i]) {
+                sqid = i + 1;
+                console.log(sqid)
+            }
+        }
+        var myselect = sqid;
+        if (myselect == '1') {
+            window.location.replace("fl_fyf.html");//抚养费
+        } else if (myselect == '2') {
+            window.location.replace("fl_gs.html");//工伤
+        } else if (myselect == '3') {
+            window.location.replace("fl_gjpc.html");//国家赔偿
+        } else if (myselect == '4') {
+            window.location.replace("fl_jtsg.html");//交通事故
+        } else if (myselect == '5') {
+            window.location.replace("fl_ldbc.html");//劳动报酬
+        } else if (myselect == '6') {
+            window.location.replace("fl_lh.html");//离婚
+        } else if (myselect == '7') {
+            window.location.replace("fl_zyf.html");//赡养费
+        } else if (myselect == '8') {
+            window.location.replace("fl_ssaj.html");//刑事案件
+        } else if (myselect == '9') {
+            window.location.replace("fl_yljf.html");//医疗纠纷
+        } else if (myselect == '10') {
+            window.location.replace("fl_jyyw.html");//见义勇为
+        } else if (myselect == '11') {
+        	window.location.replace("fl_fyf1.html");//扶养费
+        }
+      
+    })
+    $('#myselect').click(function() {
+        var myselect = $('#myselect').val();
+        console.log(myselect);
+        if (myselect == '1') {
+            $('.hang1_box').load('Fshifaxietong4.html');
+        } else if (myselect == '2') {
+
+            $('.hang1_box').load('Fshifaxietong2.html');
+        } else if (myselect == '3') {
+            $('.hang1_box').load('Fshifaxietong3.html');
+        }
+    })
+    $(function() {
+
+        $("").each(function() {
+
+            var index = $(this).index();
+
+            //            $(".rengong ul li").eq(0).addClass("act");
+
+            $(this).click(function() {
+
+                // alert(index);
+
+                $(this).addClass("act").siblings().removeClass("act");
+
+                $(".con-xt>div").eq(index).stop(true).show().siblings().stop(true).hide();
+
+            })
+
+        })
+
+    })
+
+    //上传文件
+    $(".avator-btn-fake").click(function() {
+        $("#file1").click();
+    });
+    $("#file1").change(function() {
+        var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+        if (null == file) {
+            return false;
+        }
+        var file_reader = new FileReader();
+        file_reader.onload = (function() {
+            var image_url = this.result; // 这是图片的路径
+            $(".avator-btn-fake").attr('src', image_url);
+        });
+        file_reader.readAsDataURL(file);
+    });
+    $(".avator-btn-fake2").click(function() {
+        $("#file2").click();
+    });
+    $("#file2").change(function() {
+        var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+        if (null == file) {
+            return false;
+        }
+        var file_reader = new FileReader();
+        file_reader.onload = (function() {
+            var image_url = this.result; // 这是图片的路径
+            $(".avator-btn-fake2").attr('src', image_url);
+        });
+        file_reader.readAsDataURL(file);
+    });
+    $(".avator-btn-fake3").click(function() {
+        $("#file3").click();
+    });
+    $("#file3").change(function() {
+        var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+        if (null == file) {
+            return false;
+        }
+        var file_reader = new FileReader();
+        file_reader.onload = (function() {
+            var image_url = this.result; // 这是图片的路径
+            $(".avator-btn-fake3").attr('src', image_url);
+        });
+        file_reader.readAsDataURL(file);
+    });
+
+    window.onload = function() {
+
+        new rolldate.Date({
+            el: '.date3',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+        new rolldate.Date({
+            el: '.date4',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+        new rolldate.Date({
+            el: '.date5',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+        new rolldate.Date({
+            el: '.date6',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+        new rolldate.Date({
+            el: '.date7',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+        new rolldate.Date({
+            el: '.date8',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+        new rolldate.Date({
+            el: '.date9',
+            format: 'YYYY-MM-DD hh:mm',
+            beginYear: 1990,
+            endYear: 2020
+        })
+
+
+    }
+</script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script type="text/javascript" src="js/rolldate.js"></script>
+<script>
+    $(".footer").load("footer.html");
+    // 验证码
+    // ======验证码
+
+    var yzm;
+    var tim = 60;
+    var timer;
+    $(".verify_f").click(function() {
+        clearInterval(timer)
+        var mobile = $(".gz_lianx3").val();
+        if (mobile.length != 0) {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+                data: {
+                    mobile: mobile
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        yzm = data.data.yzm;
+                        timer = setInterval(function() {
+                            tim--;
+                            $(".verify_f").val(tim);
+                            if (tim <= 0) {
+                                tim = 60;
+                                $(".verify_f").val("重新发送");
+                                clearInterval(timer)
+                            }
+                        }, 1000)
+                    } else {
+                        $(".verify_f").val("发送失败");
+                    }
+
+                }
+            })
+        } else {
+            tishi("请输入手机号");
+        }
+
+    })
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    //=======提交
+    var obj = JSON.parse(localStorage.getItem("tex"));
+    // console.log(obj);
+    var objType = getUrlParms('type');
+    console.log(objType);
+    if (obj != null) {
+        if (accessStatus == -2) {
+            $(".gz_lianxi1").val(obj.name);
+            $(".gz_lianxi2").val(obj.id_card);
+            $(".gz_lianxi4").val(obj.verify_code);
+            $(".gz_lianx3").val(obj.mobile);
+        }
+        console.log(obj.imgFile.split(';').length);
+        var fileHTML = "";
+        for (var i = 0; i < obj.imgFile.split(';').length; i++) {
+            fileHTML += `<div>
+                <img src="data:image/jpeg;base64,${obj.imgFile.split(';')[i]}" class="img1" alt="" class="avator-btn-fake">
+                <input type="file" name="file" class="file" style="width: 1rem; height: 1rem;" id="file1" accept="image/*" hidden>
+            </div>`;
+        }
+        $('.Enclosure div div').html(fileHTML);
+        $(".select3").text(obj.jg_name);
+        $(".select3").attr('index', obj.jg_id);
+        $(".select4").text(obj.sqr_name);
+        $(".select4").attr('index', obj.sqr_id);
+        $(".shix").text(obj.sx);
+
+        $.ajax({
+            type: 'get',
+            url: 'https://sys.t7c.net/index.php/home/Data/jg_info',
+            data: {
+                id: obj.jg_id
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                $('.select3_name').text(data.data.jgmc);
+                $('.select3_address').text(data.data.dz);
+                $('.select3_tel').text(data.data.dh);
+            }
+        })
+    }
+    if (objType != null && objType != "") {
+        // $('.quediv').css('display', 'block');
+        if (objType == 0) {
+            $('.con_2').css('display', 'block');
+            $('.con_1').css('display', 'none');
+        }
+    }
+
+    $('.con').on('click', '.tijiao', function() {
+        $('.load').show();
+        console.log(obj.verify_code)
+        if (accessStatus == -2) {
+            if ($(".gz_lianxi4").val().length == 0) {
+                tishi("请输入验证码");
+                return false;
+            }
+
+        }
+        if (access_token == "" || access_token == undefined || access_token == null) {
+            var upload = obj.imgFile;
+            // var upload = obj.imgde1 + ";" + obj.imgde2 + ";" + obj.imgde3
+            var daan = localStorage.getItem("daan");
+            var select3 = $(".select3").text();
+            // if($(".gz_lianxi1").text().length==0){
+
+            // }
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/yz_bid',
+                data: {
+                    access_token: access_token,
+                    jg_id: obj.jg_id,
+                    jg_name: obj.jg_name,
+                    item: obj.sx,
+                    item_info: daan,
+                    upload: upload,
+                    proposer_type: obj.sqr_id,
+                    name: obj.name,
+                    id_card: obj.id_card,
+                    verify_code: obj.verify_code,
+                    mobile: obj.mobile
+
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    $('.load').hide();
+                    if (data.state == 1) {
+                        localStorage.removeItem("tex");
+                        localStorage.removeItem("daan");
+                        tishi(data.msg);
+                        setTimeout(function() {
+                            // body...
+                            
+                             //window.history.go(-1);
+                        }, 1000);
+                         window.location.href="falvyuanzu.html";
+                    } else {
+                        tishi(data.msg);
+                    }
+                }
+            })
+        } else {
+            var upload = obj.imgFile;
+            var daan = localStorage.getItem("daan");
+            var select3 = $(".select3").text();
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/yz_bid',
+                data: {
+                    access_token: access_token,
+                    jg_id: obj.jg_id,
+                    jg_name: obj.jg_name,
+                    item: obj.sx,
+                    item_info: daan,
+                    upload: upload,
+                    proposer_type: obj.sqr_id,
+                    access_token: access_token
+
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    $('.load').hide();
+                    if (data.state == 1) {
+                        localStorage.removeItem("tex");
+                        localStorage.removeItem("daan");
+                        tishi(data.msg)
+                        setTimeout(function() {
+                                // body...
+                                window.history.go(-1);
+                            }, 1000)
+                            // window.location.href="falvyuanzu.html";
+                    } else {
+                        tishi(data.msg);
+                    }
+                }
+            })
+        }
+    })
+    // $(".header a").click(function() {
+    //     localStorage.removeItem("tex");
+    //     localStorage.removeItem("daan");
+    //     window.location.href = "falvyuanzu.html";
+    // })
+</script>

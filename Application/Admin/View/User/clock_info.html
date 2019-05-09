@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='打卡记录';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑特殊人员</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">特殊人员姓名：</th>
+                            <td>
+                                {$list.special_personnel.name}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">特殊人员身份证号：</th>
+                            <td>
+                                {$list.special_personnel.id_card}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">特殊人员手机号码：</th>
+                            <td>
+                                {$list.special_personnel.mobile}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">绑定账户ID：</th>
+                            <td>
+                                {$list.personal.id}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">绑定账户姓名：</th>
+                            <td>
+                                {$list.personal.xm}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">打卡时间：</th>
+                            <td>
+                                {$list.ct_time|date="Y-m-d H:i:s",###}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">经度：</th>
+                            <td>
+                                {$list.jd}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">纬度：</th>
+                            <td>
+                                {$list.wd}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">位置：</th>
+                            <td>
+                                <a href="./map.html?jd={$list.jd}&wd={$list.wd}">{$list.place}</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">拍摄照片：</th>
+                            <td>
+                                <div style="width:300px;height:200px;">
+                                    <img src="{$list.img}" style="width:200px;height:200px;">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

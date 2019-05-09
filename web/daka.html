@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" type="text/css" href="css/gerenxinxi.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <style type="text/css">
+        body,
+        html,
+        #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        
+        .iw_s {
+            display: none !important;
+        }
+        
+        .file {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        
+        .header_1 {
+            position: relative;
+        }
+        
+        .con_text {
+            line-height: .8rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .3rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+    </style>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=pfxLjAaZ1R42UYibN7YlMPzSdALx1UGq&s=1"></script>
+    <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6yAoynmTPNlTBa8z1X4LfwGE"></script> -->
+    <script type="text/javascript" src="https://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+    <title>在线打卡</title>
+</head>
+
+<body style="overflow: auto;">
+    <div class="header_s">
+        <header class="header">
+            <a href="index.html">
+                <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+            </a>
+            <div class="shenban_title">在线打卡</div>
+        </header>
+        <p class="con_p"> 拍摄图片信息 </p>
+        <div class="header_1">
+            <img src="img/tianjia.jpg" class="imgg">
+            <input type="file" class="file" accept="image/*" capture="camera" />
+        </div>
+    </div>
+    <div class="container">
+        <p class="con_p">当前位置信息</p>
+        <div class="con_text">
+
+        </div>
+        <a class="daka">打卡</a>
+    </div>
+    <p class="tishi"></p>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="fooder"></div>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        //1.自动获取当先位置信息
+        //
+        //2.直接打开手机前摄像头进行自拍，点击拍照后将照片（照片不可修改、不可选择相册）、位置信息自动发送到后台
+        //
+        //3.获取手机imei码作为打卡权限和人员信息的判别依据
+        //
+        // 百度地图API功能
+        /* var map = new BMap.Map("allmap"); // 创建Map实例
+         map.centerAndZoom(new BMap.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
+         //添加地图类型控件
+         map.addControl(new BMap.MapTypeControl({
+             mapTypes: [
+                 BMAP_NORMAL_MAP,
+                 BMAP_HYBRID_MAP
+             ]
+         }));
+         map.setCurrentCity("北京"); // 设置地图显示的城市 此项是必须设置的
+         map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放*/
+        var access_token = localStorage.getItem("access_token");
+        var img;
+        $('.file').change(function() {
+            var file = this.files[0];
+            if (window.FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //监听文件读取结束后事件    
+                reader.onloadend = function(e) {
+                    // 图片base64
+                    img = e.target.result.split(",")[1];
+                    $(".imgg").attr("src", e.target.result)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+<script src="js/load.js"></script>
+<script type="text/javascript">
+    reurl()
+    function reurl() {
+        
+        urls = location.href; //把当前页面的地址赋给变量 url
+
+        var times = urls.split("?"); //分切变量 url 分隔符号为 "?"
+
+        if (times[1] != 1) { //如果?后的值不等于1表示没有刷新
+
+            urls += "?1"; //把变量 url 的值加入 ?1
+
+            self.location.replace(urls); //刷新页面
+
+        }
+    }
+    var jd, wd;
+    var cid = 35;
+    var geolocation = new BMap.Geolocation();
+    var access_token = localStorage.getItem("access_token");
+    if (access_token == "") {
+        // alert("");
+        $(".tishi").text("请登录");
+        $(".tishi").fadeIn().delay(500).fadeOut();
+        window.location.href = "login.html";
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/mine",
+            data: {
+                access_token: access_token
+            },
+            dataType: 'json',
+            success: function(data) {
+                if (data.state != "1") {
+                    window.location.href = "login.html";
+                }
+
+
+            }
+        })
+    }
+    geolocation.getCurrentPosition(function(r) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var position = {
+                lng: r.point.lng,
+                lat: r.point.lat
+            }
+            if (cid == 'sort') {
+                sort(position);
+            } else {
+                positions(position, cid);
+            }
+            //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            /*  $(".jd").text(r.point.lng)
+              $(".wd").text(r.point.lat)*/
+
+            jd = r.point.lng;
+            wd = r.point.lat;
+            getAddress(r.point.lng, r.point.lat);
+        } else {
+            $(".tishi").text('获取当前位置失败,请确定您开启了定位服务');
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            // alert();
+        }
+    }, {
+        enableHighAccuracy: true
+    });
+
+    //该js函数是必须要的不然要报错
+    function positions(json, cid) {}
+
+    //根据经纬度获取具体地址信息
+    function getAddress(lng, lat) {
+        /* var map = new BMap.Map("allmap");*/
+        var point = new BMap.Point(lng, lat);
+        /*map.centerAndZoom(point,12);*/
+        var geoc = new BMap.Geocoder();
+        geoc.getLocation(point, function(rs) {
+            var addComp = rs.addressComponents;
+
+
+            var names = "";
+            for (var name in addComp) {
+                names += name + ": " + addComp[name] + ", ";
+            }
+            // alert(names);
+
+            //alert(addComp.province + "," + addComp.city + "," + addComp.district + "," + addComp.street + "," + addComp.streetNumber);
+            $(".con_text").text(addComp.province + "" + addComp.city + "" + addComp.district + "" + addComp.street + "" + addComp.streetNumber);
+            
+
+
+
+        });
+    }
+
+    //打卡   
+    $(".daka").click(function() {
+        var place = $(".con_text").text();
+
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Clock/clock',
+            data: {
+                access_token: access_token,
+                img: img,
+                jd: jd,
+                wd: wd,
+                place: place
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                $(".tishi").text(data.msg)
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                // alert(data.msg);
+                //$(".jd").text(data.status);
+                if (data.status == "1") {
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                    }, 800)
+                }
+            }
+        })
+    })
+</script>

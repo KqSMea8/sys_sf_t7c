@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑政务公开类型';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑政务公开类型</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">政务公开类型名称：</th>
+                            <td>
+                                <input type="text" name="name" class="input uname" size="40" value="{$list.name}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">是否需要选择区域：</th>
+                            <td>
+                                <input type="radio" name="area_status" class="input uname" value="1" <if condition="$list['area_status'] eq 1">checked</if>/>是
+                                <input type="radio" name="area_status" class="input uname" value="0" <if condition="$list['area_status'] eq 0">checked</if>/>否
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">政务公开类型封面：</th>
+                            <td>
+                                <input type="file" name="img_url">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120"></th>
+                            <td>
+                                <if condition="$list['img_url'] neq ''">
+                                <div style="width:300px;height:200px;">
+                                    <img src="{$list.img_url}" style="width:200px;height:200px;">
+                                </div>
+                                </if>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+       $(function(){
+           $(".submit").click(function(){
+            commonAjaxSubmit();
+           });
+       });
+</script>
+</body>
+</html>
+

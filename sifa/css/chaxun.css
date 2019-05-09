@@ -1,0 +1,33 @@
+.ctn1{
+	height: 3.5rem;
+}
+.ctn1 .title{
+	height: .8rem;
+	border-bottom: 1px solid #e6e6e6;
+	padding-left: .33rem;
+	line-height: .8rem;
+	font-size: .32rem;
+}
+.ctn1 ul li{
+	width: 30%;
+	float: left;
+	line-height: .8rem;
+	margin:.1rem;
+	margin-top: .33rem;
+	text-align: center;
+}
+.ctn1 ul li img{
+	width: 1rem;
+	height: 1rem;
+}
+.ctn1 ul li div{
+	width: 1.2rem;
+	height: 1.2rem;
+	margin:0 auto;
+}
+.ctn1 ul li span{
+	font-size: .24rem;
+}
+.ti{
+	clear: both;
+}

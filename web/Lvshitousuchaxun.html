@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="renderer" content="ie-comp" />
+<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/sale.css">
+<!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+<link rel="stylesheet" href="css/header.css">
+<!--<link rel="stylesheet" type="text/css" href="css/dialog.css">-->
+<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+</script>
+<title>投诉查询</title>
+<style>
+body, html {
+	background-color: white;
+}
+.act {
+	color: #196394;
+	border-bottom: #196394 2px solid;
+}
+.items {
+	display: flex;
+	justify-content: space-around;
+	line-height: 0.6rem;
+}
+.items>li {
+	width: 1.9rem;
+	text-align: center;
+}
+.rengong {
+	width: 100%;
+	height: 0.6rem;
+	border-bottom: 1px solid #d3d1d1
+}
+.item {
+	width: 6rem;
+	height: 2rem;
+	margin: 0 auto;
+}
+.selects {
+	width: 6rem;
+	margin: 1rem 0.8rem;
+	height: 0.8rem;
+}
+.queding {
+	width: 5rem;
+	background-color: #196394;
+	height: 0.8rem;
+	text-align: center;
+	color: white;
+	font-size: 0.32rem;
+	line-height: 0.8rem;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.quediv {
+	margin: 1rem auto 1rem;
+	text-align: center;
+}
+.hang {
+	height: 0.6rem;
+	width: 100%;
+	display: flex;
+}
+.zuo {
+	color: #000000;
+	height: 100%;
+	width: 30%;
+	text-align: right;
+	padding-right: 0.2rem;
+	line-height: 0.8rem;
+	font-weight: bold;
+}
+.you {
+	height: 100%;
+	width: 70%;
+	line-height: 0.8rem;
+}
+.you>div{
+	flex: 1;
+	margin-left: 0.1rem;
+}
+.you_1{
+	width: 100%;
+	height: 50%;
+	height: .8rem;
+
+}
+.you_1 div{
+	width: 50%;
+	float: left;
+}
+	.con{
+		position: relative;
+		border: 1px solid #999999;
+		margin: 0.2rem;
+		padding-bottom: 0.2rem;
+	}
+	.con>div:nth-child(8)>.you{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap:wrap;
+	}.con>div:nth-child(8)>.you>div{
+		width: 50%;
+		float: left;
+		height: 0.3rem;
+	}
+	p{
+		line-height: 0.35rem;
+		margin-top: 0.2rem;
+	}
+	.xuanz{
+		position: absolute;
+		right: 0.1rem;
+		top: 0.1rem;
+		display: inline-block;
+		width: 1.5rem;
+		height: 0.5rem;
+		background-color: #196394;
+		color: white;
+		text-align: center;
+		line-height: 0.5rem;
+		border-radius: 5px;
+	}
+	.chexiao{
+		width: 2rem;
+		height: 0.6rem;
+		background-color: #196394;
+		color: white;
+		text-align: center;
+		line-height: 0.6rem;
+		border-radius: 5px;
+		margin:0.4rem auto 0;
+	}
+		.sousuo{
+		width: 100%;
+		height: 1rem;
+		text-align: center;
+		line-height: 1rem;
+		border-bottom: 1px solid #d3d1d1;
+	}
+	.ss{
+		font-size: 0.32rem;
+		color: #333333;
+	}
+	.input{
+			width: 5.6rem;
+	height: 0.6rem;
+	border: 0;
+	border-radius: 3px;
+	text-align: left;
+	padding-left: 0.1rem;
+	margin-right: 0.15rem;
+	border: 1px solid #999999;
+}
+	.anniu{
+		display: flex;
+		margin-top: 0.05rem;
+	}
+</style>
+</head>
+<body style="overflow: scroll">
+<header class="header">
+	<a href="lvshiyuyue.html">
+		<img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+	</a>
+	<div class="shenban_title">投诉查询</div>
+</header>
+	<div class="con">
+		<span class="xuanz">等待接受</span>
+		<div class="hang">
+			<div class="zuo">投诉人:</div>
+			<div class="you">
+				牡丹江公证处
+			</div>
+		</div><div class="hang">
+			<div class="zuo">被投诉律所:</div>
+			<div class="you">
+				牡丹江公证处
+			</div>
+		</div>
+		<div class="hang">
+			<div class="zuo">被投诉律师:</div>
+			<div class="you">
+				李小龙
+			</div>
+		</div>
+		<div class="hang">
+			<div class="zuo">投诉类别:</div>
+			<div class="you">
+				财产援助
+			</div>
+		</div>
+		<div class="hang">
+			<div class="zuo">投诉标题:</div>
+			<div class="you">
+			 	标题展示
+			</div>
+		</div>
+	 	<div class="hang" style="height: auto;">
+			<div class="zuo">投诉内容:</div>
+			<div class="you">
+			 	<p>最近几天有事情，希望可以预约在下个月的下旬</p>
+			</div>
+		</div>
+		 <div class="hang" style="height: auto;">
+			<div class="zuo">处理结果:</div>
+			<div class="you">
+			 	<p>已处理完成</p>
+			</div>
+		</div>
+		<div class="hang" style="height:1.4rem;">
+			<div class="zuo">满意度评价:</div>
+			<div class="you">
+			 	<div class="you_1">
+			 		<div>
+						<input type="radio" name="n2" checked>
+						<span>非常满意</span>
+					</div>
+					<div>
+						<input type="radio" name="n2">
+						<span>满意</span>
+					</div>
+			 	</div>
+				<div class="you_1">
+					<div>
+						<input type="radio" name="n2">
+						<span>一般 </span>
+					</div>
+					<div>
+						<input type="radio" name="n2">
+						<span>不满意</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="anniu">
+			
+			<div class="chexiao">确认提交</div>
+			<div class="chexiao">撤销投诉</div>
+		</div>
+	</div>
+<div style="width: 100%;height: 1rem;"></div>
+<div class="footer"></div>
+</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+	$(".footer").load("footer.html")
+//上传文件
+		$(".avator-btn-fake").click(function(){
+				$("#file1").click();
+		});
+		$("#file1").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});$(".avator-btn-fake2").click(function(){
+				$("#file2").click();
+		});
+		$("#file2").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake2").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});$(".avator-btn-fake3").click(function(){
+				$("#file3").click();
+		});
+		$("#file3").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake3").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});
+
+</script>

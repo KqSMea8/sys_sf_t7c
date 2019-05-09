@@ -1,0 +1,244 @@
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input{
+	outline:none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.banner img{
+  width: 100%;
+  height: 600px;
+}
+
+.list,
+.fundContract {
+  width: 1148px;
+  height: 1200px;
+  margin: 42px auto;
+}
+.list .list-left {
+  width: 245px;
+  height: 242px;
+  margin-top: 8px;
+}
+.list .list-left li {
+  width: 100%;
+  height: 56px;
+  margin-top: 4px;
+  background-color: #f9f8f8;
+}
+.list .list-left a {
+  display: inline-block;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  color: #222222;
+}
+.list .list-left .bgc {
+  background-color: #00a0e9;
+}
+
+.list .list-right-zong,.list .list-right-zong1 {
+  position: relative;
+  width: 855px;
+  height: 680px;
+  margin: 10px 0 0 48px;
+  background-color: #f9f8f8;
+}
+.list .list-right-zong ul,.list .list-right-zong1 ul {
+  overflow: hidden;
+  margin: 50px 0 0 70px;
+}
+.list .list-right-zong li,.list .list-right-zong1 li {
+  float: left;
+  margin-right: 52px;
+}
+.list .list-right-zong input,.list .list-right-zong1 input {
+  margin-right: 23px;
+}
+.list .list-right-zong input.rgze{
+	height:30px;
+}
+/*----------------------------------------------------------------------------------- list-right --------------------*/
+.list .list-right,.list .list-right4 {
+  position: relative;
+  width: 855px;
+  /*height: 1200px;*/
+  margin: 10px 0 0 48px;
+  background-color: #f9f8f8;
+  display:none;
+}
+.list .list-right{
+	height:600px;
+}
+.list .list-right-top {
+  height: 58px;
+}
+.list .list-right-top li {
+  width: 104px;
+  height: 56px;
+  margin-top: 4px;
+  background-color: #f9f8f8;
+  float: left;
+}
+.list .list-right-top li:nth-child(1) {
+  margin-left: 40px;
+}
+.list .list-right-top .line {
+  border-bottom: 2px solid #00a0e9;
+}
+.list .list-right-top a {
+  display: inline-block;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  color: #222222;
+}
+/*----------------------------------------------------------------------*/
+.list-right .data{
+  padding-bottom: 90px;
+}
+.list-right .data,
+.list-right .dataProduct {
+  height: 300px;
+  margin: 50px 40px 90px 40px;
+}
+.list-right .dataProduct{
+  display: none;
+  margin: 50px 40px 90px 40px;
+}
+.list-right .data ul {
+  float: left;
+}
+.list-right .data ul:nth-child(1) {
+  margin: 0 100px 0 237px;
+}
+.list-right .data li {
+  margin-bottom: 46px
+}
+.list-right .purchaseBtn,
+.list .list-right-zong .buyBtn,.list .list-right-zong1 .buyBtn{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 90px;
+  margin: 0 auto;
+  width: 192px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #ffffff;
+  background-color:#00a0e9;
+  cursor: pointer;
+}
+/*---------------------------------------------------------------*/
+.list .list-right4{
+  width: 775px;
+	/*margin:3% auto;*/
+	padding-left:40px;
+	padding-right:40px;
+	padding-bottom:30px;
+	margin-bottom:30px;
+}
+.list-right4>ul{
+  width:102%;
+  height:600px;
+  overflow: scroll;
+}
+.list .list-right4>ul>li{
+	width:100%;
+	height:106px;
+	background:#fff;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top:20px;
+}
+.list .list-right4 p{
+	width:80px;
+	height:66px;
+	line-height:30px;
+	text-align:center;
+	float:left;
+	padding:20px;
+	border-right:solid 1px #f0f0f0;
+}
+.list .list-right4 .list-right4-bot,.list .list-right4 .list-right4-top{
+	width:530px;
+	height:53px;
+	float:left;
+}
+.list .list-right4 .list-right4-top li,.list .list-right4 .list-right4-bot li{
+	width:132px;
+	float:left;
+	text-align:center;
+	line-height:53px;
+}
+.purchaseBtn1{
+	/*position: absolute;
+  left: 0;
+  right: 0;*/
+  /*bottom: 90px;*/
+  margin: 0 auto;
+  width: 102px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  background-color:#00a0e9;
+  cursor: pointer;
+  float:right;
+  margin-top:-20px;
+  margin-right:20px;
+}
+/*--------------------------------------------------------------------------------- list-right ----------------*/
+.fundContract{
+  display: none;
+}
+.fundContractContent{
+  padding: 20px 0;
+  width: 100%;
+  height: 500px;
+  font-size: 16px;
+  border: 1px solid #eee;
+  overflow-y: auto;
+}
+.contractContentBox{
+  margin: 0 auto;
+  width: 850px;
+}
+.contractTitle{
+  line-height: 50px;
+  text-align: center;
+}
+.readContract{
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+.fundContractNextBtn{
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 0 20px;
+  width: 100px;
+  font-size: 16px;
+  line-height: 36px;
+  color: #fff;
+  text-align: center;
+  background-color: #59a3fa;
+  cursor: pointer;
+}
+
+
+
+
+

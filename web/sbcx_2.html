@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查询列表</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reserve.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+</head>
+<style>
+    .zwsj {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 5rem;
+        height: auto;
+        margin-left: -2.5rem;
+        font-size: 1rem;
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <span>查询列表</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="table_down" style="padding-bottom:3rem;" id="_20">
+        <!-- <a href="biddintgquery.html" title="">
+            <div class="each">
+                <span>调解类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="biddintgquery.html" title="">
+            <div class="each">
+                <span>调解类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="biddintgquery.html" title="">
+            <div class="each">
+                <span>调解类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a> -->
+    </div>
+    <div class="footer"></div>
+    <div class="zwsj">暂无数据</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".footer").load("footer2.html")
+    var access_token = localStorage.getItem("access_token");
+    // ===============列表接口
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Handle/tj_bid_list',
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: true, //同步异步
+        success: function(data) {
+            console.log(data);
+            if (data.data == null || data.data == "") {
+                $(".zwsj").show();
+            }
+            if (data.state == "-2") {
+                // alert("请登录")
+                window.location.href = "login.html";
+            }
+            var html = "";
+            var status = ['待审核', '审核中', '审核通过', '补充材料', '已撤销', '未评价', '已评价','未通过'];
+
+            for (var i = 0; i < data.data.length; i++) {
+                if (data.data[i].name == null) {
+                    data.data[i].name = "为上传数据";
+                }
+                html += `<a class="list" title="" id="${data.data[i].id}">
+                        <div class="each">
+                            <span>${data.data[i].name}</span>
+                            <span style="    margin-left: 10rem;">${status[data.data[i].status]}</span>
+                            <span class="right">${data.data[i].ct_time}</span>
+                        </div>
+                    </a>`;
+            }
+            $(".table_down").html(html);
+            $(".list").each(function() {
+                $(this).click(function() {
+                    var id = $(this).attr("id");
+                    //localStorage.setItem("gz_id",id);
+                    window.location.href = "biddintgquery.html?id=" + id;
+                })
+            })
+        }
+    })
+</script>
+
+</html>

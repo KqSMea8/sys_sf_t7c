@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>特殊人员列表-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='特殊人员列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">特殊人员列表</div>
+                        <div style="width: 100px;float: right;"><button type="button" class="btn" onclick="window.location.href='{:U('User/special_personnel_add')}'">登记特殊人员</button></div>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>特殊人员姓名</td>
+                                <td>特殊人员身份证号</td>
+                                <td>特殊人员手机号码</td>
+                                <td>监管方式</td>
+                                <td>昨日是否打卡</td>
+                                <td>是否绑定</td>
+                                <td>添加时间</td>
+                                <td width="300">操作</td>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tr align="center" id="{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.id_card}</td>
+                                <td>{$vo.mobile}</td>
+                                <td>{$vo.type}</td>
+                                <td>
+                                    <if condition="$vo['status'] eq 1">
+                                    不需要打卡
+                                    <else />
+                                    {$vo.clock}
+                                    </if>
+                                </td>
+                                <td>
+                                    <if condition="$vo['uid'] neq ''">
+                                    已绑定（UID：{$vo.uid}）
+                                    <else />
+                                    未绑定
+                                    </if> 
+                                </td>
+                                <td>{$vo.ct_time|date="Y-m-d H:i:s",###}</td>
+                                <!-- <td><a href="javascript:void(0);" title="激活" onclick="changeAttr({$vo.id},this)"><img src="__PUBLIC__/Img/action_{$vo.status}.png" border="0"></a></td> -->
+                                <td>[ <a href="__URL__/clock?id={$vo.id}">打卡记录 </a> ] [ <a href="__URL__/special_personnel_add?id={$vo.id}">编辑 </a> ] <if condition="$vo.status eq 1">[ <a href="javascript:void(0);" data-valid="0" onclick="changeStatus({$vo.id},this);">停用 </a> ]<else/>[ <a href="javascript:void(0);" data-valid="1" onclick="changeStatus({$vo.id},this);">激活 </a> ]</if> [ <a link="{:U('User/special_personnel_del/',array('id'=>$vo['id']))}" href="javascript:void(0)" name="{$vo.name}" class="del">删除 </a> ]</td>
+                            </tr>
+                        </volist>
+                        <tr><td colspan="6" align="right">{$page}</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <script type="text/javascript">
+            $(function(){
+                $(".del").click(function(){
+                    var delLink=$(this).attr("link");
+                    $this = $(this);
+                    popup.confirm('你真的打算删除【<b>'+$(this).attr("name")+'</b>】吗?','温馨提示',function(action){
+                        if(action == 'ok'){
+                            delByLink(delLink,$this);
+                            //top.window.location.href=delLink;
+                        }
+                    });
+                    return false;
+                });
+            });
+            function changeAttr(id,v){
+                $.get('{:U("News/changeAttr")}?id='+id+'&table=special_personnel',function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+
+            //修改用户状态    用户状态：0停用 1正常
+            function changeStatus(id,obj){
+                var change_status = $(obj).attr('data-valid');
+                $.ajax({
+                    type: "POST",
+                    url: "https://sys.t7c.net/index.php/conist/User/special_personnel_change_valid",
+                    data: {
+                        id:id,
+                        status:change_status,
+                    },
+                    success: function(data){
+                        alert(data.info);
+                        window.location.reload();
+                    }
+                });
+            }
+
+        </script>
+    </body>
+</html>

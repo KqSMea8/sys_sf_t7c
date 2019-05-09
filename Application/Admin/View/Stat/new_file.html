@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.content{
+				width: 100%;
+			}
+			.content div{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div id="main_bingOne"style="width: 500px;height: 400px;"></div>
+			<div id="main_bingTwo"style="width: 500px;height: 400px;"></div>
+			<div id="main_bingThree"style="width: 500px;height: 400px;"></div>
+			<div id="main_bingFour"style="width: 500px;height: 400px;"></div>
+			<div id="main_bingFive"style="width: 500px;height: 400px;"></div>
+		</div>		
+		<script type="text/javascript" src="./echarts.min.js"></script>
+		<script>
+			echarts.init(document.getElementById('main_bingOne')).setOption({				
+			    title : {
+			        text: '申办统计',
+			        x:'center',
+			        y:'55px'
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: []
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			             hoverAnimation:false,
+			            radius : '65%',
+			            center: ['50%', '60%'],
+			            data:[
+			                {value:335, name:'申办信息统计'},
+			                {value:310, name:'申办拒绝统计'},
+			                {value:234, name:'申办完成统计'}
+			            ],
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			});
+			echarts.init(document.getElementById('main_bingTwo')).setOption({				
+			    title : {
+			        text: '预约统计',
+			        x:'center',
+			        y:'55px'
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: []
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			             hoverAnimation:false,
+			            radius : '65%',
+			            center: ['50%', '60%'],
+			            data:[
+			                {value:335, name:'预约信息统计'},
+			                {value:310, name:'预约拒绝统计'},
+			                {value:234, name:'预约完成统计'}
+			            ],
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			});
+			echarts.init(document.getElementById('main_bingThree')).setOption({				
+			    title : {
+			        text: '投诉统计',
+			        x:'center',
+			        y:'55px'
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: []
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			             hoverAnimation:false,
+			            radius : '65%',
+			            center: ['50%', '60%'],
+			            data:[
+			                {value:335, name:'投诉信息统计'},
+			                {value:310, name:'投诉拒绝统计'},
+			                {value:234, name:'投诉完成统计'}
+			            ],
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			});
+			echarts.init(document.getElementById('main_bingFour')).setOption({				
+			    title : {
+			        text: '评价统计',
+			        x:'center',
+			        y:'55px'
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: []
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			             hoverAnimation:false,
+			            radius : '65%',
+			            center: ['50%', '60%'],
+			            data:[
+			                {value:335, name:'评价统计'}
+			            ],
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			});
+			echarts.init(document.getElementById('main_bingFive')).setOption({				
+			    title : {
+			        text: '相关列表查看统计',
+			        x:'center',
+			        y:'55px'
+			    },
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b} : {c} ({d}%)"
+			    },
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: []
+			    },
+			    series : [
+			        {
+			            name: '访问来源',
+			            type: 'pie',
+			             hoverAnimation:false,
+			            radius : '65%',
+			            center: ['50%', '60%'],
+			            data:[
+			                {value:335, name:'相关列表查看统计'}
+			            ],
+			            itemStyle: {
+			                emphasis: {
+			                    shadowBlur: 10,
+			                    shadowOffsetX: 0,
+			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+			                }
+			            }
+			        }
+			    ]
+			});
+		</script>
+	</body>
+</html>

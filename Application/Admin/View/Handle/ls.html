@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>审批列表-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='审批列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">审批列表</div>
+                    </div>
+                    <form action="" method="get" id="quickForm">
+                        <button class="btn quickSubmit" name="type" value="3">预约</button>
+                        <button class="btn quickSubmit" name="type" value="2">投诉</button>
+                    </form>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>申请人</td>
+                                <td>受理机构</td>
+                                <td>受理机构人员</td>
+                                <td>状态</td>
+                                <td>申请时间</td>
+                                <td>完成时间</td>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tr align="center" id="{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>
+                                <if condition="$vo['xm'] neq ''">
+                                {$vo.xm}
+                                <else />
+                                {$vo.proposer_name}
+                                </if>
+                                </td>
+                                <td>{$vo.jg_name}</td>
+                                <td>{$vo.jgry_name}</td>
+                                <td>{$vo.status}</td>
+                                <td>{$vo.ct_time|date="Y-m-d H:i:s",###}</td>
+                                <td><if condition="$vo['finish_time'] eq 0"><else />{$vo.finish_time|date="Y-m-d H:i:s",###}</if></td>
+                                <td>
+                                    <if condition="$vo['flag'] eq 1">
+                                    [ <a href="__URL__/set?id={$vo.id}&cate={$cate}&type={$type}">指定人员 </a> ]
+                                    </if>
+                                </td>
+                            </tr>
+                        </volist>
+                        <tr><td colspan="7" align="right">{$page}</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

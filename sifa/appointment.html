@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>在线预约</title>
+		<link rel="stylesheet" href="./css/head.css">
+		<link rel="stylesheet" href="./css/appointment.css">
+		<link href="css/rolldate.css" rel="stylesheet">
+	</head>
+	<link rel="stylesheet" href="./css/mobileSelect.css">
+	<script src="./js/shipei.js"></script>
+	<style>
+		textarea {
+			display: block;
+			width: 73%;
+			float: right;
+			height: 4.5rem;
+			font-size: .75rem;
+			outline: none;
+			resize: none;
+		}
+		
+		input[type="button"],
+		input[type="submit"],
+		input[type="reset"] {
+			-webkit-appearance: none;
+		}
+		
+		.iij {
+			height: auto;
+		}
+		
+		.img_left {
+			width: 100%;
+		}
+		
+		.img_left p {
+			width: 100%;
+			text-align: left;
+			line-height: 2.5rem;
+			padding-left: 1.4rem;
+		}
+		
+		.shangchuan {
+			width: 100%;
+			display: -webkit-flex;
+		}
+		
+		.shangchuan li {
+			width: 35%;
+			margin: 0 7%;
+			position: relative;
+		}
+		
+		.shangchuan li input {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+		}
+		
+		.tishi {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			width: 6rem;
+			height: auto;
+			padding: .5rem;
+			display: none;
+			background: rgba(0, 0, 0, .5);
+			text-align: center;
+			color: #fff;
+			border-radius: .25rem;
+			margin-left: -3rem;
+			z-index: 999999;
+		}
+	</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="header">
+				<div class="head">
+					<div class="img">
+						<a href="javascript:;"> <img onclick="javascript:history.go(-1);" src="./img/return_03.png" alt=""></a>
+					</div>
+					<div class="title">
+						<p>在线预约</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="section">
+				<div class="iij">
+					<div class="region select">
+						<p>所属区域</p>
+						<input type="text" readonly="readonly" name="regions" class="regions" id="" placeholder="请选择区域" />
+					</div>
+					<div class="region select">
+						<p>调解机构</p>
+						<input type="text" name="mechanism" readonly="readonly" placeholder="请选择调解机构" class="mechanism">
+					</div>
+					<div class="region select">
+						<p>选择类别</p>
+						<input type="text" name="types" placeholder="请选择类别" readonly="readonly" class="types">
+					</div>
+					<div class="region select">
+						<p>选择时间</p>
+						<p>
+							<input readonly type="text" class="date3 order_time" placeholder="请选择时间">
+						</p>
+					</div>
+					<div class="region select" style="height: 5rem;">
+						<p>填写备注</p>
+						<textarea class="Remarks"></textarea>
+					</div>
+				</div>
+				<div class="section_img" style="height: 18rem;">
+					<form action="">
+						<div class="img_left">
+							<p>
+								当事人身份证正反面
+							</p>
+
+						</div>
+						<ul class="shangchuan">
+							<li>
+								<img class="img1 myImg1" src="./img/shangchuan.png" alt="">
+								<input class="filed2 myFiled1" type="file"></li>
+							<li>
+								<img class="img1 myImg2" src="./img/shangchuan.png" alt="">
+								<input class="filed2 myFiled2" type="file">
+							</li>
+						</ul>
+					</form>
+					<form action="">
+						<div class="img_left">
+							<p>
+								对方当事人身份证正反面
+							</p>
+
+						</div>
+						<ul class="shangchuan">
+							<li>
+								<img class="img1 otherImg1" src="./img/shangchuan.png" alt="">
+								<input class="filed2 otherFiled1" type="file"></li>
+							<li>
+								<img class="img1 otherImg2" src="./img/shangchuan.png" alt="">
+								<input class="filed2 otherFiled2" type="file">
+							</li>
+						</ul>
+					</form>
+				</div>
+				<div style="width: 70%;margin: 5rem auto 2rem;height: 5rem;">
+					<div class="btn" style="margin-top: 0.2rem;">
+						提交预约
+					</div>
+					<!-- <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+                    撤销预约
+                </div> -->
+				</div>
+			</div>
+		</section>
+		<div class="Modal-frame">
+			<p>预约成功</p>
+		</div>
+		<div class="footer"></div>
+	</body>
+	<script src="./js/jquery-3.3.1.min.js"></script>
+
+</html>
+<script src="js/select.js"></script>
+<script src="js/rolldate.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="./js/mobileSelect.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script>
+	window.onload = function() {
+		/*
+		 *欢迎关注https://github.com/weijhfly/rolldate，并给个star，此插件会持续完善。
+		 */
+		// 格式
+
+		new rolldate.Date({
+			el: '.date3',
+			format: 'YYYY-MM-DD hh:mm',
+			beginYear: 1990,
+			endYear: 2020
+		})
+
+	}
+	$(".footer").load("footer2.html");
+
+	function showTips(text) {
+		$('body').append('<p class="tishi" style="display: none;">' + text + '</p>');
+		if($('.tishi').css('display') == 'none') {
+			$('.tishi').stop(true).fadeIn();
+			setTimeout(function() {
+				$('.tishi').stop(true).fadeOut();
+				$('.tishi').remove();
+			}, 3000);
+		}
+	}
+	var access_token = localStorage.getItem('access_token');
+
+	var proposerfront_img, proposercontrary_img, adversefront_img, adversecontrary_img;
+	$('.myFiled1').change(function() {
+		var file = this.files[0];
+		if(window.FileReader) {
+			var reader = new FileReader();
+			reader.readAsDataURL(file);
+			//监听文件读取结束后事件    
+			reader.onloadend = function(e) {
+				// 图片base64
+				proposerfront_img = e.target.result.split(",")[1];
+				$(".myImg1").attr("src", e.target.result)
+			};
+		}
+	});
+	$('.myFiled2').change(function() {
+		var file = this.files[0];
+		if(window.FileReader) {
+			var reader = new FileReader();
+			reader.readAsDataURL(file);
+			//监听文件读取结束后事件    
+			reader.onloadend = function(e) {
+				// 图片base64
+				proposercontrary_img = e.target.result.split(",")[1];
+				$(".myImg2").attr("src", e.target.result)
+			};
+		}
+	});
+	$('.otherFiled1').change(function() {
+		var file = this.files[0];
+		if(window.FileReader) {
+			var reader = new FileReader();
+			reader.readAsDataURL(file);
+			//监听文件读取结束后事件    
+			reader.onloadend = function(e) {
+				// 图片base64
+				adversefront_img = e.target.result.split(",")[1];
+				$(".otherImg1").attr("src", e.target.result)
+			};
+		}
+	});
+	$('.otherFiled2').change(function() {
+		var file = this.files[0];
+		if(window.FileReader) {
+			var reader = new FileReader();
+			reader.readAsDataURL(file);
+			//监听文件读取结束后事件    
+			reader.onloadend = function(e) {
+				// 图片base64
+				adversecontrary_img = e.target.result.split(",")[1];
+				$(".otherImg2").attr("src", e.target.result)
+			};
+		}
+	});
+	//	所在区域
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Data/area",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			var typeHTML = [];
+			var index = data.data;
+			for(var i = 0; i < data.data.length; i++) {
+				typeHTML.push(data.data[i].name);
+			}
+			//             console.log(typeHTML)
+			var mobileSelect1 = new MobileSelect({
+				trigger: '.regions',
+				title: '请选择区域',
+				wheels: [{
+					data: typeHTML
+				}],
+				position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+				transitionEnd: function(indexArr, data) {
+					//console.log(data);
+				},
+				callback: function(indexArr, data) {
+					//                        console.log(data);
+					$(".regions").attr("value", data)
+					for(i = 0; i < index.length; i++) {
+						if(data == index[i].name) {
+							$(".regions").attr('id', index[i].id);
+						}
+					};
+				}
+			});
+		}
+	})
+	//	调解机构
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Data/twh",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			var typeHTML = [];
+			var index = data.data;
+			for(var i = 0; i < data.data.length; i++) {
+				typeHTML.push(data.data[i].jgmc);
+			}
+			//             console.log(typeHTML)
+			var mobileSelect1 = new MobileSelect({
+				trigger: '.mechanism',
+				title: '请选择调解机构',
+				wheels: [{
+					data: typeHTML
+				}],
+				position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+				transitionEnd: function(indexArr, data) {
+					//console.log(data);
+				},
+				callback: function(indexArr, data) {
+					//                        console.log(data);
+					$(".mechanism").attr("value", data)
+					for(i = 0; i < index.length; i++) {
+						if(data == index[i].jgmc) {
+							$(".mechanism").attr('id', index[i].id);
+						}
+					};
+				}
+			});
+		}
+	})
+	//	调解类别
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Data/order_type",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			//              console.log(data);
+			var typeHTML = [];
+			var index = data.data;
+			for(var i = 0; i < data.data.length; i++) {
+				typeHTML.push(data.data[i].title);
+			}
+			var mobileSelect1 = new MobileSelect({
+				trigger: '.types',
+				title: '请选择调解类别',
+				wheels: [{
+					data: typeHTML
+				}],
+				position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+				transitionEnd: function(indexArr, data) {
+					//console.log(data);
+				},
+				callback: function(indexArr, data) {
+					//                        console.log(data);
+					$(".types").attr("value", data)
+					for(i = 0; i < index.length; i++) {
+						if(data == index[i].title) {
+							$(".types").attr('id', index[i].id);
+						}
+					};
+				}
+			});
+		}
+	})
+
+	//提交
+	$('.btn').click(function() {
+		var jg_id = $('.mechanism').attr('id');
+		var jg_name = $('.mechanism').val();
+		var order_type = $('.types').attr('id');
+		var area_id = $('.regions').attr('id');
+		var order_note = $('.Remarks').val();
+		var order_time = $.myTime.DateToUnix($('.order_time').val());
+		$.ajax({
+			type: "POST",
+			url: "http://sf.wokerr.com/index.php/home/Handle/tj_order",
+			async: false,
+			data: {
+				access_token: access_token,
+				proposerfront_img: proposerfront_img,
+				proposercontrary_img: proposercontrary_img,
+				adversefront_img: adversefront_img,
+				adversecontrary_img: adversecontrary_img,
+				jg_id: jg_id,
+				jg_name: jg_name,
+				order_type: order_type,
+				area_id: area_id,
+				order_note: order_note,
+				order_time: order_time,
+			},
+			dataType: 'json',
+			success: function(data) {
+				console.log(data);
+				if(data.status == 1) {
+					javascript: history.go(-1);
+				}
+				else {
+					showTips(data.msg);
+				}
+			}
+		})
+	})
+	$.extend({
+		myTime: {
+			CurTime: function() {
+				return Date.parse(new Date()) / 1000;
+			},
+			DateToUnix: function(string) {
+				var f = string.split(' ', 2);
+				var d = (f[0] ? f[0] : '').split('-', 3);
+				var t = (f[1] ? f[1] : '').split(':', 3);
+				return(new Date(
+					parseInt(d[0], 10) || null,
+					(parseInt(d[1], 10) || 1) - 1,
+					parseInt(d[2], 10) || null,
+					parseInt(t[0], 10) || null,
+					parseInt(t[1], 10) || null,
+					parseInt(t[2], 10) || null
+				)).getTime() / 1000;
+			},
+			UnixToDate: function(unixTime, isFull, timeZone) {
+				if(typeof(timeZone) == 'number') {
+					unixTime = parseInt(unixTime) + parseInt(timeZone) * 60 * 60;
+				}
+				var time = new Date(unixTime * 1000);
+				var ymdhis = "";
+				ymdhis += time.getUTCFullYear() + "-";
+				ymdhis += (time.getUTCMonth() + 1) + "-";
+				ymdhis += time.getUTCDate();
+				if(isFull === true) {
+					ymdhis += "" + time.getUTCHours() + ":";
+					ymdhis += time.getUTCMinutes() + ":";
+					ymdhis += time.getUTCSeconds();
+				}
+				return ymdhis;
+			}
+		}
+	});
+</script>

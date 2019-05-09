@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>在线解答</title>
+    <style>
+        body,
+        html {
+            background-color: white;
+        }
+        
+        .hang {
+            width: 100%;
+            height: 1.25rem;
+            padding: 0 0.2rem;
+            border-bottom: 1px solid #d3d1d1;
+            display: flex;
+        }
+        
+        .xinxi>p {
+            font-size: 0.12rem;
+            color: #666666;
+        }
+        
+        .touxiang {
+            line-height: 1.25rem;
+            position: relative;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.2rem;
+        }
+        
+        .touxiang>img {
+            vertical-align: middle;
+            width: 1rem;
+            height: 1.05rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .3rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+        
+        .xinxi {
+            padding-top: 0.28rem;
+            padding-bottom: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="javascript:history.go(-1)">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">在线解答</div>
+    </header>
+    <div class="content">
+        <!-- <div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+				<span class="tishi">1</span>
+			</div>
+			<div class="xinxi">
+			 	<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+			</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+				<span class="tishi">1</span>
+			</div>
+			<div class="xinxi">
+			 	<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+			</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang"><img src="img/zhixun.png" alt=""></div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+			 	<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+			</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt=""></div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div>
+		<div class="hang" onclick="window.location.href= 'liaotianxinxi.html';return false">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt=""></div>
+			<div class="xinxi">
+		 		<span style="font-size: 0.32rem;color: #333333">姓名</span>
+				<p>聊天内容聊天内容聊天内容聊天内容聊天内</p>
+		 	</div>
+		</div> -->
+    </div>
+    <p class="tishi"></p>
+</body>
+
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    var access_token = localStorage.getItem("access_token");
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Personal/chat_history',
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            if (data.data.length == 0) {
+                $(".tishi").text("暂无解答信息");
+                $(".tishi").fadeIn().delay(1000).fadeOut();
+            }
+            var html = "";
+            var tishi = "";
+            $.each(data.data, function(index, obj) {
+                if (data.data[index].status == "1") {
+                    tishi = "";
+                } else {
+                    tishi = '<span class="tishi"></span>';
+                }
+                html += '<div class="hang" id="' + data.data[index].uid + '" id2="' + data.data[index].uid2 + '">' +
+                    '<div class="touxiang">' +
+                    '<img src="' + data.data[index].user.tx + '" alt="" style="border-radius:50%;">' +
+                    tishi +
+                    '</div>' +
+                    '<div class="xinxi">' +
+                    '<span style="font-size: 0.32rem;color: #333333">' + data.data[index].user.xm + '</span>' +
+                    '<p>' + data.data[index].text + '</p >' +
+                    '</div>' +
+                    '</div>';
+
+            })
+            $(".content").html(html);
+            $(".hang").click(function() {
+                var id = $(this).attr("id");
+                var id2 = $(this).attr("id2");
+                window.location.href = "liaotianxinxi.html?id=" + id + "&id2=" + id2
+            })
+        }
+    })
+</script>
+</script>

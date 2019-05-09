@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="./js/register.js" defer="defer"></script>
+    <link rel="stylesheet" href="./css/register.css">
+    <script src="./js/shipei.js"></script>
+    <style>
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 8rem;
+            height: auto;
+            padding: .3rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -4rem;
+            z-index: 999999;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <div id="header"></div>
+    <div id="content">
+        <img src="./img/4.png" alt="" onclick="window.location.href= 'login.html';return false">
+        <div class="logo">
+            <img src="./img/3.jpg" alt="">
+        </div>
+        <div class="con_nav">
+            <div class="each_con">
+                <input type="text" placeholder="请输入账号名称（英文与数字）" class="dlzh">
+                <span>登录账号</span>
+            </div>
+            <div class="each_con">
+                <input type="text" placeholder="请输入姓名(四个以内汉字)" class="name">
+                <span>姓名</span>
+            </div>
+            <div class="each_con">
+                <input type="text" placeholder="请输入身份证号" onblur="isCardNo($(this).val())" class="id_card">
+                <span>身份证号</span>
+            </div>
+            <div class="each_con">
+                <input onkeyup='this.value=this.value.replace(/\D/gi,"")' type="text" tongyi placeholder="请输入手机号" class="tel jtsg_tj3">
+                <span>手机号</span>
+            </div>
+            <div class="each_con">
+                <button class="verify_f">发送验证码</button>
+                <input type="text" class="yanzhengma" placeholder="验证码" style="width:43%;margin-right:0.465rem;">
+                <span>验证码</span>
+            </div>
+            <div class="each_con">
+                <input type="password" placeholder="请输入密码 " class="password">
+                <span>密码</span>
+            </div>
+            <div class="each_con">
+                <input type="password" placeholder="请再次输入密码 " onblur="queren($(this).val())" class="password2">
+                <span>确认密码</span>
+            </div>
+            <div class="each_con">
+                <input type="text " placeholder="请输入工作单位 " class="work_unit ">
+                <span>工作单位</span>
+            </div>
+            <div class="each_con">
+                <input type="text " placeholder="请输入邮政编码 " onblur="youbian($(this).val())" class="post_code">
+                <span>邮政编码</span>
+            </div>
+            <div class="each_con">
+                <input type="text " placeholder="请输入地址 " class="address ">
+                <span>联系地址</span>
+            </div>
+        </div>
+        <!--     <div class="tongyi" onclick="window.location.href= 'xieyi.html';return false">
+            <img src="./img/1.png" alt="">
+            <span>同意《****注册用户协议》</span>
+        </div> -->
+        <button id="register" style="font-size: 1rem">注册</button>
+        <div class="tongyi">
+            已有账号？<a href="login.html">登录</a>
+        </div>
+    </div>
+    <div id="footer "></div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    localStorage.setItem("access_token", "");
+
+    // $(".password2").change(function(){
+    //   var password=$(".password").val();
+    //   if($(this).val()!=password){
+    //       $(".tishi").text("两次密码不正确");
+    //       $(".tishi").fadeIn().delay(500).fadeOut();
+    //       $(this).val("")
+    //   }
+    // });
+    function queren(pass) {
+
+        if (pass != $(".password").val()) {
+            $(".tishi").text("两次密码不一致，请重新输入");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            // return false;
+        }
+
+    }
+
+    function isCardNo(card) {
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+        if (card.length != 0) {
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (reg.test(card) === false) {
+                $(".tishi").text("身份证号格式不正确");
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".id_card").val("")
+                return false;
+            }
+        }
+    }
+
+    function youbian(card) {
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+        if (card.length != 0) {
+            var reg = /^[1-9][0-9]{5}$/;
+            if (reg.test(card) === false) {
+                $(".tishi").text("邮政编码不正确·");
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".post_code").val("")
+                return false;
+            }
+        }
+    }
+
+    $("#register").click(function() {
+
+        var name = $(".name").val(),
+            dlzh = $(".dlzh").val(),
+            id_card = $(".id_card ").val(),
+            tel = $(".tel ").val(),
+            password = $(".password").val(),
+            password2 = $(".password2").val(),
+            work_unit = $(".work_unit").val(),
+            post_code = $(".post_code ").val(),
+            address = $(".address").val(),
+            yanzhengma = $(".yanzhengma").val();
+        if (name.length == 0) {
+            $(".tishi").text("请输入姓名");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            return false;
+        } else if (dlzh.length == 0){
+            $(".tishi").text("请输入登录账号");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+        }else if (id_card.length == 0) {
+            $(".tishi").text("请输入身份证号");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            return false;
+        } else if (tel.length == 0) {
+            $(".tishi").text("请输入手机号");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            return false;
+        } else if (yanzhengma.length == 0) {
+            $(".tishi").text("请输入验证码");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            return false;
+        } else if (password.length == 0) {
+            $(".tishi").text("请输入密码");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            return false;
+        } else if (password2.length == 0) {
+            $(".tishi").text("请输入确认密码");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            return false;
+        // } else if (work_unit.length == 0) {
+        //     $(".tishi").text("工作单位");
+        //     $(".tishi").fadeIn().delay(500).fadeOut();
+        //     return false;
+        // } else if (post_code.length == 0) {
+        //     $(".tishi").text("邮政编码");
+        //     $(".tishi").fadeIn().delay(500).fadeOut();
+        //     return false;
+        // } else if (address.length == 0) {
+        //     $(".tishi").text("联系地址");
+        //     $(".tishi").fadeIn().delay(500).fadeOut();
+        //     return false;
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "https://sys.t7c.net/index.php/home/Login/register",
+                data: {
+                    dlzh:dlzh,
+                    name: name,
+                    id_card: id_card,
+                    tel: tel,
+                    verify_code: yanzhengma,
+                    password: password,
+                    password2: password2,
+                    work_unit: work_unit,
+                    post_code: post_code,
+                    address: address
+                },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        localStorage.setItem("access_token", data.data.access_token);
+                        localStorage.setItem("splx", data.data.splx);
+                        localStorage.setItem("yhlx", data.data.yhlx);
+                        window.location.href = "index.html";
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        }
+
+
+    })
+
+    // ===========验证码
+    var yzm;
+    var tim = 60;
+    var timer;
+    $(".verify_f").click(function() {
+        clearInterval(timer);
+        $(".verify_f").attr("disabled", "disabled");
+        var mobile = $(".jtsg_tj3").val();
+        if (mobile.length == 0) {
+            $(".tishi").text("请填写手机号");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+        } else {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+                data: {
+                    mobile: mobile
+                },
+                dataType: 'json',
+                // async: false,   //同步异步
+                success: function(data) {
+                    console.log(data);
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                    if (data.state == 1) {
+                        yzm = data.data.yzm;
+                        timer = setInterval(function() {
+                            tim--;
+                            $(".verify_f").text(tim + "s");
+                            if (tim < 1) {
+                                tim = 60;
+                                $(".verify_f").text("重新发送");
+                                $(".verify_f").removeAttr("disabled");
+                                clearInterval(timer);
+                            }
+                        }, 1000)
+                    } else if (data.state == -1) {
+                        $(".verify_f").text("重新发送");
+                        $(".verify_f").removeAttr("disabled");
+                    } else {
+                        // $(".tishi").text(data.msg);
+                        // $(".tishi").fadeIn().delay(500).fadeOut();  
+                        $(".verify_f").text("发送失败");
+                    }
+
+                }
+            })
+        }
+
+    })
+</script>

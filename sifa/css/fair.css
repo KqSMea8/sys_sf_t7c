@@ -1,0 +1,27 @@
+.content {
+    width: 100%;
+    position: relative;
+}
+
+.box {
+    display: inline-block;
+    width: 32%;
+}
+
+.box img {
+    margin-left: 2.1875rem;
+    margin-top: 1.75rem;
+    width: 3.125rem;
+}
+
+.box span {
+    display: block;
+    text-align: center;
+    line-height: 1.5625rem;
+    height: 1.5625rem;
+}
+		input[type="button"], input[type="submit"], input[type="reset"] {
+
+-webkit-appearance: none;
+
+}

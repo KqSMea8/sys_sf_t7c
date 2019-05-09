@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>弘毅财智-产品展示</title>
+  <link rel="stylesheet" href="__CSS__/common.css">
+  <link rel="stylesheet" href="__CSS__/productDisplay.css">
+  <!-- <script src="lib/jquery-1.11.3/jquery.js"></script> -->
+  <script src="__LIB__/jquery-1.9.1/jquery.js"></script>
+</head>
+<body>
+    <div class="header">
+      <div class="header_content">
+        <a href="../Index/index.html"><img src="__IMG__/logo.png" alt=""></a>
+        <div class="header_btn">
+          <a href="../Index/index.html" class="active">首页</a>
+					<a href="productDisplay.html" class="blur">产品展示</a>
+					<a href="../Promoter/extensionSystem.html" class="blur">推广员系统</a>
+					<a href="../Safe/safe1.html" class="blur">安全保证</a>
+					<a href="../Problem/problem.html" class="blur">问题回答</a>
+					<a href="../Login/login1.html"  class="blur login">登录</a>
+					<a href="../Login/register1.html"  class="blur register">免费注册</a>		
+        </div>
+      </div>
+    </div>
+  <div class="banner">
+    <img src="__IMG__/banner.png" alt="">
+  </div>
+  <div class="list">
+    <div class="list-left left">
+      <!--<ul class="fundKinds">
+        <li><a href="javascript:;" data-fundkind="1" class="bgc">ICO基金</a></li>
+        <li><a href="javascript:;" data-fundkind="2" >数字货币余额宝</a></li>
+        <li><a href="javascript:;" data-fundkind="3" >混合套利基金</a></li>
+        <li><a href="javascript:;" data-fundkind="4" >ETF基金</a></li>
+      </ul>-->
+    </div>
+    <!-- 确认认购页面 -->
+    <div class="list-right-zong left" style="display: none;">
+      <ul>
+        <li>投入货币</li>
+        <li>
+        	<select class="list-right-zong-hbzl" style="width:60px;height:30px;">
+        		<!--<option>投入法币</option>
+        		<option>投入数字货币</option>-->
+        	</select>
+        </li>
+      </ul>
+      <ul>
+        <li style="line-height:30px;">投入金额</li>
+        <li><input style="border:solid 1px #999;" type='text' class="rgze" onkeyup="(this.val=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.val();" /></li>
+      </ul>
+      <ul>
+        <li>退出货币</li>
+        <li><input type="radio" name="signOut" id="signOut_f"><label for="signOut_f">退出法币</label></li>
+        <li><input type="radio" name="signOut" id="signOut_n"><label for="signOut_n">退出数字货币</label></li>
+      </ul>
+      <ul>
+        <li>处理方式</li>
+        <li><input type="radio" name="handle" value="1" checked="checked" class="handle_deposit" id="handle_deposit"><label for="handle_deposit">基金托管</label></li>
+        <li><input type="radio" name="handle" value="0" class="handle_client" id="handle_client"><label for="handle_client">委托人</label></li>
+      </ul>
+      <div class="buyBtn">确认认购</div>
+    </div>
+    <!--确认认购页面2-->
+    <div class="list-right-zong1 left" style="display: none;">
+      <ul>
+        <li>投入货币</li>
+        <li><input type="radio" name="investment" id="investment_f"><label for="investment_f">投入法币</label></li>
+        <li><input type="radio" name="investment" id="investment_n"><label for="investment_n">投入数字货币</label></li>
+      </ul>
+      <ul>
+        <li>投入金额</li>
+        <li>xxxxx.xx</li>
+      </ul>
+      <div class="buyBtn">确认认购</div>
+    </div>
+    <!-- 认购基金页面 -->
+
+    <div class="list-right left">
+      <ul class="list-right-top">
+        <li class="line"><a href="javascript:;" data-detail="1">产品参数</a></li>
+        <li><a href="javascript:;" data-detail="2">项目介绍</a></li>
+      </ul>
+      <div class="data">
+        <ul class="data-left">
+          <li>收益类型</li>
+          <li>投资条件</li>
+          <li>封闭期限</li>
+          <li>费用说明</li>
+          <li>驳回方式</li>
+        </ul>
+        <ul class="data-right">
+          
+        </ul>
+      </div>
+      <div class="dataProduct">
+          <div class="productIntroduce" style="overflow-y: auto;height: 100%;">
+              <!--ico基金交易成本低，流程快捷，安全高效。ico基金交易成本低，流程快捷，
+              安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，
+
+              流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，
+              流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，
+
+              流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，
+
+              安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，
+
+              安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，
+
+              流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效ico基金交易成本低，流程快捷，安全高效。-->
+          </div>
+      </div>
+      <div class="purchaseBtn">认购基金</div>
+    </div>
+    <div class="list-right-sy">
+    <!--ICO基金页面-->
+    <div class="list-right4 left" style="display:block;">
+    	<!--<ul>
+    		<li>
+    				<p>弘毅套利基金X号</p>
+    				<ul class="list-right4-top">
+    					<li>xx.xx%</li>
+    					<li>xx.xx日</li>
+    					<li>xx.xx日</li>
+    					<li>xx.xx日</li>
+    				</ul>
+    				<ul class="list-right4-bot">
+    					<li>年化预期</li>
+    					<li>产品发售期</li>
+    					<li>赎回方式</li>
+    					<li>费用说明</li>
+    				</ul>
+    				<div class="purchaseBtn1">认购基金</div>
+    		</li>
+    		<li>
+    				<p>弘毅套利基金X号</p>
+    				<ul class="list-right4-top">
+    					<li>xx.xx%</li>
+    					<li>xx.xx日</li>
+    					<li>xx.xx日</li>
+    					<li>xx.xx日</li>
+    				</ul>
+    				<ul class="list-right4-bot">
+    					<li>年化预期</li>
+    					<li>产品发售期</li>
+    					<li>赎回方式</li>
+    					<li>费用说明</li>
+    				</ul>
+    				<div class="purchaseBtn1">认购基金</div>
+    		</li>
+    	</ul>-->
+    </div>
+    </div>
+  </div>
+  <!-- 合同页面 -->
+  <div class="fundContract" style="display:none;">
+      <div class="fundContractContent">
+          <div class="contractContentBox">
+              <div class="contractTitle"></div>
+              <div class="clauseText"></div>
+          </div>
+      </div>
+      <div class="readContract">
+          <!--<label>
+              <input type="checkbox" class="isRead" value="false"> 我已经阅读《<span>xxx产品合同</span>》
+          </label>-->
+      </div>
+      <div class="fundContractNextBtn">下一步</div>
+  </div>
+  <div class="footer">
+      <div class="footer_content">
+        <div class="contact">
+          <div class="contact_our">
+            联系我们
+          </div>
+          <div class="contact_now"><span>电话 ：</span><span>000-000-0000</span></div>
+          <div class="contact_now"><span>邮编 ： </span><span>0000002145@qq.com</span></div>
+          <div class="contact_now"><span>工作时间 ：</span><span>周一周日（08:00-22：00）</span></div>
+        </div>
+        
+        <div class="address">©2017 马六甲 All rights reserved ICO CHIN PTE LTD</div>
+        
+        <div class="codeall">
+          <div class="code">
+          <img src="__IMG__/code.png" />
+          <p>微信公众号</p>
+        </div>
+        <div class="code">
+          <img src="__IMG__/code.png" />
+          <p>官方QQ群</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="__JS__/operateCookie.js"></script>
+    <script src="__JS__/common.js"></script>
+    <script src="__JS__/productDisplay.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+
+
+//确认认购页面请求
+
+
+
+</script>

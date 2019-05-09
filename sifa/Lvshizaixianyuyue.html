@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+</head>
+<link rel="stylesheet" type="text/css" href="css/city-picker.css">
+<!--<link rel="stylesheet" type="text/css" href="css/dialog.css">-->
+<script type="text/javascript">
+document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+</script>
+<title>在线申办</title>
+<style>
+body,
+html {
+    background-color: white;
+}
+
+.act {
+    color: #196394;
+    border-bottom: #196394 2px solid;
+}
+
+.items {
+    display: flex;
+    justify-content: space-around;
+    line-height: 0.6rem;
+}
+
+.items>li {
+    width: 1.9rem;
+    text-align: center;
+}
+
+.rengong {
+    width: 100%;
+    height: 0.6rem;
+    border-bottom: 1px solid #d3d1d1
+}
+
+.item {
+    width: 6rem;
+    height: 2rem;
+    margin: 0 auto;
+}
+
+.selects {
+    width: 6rem;
+    margin: 1rem 0.8rem;
+    height: 0.8rem;
+}
+
+.queding {
+    width: 5rem;
+    background-color: #196394;
+    height: 0.8rem;
+    text-align: center;
+    color: white;
+    font-size: 0.32rem;
+    line-height: 0.8rem;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.quediv {
+    margin: 1rem auto 1rem;
+    text-align: center;
+}
+
+.hang {
+    height: 0.8rem;
+    width: 100%;
+    display: flex;
+}
+
+.zuo {
+    color: #000000;
+    height: 0.8rem;
+    width: 2.5rem;
+    text-align: right;
+    padding-right: 0.2rem;
+    line-height: 0.8rem;
+}
+
+.you {
+    height: 0.8rem;
+    width: 4.8rem;
+    line-height: 0.8rem;
+}
+
+.queding {
+    width: 5rem;
+    background-color: #196394;
+    height: 0.8rem;
+    text-align: center;
+    color: white;
+    font-size: 0.32rem;
+    line-height: 0.8rem;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.quediv {
+    margin: 1.5rem auto 1rem;
+    text-align: center;
+}
+
+select {
+    border: 1px solid #ccc;
+    width: 4.3rem;
+    height: 0.6rem;
+}
+
+input {
+    width: 4.3rem;
+    height: 0.6rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.title {
+    font-size: 0.28rem;
+    font-weight: bold;
+}
+
+textarea {
+    line-height: normal;
+    border: 1px solid #b5b5b5;
+    width: 4.3rem;
+    height: 2.5rem;
+    border-radius: 2px;
+    outline: none;
+    resize: none;
+    font-size: .25rem;
+    color: #333;
+    background-color: white;
+    margin-top: 0.3rem
+}
+
+.you>div>div>img {
+    margin-top: 0.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.zuo_p {
+    line-height: 0.6rem;
+    margin-top: 0.1rem;
+}
+.btn{
+	width: 2rem;
+	line-height: 0.8rem;
+}
+.con{
+    /*margin-bottom: 2.5rem;*/
+}
+</style>
+</head>
+
+<body style="overflow: scroll">
+    <header class="header"> <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;" onClick="javascript:history.go(-1);">
+        <div class="shenban_title">在线预约</div>
+    </header>
+    <div class="con">
+        <div class="con">
+            <div class="hang">
+                <div class="zuo">
+                    <p class="zuo_p">所属区域</p>
+                </div>
+                <div class="you">
+                	<input type="text" readonly="readonly" name="regions" class="regions" id="" placeholder="请选择区域" />
+                </div>
+            </div>
+             <div class="hang">
+                <div class="zuo">
+                    <p class="zuo_p">选择律师事务所</p>
+                </div>
+                <div class="you">
+                	<input type="text" readonly="readonly" name="firm" class="firm" id="" placeholder="请选择律师事务所" />
+                </div>
+            </div>
+             <div class="hang">
+                <div class="zuo">
+                    <p class="zuo_p">选择律师</p>
+                </div>
+                <div class="you">
+                	<input type="text" readonly="readonly" name="Lawyer" class="Lawyer" id="" placeholder="请选择律师" />
+                </div>
+            </div>
+            <div class="hang">
+                <div class="zuo">选择类别</div>
+                <div class="you">
+                    <input type="text" readonly="readonly" name="types" class="types" id="" placeholder="请选择类别" />
+                </div>
+            </div>
+            <div class="hang">
+                <div class="zuo">选择时间</div>
+                <div class="you">
+                    <input type="text" class="date3 order_time" placeholder="请选择时间">
+                </div>
+            </div>
+            <div class="hang" style="height:2.9rem;">
+                <div class="zuo">案件简介</div>
+                <div class="you">
+                    <textarea name="" id="order_note" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="hang" style="margin-top: 0.2rem;height: 2rem;">
+                <div class="zuo">上传附件</div>
+                <div class="you">
+                    <div>
+                        <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake">
+                            <input type="file" name="file" class="file" id="file1" accept="image/*" style="display: none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 70%;margin: .5rem auto;height: 1rem;padding-bottom:2.5rem;">
+                <div class="btn" style="margin-top: 0.2rem;">
+                    提交预约
+                </div>
+                <!-- <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+                    撤销预约
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+window.onload = function() {
+
+    new rolldate.Date({
+        el: '.date3',
+        format: 'YYYY-MM-DD hh:mm',
+        beginYear: 1990,
+        endYear: 2020
+    })
+
+
+
+}
+</script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script type="text/javascript" src="js/rolldate.js"></script>
+<script type="text/javascript" src="js/citydata.js"></script>
+<script src="./js/mobileSelect.js"></script>
+<script type="text/javascript" src="js/cityPicker-1.0.0.js?v=1"></script>
+<script>
+//上传文件
+$(".avator-btn-fake").click(function() {
+    $("#file1").click();
+});
+$("#file1").change(function() {
+    var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    if (null == file) {
+        return false;
+    }
+    var file_reader = new FileReader();
+    file_reader.onload = (function() {
+        var image_url = this.result; // 这是图片的路径
+        $(".avator-btn-fake").attr('src', image_url);
+    });
+    file_reader.readAsDataURL(file);
+});
+$(".avator-btn-fake2").click(function() {
+    $("#file2").click();
+});
+$("#file2").change(function() {
+    var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    if (null == file) {
+        return false;
+    }
+    var file_reader = new FileReader();
+    file_reader.onload = (function() {
+        var image_url = this.result; // 这是图片的路径
+        $(".avator-btn-fake2").attr('src', image_url);
+    });
+    file_reader.readAsDataURL(file);
+});
+$(".avator-btn-fake3").click(function() {
+    $("#file3").click();
+});
+$("#file3").change(function() {
+    var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    if (null == file) {
+        return false;
+    }
+    var file_reader = new FileReader();
+    file_reader.onload = (function() {
+        var image_url = this.result; // 这是图片的路径
+        $(".avator-btn-fake3").attr('src', image_url);
+    });
+    file_reader.readAsDataURL(file);
+});
+</script>
+<script type="text/javascript">
+$(function() {
+    $('#city-picker-search').cityPicker({
+        dataJson: cityData,
+        renderMode: true,
+        search: true,
+        linkage: true
+    });
+
+
+});
+	function showTips(text){
+		$('body').append('<p class="tishi" style="display: none;">'+ text +'</p>');
+		if($('.tishi').css('display')=='none'){
+			$('.tishi').stop(true).fadeIn();
+			setTimeout(function(){
+				$('.tishi').stop(true).fadeOut();
+				$('.tishi').remove();
+			},3000);
+		}
+	}
+	var access_token = localStorage.getItem('access_token');
+$(".footer").load("footer.html");
+//	所在区域
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Data/area",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			var typeHTML = [];
+			var index = data.data;
+			for(var i = 0; i < data.data.length; i++) {
+				typeHTML.push(data.data[i].name);
+			}
+			//             console.log(typeHTML)
+			var mobileSelect1 = new MobileSelect({
+				trigger: '.regions',
+				title: '请选择区域',
+				wheels: [{
+					data: typeHTML
+				}],
+				position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+				transitionEnd: function(indexArr, data) {
+					//console.log(data);
+				},
+				callback: function(indexArr, data) {
+					//                        console.log(data);
+					$(".regions").attr("value", data)
+					for(i = 0; i < index.length; i++) {
+						if(data == index[i].name) {
+							$(".regions").attr('id', index[i].id);
+						}
+					};
+				}
+			});
+		}
+	})
+//	律师事务所
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Data/lvshisws",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			var typeHTML = [];
+			var index = data.data;
+			for(var i = 0; i < data.data.length; i++) {
+				typeHTML.push(data.data[i].jc);
+			}
+			//             console.log(typeHTML)
+			var mobileSelect1 = new MobileSelect({
+				trigger: '.firm',
+				title: '请选择律师事务所',
+				wheels: [{
+					data: typeHTML
+				}],
+				position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+				transitionEnd: function(indexArr, data) {
+					//console.log(data);
+				},
+				callback: function(indexArr, data) {
+					//                        console.log(data);
+					$(".firm").attr("value", data);
+					var firmId;
+					for(i = 0; i < index.length; i++) {
+						if(data == index[i].jc) {
+							$(".firm").attr('id', index[i].id);
+							firmId=index[i].id;
+						}
+					}
+					showFirm(firmId);
+				}
+			});
+		}
+	})
+	function showFirm(id){
+		$.ajax({
+			type:"post",
+			url:"http://sf.wokerr.com/index.php/home/Data/lvshisws",
+			async:false,
+			data:{
+				id:id
+			},
+			dataType:'json',
+			success:function(data){
+				console.log(data);
+				var firmHTML=[];
+				var firmidHTML=[];
+				for(var i=0;i<data.data.length;i++){
+					firmHTML.push(data.data[i].xm);
+					firmidHTML.push(data.data[i].id);
+				}
+				var mobileSelect1 = new MobileSelect({
+					trigger: '.Lawyer',
+					title: '请选择律师',
+					wheels: [{
+						data: firmHTML
+					}],
+					position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+					transitionEnd: function(indexArr, data) {
+						//console.log(data);
+					},
+					callback: function(indexArr, data) {
+						//                        console.log(data);
+						$(".Lawyer").attr("value", data);
+						var firmId;
+						for(i = 0; i < firmHTML.length; i++) {
+							if(data == firmHTML[i]) {
+								$(".Lawyer").attr('id', firmidHTML[i]);
+							}
+						}
+						$('.mobileSelect').eq(3).remove();
+					}
+				});
+			}
+		});
+	}
+	//类别选择
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Data/order_type",
+		data: {},
+		dataType: 'json',
+		success: function(data) {
+			//              console.log(data);
+			var typeHTML = [];
+			var index = data.data;
+			for(var i = 0; i < data.data.length; i++) {
+				typeHTML.push(data.data[i].title);
+			}
+			var mobileSelect1 = new MobileSelect({
+				trigger: '.types',
+				title: '请选择类别',
+				wheels: [{
+					data: typeHTML
+				}],
+				position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+				transitionEnd: function(indexArr, data) {
+					//console.log(data);
+				},
+				callback: function(indexArr, data) {
+					//                        console.log(data);
+					$(".types").attr("value", data)
+					for(i = 0; i < index.length; i++) {
+						if(data == index[i].title) {
+							$(".types").attr('id', index[i].id);
+						}
+					};
+				}
+			});
+		}
+	})
+	function showImg(img){
+		img=img.substr(img.indexOf(','));
+		img=img.substr(1);
+		return img;
+	}
+	$('.btn').click(function(){
+		var adjunct=showImg($('.avator-btn-fake').attr('src'));
+		var area_id=$(".regions").attr('id');
+		var jg_id=$(".firm").attr('id');
+		var jg_name=$(".firm").val();
+		var jgry_id=$(".Lawyer").attr('id');
+		var order_type=$(".types").attr('id');
+		var jgry_name=$(".Lawyer").val();
+		var order_note=$("#order_note").val();
+		var order_time=$.myTime.DateToUnix($('.order_time').val());
+		$.ajax({
+			type: "POST",
+			url: "http://sf.wokerr.com/index.php/home/Handle/ls_order",
+			async: false,
+			data: {
+				access_token: access_token,
+				adjunct: adjunct,
+				area_id: area_id,
+				jg_id: jg_id,
+				jg_name: jg_name,
+				order_type: order_type,
+				jgry_id: jgry_id,
+				order_time: order_time,
+				jgry_name:jgry_name,
+				order_note:order_note
+			},
+			dataType: 'json',
+			success: function(data) {
+				console.log(data);
+				if(data.status == 1) {
+					javascript: history.go(-1);
+				}
+				else {
+					showTips(data.msg);
+				}
+			}
+		})
+	})
+	$.extend({
+		myTime: {
+			CurTime: function() {
+				return Date.parse(new Date()) / 1000;
+			},
+			DateToUnix: function(string) {
+				var f = string.split(' ', 2);
+				var d = (f[0] ? f[0] : '').split('-', 3);
+				var t = (f[1] ? f[1] : '').split(':', 3);
+				return(new Date(
+					parseInt(d[0], 10) || null,
+					(parseInt(d[1], 10) || 1) - 1,
+					parseInt(d[2], 10) || null,
+					parseInt(t[0], 10) || null,
+					parseInt(t[1], 10) || null,
+					parseInt(t[2], 10) || null
+				)).getTime() / 1000;
+			},
+			UnixToDate: function(unixTime, isFull, timeZone) {
+				if(typeof(timeZone) == 'number') {
+					unixTime = parseInt(unixTime) + parseInt(timeZone) * 60 * 60;
+				}
+				var time = new Date(unixTime * 1000);
+				var ymdhis = "";
+				ymdhis += time.getUTCFullYear() + "-";
+				ymdhis += (time.getUTCMonth() + 1) + "-";
+				ymdhis += time.getUTCDate();
+				if(isFull === true) {
+					ymdhis += "" + time.getUTCHours() + ":";
+					ymdhis += time.getUTCMinutes() + ":";
+					ymdhis += time.getUTCSeconds();
+				}
+				return ymdhis;
+			}
+		}
+	});
+</script>

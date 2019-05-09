@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>调委会</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/gongzhengchu.css">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+
+    <script src="./js/mobileSelect.js"></script>
+    <style>
+        .ctn div:last-child>span {
+            display: inline-block;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .25rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .125rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+        .ull{
+            padding:0 .3rem;
+            margin:.4rem 0;
+            margin-bottom: 1.4rem;
+
+        }
+        .ull p{
+            width: 100%;
+            height: .8rem;line-height: .8rem;background:#f5f6f3;
+            padding:0 .3rem;
+            margin:.2rem 0;
+        }
+    </style>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+
+<body style="overflow: scroll;">
+    <p class="tishi"> </p>
+    <div class="header">
+        <a href="javascript:;" onclick="JavaScript:history.back(-1);">
+            <img src="img/fh.png">
+        </a>
+        <h5>调委会查询</h5>
+    </div>
+    <div class="fl">
+        <a href="javascript:;">
+            <span class="active">机构信息</span>
+        </a>
+        <a href="javascript:;">
+            <span>人员信息</span>
+        </a>
+    </div>
+    <!--     第一个页面 -->
+    <div class="container">
+        <div class="item1">
+            <div class="search">
+                <input type="text" name="" placeholder="查询调委会">
+                <div>
+                    <img src="img/ss.png">
+                </div>
+            </div>
+            <div class="dz_val">
+                <div class="text mg">
+                    <div>类别</div>
+                    <!--  <select class="select">
+                      <option>北京</option>
+                   </select> -->
+                    <input type="text" readonly class="leibie1" />
+                </div>
+
+                <div class="text mg">
+                    <div>区域</div>
+                    <!--  <select class="select">
+              <option>北京</option>
+           </select> -->
+                    <input type="text" readonly class="quyuj1" />
+                </div>
+
+                <div class="text mg">
+                    <div>所辖机构</div>
+                    <!--  <select>
+              <option>昌平</option>
+                      </select>  -->
+                    <input type="text" readonly class="jigouj1" />
+                </div>
+            </div>
+             <div class="ull">
+                <!-- <p>hfjghk</p> -->
+            </div>
+           <!--  <div class="ctn">
+               <p class="tet_title">机构名称:
+                   <span class="mc"> </span>
+               </p>
+           
+               <p class="tet_title">机构地址:
+                   <span class="dz"> </span>
+               </p>
+           
+               <p class="tet_title">机构电话:
+                   <span class="phone"> </span>
+               </p>
+           </div>
+           <div class="wz_info">
+               <span>定位信息:</span>
+               <div>
+                   <!DOCTYPE html>
+                   <html>
+           
+                   <head>
+                       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                       <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+                       <style type="text/css">
+                           body,
+                           html,
+                           #allmaps {
+                               width: 100%;
+                               height: 100%;
+                               overflow: hidden;
+                               margin: 0;
+                               font-family: "微软雅黑";
+                           }
+                       </style>
+                       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=dnT9GV3Ryp2xLpkhKrcIFBwScizyZT0k"></script>
+                       <title>添加动画标注点</title>
+                   </head>
+           
+                   <body>
+                       <div id="allmaps"></div>
+                   </body>
+           
+                   </html>
+                   <script type="text/javascript">
+                  // 百度地图API功能
+                  var map = new BMap.Map("allmaps");
+                  var point = new BMap.Point(131.12525, 44.091008);
+                  map.centerAndZoom(point, 15);
+                  var marker = new BMap.Marker(point);  // 创建标注
+                  map.addOverlay(marker);               // 将标注添加到地图中
+                  marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+              </script>
+               </div>
+           </div> -->
+        </div>
+
+        <!-- 第一个item 结束 -->
+
+        <!-- 第二个item 开始 -->
+
+        <div class="item1" style="display: none;">
+            <div class="search">
+                <input type="text" name="" placeholder="查询调解人员">
+                <div><img src="img/ss.png"></div>
+            </div>
+            <div class="dz_val">
+                <!--  <div class="text">
+           <div>类型</div>
+           <select>
+               <option>请选择</option>
+               <option>工作人员信息</option>
+               <option>人员信息</option>
+           </select>
+       </div>
+        -->
+                <div class="text mg">
+                    <div>区域</div>
+                    <input type="text" readonly class="quyur2" />
+                </div>
+
+                <div class="text mg">
+                    <div>所辖机构</div>
+                    <input type="text" readonly class="jigour2" />
+                </div>
+            </div>
+            <div class="ren">
+                <!-- <div class="ctn ctn1">
+            <div>
+                <img src="img/tx.png">
+            </div>
+            <div class="ino">
+                <span class="tet_title"> 姓名: <span> 张三</span></span><br>
+                <span class="tet_title"> 职务: <span> 老师</span></span><br>
+                <span class="tet_title"> 电话: <span> 1234567890</span></span>
+                <span class="tet_title">
+                    <p style="width: 100%;height:0.6rem;">擅长业务:<p>
+                    <span>律师相关，民事纠纷，刑事纠纷，案件侦破等</span>
+                </span>
+                <span class="tet_title"> 擅长业务:<span>律师相关，民事纠纷，刑事纠纷，案件侦破等</span></span>
+            </div>
+        </div>
+        
+        <div class="ctn ctn1"  style="margin-top:.2rem;">
+            <div>
+                <img src="img/tx.png">
+            </div>
+            <div class="ino">
+                <span class="tet_title"> 姓名: <span> 张三</span></span><br>
+                <span class="tet_title"> 职务: <span> 老师</span></span><br>
+                <span class="tet_title"> 电话: <span> 1234567890</span></span><br>
+                <span class="tet_title"> 擅长业务:<span>律师相关，民事纠纷，刑事纠纷，案件侦破等</span></span>
+            </div>
+        </div> -->
+            </div>
+
+        </div>
+    </div>
+    <!-- <div style="width: 100%;height: 1rem;margin-bottom:4rem"></div>
+ -->
+    <div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+</script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".fl>a").each(function() {
+        var index = $(this).index();
+        console.log(index);
+        console.log($(".item1").eq(index))
+        var cate = index + 1;
+        $(this).click(function() {
+            $(".fl>a>span").removeClass('active');
+            $(".fl>a>span").eq(index).addClass('active').siblings().removeClass('active');
+            $(".container>div").eq(index).stop(true).show().siblings().stop(true).hide();
+            if (cate == 2) {
+                renyuan();
+            }
+        });
+    })
+    var access_token = localStorage.getItem("access_token");
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var type = getUrlParms("rea");
+    //机构列表
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Organ/jg_list ",
+        data: {access_token:access_token,type:type},
+        dataType: 'json',
+        success: function(data) {
+           console.log(data)
+           var html="";
+           for(var i=0;i<data.data.length;i++){
+            html+=`<p id="${data.data[i].id}">${data.data[i].jgmc}</p>`
+           }
+           $(".ull").html(html);
+           $(".ull p").click(function(){
+            var id=$(this).attr("id");
+            window.location.href="jg_xq.html?id="+id+"&type="+type;
+           })
+        }
+    })
+    //默认机构
+    //区域
+    var lbnum = ["调委会", "专业调委会"];
+    var num;
+    $(".leibie1").focus(function(){
+        $('.quyuj1').attr('value','');
+        $('.jigouj1').attr('value','');
+        $(".mc").text('');
+        $(".dz").text('');
+        $(".phone").text('');
+        $('#allmaps').hide();
+    })
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.leibie1',
+        title: '请选择类别',
+        wheels: [{
+            data: lbnum
+        }],
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function(indexArr, data) {
+            //console.log(data);
+        },
+        callback: function(indexArr, data) {
+            $(".leibie1").attr("value", data)
+            for (var i = 0; i < lbnum.length; i++) {
+                if (data == lbnum[i]) {
+                    num = i;
+                }
+            };
+            lai();
+        }
+    })
+    var quyu = [],
+        area, jigou = [],
+        id;
+
+    function lai() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Data/area",
+            data: {
+
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var index = data.data;
+                for (var i = 0; i < data.data.length; i++) {
+                    quyu.push(data.data[i].name)
+                }
+                console.log(quyu);
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '.quyuj1',
+                    title: '请选择区域',
+                    wheels: [{
+                        data: quyu
+                    }],
+                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                    transitionEnd: function(indexArr, data) {
+                        //console.log(data);
+                    },
+                    callback: function(indexArr, data) {
+                        //console.log(indexArr);
+                        $(".quyuj1").attr("value", data)
+                        for (i = 0; i < index.length; i++) {
+                            if (data == index[i].name) {
+                                area = index[i].id;
+                            }
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "https://sys.t7c.net/index.php/home/Organ/choose",
+                            data: {
+                                access_token: access_token,
+                                area: area,
+                                is_major: num,
+                                type: type
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                console.log(data);
+                                if (data.data == null || data.data == "") {
+                                    $(".tishi").text("该区域暂无机构");
+                                    $(".tishi").fadeIn().delay(800).fadeOut();
+                                    $(".tishi").fadeIn().delay(800).fadeOut();
+                                    $(".mc").text('');
+                                    $(".dz").text('');
+                                    $(".phone").text('');
+                                    return false;
+                                }
+                                if (data.state == -2) {
+                                    $(".tishi").text(data.msg);
+                                    $(".tishi").show().delay(500).fadeOut();
+                                    return false;
+                                }
+                                var jindex = data.data;
+                                if (data.state == 1) {
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        jigou.push(data.data[i].jgmc)
+                                    }
+                                    var mobileSelect1 = new MobileSelect({
+                                        trigger: '.jigouj1',
+                                        title: '请选择机构',
+                                        wheels: [{
+                                            data: jigou
+                                        }],
+                                        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                        transitionEnd: function(indexArr, data) {
+                                            //console.log(data);
+                                        },
+                                        callback: function(indexArr, data) {
+                                            console.log(jindex);
+                                            $(".jigouj1").attr("value", data)
+                                            for (i = 0; i < jindex.length; i++) {
+                                                if (data == jindex[i].jgmc) {
+                                                    id = jindex[i].id;
+
+                                                }
+                                            };
+                                            console.log(id)
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "https://sys.t7c.net/index.php/home/Organ/details",
+                                                data: {
+                                                    access_token: access_token,
+                                                    id: id,
+                                                    type: type,
+                                                    cate: 1
+                                                },
+                                                dataType: 'json',
+                                                success: function(data) {
+                                                    console.log(data);
+                                                    var html=`<p id="${data.data.id}">${data.data.jgmc}</p>`;
+                                                    $(".ull").html(html);
+                                                     $(".ull p").click(function(){
+                                                        var id=$(this).attr("id");
+                                                        window.location.href="jg_xq.html?id="+id+"&type="+type;
+                                                       })
+                                                   /* $(".mc").text(data.data.jgmc);
+                                                    $(".dz").text(data.data.dz);
+                                                    $(".phone").text(data.data.dh)
+                                                        // 百度地图API功能
+                                                    var map = new BMap.Map("allmaps");
+                                                    var point = new BMap.Point(data.data.jd, data.data.wd);
+                                                    map.centerAndZoom(point, 15);
+                                                    var marker = new BMap.Marker(point); // 创建标注
+                                                    map.addOverlay(marker); // 将标注添加到地图中
+                                                    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                                                    $('#allmaps').show();*/
+                                                }
+                                            })
+                                        }
+                                    });
+                                }
+                            }
+                        })
+                    }
+                });
+            }
+        })
+    }
+
+    function renyuan() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Organ/jgry_list",
+            data: {access_token:access_token,type:type},
+            dataType: 'json',
+            success: function(data) {
+               console.log(data)
+               var html="";
+                for (var i = 0; i < data.data.length; i++) {
+                    html += `<div class="ctn ctn1"  style="margin-top:.2rem;" id='${data.data[i].id}'>
+                                        <div>
+                                            <img src="${data.data[i].zp}">
+                                        </div>
+                                        <div class="ino">
+                                            <span class="tet_title"> 姓名: <span> ${data.data[i].xm}</span></span><br>
+                                            <span class="tet_title"> 职务: <span> ${data.data[i].zw}</span></span><br>
+                                            <span class="tet_title"> 电话: <span> ${data.data[i].lxdh}</span></span><br>
+                                            <span class="tet_title"> 擅长业务:<span>${data.data[i].ywzc}</span></span>
+                                        </div>
+                                    </div>`
+                }
+                $(".ren").html(html);
+            }
+        })
+        var quyu1 = [],
+            area1, jigou1 = [],
+            id1;
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Data/area",
+            data: {},
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var index = data.data;
+                for (var i = 0; i < data.data.length; i++) {
+                    quyu1.push(data.data[i].name)
+                }
+                console.log(quyu1);
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '.quyur2',
+                    title: '请选择区域',
+                    wheels: [{
+                        data: quyu1
+                    }],
+                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                    transitionEnd: function(indexArr, data) {
+                        //console.log(data);
+                    },
+                    callback: function(indexArr, data) {
+                        //console.log(indexArr);
+                        $(".quyur2").attr("value", data)
+                        for (i = 0; i < index.length; i++) {
+                            if (data == index[i].name) {
+                                area1 = index[i].id;
+
+                            }
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "https://sys.t7c.net/index.php/home/Organ/choose",
+                            data: {
+                                access_token: access_token,
+                                area: area1,
+                                type: type
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                console.log(data);
+                                if (data.data == null || data.data == "") {
+                                    $(".tishi").text("该区域暂无机构");
+                                    $(".tishi").fadeIn().delay(800).fadeOut();
+                                    return false;
+                                }
+                                var jindex = data.data;
+                                if (data.state == 1) {
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        jigou1.push(data.data[i].jgmc)
+                                    }
+                                    var mobileSelect1 = new MobileSelect({
+                                        trigger: '.jigour2',
+                                        title: '请选择机构',
+                                        wheels: [{
+                                            data: jigou1
+                                        }],
+                                        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                        transitionEnd: function(indexArr, data) {
+                                            //console.log(data);
+                                        },
+                                        callback: function(indexArr, data) {
+                                            console.log(jindex);
+                                            $(".jigour2").attr("value", data)
+                                            for (i = 0; i < jindex.length; i++) {
+                                                if (data == jindex[i].jgmc) {
+                                                    id1 = jindex[i].id;
+
+                                                }
+                                            };
+                                            console.log(id1)
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "https://sys.t7c.net/index.php/home/Organ/details",
+                                                data: {
+                                                    access_token: access_token,
+                                                    id: id1,
+                                                    type: type,
+                                                    cate: 2
+                                                },
+                                                dataType: 'json',
+                                                success: function(data) {
+                                                    console.log(data);
+                                                    var html = "";
+                                                    for (var i = 0; i < data.data.length; i++) {
+                                                        html += `<div class="ctn ctn1"  style="margin-top:.2rem;" id='${data.data[i].id}'>
+                                                                            <div>
+                                                                                <img src="${data.data[i].zp}">
+                                                                            </div>
+                                                                            <div class="ino">
+                                                                                <span class="tet_title"> 姓名: <span> ${data.data[i].xm}</span></span><br>
+                                                                                <span class="tet_title"> 职务: <span> ${data.data[i].zw}</span></span><br>
+                                                                                <span class="tet_title"> 电话: <span> ${data.data[i].lxdh}</span></span><br>
+                                                                                <span class="tet_title"> 擅长业务:<span>${data.data[i].ywzc}</span></span>
+                                                                            </div>
+                                                                        </div>`
+                                                    }
+                                                    $(".ren").html(html);
+                                                }
+                                            })
+                                        }
+                                    })
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    }
+</script>
+
+</html>

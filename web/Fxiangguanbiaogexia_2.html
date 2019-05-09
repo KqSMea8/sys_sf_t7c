@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相关样表</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+    <style>
+        .showPath {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .showbg,
+        .showPDF {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+        
+        .showPDF {
+            z-index: 9998;
+        }
+        </style>
+</head>
+
+<body>
+    <div id="header">
+        <span>相关样表</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="table_down">
+        <!-- <div class="each">
+          <a href="">
+              <span>XXXX合同-1</span>
+              <span class="right">2018-8-8</span>
+            </a>
+            
+        </div>
+        <div class="each">
+            <span>XXXX合同-2</span>
+            <span class="right">2018-8-8</span> -->
+            <div style="clear: both;"></div>
+        <!-- </div> -->
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="footer"></div>
+    <div class="showPath">
+        <div class="showPDF"></div>
+        <div class="showbg"></div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="./js/shipei.js"></script>
+<script type="text/javascript" src="js/flexible.js"></script>
+<script src="js/jquery.media.js"></script>
+<script type="text/javascript">
+    $(".footer").load("footer2.html");
+    
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+        return unescape(r[2]);
+        return null;
+    }
+
+    var id = getUrlParms("id");
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Data/form_info",
+        async: false,
+        data: {
+            id: id
+        },
+        dataType: 'json',
+        success: function(data) {
+            var html = "";
+            for (var i = 0; i < data.data.length; i++) {
+                html += `<div class="each" name="${data.data[i].title}" path="${data.data[i].path}" id="${data.data[i].id}">
+                    <span>${data.data[i].title}</span>
+                    <span class="right">${data.data[i].ct_time}</span>
+                    </div>`
+                    // console.log("--------------------------"+data.data[i].path);
+                }
+            $(".table_down").html(html);
+
+        }
+    })
+    $('.each').click(function() {
+        var name = $(this).attr('name');
+        var path = $(this).attr('path');
+        window.location.href = "Fxiangguanbiaogexia_3.html?path=" + path + '&name=' + encodeURI(encodeURI(name));
+    })
+</script>
+
+</html>

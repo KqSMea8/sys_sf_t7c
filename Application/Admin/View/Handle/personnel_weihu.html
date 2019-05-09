@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>审批列表-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='审批列表';
+        </php>
+        <include file="Common:intoHead" />
+        <script type="text/javascript" src="__PUBLIC__/Admin/Js/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/Css/WdatePicker.css">
+        <script type="text/javascript" src="__PUBLIC__/Admin/Js/WdatePicker.js"></script>
+
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">审批列表</div>
+                    </div>
+                    <form action="" method="get" id="quickForm">
+                        是否已指定人员:
+                        <select name="status">
+                            <option value="0">全部</option>
+                            <option value="1">未指定人员</option>
+                            <option value="2">已指定人员</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;时间：
+                        <input type="text" class="Wdate input uname" onFocus="WdatePicker({lang:'zh-cn'})"  name="start_time" style="width:170px;margin-top:0" value="{$_GET['start_time']}">至
+                        <input type="text" class="Wdate input uname" onFocus="WdatePicker({lang:'zh-cn'})"  name="end_time" style="width:200px;margin-top:0" value="{$_GET['end_time']}">
+                        <input type="hidden" name="type" value="{$_GET['type']}">
+                        区域：
+                        <select name="qy">
+                            <option value="">请选择</option>
+                            <volist name="qy" id="vo">
+                            <option value="{$vo.id}">{$vo.name}</option>
+                            </volist>
+                        </select>
+                        人员：
+                        <select name="jgry_id">
+                            <option value="">请选择</option>
+                            <volist name="jgry" id="vo">
+                            <option value="{$vo.id}">{$vo.xm}</option>
+                            </volist>
+                        </select>
+                        <button class="btn">搜索</button>
+                    </form>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>申请人</td>
+                                <td>受理机构</td>
+                                <if condition="$type eq 2">
+                                <td>投诉人员</td>
+                                <else />
+                                <td>受理机构人员</td>
+                                </if>
+                                <td>状态</td>
+                                <td>是否指定审批人员</td>
+                                <td>申请时间</td>
+                                <td>完成时间</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tr align="center" id="{$vo.id}">
+                                <td>{$vo.id}</td>
+                                <td>
+                                <if condition="$vo['xm'] neq ''">
+                                {$vo.xm}
+                                <else />
+                                {$vo.proposer_name}
+                                </if></td>
+                                <td>{$vo.jg_name}</td>
+                                <td>{$vo.jgry_name}</td>
+                                <td>{$vo.status}</td>
+                                <td>
+                                    <if condition="$vo.flag eq 1">
+                                        <span style="color:red;">未指定</span>
+                                    <else/>
+                                        <span style="color:green;">已指定</span>
+                                    </if>
+                                </td>
+                                <td>{$vo.ct_time|date="Y-m-d H:i:s",###}</td>
+                                <td><if condition="$vo['finish_time'] eq 0"><else />{$vo.finish_time|date="Y-m-d H:i:s",###}</if></td>
+                                <td>
+                                    <!-- <if condition="$vo['flag'] eq 1"> -->
+                                    <!-- [ <a href="__URL__/set?id={$vo.id}&cate={$cate}&type={$type}">指定人员 </a> ] -->
+                                    <!-- </if> -->
+                                    [ <a href="__URL__/set?id={$vo.id}&cate={$cate}&type={$type}">指定人员 </a> ]
+                                </td>
+                            </tr>
+                        </volist>
+                        <tr><td colspan="8" align="right">{$page}</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>
+<script type="text/javascript">
+    /*var url=window.location.search;
+    var text=url.substr(url.length-1,1)
+    console.log(text);*/
+
+</script>

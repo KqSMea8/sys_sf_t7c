@@ -1,0 +1,111 @@
+.section {
+    width: 23rem;
+    overflow: hidden;
+    margin: 1rem auto;
+}
+
+.select {
+    width: 18rem;
+    margin: .5rem auto;
+    height: 3.5rem;
+}
+
+.select p {
+    display: inline-block;
+    margin-right: .5rem;
+    height: 2rem;
+    width: 4rem;
+    line-height: 2rem;
+	font-size: 0.9rem;
+}
+input{
+    border: 1px solid #999;
+}
+.select select,
+.select input {
+    width: 13rem;
+    height: 2rem;
+    font-size: .9rem;
+}
+
+.select input {
+    width: 12.7rem;
+}
+
+.img-right {
+    float: right;
+}
+.section_img{
+    height: 10rem;
+}
+.section_img form {
+    display: inline-block;
+    float: left;
+	margin-left:1rem;
+    width: 20rem;
+}
+
+.img_left,
+.img-right {
+    width: 12rem;
+    height: 100%;
+    position: relative;
+}
+.filed2{
+    position: absolute;
+    top: 8.5rem;
+    left: 6.5rem;
+}
+.img_left p,
+.img-right p {
+    width: 5rem;
+    line-height: 2rem;
+    text-align: right;
+    font-size: .9rem;
+}
+
+.img_left img,
+.img-right img {
+    width: 7rem;
+    height: 6.25rem;
+    margin-left: 6.5rem;
+    float: left;
+}
+
+.img_left input,
+.img-right input {
+    width: 7rem;
+    float: right;
+    opacity: 0;
+    height: 6.25rem;
+    margin-top: -6.54rem;
+}
+
+.button input {
+    outline: none;
+    margin: 3rem 35%;
+    background: rgb(25, 99, 148);
+    padding: .45rem 2rem;
+    border: 0;
+    color: #ffffff;
+    border-radius: .2rem;
+}
+
+.Modal-frame {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -7rem;
+    margin-top: -4.5rem;
+    height: 9rem;
+    display: none;
+    width: 14rem;
+    background: rgba(0, 0, 0, .4);
+}
+
+.Modal-frame p {
+    color: #ffffff;
+    height: 9rem;
+    line-height: 9rem;
+    text-align: center;
+}

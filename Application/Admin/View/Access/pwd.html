@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>添加管理员-权限管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='修改密码';
+        </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+    <div class="wrap"> <include file="Common:head" />
+        <div class="mainBody"> <include file="Common:left" />
+            <div id="Right">
+                <div class="contentArea">
+                    <div class="Item hr">
+                        <div class="current">修改密码</div>
+                    </div>
+                    <form action="" method="post">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                            <tr>
+                                <th width="120">账号邮件地址：</th>
+                                <td><input <if condition="ACTION_NAME eq 'editAdmin'"> disabled="disabled"</if> name="email" type="text" class="input email" size="40" value="{$info.email}" /></td>
+                            </tr>
+                            <tr>
+                                <th>旧密码：</th>
+                                <td><input class="input pwd" name="pwd" type="password" size="40" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th>新密码：</th>
+                                <td><input class="input newPwd" name="pwd" type="password" size="40" value="" /></td>
+                            </tr>
+                            <tr>
+                                <th>确认密码：</th>
+                                <td><input class="input newPwds" name="pwd" type="password" size="40" value="" /></td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="aid" value="{$info.aid}"/>
+                    </form>
+                    <div class="commonBtnArea">
+                        <button class="btn submit">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+    $(".submit").click(function(){
+    	var Email=$(".email").val();
+    	var Pwd=$(".pwd").val();
+    	var NewPwd=$(".newPwd").val();
+    	var NewPwds=$(".newPwds").val();
+        $.ajax({
+            type:"post",
+            url:"{:U("Access/changePwd")}",
+            data:{email:Email,pwd:Pwd,newpwd:NewPwd,repwd:NewPwds},
+            dataType:"json",
+            success:function(data){
+            	if(data.state==-1){
+            		alert(data.msg);
+            	}else{
+            		console.log(data);
+            	}
+            }
+        })
+    })
+</script>
+</body>
+</html>

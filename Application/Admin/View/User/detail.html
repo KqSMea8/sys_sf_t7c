@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='用户信息';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">用户信息</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">用户ID：</th>
+                            <td>
+                                {$list.id}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">用户姓名：</th>
+                            <td>
+                                <input type="text" class="input uname" name="xm" value="{$list.xm}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">用户身份证号：</th>
+                            <td>
+                                {$list.zjh}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">用户联系电话：</th>
+                            <td>
+                                <input type="text" class="input uname" name="lxdh" value="{$list.lxdh}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">用户性别：</th>
+                            <td>
+                                <input type="text" class="input uname" name="xb" value="{$list.xb}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">用户邮箱：</th>
+                            <td>
+                                <input type="text" class="input uname" name="yx" value="{$list.yx}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">用户QQ：</th>
+                            <td>
+                                <input type="text" class="input uname" name="qq" value="{$list.qq}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">城市：</th>
+                            <td>
+                                <input type="text" class="input uname" name="cs" value="{$list.cs}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">联系地址：</th>
+                            <td>
+                                <input type="text" class="input uname" name="lxdz" value="{$list.lxdz}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">邮政编码：</th>
+                            <td>
+                                <input type="text" class="input uname" name="yzbm" value="{$list.yzbm}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">出生日期：</th>
+                            <td>
+                                <input type="text" class="input uname" name="csrq" value="{$list.csrq}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">学历：</th>
+                            <td>
+                                <input type="text" class="input uname" name="xl" value="{$list.xl}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">工作单位：</th>
+                            <td>
+                                <input type="text" class="input uname" name="gzdw" value="{$list.gzdw}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">注册IP</th>
+                            <td>
+                                {$list.zcip}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">注册时间</th>
+                            <td>
+                                {$list.zcsj}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">最后登录时间</th>
+                            <td>
+                                {$list.zhdlsj}
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+
+            $(".submit").click(function(){
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

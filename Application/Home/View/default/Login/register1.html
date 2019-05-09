@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>弘毅财智-注册</title>
+    <link rel="stylesheet" type="text/css" href="__CSS__/register.css"/>
+    <!-- <script src="lib/jquery-1.11.3/jquery.js"></script> -->
+    <script src="__LIB__/jquery-1.9.1/jquery.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<a href="index.html"><img src="__IMG__/logo.png" alt=""></a>
+		</div>
+		<div class="content">
+			
+			<div class="content_table">
+				<div class="tit">
+					注册
+				</div>
+
+					<!-- <ul class="list"> -->
+						<!-- <li><span></span><input type="text" id="tel" class="tel" onblur="Uname(this.value)"  placeholder="请输入用户名"/></li> -->
+						<!-- <div id="error1"></div> -->  
+            <!-- <li><span></span><input type="password" class="pwd" onblur="pwds(this.value)" placeholder="输入密码"/></li> -->
+            <!-- <li><span></span><input type="password" class="pwds" onblur="time(this.value)" placeholder="确定密码"/></li> -->
+            <!-- <li><span></span><input type="password" id="yqm" placeholder="邀请员序号" /></li> -->
+						<!-- <li><div><span></span><input type="text" id="yzm"  placeholder="输入短信验证码"/></div><a class="fs" >获取验证码</a></li> -->
+					<!-- </ul>					 -->
+			
+          <ul class="list">
+            <li><span></span><input type="text" class="tel" value="18336077661" placeholder="请输入手机号"/></li>
+            <li><span></span><input type="password" value="1122" class="password" placeholder="输入密码"/></li>
+            <li><span></span><input type="password" value="1122" class="passwords" placeholder="确定密码"/></li>
+            <li><span></span><input type="text" class="yqm" placeholder="邀请员序号" /></li>
+            <li><div><span></span><input type="text" class="yzm"  placeholder="输入短信验证码"/></div><a class="yzmBtn" ><img src="http://jr.wokerr.com/index.php/home/login/photo_yzm" alt="验证码" onclick="this.src='http://jr.wokerr.com/index.php/home/login/photo_yzm?'+Math.random()"></a></li>
+          </ul>
+				<div class="registerBtn" >
+					注册
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+      <div class="footer_content">
+        <div class="footer_btn">
+          <a href="../Index/index.html" style="font-weight: 600;">首页</a>
+          <span>|</span>
+          <a href="../Product/productDisplay.html" style="font-weight: 600;">产品展示</a>
+          <span>|</span>
+          <a href="../Promoter/extensionSystem.html" style="font-weight: 600;">推广员系统</a>
+          <span>|</span>
+          <a href="../Safe/safe1.html" style="font-weight: 600;">安全保证</a>
+          <span>|</span>
+          <a href="../Problem/problem.html" style="font-weight: 600;">问题回答</a>
+        </div>
+        <p class="copyright" style="font-weight: 600;">Copyright © 2004-2018  弘毅财智HY.com 版权所有</p>
+      </div>
+    </div>
+	</body>
+</html>
+<script src="__JS__/operateCookie.js"></script>
+<script>
+
+  // 注册：传值方式：post，参数：yshouji，参数名称：手机号，类型：string，参数：password，参数名称：密码，类型：string，参数：yzm，参数名称：验证码，类型：string
+/*
+  1、判断手机号是否为空
+  2、判断密码是否一样
+
+*/ 
+var $tel = $(".tel");
+var $password = $(".password");
+var $passwords = $(".passwords");
+var $yqm = $(".yqm");
+var $yzm = $(".yzm");
+var $yzmBtn = $(".yzmBtn");
+var $registerBtn = $(".registerBtn");
+var count = 0;
+var yzmURL = 'http://jr.wokerr.com/index.php/home/login/photo_yzm';
+var registerURL = 'http://jr.wokerr.com/index.php/home/login/register';
+//$yzmBtn.click(function() {
+//  var judgeVal = judgeInput($tel, $password, $passwords);
+//  if (count > 0 || judgeVal == false) {
+//    return;
+//  }else{
+//    count = 60;
+//  }
+//  var timer = setInterval(function(){
+//      $yzmBtn.html("重新发送" + count-- + "秒");
+//        if(count == 0){
+//          $yzmBtn.html("获取验证码");
+//          clearInterval(timer);
+//        }
+//  },1000);
+//  // 获取验证码
+//  $.post(yzmURL,{
+//  tel: $.trim($tel.val())
+//  }, function(data) {
+//      console.log("data"+data);
+//      var dataJSON = $.parseJSON(data);
+//      console.log(dataJSON);
+//      if (dataJSON.state == "1") {
+//          $yzm.val(dataJSON.data.yzm);
+//          count = 0;
+//          $yzmBtn.html("获取验证码");
+//          clearInterval(timer);
+//      }else{
+//          $tel.val("");
+//          $password.val("");
+//          $passwords.val("");
+//          $yqm.val("");
+//          $yzm.val("");
+//          clearInterval(timer);
+//          alert(dataJSON.msg);
+//      }
+//  });
+//});
+
+var yqmss=getCookie("yqm");
+$(".yqm").val(yqmss);
+
+
+// 点击注册
+$registerBtn.click(function() {
+    var judgeVal = judgeInput($tel, $password, $passwords);
+    if ($yzm.val() != "" && judgeVal != false) {
+        $.post(registerURL,
+          {
+            user_name: $.trim($tel.val()),
+            user_password: $.trim($password.val()),
+            repassword:$.trim($passwords.val()),
+            inviter_code: $.trim($yqm.val()),
+            verify_code: $.trim($yzm.val())
+          }, 
+        function(data) {
+          var dataJSON = $.parseJSON(data);
+          console.log(dataJSON);
+          if (dataJSON.state == "1") {
+              alert("恭喜您，注册成功！");
+              setCookie({user_name: $.trim($tel.val()),token: 1},7);
+             window.location.href = "login.html";
+          }else{
+              $tel.val("");
+              $password.val("");
+              $passwords.val("");
+              $yqm.val("");
+              $yzm.val("");
+              alert(dataJSON.msg);
+          }
+        });
+    }else{
+    	alert("注册失败")
+    }
+});
+
+//版权
+$.ajax({
+  type:"post",
+  url:"http://jr.wokerr.com/index.php/Home/Index/cu_info",
+  async:false,
+  data:{},
+  dataType:"json",
+  success:function(data){
+    console.log(data);
+    $(".copyright").html(data.data.copyright);
+  }
+});
+
+// 对输入进行判断
+function judgeInput($tel, $password, $passwords) {
+  var tel = $.trim($tel.val());
+  var password = $.trim($password.val());
+  var passwords = $.trim($passwords.val());
+  if (tel) {
+      var numTel = parseInt(tel);
+      if(typeof numTel == "number" && numTel.toString().length == 11) {
+          if (password != "" && passwords != "") {
+            if (password != passwords) {
+                alert("两次输入的密码不一致！");
+                return false;
+            }else{
+                return true;
+            }
+          }else{
+            alert("密码不能为空！");
+            return false;
+          }
+      }else{
+        alert("请输入正确的手机号！");
+        return false;
+      }
+  }else{
+    alert("手机号不能为空！");
+    return false;
+  }
+}
+</script>
+	
+		
+	

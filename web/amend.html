@@ -1,0 +1,94 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/mydata.css">
+    <title>我的资料</title>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+<style>
+	.amend{
+		margin-top:50px;
+	}
+    .line{
+    	width:80%;
+    	height:38px;
+    	line-height: 38px;
+    	margin: 0 auto;
+    	margin-top:20px;
+    }
+     .line input{
+     	width:100%;
+     	height:100%;
+     	line-height: 100%;
+     	border:0;
+     	padding-left:15px;
+     	background:#f4f4f4;
+     	border-bottom:1px solid #000;
+     }
+     .line  button{
+     	width:50%;
+     	height:30px;
+     	border:0;
+     	margin: 0 auto;
+     	display: block;
+     }
+</style>
+
+<body>
+    <header class="header">
+        <a href="javascript:window.history.back(-1);" class="x"><img src="img/zuojiantou.png"></a>
+        <h6>重置密码</h6>
+        <!-- <span class="keep">保存</span> -->
+    </header>
+    <div class="amend">
+	    <div class="line">
+	    	<input type="password" name="newpassword" placeholder="请输入密码"  class="password">
+	    </div>
+	    <div class="line">
+	    	<input type="password" name="password" placeholder="请输入密码"  class="password1">
+	    </div>
+	     <div class="line">
+	    	<button id="submit">确认修改</button>
+	    </div>
+    </div>
+   
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).on("click","#submit",function(){
+		var password = $(".password").val()
+		// console.log(password)
+		var password1 = $(".password1").val()
+		if(password != password1){
+			alert("两次密码不一致")
+			return false;
+		}
+		var token = localStorage.getItem("access_token");
+		// console.log(token)
+
+		$.ajax({
+			type:"post",
+			url:"https://sys.t7c.net/index.php/home/login/editpwd",
+			dataType:"json",
+			data:{
+				access_token:token,newpassword:password
+			},
+			success:function(res){
+
+				if(res.state == 1){
+					alert("修改成功")
+					history.go(-1)
+				}else{
+					alert(res.msg)
+				}
+			}
+		})
+	})
+</script>

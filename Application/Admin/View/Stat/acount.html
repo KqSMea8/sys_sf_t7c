@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='统计';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <form method="post" enctype="multipart/form-data">
+                <div class="Item hr">
+                    <div class="current">申办统计</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">申办信息统计：</th>
+                            <td>
+                                {$list.bid_count1}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">申办拒绝统计：</th>
+                            <td>
+                                {$list.bid_count2}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">申办完成统计：</th>
+                            <td>
+                                {$list.bid_count3}
+                            </td>
+                        </tr>
+                    </table>
+                <div class="Item hr">
+                    <div class="current">预约统计</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">预约信息统计：</th>
+                            <td>
+                                {$list.order_count1}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">预约拒绝统计：</th>
+                            <td>
+                                {$list.order_count2}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">预约完成统计：</th>
+                            <td>
+                                {$list.order_count3}
+                            </td>
+                        </tr>
+                    </table>
+                <div class="Item hr">
+                    <div class="current">投诉统计</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">投诉信息统计：</th>
+                            <td>
+                                {$list.complain_count1}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">投诉拒绝统计：</th>
+                            <td>
+                                {$list.complain_count2}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">投诉完成统计：</th>
+                            <td>
+                                {$list.complain_count3}
+                            </td>
+                        </tr>
+                    </table>
+                 <div class="Item hr">
+                    <div class="current">评价统计</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">非常满意统计：</th>
+                            <td>
+                                {$list.evaluate_1}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">满意统计：</th>
+                            <td>
+                                {$list.evaluate_2}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">一般统计：</th>
+                            <td>
+                                {$list.evaluate_3}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">不满意统计：</th>
+                            <td>
+                                {$list.evaluate_4}
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <!-- <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

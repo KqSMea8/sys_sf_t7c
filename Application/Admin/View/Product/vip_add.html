@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>会员等级列表-网站设置-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='添加会员等级列表';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">添加会员等级列表</div>
+                </div>
+                <form action="{:U('Access/add_vip')}" method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">vip方案名称：</th>
+                            <td><input name="name" type="text" class="input" size="30" value="{$list.name}" /> </td>
+                        </tr>
+                        <tr>
+                            <th>vip1：</th>
+                            <td><input class="input" name="vip1" type="text" size="15" value="{$list.vip1}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip2：</th>
+                            <td><input class="input" name="vip2" type="text" size="15" value="{$list.vip2}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip3：</th>
+                            <td><input class="input" name="vip3" type="text" size="15" value="{$list.vip3}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip4：</th>
+                            <td><input class="input" name="vip4" type="text" size="15" value="{$list.vip4}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip5：</th>
+                            <td><input class="input" name="vip5" type="text" size="15" value="{$list.vip5}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip6：</th>
+                            <td><input class="input" name="vip6" type="text" size="15" value="{$list.vip6}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip7：</th>
+                            <td><input class="input" name="vip7" type="text" size="15" value="{$list.vip7}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip8：</th>
+                            <td><input class="input" name="vip8" type="text" size="15" value="{$list.vip8}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip9：</th>
+                            <td><input class="input" name="vip9" type="text" size="15" value="{$list.vip9}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip10：</th>
+                            <td><input class="input" name="vip10" type="text" size="15" value="{$list.vip10}" /></td>
+                        </tr>
+                        <tr>
+                            <th>vip11：</th>
+                            <td><input class="input" name="vip10" type="text" size="15" value="{$list.vip11}" /></td>
+                        </tr>
+
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                </form>
+                <div class="commonBtnArea" >
+                    <button class="btn submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+    $(function(){
+        $(".submit").click(function(){
+            commonAjaxSubmit();
+        });
+    });
+</script>
+</body>
+</html>

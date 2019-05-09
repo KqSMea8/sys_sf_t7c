@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>编辑会员-权限管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑会员';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑会员</div>
+                </div>
+                <form action="{:U('Access/add_user')}" method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                    	<tr>
+                            <th>会员等级：</th>
+                            <td>
+                            	<select class="input" name="vip" value="{$list.vip}" type="text" style="width:80px;height:30px">
+                            		<option value="vip1">vip1</option>
+                            		<option value="vip2">vip2</option>
+                            		<option value="vip3">vip3</option>
+                            		<option value="vip4">vip4</option>
+                            		<option value="vip5">vip5</option>
+                            		<option value="vip6">vip6</option>
+                            		<option value="vip7">vip7</option>
+                            		<option value="vip8">vip8</option>
+                            		<option value="vip9">vip9</option>
+                            		<option value="vip10">vip10</option>
+                            		<option value="vip11">vip11</option>
+                        		</select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>会员姓名：</th>
+                            <td><input name="user_name" type="text" class="input" size="40" value="{$list.user_name}" /></td>
+                        </tr>
+                        <tr>
+                            <th width="120">密码：</th>
+                            <td><input name="user_password" type="password" class="input" size="30" value="{$list.user_password}" />  不修改留空</td>
+                        </tr>
+                        <tr>
+                            <th width="120">邀请码：</th>
+                            <td><input name="invite_code" type="text" class="input" size="30" value="{$list.invite_code}" />（可不填）</td>
+                        </tr>
+                        <tr>
+                            <th width="120">手机号码：</th>
+                            <td><input name="tel" type="text" class="input" size="30" value="{$list.tel}" /></td>
+                        </tr>
+                        <tr>
+                            <th width="120">推广员绩效比例：</th>
+                            <td><input name="trate" type="text" class="input" size="30" value="{$list.trate}" /></td>
+                        </tr>
+                        <tr>
+                            <th width="120">状态：</th>
+                            <td>
+                            	<select name="state" style="width: 80px;">
+                                        <if condition="$list.state eq 1">
+                                            <option value="1" selected>启用</option>
+                                            <option value="0">禁用</option>
+                                            <else/>
+                                            <option value="1">启用</option>
+                                            <option value="0" selected>禁用</option>
+                                        </if>
+                                    </select>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                </form>
+                <div class="commonBtnArea" >
+                    <button class="btn submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="__PUBLIC__/kindeditor/kindeditor.js,__PUBLIC__/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+    $(".submit").click(function(){
+            <if condition="ACTION_NAME neq 'add_user'">
+//          if(!isEmail($("input[name='email']").val())){
+//          popup.alert("账号邮件地址格式错误");
+//          return false;
+//      }
+        if($.trim($("input[name='pwd']").val())==''){
+            popup.alert("密码不能为空");
+            return false;
+        }
+            </if>
+            commonAjaxSubmit();
+    })
+    
+</script>
+</body>
+</html>

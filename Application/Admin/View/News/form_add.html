@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑表格分类';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑表格分类</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">表格分类标题：</th>
+                            <td>
+                                <input type="text" name="title" class="input uname" size="40" value="{$list.title}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">表格分类类型：</th>
+                            <td>
+                                <select name="type">
+                                    <option value="0">请选择</option>
+                                    <option value="1" <if condition="$list['type'] eq 1">selected</if>>公证办理</option>
+                                    <option value="2" <if condition="$list['type'] eq 2">selected</if>>法律援助申请</option>
+                                    <option value="3" <if condition="$list['type'] eq 3">selected</if>>人民调解申请</option>
+                                    <option value="4" <if condition="$list['type'] eq 4">selected</if>>司法鉴定申请</option>
+                                    <option value="5" <if condition="$list['type'] eq 5">selected</if>>律师预约</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

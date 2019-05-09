@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加会员级别汇率-网站设置-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='网站设置 > 添加会员级别汇率';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">添加会员级别汇率</div>
+                </div>
+                <form action="{:U('Product/add_memberlevel')}" method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">名称：</th>
+                            <td><input name="name" type="text" class="input" size="40"/> </td>
+                        </tr>
+                        <tr>
+                            <th width="120">特殊利率：</th>
+                            <td><input name="special_rate" type="text" class="input" size="40"/>　•　百分比计算 </td>
+                        </tr>
+                        <tr>
+                            <th width="120">初始利率：</th>
+                            <td><input name="initial_rate" type="text" class="input" size="40"/>　•　百分比计算 </td>
+                        </tr>
+                        <tr>
+                            <th width="120">递减利率：</th>
+                            <td><input name="degression_rate" type="text" class="input" size="40"/>　•　百分比计算 </td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="commonBtnArea" >
+                    <button class="btn submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+    $(function(){
+        $(".submit").click(function(){
+            commonAjaxSubmit();
+        });
+    });
+</script>
+</body>
+</html>

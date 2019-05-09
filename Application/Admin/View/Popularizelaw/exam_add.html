@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑考试试题';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑考试试题</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">考试试题序号：</th>
+                            <td>
+                                <input type="text" name="order_number" class="input uname" size="80" value="{$list.order_number}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">考试试题名称：</th>
+                            <td>
+                                <input type="text" name="title" class="input uname" size="80" value="{$list.title}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">A选项：</th>
+                            <td>
+                                <input type="text" name="A_answer" class="input uname" size="80" value="{$list.A_answer}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">B选项：</th>
+                            <td>
+                                <input type="text" name="B_answer" class="input uname" size="80" value="{$list.B_answer}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">C选项：</th>
+                            <td>
+                                <input type="text" name="C_answer" class="input uname" size="80" value="{$list.C_answer}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">D选项：</th>
+                            <td>
+                                <input type="text" name="D_answer" class="input uname" size="80" value="{$list.D_answer}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">正确选项：</th>
+                            <td>
+                                <input type="radio" name="true_answer" value="A" <if condition="$list['true_answer'] eq A">checked</if>/>A　
+                                <input type="radio" name="true_answer" value="B" <if condition="$list['true_answer'] eq B">checked</if>/>B　
+                                <input type="radio" name="true_answer" value="C" <if condition="$list['true_answer'] eq C">checked</if>/>C　
+                                <input type="radio" name="true_answer" value="D" <if condition="$list['true_answer'] eq D">checked</if>/>D　
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <input type="hidden" name="type_id" value="{$type_id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+       $(function(){
+           $(".submit").click(function(){
+            commonAjaxSubmit();
+           });
+       });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑司法所';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+        <div id="Right" style="float:none;width:100%">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑司法所</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">司法所编码:</th>
+                            <td>
+                                <input type="text" name="sfsbm" class="input uname" size="40" value="{$list.sfsbm}"/>
+                            </td>
+                            <th width="120">司法所名称:</th>
+                            <td>
+                                <input type="text" name="jgmc" class="input uname" size="40" value="{$list.jgmc}"/>
+                            </td>
+                            <th width="120">司法所照片:</th>
+                            <td>
+                                <input type="file" name="sfszp" class="input uname" size="40" value="{$list.sfszp}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">司法所组织编码:</th>
+                            <td>
+                                <input type="text" name="sfszzbm" class="input uname" size="40" value="{$list.sfszzbm}"/>
+                            </td>
+                            <th width="120">立户列编所:</th>
+                            <td>
+                                <input type="text" name="lhlbs" class="input uname" size="40" value="{$list.lhlbs}"/>
+                            </td>
+                            <th width="120">管理体制:</th>
+                            <td>
+                                <input type="text" name="gltz" class="input uname" size="40" value="{$list.gltz}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">设立区域类型:</th>
+                            <td>
+                                <input type="text" name="slqylx" class="input uname" size="40" value="{$list.slqylx}"/>
+                            </td>
+                            <th width="120">设立区域:</th>
+                            <td>
+                                <input type="text" name="slqy" class="input uname" size="40" value="{$list.slqy}"/>
+                            </td>
+                            <th width="120">建制级别:</th>
+                            <td>
+                                <input type="text" name="jzjb" class="input uname" size="40" value="{$list.jzjb}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">分配政法专项编制数量:</th>
+                            <td>
+                                <input type="text" name="fpzfzxbzsl" class="input uname" size="40" value="{$list.fpzfzxbzsl}"/>
+                            </td>
+                            <th width="120">落实政法专项编制数量:</th>
+                            <td>
+                                <input type="text" name="lszfzxbzsl" class="input uname" size="40" value="{$list.lszfzxbzsl}"/>
+                            </td>
+                            
+                            <th width="120">司法所人员数量:</th>
+                            <td>
+                                <input type="text" name="sfsrysl" class="input uname" size="40" value="{$list.sfsrysl}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">建立党（团）支部情况:</th>
+                            <td>
+                                <input type="text" name="jldtzbqk" class="input uname" size="40" value="{$list.jldtzbqk}"/>
+                            </td>
+                            <th width="120">联系电话:</th>
+                            <td>
+                                <input type="text" name="dh" class="input uname" size="40" value="{$list.dh}"/>
+                            </td>
+                            
+                            <th width="120">传真号码:</th>
+                            <td>
+                                <input type="text" name="czhm" class="input uname" size="40" value="{$list.czhm}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">联系地址:</th>
+                            <td>
+                                <input type="text" name="dz" class="input uname" size="40" value="{$list.dz}"/>
+                            </td>
+                            <th width="120">邮政编码:</th>
+                            <td>
+                                <input type="text" name="yzbm" class="input uname" size="40" value="{$list.yzbm}"/>
+                            </td>
+                            
+                            <th width="120">电子邮箱:</th>
+                            <td>
+                                <input type="text" name="dzyx" class="input uname" size="40" value="{$list.dzyx}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">司法所长（负责人）:</th>
+                            <td>
+                                <input type="text" name="sfsz" class="input uname" size="40" value="{$list.sfsz}"/>
+                            </td>
+                            <th width="120">司法所长（负责人）联系电话:</th>
+                            <td>
+                                <input type="text" name="sfszlxdh" class="input uname" size="40" value="{$list.sfszlxdh}"/>
+                            </td>
+                            
+                            <th width="120">司法副所长:</th>
+                            <td>
+                                <input type="text" name="sffsz" class="input uname" size="40" value="{$list.sffsz}"/>
+                            </td>
+                        </tr>     
+                        <tr>
+                            <th width="120">司法副所长联系电话:</th>
+                            <td>
+                                <input type="text" name="sffszlxdh" class="input uname" size="40" value="{$list.sffszlxdh}"/>
+                            </td>
+                            <th width="120">经度:</th>
+                            <td>
+                                <input type="text" name="jd" class="input uname" size="40" value="{$list.jd}"/>
+                            </td>
+                            <th width="120">纬度:</th>
+                            <td>
+                                <input type="text" name="wd" class="input uname" size="40" value="{$list.wd}"/>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th width="120">简介:</th>
+                            <td>
+                                <textarea name="jgjj" cols="30" rows="10">{$list.jgjj}</textarea>
+                            </td>
+                             <th width="120">执业区域：</th>
+                            <td>
+                                <if condition="$qy_id neq ''">
+                                        <input type="hidden" name="qy" value="{$qy_id}">
+                                        <volist name="qy" id="vo">
+                                            <if condition="$vo['id'] eq $qy_id">{$vo.name}</if>
+                                        </volist>
+                                    <else />
+                                    <select name="qy">
+                                    <option value="0">请选择</option>
+                                        <volist name="qy" id="vo">
+                                            <option value="{$vo.id}" <if condition="$vo['id'] eq $list['qy']">selected</if>>{$vo.name}</option>
+                                        </volist>
+                                     </select>
+                                    </if>
+                            </td>
+                            <th width="120">状态:</th>
+                            <td>
+                                <input type="radio" name="zt" value="1" <if condition="$list['zt'] eq 1">checked</if>>有效
+                                <input type="radio" name="zt" value="0" <if condition="$list['zt'] eq 0">checked</if>>无效
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" style="width:100%;right:auto;">
+                        <span class="btn submit">提交</span>
+                        <span class="btn back">返回</span>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+             $(".back").click(function(){
+                var url='__URL__/jg?qy='+index+'&type='+jg+'&cate='+type;
+                showFirme(url)
+             })
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             var url='__URL__/sfs_add';
+             commonAjaxSubmits(url);
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

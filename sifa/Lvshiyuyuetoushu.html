@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线投诉</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+    <script src="js/mobileSelect.js"></script>
+    <link rel="stylesheet" href="css/mobileSelect.css">
+    <style>
+        .bq_con{
+    position: relative;
+}
+    .imgde{
+        position: absolute;
+        width: 4.6875rem;
+        height: 5.625rem;
+        overflow: hidden;
+        vertical-align: middle;
+        opacity: 0;
+        top: .61rem;
+    }
+    .img_1 {
+        left: 7.7875rem;
+    }
+    .img_2 {
+        left: 12.7rem;
+    }
+    .img_3{
+        left: 17.7rem;
+    }
+    .nav_first textarea{
+        font-size: 1rem;
+    }
+    .tishi{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 6rem;
+        height: auto;
+        padding: .5rem;
+        display: none;
+        background: rgba(0,0,0,.5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -3rem;
+        z-index: 999999;
+    }
+    .nav_first span {
+    width: 59.5%;
+    display: block;
+    float: right;
+    margin-right: 1.53rem;
+    line-height: 1.875rem;
+    text-align: left;
+    border: 1px solid #ccc;
+    height: 30px;
+}
+.nav_first div{
+    display: block;
+    float: right;
+    margin-right: 1rem;
+    line-height:  1.875rem;
+    text-align: right;
+}
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <div id="header">
+        <span>在线投诉</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="nav_fir">
+        <div class="nav_first">
+            <span class="xz1"></span>
+            <div>被投诉机构</div>
+        </div>
+        <div class="nav_first">
+            <span id="xz2"></span>
+            <div>被投诉人员</div>
+        </div>
+        <div class="nav_first">
+            <span class="xz3"></span>
+            <div>投诉类别</div>
+        </div>
+        <div class="nav_first">
+            <input class="biaoti" type="text">
+            <div>投诉标题</div>
+        </div>
+        <div class="nav_first" style="height:6.875rem;">
+            <textarea type="text" class="neirong" style="height:6.25rem;"></textarea>
+            <div>投诉内容</div>
+        </div>
+    </div>
+    <div class="BidQuery">
+        <div class="bq_con" >
+            <span class="left" style="float:left">上传附件</span>
+            <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+            <input type="file" class="img_1 imgde" name="">
+            <img src="./img/tianjia.jpg" class="img2" alt="">
+             <input type="file" class="img_2 imgde" name="">
+            <img src="./img/tianjia.jpg" class="img3" alt="">
+             <input type="file" class="img_3 imgde" name="">
+        </div>    
+    </div>
+    <div class="BidQuery">
+        <div class="bq_con">
+            <span class="left" style="float:left">上传视频或录音</span>
+            <img src="./img/tianjia.jpg" alt="" style="width:6.875rem;height:4.6875rem;margin-left:1%;">
+            <p style="margin-left:6.875rem;">上传视频不能大于1G</span>
+        </div>
+    </div>
+    <div class="onlineOrder_button" style="height:3.125rem;">
+        <button id="mid_lit" >投诉</button>
+    </div>
+<div style="width: 100%;height: 3.3rem"></div>
+<div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+        $(".footer").load("footer2.html");
+
+// ==========存储变量
+var access_token=localStorage.getItem("access_token");
+var gzc;
+var gzc_name;
+var gzy;
+var gzy_name;
+var complain_type;
+//===============第一个select 
+var gzc;
+var xz1=[];
+var lk1;
+var xz2s=[];
+    $.ajax({
+        type:'post',
+        url:'http://sf.wokerr.com/index.php/home/Data/gzc',
+        data:{},
+        dataType:'json', 
+        async: true,   //同步异步
+        success:function(data){
+            console.log(data);
+            // var html=""
+                var tk=data.data;
+            for(var i=0; i<data.data.length;i++){
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].jgmc}</option>`;
+                xz1.push(data.data[i].jgmc);
+            }
+            // $(".select1").append(html);
+        var mobileSelect = new MobileSelect({
+            trigger: '.xz1',
+            title: '请选择公证处',
+            wheels: [{
+                data: xz1
+            }],
+            position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+            transitionEnd: function(indexArr, data) {
+                //console.log(data);
+            },
+            callback: function(indexArr, data) {
+                console.log(data);
+                fgld = data + "";
+                $(".xz1").attr("value", data)
+                for (var i = 0; i < tk.length; i++) {
+                    if (data == tk[i].jgmc) {
+                            gzc = tk[i].id;
+                        }
+                    }
+
+                           $.ajax({
+                                type:'post',
+                                url:'http://sf.wokerr.com/index.php/home/Data/gzc',
+                                data:{
+                                    id:gzc
+                                },
+                                dataType:'json', 
+                                async: true,   //同步异步
+                                success:function(data){
+                                    console.log(data);
+                                    // var html1="";
+                                    var tk1=data.data;
+                                    for(var i=0;i<data.data.length;i++){
+                                         xz2s.push(data.data[i].xm)
+                                        // html1+=`<option value="" id="${data.data[i].id}" ur="${data.data[i].zp}" lxdh="${data.data[i].lxdh}">${data.data[i].xm}</option>`;
+                                    }
+                                    // $(".select2").append(html1);
+                                    var mobileSelect1 = new MobileSelect({
+                                        trigger: '#xz2',
+                                        title: '请选择公证元',
+                                        wheels: [{
+                                            data:xz2s
+                                        }],
+                                        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                        transitionEnd: function(indexArr, data) {
+                                            //console.log(data);
+                                        },
+                                        callback: function(indexArr, data) {
+                                            console.log(data);
+                                            fgld = data + "";
+                                            $("#xz2").attr("value", data)
+                                            for (var i = 0; i < tk1.length; i++) {
+                                                if (data == tk1[i].xm) {
+                                                        lk1 = tk1[i].id;
+                                                    }
+                                            }
+                                        }
+                                    })
+                                }
+                            })
+
+
+            }
+        })
+        }
+    })
+$(".select1").change(function(){
+    gzc=$(this).find("option:selected").attr("id");
+    gzc_name=$(this).find("option:selected").text();
+})
+// ===============第二个select
+
+//     $("#xz2").click(function(){
+//         console.log(gzc);
+//         if(gzc==undefined||gzc==""){
+//             $(".tishi").text("需要先选择被投诉机构");
+//             $(".tishi").fadeIn().delay(500).fadeOut();
+//         }else{
+//        // gzc=$(this).find("option:selected").attr("id");
+//        $.ajax({
+//             type:'post',
+//             url:'http://sf.wokerr.com/index.php/home/Data/gzc',
+//             data:{
+//                 id:gzc
+//             },
+//             dataType:'json', 
+//             async: true,   //同步异步
+//             success:function(data){
+//                 console.log(data);
+//                 // var html1="";
+//                 var tk1=data.data;
+//                 for(var i=0;i<data.data.length;i++){
+//                      xz2s.push(data.data[i].xm)
+//                     // html1+=`<option value="" id="${data.data[i].id}" ur="${data.data[i].zp}" lxdh="${data.data[i].lxdh}">${data.data[i].xm}</option>`;
+//                 }
+//                 // $(".select2").append(html1);
+//                 var mobileSelect1 = new MobileSelect({
+//                     trigger: '#xz2',
+//                     title: '请选择公证元',
+//                     wheels: [{
+//                         data:xz2s
+//                     }],
+//                     position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+//                     transitionEnd: function(indexArr, data) {
+//                         //console.log(data);
+//                     },
+//                     callback: function(indexArr, data) {
+//                         console.log(data);
+//                         fgld = data + "";
+//                         $("#xz2").attr("value", data)
+//                         for (var i = 0; i < tk1.length; i++) {
+//                             if (data == tk1[i].xm) {
+//                                     lk1 = tk1[i].id;
+//                                     // lxdh=tk1[i].lxdh;
+//                                     // zp=tk1[i].zp;
+//                                 }
+//                         }
+//                     }
+//                 })
+//             }
+//         })
+//     }    
+// })
+$(".select2").change(function(){
+        gzy=$(this).find("option:selected").attr("id");
+        gzy_name=$(this).find("option:selected").text();
+})
+// =============第三个select
+var lk3   //下拉框id；
+var xz3=[]; // 下拉框数组
+    $.ajax({
+        type:'post',
+        url:'http://sf.wokerr.com/index.php/home/Data/complain_type',
+        data:{},
+        dataType:'json', 
+        async: true,   //同步异步
+        success:function(data){
+            console.log(data);
+            var tk3=data.data;
+            // var html="";
+            for(var i=0; i<data.data.length;i++){
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].title}</option>`;
+                xz3.push(data.data[i].title)
+            }
+            // $(".select3").append(html);
+            var mobileSelect3 = new MobileSelect({
+                trigger: '.xz3',
+                title: '请选择公证元',
+                wheels: [{
+                    data:xz3
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".xz3").attr("value", data)
+                    for (var i = 0; i < tk3.length; i++) {
+                        if (data == tk3[i].title) {
+                                lk3 = tk3[i].id;
+                            }
+                    }
+                }
+            })
+        }
+    })
+// $(".select2").change(function(){
+//         complain_type=$(this).find("option:selected").attr("id");
+// })
+
+// ========================上传图片  转base64
+var imgde1;
+var imgde2;
+var imgde3;
+ $(".img_1").change(function(){   
+ var file = this.files[0];
+   if (window.FileReader) {
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+                imgde1=e.target.result.split(",")[1];
+               $(".img1").attr("src",e.target.result)
+            };    
+       }
+});
+$(".img_2").change(function(){
+ var file = this.files[0];
+   if (window.FileReader) {    
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+            reader.onloadend = function (e) {
+               imgde2=e.target.result.split(",")[1];
+               $(".img2").attr("src",e.target.result)
+            };    
+       }
+});
+$(".img_3").change(function(){   
+ var file = this.files[0];
+   if (window.FileReader) {    
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+               // 图片base64
+                imgde3=e.target.result.split(",")[1];
+               $(".img3").attr("src",e.target.result)
+            };    
+       } 
+});
+
+// ===============提交
+
+
+
+    $("#mid_lit").click(function(){
+    var upload=imgde1+";"+imgde2+";"+imgde3
+        var biaoti=$(".biaoti").val();
+        var neirong=$(".neirong").val();
+        var gzc_name1=$(".xz1").text();
+        var gzy_name1=$("#xz2").text();
+            $.ajax({
+                type:'post',
+                url:'http://sf.wokerr.com/index.php/home/Handle/complain',
+                data:{
+                    type:5,
+                    jg_id:gzc,
+                    jg_name:gzc_name1,
+                    jgry_id:lk1,
+                    jgry_name:gzy_name1,
+                    title:biaoti,
+                    text:neirong,
+                    complain_type:lk3,
+                    upload:upload,
+                    access_token:access_token
+                },
+                dataType:'json', 
+                async: true,   //同步异步
+                success:function(data){
+                    console.log(data);
+                    if(data.status=="1"){
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                        window.location.reload()
+                    }else{
+                        $(".tishi").text("提交失败");
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })   
+    })
+
+</script>
+
+</html>

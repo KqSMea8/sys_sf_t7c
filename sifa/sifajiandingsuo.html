@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>司法鉴定</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/gongzhengchu.css">
+     <style>
+        .ctn div:last-child>span{
+        display: inline-block;
+     }
+    </style>
+	<script type="text/javascript">
+ 　　document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+	</script>
+</head>
+<body style="overflow: scroll;">
+    <div class="header">
+        <a href="javascript:;" onclick="JavaScript:history.back(-1);"><img src="img/fh.png"></a>
+        <h5>司法鉴定查询</h5>
+    </div>
+    <div class="fl">
+        <a href="javascript:;"><span class="active">机构信息</span></a>
+        <a href="javascript:;"><span>人员信息</span></a>
+    </div>
+    <!--     第一个页面 -->
+<div class="container">
+<div class="item1">
+    <div class="search">
+    	<input type="text" name="" placeholder="查询公证员">
+        <div><img src="img/ss.png"></div>
+    </div>
+    <div class="dz_val">
+        <div class="hang">
+            <div class="zuo">类别</div>
+            <div class="you">
+                <select name="" id="" class="select2" style="height:  0.8rem">
+                    <option value="123">法医类</option>
+                    <option value="456">司法会计类</option>
+                </select>
+                <select name="" id="" class="select2" style="height:  0.8rem">
+                    <option value="123">法医病理</option>
+                    <option value="456">法医临床</option>
+                </select>
+            </div>
+        </div>
+        <div class="text mg">
+            <div>区域</div>
+            <input type="text" />
+        </div>
+        <br>
+        <div class="text mg">
+            <div>所辖机构</div>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="ctn">
+        <span class="tet_title">机构名称: <span> 北京市朝阳区公证处</span></span><br>
+        <span class="tet_title">机构地址: <span> 北京市朝阳区123号</span></span><br>
+        <span class="tet_title">机构电话: <span> 1234567890</span></span>
+    </div>
+    <div class="wz_info">
+        <span>定位信息:</span>
+        <div>
+             <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+                    <style type="text/css">
+                    body, html,#allmaps {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+                    </style>
+                    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=dnT9GV3Ryp2xLpkhKrcIFBwScizyZT0k"></script>
+                    <title>添加动画标注点</title>
+                </head>
+                <body>
+                    <div id="allmaps"></div>
+                </body>
+                </html>
+                <script type="text/javascript">
+                    // 百度地图API功能
+                    var map = new BMap.Map("allmaps");
+                    var point = new BMap.Point(116.404, 39.915);
+                    map.centerAndZoom(point, 15);
+                    var marker = new BMap.Marker(point);  // 创建标注
+                    map.addOverlay(marker);               // 将标注添加到地图中
+                    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                </script>
+
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- 第一个item 结束 -->
+
+<!-- 第二个item 开始 -->
+
+    <div class="item1" style="display: none;">
+    <div class="search">
+        <input type="text" name="" placeholder="查询公证员">
+        <div><img src="img/ss.png"></div>
+    </div>
+    <div class="dz_val">
+       <!--  <div class="text">
+           <div>类型</div>
+           <select>
+               <option>请选择</option>
+               <option>工作人员信息</option>
+               <option>人员信息</option>
+           </select>   
+       </div>
+       <br> -->
+        <div class="text mg">
+            <div>区域</div>
+            <select>
+                <option>北京</option>
+            </select>   
+        </div>
+        <br>
+        <div class="text mg">
+            <div>所辖机构</div>
+            <select>
+                <option>昌平</option>
+            </select>   
+        </div>
+    </div>
+    <div class="ctn ctn1">
+        <div>
+            <img src="img/tx.png">
+        </div>
+        <div class="ino">
+            <span class="tet_title"> 姓名: <span> 张三</span></span><br>
+            <span class="tet_title"> 职务: <span> 老师</span></span><br>
+            <span class="tet_title"> 电话: <span> 1234567890</span></span>
+             <span class="tet_title"> 擅长业务:<span>律师相关，民事纠纷，刑事纠纷，案件侦破等</span></span>
+        </div>
+    </div>
+    <div class="ctn ctn1" style="margin-top:.2rem">
+        <div>
+            <img src="img/tx.png">
+        </div>
+        <div class="ino">
+            <span class="tet_title"> 姓名: <span> 张三</span></span><br>
+            <span class="tet_title"> 职务: <span> 老师</span></span><br>
+            <span class="tet_title"> 电话: <span> 1234567890</span></span>
+             <span class="tet_title"> 擅长业务:<span>律师相关，民事纠纷，刑事纠纷，案件侦破等</span></span>
+        </div>
+    </div>
+
+</div>
+</div>
+<div style="width: 100%;height: 1rem"></div>
+<div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".fl>a").each(function(){
+        var index=$(this).index();
+        console.log(index);
+        console.log($(".item1").eq(index))
+        $(this).click(function(){
+            $(".fl>a>span").removeClass('active');
+            $(".fl>a>span").eq(index).addClass('active').siblings().removeClass('active');
+            $(".container>div").eq(index).stop(true).show().siblings().stop(true).hide();
+        });
+    })
+
+</script>
+</html>

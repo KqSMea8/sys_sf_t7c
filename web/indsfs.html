@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title></title>
+
+    <!-- <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+
+    <link href="Scripts/webuploader/webuploader.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/webuploader/webuploader.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Scripts/style.css" rel="stylesheet" />
+    <link href="Scripts/demo.css" rel="stylesheet" />
+    <link href="Scripts/font-awesome.css" rel="stylesheet" /> -->
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        // window.onload = function() {
+        //     var input = document.getElementById("file_input");
+        //     var result, div;
+
+        //     if (typeof FileReader === 'undefined') {
+        //         result.innerHTML = "抱歉，你的浏览器不支持 FileReader";
+        //         input.setAttribute('disabled', 'disabled');
+        //     } else {
+        //         input.addEventListener('change', readFile, false);
+        //     }　　　　
+        //     function readFile() {
+        //         for (var i = 0; i < this.files.length; i++) {
+        //             if (!input['value'].match(/.jpg|.gif|.png|.bmp/i)) {　
+        //                 return alert("上传的图片格式不正确，请重新选择")　　　　　　　　　
+        //             }
+        //             var reader = new FileReader();
+
+        //             reader.readAsDataURL(this.files[i]);
+        //             reader.onload = function(e) {
+        //                 result = '<div class="PicInput fl" id="PicInput"><img src="' + this.result + '"><span class="DelInput"></span></div>';
+        //                 div = document.createElement('div');
+        //                 div.innerHTML = result;
+        //                 document.getElementById('PicUpload').appendChild(div);　　　　　　　
+        //             }
+        //         }
+        //     }
+        // }
+    </script>
+</head>
+<style>
+    input {
+        width: 500px;
+        height: 100px;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.1/jquery.form.min.js" integrity="sha384-tIwI8+qJdZBtYYCKwRkjxBGQVZS3gGozr3CtI+5JF/oL1JmPEHzCEnIKbDbLTCer" crossorigin="anonymous"></script>
+
+<body>
+    <!-- <div class="AddInpnt fl">
+        <input type="file" class="File" id="file_input" multiple/>
+    </div> -->
+    <input type="file" id="video" multiple=true onchange="showFileList()" />
+    <input id="uploadBtn" type="button" value="上传" onclick="doUpload()" />&nbsp;
+
+    <!-- <script type="text/javascript" src="{$IMG}/bstage/js/jquery.form.js" language="javascript"></script> -->
+    <script>
+        var quence = new Array(); //待上传的文件队列，包含切块的文件
+        /**
+         * 用户选择文件之后的响应函数，将文件信息展示在页面，同时对大文件的切块大小、块的起止进行计算、入列等
+         */
+
+        function showFileList() {
+            var files = document.getElementById("video").files[0];
+            // var uuid;
+            console.log(files)
+            if (!files) {
+                return;
+            }
+            var chunkSize = 5 * 1024 * 1024; //切块的阀值：5M
+            $(files).each(function(idx, e) {
+                //展示文件列表，略......
+                var fileSize = (Math.round(files.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+                if (e.size > chunkSize) { //文件大于阀值，进行切块
+
+                    //切块发送
+                    var chunks = Math.max(Math.floor(fileSize.split(".")[0] / chunkSize), 1) + 1; //分割块数
+                    console.log(fileSize)
+                    for (var i = 0; i < chunks; i++) {
+                        var startIdx = i * chunkSize; //块的起始位置
+                        var endIdx = startIdx + chunkSize; //块的结束位置
+                        if (endIdx > fileSize) {
+                            endIdx = fileSize;
+                        }
+                        var lastChunk = false;
+                        if (i == (chunks - 1)) {
+                            lastChunk = true;
+                        }
+                        var uuid = "uid" + i;
+
+                        //封装成一个task，入列
+                        var task = {
+                            file: e,
+                            uuid: uuid, //避免文件的重名导致服务端无法定位文件，需要给每个文件生产一个UUID
+                            chunked: true,
+                            startIdx: startIdx,
+                            endIdx: endIdx,
+                            currChunk: i,
+                            totalChunk: chunks
+                        }
+                        quence.push(task);
+
+                    }
+                } else { //文件小于阀值
+
+                    var task = {
+                        file: e,
+                        uuid: uuid,
+                        chunked: false
+                    }
+                    quence.push(task);
+
+                }
+            });
+        }
+
+        /**
+         *  上传器，绑定一个XMLHttpRequest对象，处理分配给其的上传任务
+         **/
+        function Uploader(name) {
+            this.url = "https://sys.t7c.net/index.php/home/Data/upload_video"; //服务端处理url
+            this.req = new XMLHttpRequest();
+            this.tasks; //任务队列
+            this.taskIdx = 0; //当前处理的tasks的下标
+            this.name = name;
+            this.status = 0; //状态，0：初始；1：所有任务成功；2：异常
+
+            //上传 动作
+            console.log(this)
+            this.upload = function(uploader) {
+                    this.req.responseType = "json";
+
+                    //注册load事件（即一次异步请求收到服务端的响应）
+                    this.req.addEventListener("load", function() {
+                        //更新对应的进度条
+                        console.log(this.response.uuid + ":" + this.response.fileSize)
+                        progressUpdate(this.response.uuid, this.response.fileSize);
+                        //从任务队列中取一个再次发送
+                        var task = uploader.tasks[uploader.taskIdx];
+                        if (task) {
+                            console.log(uploader.name + "：当前执行的任务编号：" + uploader.taskIdx);
+                            this.open("POST", uploader.url);
+                            this.send(uploader.buildFormData(task));
+                            uploader.taskIdx++;
+                        } else {
+                            console.log("处理完毕");
+                            uploader.status = 1;
+                        }
+                    });
+
+                    //处理第一个
+                    var task = this.tasks[this.taskIdx];
+                    if (task) {
+                        console.log(uploader.name + "：当前执行的任务编号：" + this.taskIdx);
+                        this.req.open("POST", this.url);
+                        this.req.send(this.buildFormData(task));
+                        this.taskIdx++;
+                    } else {
+                        uploader.status = 1;
+                    }
+                }
+                //提交任务
+            this.submit = function(tasks) {
+                this.tasks = tasks;
+            }
+
+            //构造表单数据
+            this.buildFormData = function(task) {
+                var file = task.file;
+                var formData = new FormData();
+                formData.append("fileName", file.name);
+                formData.append("fileSize", file.size);
+                formData.append("uuid", task.uuid);
+                var chunked = task.chunked;
+                if (chunked) { //分块
+                    formData.append("chunked", task.chunked);
+                    formData.append("data", file.slice(task.startIdx, task.endIdx)); //截取文件块
+                    formData.append("currChunk", task.currChunk);
+                    formData.append("totalChunk", task.totalChunk);
+                } else {
+                    formData.append("data", file);
+                }
+                return formData;
+            }
+
+        }
+
+        /**
+         *用户点击“上传”按钮
+         */
+        function doUpload() {
+            //创建4个Uploader上传器（4条线程）
+            var uploader0 = new Uploader("uploader0");
+            var task0 = new Array();
+
+            var uploader1 = new Uploader("uploader1");
+            var task1 = new Array();
+
+            var uploader2 = new Uploader("uploader2");
+            var task2 = new Array();
+
+            var uploader3 = new Uploader("uploader3");
+            var task3 = new Array();
+
+            //将文件列表取模hash，分配给4个上传器
+            console.log(quence)
+            for (var i = 0; i < quence.length; i++) {
+                if (i % 4 == 0) {
+                    task0.push(quence[i]);
+                } else if (i % 4 == 1) {
+                    task1.push(quence[i]);
+                } else if (i % 4 == 2) {
+                    task2.push(quence[i]);
+                } else if (i % 4 == 3) {
+                    task3.push(quence[i]);
+                }
+            }
+            // /提交任务，启动线程上传
+            console.log(task0);
+            uploader0.submit(task0);
+            uploader0.upload(uploader0);
+            uploader1.submit(task1);
+            uploader1.upload(uploader1);
+            uploader2.submit(task2);
+            uploader2.upload(uploader2);
+            uploader3.submit(task3);
+            uploader3.upload(uploader3);
+
+
+            //注册一个定时任务，每2秒监控文件是否都上传完毕
+            // uploadCompleteMonitor = setInterval("uploadComplete()", 2000);
+        }
+    </script>
+</body>
+
+</html> +

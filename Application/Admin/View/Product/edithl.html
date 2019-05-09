@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑货币汇率';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑货币汇率</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                         <tr>
+                                <th>基金汇率：</th>
+                                <td name="info" id="vo">
+                                    <input type="hidden" name="id" value="{$info.id}"/>
+                                    <input type="text" name="cid" value="{$info.cid}" disabled="disabled" />==>
+                                    <input type="text" name="hcid" value="{$info.pcid}" disabled="disabled" />==
+                                    <input type="text" name="huilv" value="{$info.huilv}" />
+                                </td>
+                            </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$info.id}"/>
+                    <div class="commonBtnArea" >
+                        <button class="btn submit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+    $(function(){
+        $(".submit").click(function(){
+            commonAjaxSubmit();
+        });
+    });
+    // $(function(){
+    //     var i = $(".info option:selected").text();
+    //         if(i != "比赛"){
+    //             $(".tr").css("display","none");
+    //         }else{
+    //             $(".tr").css("display","table-row");
+    //         }
+    //     $(".info").change(function(){
+    //         var info = $(".info option:selected").text();
+    //         if(info != "比赛"){
+    //             $(".tr").css("display","none");
+    //         }else{
+    //             $(".tr").css("display","table-row");
+    //         } 
+    //     })
+    // })
+</script>
+</body>
+</html>
+

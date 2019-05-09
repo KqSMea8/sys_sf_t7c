@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>用户管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='用户列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">前台用户管理</div>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>id</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>手机</td>
+                                <td>类型</td>
+                                <td>注册时间</td>
+                                <!-- <td>状态</td> -->
+                                <in name="user_list" value="1,2">
+                                    <td width="180">操作</td>
+                                </in>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                               <tr align="center" id="{$vo.id}">
+                               <td>{$vo.id}</td>
+                               <td><a href="__URL__/detail?id={$vo.id}">{$vo.xm}</a></td>
+                               <td>{$vo.xb}</td>
+                               <td>{$vo.lxdh}</td>
+                               <td>{$vo.yhlx}</td>
+                               <td>{$vo.zcsj}</td>
+                               <!-- <td><a href="javascript:void(0);" title="激活" onclick="changeAttr({$vo.id},this)"><img src="__PUBLIC__/Img/action_{$vo.state}.png" border="0"></a></td> --><!-- 
+                                <td>[ <a href="__URL__/wd_edit?id={$vo.id}">编辑 </a> ] [ <a link="{:U('News/wd_del/',array('id'=>$vo['id']))}" href="javascript:void(0)" name="{$vo.name}" class="del">删除 </a> ]</td> -->
+                                <in name="user_list" value="1,2">
+                                    <td style="display: flex;padding: 0 0 6px 0;margin: 0;justify-content: space-around;">
+                                        <if condition="$vo.zt eq 1">
+                                            <button class="stop-use" type="button" style="color:#fff;background-color: #3bb4f2;border-color: #3bb4f2;" onclick="changeAttr({$vo.id},this);" data-status="0">停用</button>
+                                            <else />
+                                            <button class="can-use" type="button" style="color:#fff;background-color: #5eb95e;border-color: #5eb95e;" onclick="changeAttr({$vo.id},this);" data-status="1">启用</button>
+                                        </if>
+                                        <button class="edit-user" type="button" style="background-color: #7D9EC0;border-color: #7D9EC0;" onclick="">
+                                            <a href="/index.php/conist/User/detail?id={$vo.id}" style="color:#fff;">修改</a>
+                                        </button>
+                                        <if condition="$vo.zt neq 2">
+                                            <button class="del" type="button" style="color:#fff;background-color: #dd514c;border-color: #dd514c;" data-name="{$vo.xm}" data-status="2" onclick="changeAttr({$vo.id},this)">删除</button>
+                                        </if>
+                                    </td>
+                                </in>
+                            </tr>
+                        </volist>
+                        <tr><td><td colspan="10" align="right">{$page}</td></td></tr>
+
+
+                        <!-- <tr><td colspan="8" align="left">
+                            <form action="__SELF__" method="get">
+                                用户名：<input type="text" name="name" value="<php>echo $_GET['name'];</php>" size="30" style="margin-right: 20px;">
+                                ID：<input type="text" name="id" value="<php>echo $_GET['id'];</php>" size="30" style="margin-right: 20px;">
+                                手机号：<input type="text" name="tel" value="<php>echo $_GET['tel'];</php>" size="30" style="margin-right: 20px;">
+                                <input type="submit" value="搜索">
+                            </form></td></tr> -->
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <script type="text/javascript">
+            // $(function(){
+            //     $(".del").click(function(){
+            //         alert(123);
+            //         // var delLink=$(this).attr("data-url");
+            //         $this = $(this);
+            //         popup.confirm('你真的打算删除【<b>'+$(this).attr("data-name")+'</b>】吗?','温馨提示',function(action){
+            //             if(action == 'ok'){
+            //                 // delByLink(delLink,$this);
+            //                 var id = $(this).attr("data-id");
+            //                 changeAttr(id,$(this));
+            //             }
+            //         });
+            //         return false;
+            //     });
+            // });
+            //修改用户状态 0停用 1启用 2删除
+            function changeAttr(id,obj){
+                var change_status = $(obj).attr('data-status');
+
+                if(change_status == 2){
+                    popup.confirm('你真的打算删除【<b>'+$(obj).attr("data-name")+'</b>】吗?','温馨提示',function(action){
+                        if(action == 'ok'){
+                            $.ajax({
+                                type: "POST",
+                                url: "https://sys.t7c.net/index.php/conist/User/change_user_status",
+                                data: {
+                                    id:id,
+                                    status:change_status
+                                },
+                                success: function(data){
+                                    alert(data.msg);
+                                    $(obj).parent().parent().remove();
+                                }
+                            });
+                        }
+                    });
+                    return false;
+                } else {
+                    $.ajax({
+                    type: "POST",
+                    url: "https://sys.t7c.net/index.php/conist/User/change_user_status",
+                    data: {
+                        id:id,
+                        status:change_status
+                    },
+                    success: function(data){
+                        alert(data.msg);
+                        window.location.reload();
+                    }
+                    });
+                }
+            }
+
+            // //修改用户信息
+            // function editUser(){
+
+            // }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线申办</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_723520_7m0fgiewsci.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+    <style>
+    .hang {
+        height: 2rem;
+        width: 100%;
+        display: flex;
+    }
+
+    .zuo {
+        color: #000000;
+        height: 2rem;
+        width: 40%;
+        text-align: right;
+        padding-right: 1rem;
+        line-height: 2rem;
+        /*	font-weight: bold;*/
+    }
+
+    .you {
+        height: 2rem;
+        width: 60%;
+        line-height: 2rem;
+        padding-right: 1rem;
+        position: relative;
+    }
+
+    #icon {
+        display: inline-block;
+        margin-left: .5rem;
+        color: #196394;
+    }
+
+    #you_text {
+        width: 100%;
+        display: inline-block;
+        position: absolute;
+        top: 1.8rem;
+        right: 0.2rem;
+        color: #ccc;
+        border: 1px solid #ccc;
+        text-align: center;
+        display: none;
+    }
+    .tijiao {
+    
+    margin-bottom: 5rem;
+}
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <span>在线申办</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <!--
+		<div class="nav_radio">
+				<div class="left" id="nav_left">
+						<span>申请人姓名</span>
+						<span>申请人身份证号</span>
+						<span>手机号</span>
+						<span>选择公证处</span>
+						<span>公证员</span>
+						<span>公证员联系方式</span>
+						<span style="position:static;display:block;">使用地</span>
+						<span>用途</span>
+						<span>翻译语言</span>
+						<span class="shangmen_left">是否需要上门服务</span>
+
+				</div>
+				<div class="right" style="margin-left:1.25rem;width: 50%;">
+						<span>牡丹江公证处</span>
+						<span>牡丹江公证处</span>
+						<span><input type="text" style="margin:0;"></span>
+						<span style="margin-top:0.8rem">牡丹江公证处</span>
+						<span>牡丹江</span>
+						<span>15245565895</span>
+						<span style="margin-top:0.7rem">牡丹江</span>
+						<span>用途类型</span>
+						<span>汉语</span>
+						<span class="shangmen_right">
+								<input name="Fruit" type="radio" value="" /><lable>是</lable>&nbsp;&nbsp;
+								<input name="Fruit" type="radio" value="" /><lable>否</lable>
+						</span>
+				</div>
+		</div>
+-->
+    <div class="hang" style="margin-top: 2rem">
+        <div class="zuo">申请人姓名:</div>
+        <div class="you">
+            牡丹江公证处
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">申请人身份证号:</div>
+        <div class="you">
+            15345645618946515486
+        </div>
+    </div>
+    <div class="hang" id="hang">
+        <div class="zuo">手机号:</div>
+        <div class="you">
+            <span>12345678910</span> <span id="icon" class="iconfont icon-question"></span>
+            <span id="you_text">如需修改手机号请在个人中心中更改</span>
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">选择公证处:</div>
+        <div class="you">
+            牡丹江公证处
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">公证员:</div>
+        <div class="you">
+            牡丹江
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">公证员联系方式:</div>
+        <div class="you">
+            15245565895
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">使用地:</div>
+        <div class="you">
+            牡丹江
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">用途:</div>
+        <div class="you">
+            用途类型
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">翻译语言:</div>
+        <div class="you">
+            汉语
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">是否需要上门服务:</div>
+        <div class="you">
+            <input name="Fruit" type="radio" value="" />
+            <lable>&nbsp;是</lable>&nbsp;&nbsp;
+            <input name="Fruit" type="radio" value="" />
+            <lable>&nbsp;否</lable>
+        </div>
+    </div>
+    <div class="nav_radio" style="padding:0;height:6.25rem;">
+        <div class="left" id="nav_left">
+            <span>身份证正反面</span>
+            <span>出生证明</span>
+            <span>户口本</span>
+        </div>
+        <div class="right" style="margin-left:1.25rem;width: 50%;">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="memery">
+        <div class="mem_left">付款方式（<span style="color: #999999">现场缴费</span>）</div>
+        <div class="mem_right">
+            公证费：<span style="color:#FF0000">5000元</span>
+            <br><span onclick=window.location.href="expenseDetail.html" style="color:#0066CC">产生费用详情 >> </span>
+        </div>
+    </div>
+    <div class="tijiao">
+        <button id="mid_lit" onclick="window.location.href= 'fair.html';return false">提交</button>
+    </div>
+<div style="width: 100%;height: 1rem"></div>
+<div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+        $(".footer").load("footer2.html");
+</script>
+<script type="text/javascript">
+$('#icon').click(function() {
+    var you_text = $('#you_text').css('display');
+    if (you_text == 'block') {
+        $('#you_text').hide();
+        $('.hang').css('height', '2rem');
+    } else {
+        $('#you_text').show();
+        $('#hang').css('height', '4rem');
+    }
+})
+</script>
+
+</html>

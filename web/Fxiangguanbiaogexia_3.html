@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相关样表</title>
+     <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <style>
+        .showPath{
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.8);
+            position:absolute;
+            top:2.5rem;
+            left:0;
+        }
+        .showbg,.showPDF{
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <span>相关样表</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="showPath">
+        <div class="showPDF"></div>
+        <!-- <div class="showbg"></div> -->
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.media.js"></script>
+<script type="text/javascript">
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var path = getUrlParms("path");
+    var name=getUrlParms('name');
+    $('#header span').html(decodeURI(name));
+    $('.showPDF').media({
+        width : '100%',
+        height : '100%',
+        autoplay : true,
+        src : path
+    });
+</script>
+
+</html>

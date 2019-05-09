@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>在线预约</title>
+        <!-- <script src="./js/jquery-1.11.3.min.js"></script> -->
+        <link rel="stylesheet" href="./css/public.css">
+        <link rel="stylesheet" href="./css/zaixian.css">
+        <link href="css/rolldate.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/mobileSelect.css">
+    </head>
+    <style>
+        .bq_conFiles{
+        padding-left: 7rem;
+    }
+        .bq_conFile{
+            position:relative;
+            display:inline-block;
+        }
+        .bq_conFile input{
+            top:0;
+            left:0;
+        }
+</style>
+</head>
+
+<body>
+    <div id="header">
+        <span>在线预约</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="nav_fir">
+        <div class="nav_first">
+            <input type="text" placeholder="请选择" readonly onfocus='this.blur();' class="xzz1">
+           <span>选择区域</span>
+        </div>
+        <div class="nav_first">
+            <input type="text" placeholder="请选择" readonly onfocus='this.blur();' class="gzc">
+            <span>选择法律援助中心</span>
+        </div>
+        <div class="nav_first">
+            <input type="text" placeholder="请选择" readonly onfocus='this.blur();' class="gzry">
+            <!-- <select class="sqrlx">
+                <option value="">请选择</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select> -->
+            <span>选择申请人类型</span>
+        </div>
+        <div class="nav_first" style="height:auto;">
+            <p class="Certificates" style="width:59%;margin-right: 1.5625rem;margin-bottom:1rem;float:right;color: #cccccc;font-size:0.24rem;">需要上传***证件,***证件,***证件</p>
+            <span style=""></span>
+        </div>
+        
+        <!-- <div class="nav_first">
+            <input type="text" readonly onfocus='this.blur();' class="sqrlx">
+                <select class="gzry" >
+                <option value="">请选择</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select>
+            <span>选择公证员</span>
+        </div> -->
+        <div class="nav_first" style="height:2rem">
+            <input type="text" placeholder="请选择" readonly onfocus='this.blur();' id="myselect">
+            <!-- <select id="myselect">
+                <option value="">请选择</option>
+                <option value="1">123</option>
+                <option value="2">123</option>
+                <option value="3">123</option>
+                <option value="4">123</option>
+            </select> -->
+            <span>选择类别</span>
+        </div>
+        <div class="yaojian" style="padding-left:8rem;line-height:1.5rem;color:#888;height:1.5rem;">
+            <p></p>
+        </div>
+        <div class="nav_first">
+            <input type="text" placeholder="请选择" class="date3" onfocus='this.blur();' placeholder="请选择时间">
+            <span>选择时间</span>
+        </div>
+        <div class="nav_first" style="height: 5rem">
+            <textarea name="" placeholder="请填写" id="mytext"></textarea>
+            <span style="line-height:1rem">填写备注</span>
+        </div>
+    </div>
+    <div class="BidQuery">
+        <div class="bq_con" >
+            <span class="left" style="float:left">上传附件</span>
+            <div class="bq_conFiles">
+                <!-- <div class="bq_conFile">
+                    <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+                    <input type="file" class="img_1 imgde" name="">
+                </div>
+                <div class="bq_conFile">
+                    <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+                    <input type="file" class="img_1 imgde" name="">
+                </div>
+                <div class="bq_conFile">
+                    <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+                    <input type="file" class="img_1 imgde" name="">
+                </div> -->
+            </div>
+           <!--  <p style="margin-left:6.875rem;">可上传1-5张图片</span> -->
+           </div>
+    </div>
+    <div style="width: 70%;margin: 3rem auto 0;height: 2.5rem;margin-bottom:2rem;">
+        <div class="btn" style="margin-top: 0.2rem;">
+            提交预约
+        </div>
+        <!-- <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+            撤销预约
+        </div> -->
+    </div>
+<div style="width: 100%;height: 3.125rem"></div>
+<p class="tishi"> sdaf</p>
+<div class="footer"></div>
+<div class="load">
+    <img src="./img/jiazaia.png" alt="">
+</div>
+<style>
+    .load{
+        position:fixed;
+        top:0;
+        left:0;
+        display:none;
+        width:100%;
+        height:100%;
+        background:rgba(0, 0, 0, .5);
+    }
+    .load div{
+        position:absolute;
+        width:5rem;
+        top:38%;
+        left:50%;
+        margin-left:-2.5rem;
+    }
+.bq_con{
+    position: relative;
+}
+.imgde{
+        position: absolute;
+        width: 4.6875rem;
+        height: 5.625rem;
+        overflow: hidden;
+        vertical-align: middle;
+        opacity: 0;
+        top: .61rem;
+    }
+    .img_1 {
+        left: 7.7875rem;
+    }
+    .img_2 {
+        left: 12.7rem;
+    }
+    .img_3{
+        left: 17.7rem;
+    }
+    .nav_first textarea{
+        font-size: 1rem;
+    }
+    .tishi{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 6rem;
+        height: auto;
+        padding: .5rem;
+        display: none;
+        background: rgba(0,0,0,.5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -3rem;
+        z-index: 9999999;
+    }
+</style>
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="./js/shipei.js"></script>
+<script src="./js/mobileSelect.js"></script>
+<script type="text/javascript">
+        $(".footer").load("footer2.html");
+        </script>
+<script src="js/jquery.js"></script>
+<script>
+    var gzkarr=[];
+    //  var mobileSelect1 = new MobileSelect({
+    //                 trigger: '.gzc',
+    //                 title: '请选择',
+    //                 wheels: [{
+    //                     data: quyu
+    //                 }],
+    //                 position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+    //                 transitionEnd: function(indexArr, data) {
+        //                     //console.log(data);
+    //                 },
+    //                 callback: function(indexArr, data) {
+        
+    //                 }
+    //     })
+window.onload = function() {
+    new rolldate.Date({
+        el: '.date3',
+        format: 'YYYY-MM-DD hh:mm',
+        beginYear: 1990,
+        endYear: 2020,
+        confirmBefore:function(el,date){
+            var d = Date.parse(new Date())/1000;
+            var data;
+            data=new Date(date).getTime()/1000;
+            if(data<=d){
+                tishi('选择日期不能小于当前时间');
+                return false;
+            }
+        }
+    })
+}
+$('#myselect').click(function(){
+        var myselect = $('#myselect').val();
+        console.log(myselect);
+        if(myselect == '1'){
+            $('.yaojian p').html('需上传要件1111');
+        }else if( myselect == '2' ){
+            $('.yaojian p').html('需上传要件2222');
+        }else if( myselect == '3' ){
+            $('.yaojian p').html('需上传要件3333');
+        }else if( myselect == '4' ){
+            $('.yaojian p').html('需上传要件4444');
+        }
+    })
+// }
+</script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script type="text/javascript" src="js/rolldate.js"></script>
+<script type="text/javascript">
+    var  jg_id,jg_name,jgry_id,jgry_name,order_note,order_time,order_type;
+    var imgde1="",imgde2="",imgde3="";
+    var gzcsj;
+    var access_token = localStorage.getItem("access_token")
+    if(access_token==""){
+    alert("请登录");
+     window.location.href="login.html";
+}else{
+    $.ajax({
+            type:"POST",
+            url:"https://sys.t7c.net/index.php/home/Personal/mine",
+            data:{access_token:access_token},
+            dataType:'json',
+            success:function(data){
+                 if(data.state!="1"){
+                     window.location.href="login.html";
+                 }
+                   
+
+            }
+      })
+}
+var xzz1=[];
+    var qy;
+    var sqrdata=[],sqind;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/area',
+        data: {},
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // var html="";
+            var qk1 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].jgmc}</option>`;
+                xzz1.push(data.data[i].name);
+            }
+            // $(".select1").append(html);
+            
+            var mobileSelect = new MobileSelect({
+                trigger: '.xzz1',
+                title: '请选择',
+                wheels: [{
+                    data: xzz1
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    /*$(".q4").text(data);*/
+                    $(".xzz1").attr("value", data)
+                    for (var i = 0; i < qk1.length; i++) {
+                        if (data == qk1[i].name) {
+                            qy = qk1[i].id;
+                             
+                        }
+                    }
+                    //公证处
+                     $.ajax({
+                        tyep:"post",
+                        url:"https://sys.t7c.net/index.php/home/Data/falvyz",
+                        data:{qy:qy},
+                        dataType:"json",
+                        success:function (data) {
+                            console.log(data);
+                            gzkarr=[];
+                            gzcsj = data.data;
+                            for(var i=0;i<data.data.length;i++){
+                                gzkarr.push(data.data[i].jgmc)
+                            };
+                            var mobileSelect1 = new MobileSelect({
+                                    trigger: '.gzc',
+                                    title: '请选择',
+                                    wheels: [{
+                                        data: gzkarr
+                                    }],
+                                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                    transitionEnd: function(indexArr, data) {
+                                        //console.log(data);
+                                    },
+                                    callback: function(indexArr, data) {
+                                        $(".gzc").val(data);
+                                        jg_name =data+"";
+                                        for(var i=0;i<gzcsj.length;i++){
+                                            if(data==gzcsj[i].jgmc){
+                                                jg_id =gzcsj[i].id; 
+                                            }
+                                        };
+                                        console.log(jg_id)
+                                        $('.mobileSelect').eq(1).remove();
+                                        typep()
+                                    }
+                            })
+                        }
+
+                    });
+                }
+            })
+        }
+    })
+    
+
+        
+function tishi(text){
+    $(".tishi").text(text);
+    $(".tishi").fadeIn().delay(1500).fadeOut();
+};
+var gzre=[],redata;
+// 公证员
+ //function lkdf(){
+ //        $.ajax({
+ //           tyep:"post",
+ //           url:"https://sys.t7c.net/index.php/home/Data/falvyz",
+ //           data:{jg_id:jg_id},
+ //          dataType:"json",
+ //           success:function (data){
+ //               console.log(data);
+//              redata = data.data;
+ //               for(var i=0;i<data.data.length;i++){
+ //                   gzre.push(data.data[i].fzr)
+  //              };
+  //              var mobileSelect1 = new MobileSelect({
+  //                  trigger: '.sqrlx',
+  //                  title: '请选择',
+  //                  wheels: [{
+  //                      data: gzre
+  //                  }],
+  //                  position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+  //                  transitionEnd: function(indexArr, data) {
+  //                      //console.log(data);
+  //                  },
+  //                  callback: function(indexArr, data) {
+  //                      $(".sqrlx").val(data);
+  //                      jgry_name =data+"";
+  //                      console.log(redata)
+  //                      for(var i=0;i<redata.length;i++){
+  //                          if(data==redata[i].fzr){
+  //                              jgry_id =redata[i].id; 
+  //                          }
+  //                      };
+   //                     console.log(jgry_id)
+  //                      typep();
+  //                  }
+  //          })
+  //          }
+  //      })
+  //  }
+     // $(".gzc").change(function() {
+// $(".gzry").change(function(){
+//     jgry_id=$(this).find("option:selected").attr("id");
+//     jgry_name = $(this).find("option:selected").text();
+// });
+// $("#myselect").change(function(){
+//     order_type=$(this).find("option:selected").attr("id");
+// });
+// $.ajax({
+//     tyep:"post",
+//     url:"https://sys.t7c.net/index.php/home/Data/proposer_type",
+//     data:{},
+//     dataType:"json",
+//     success:function (data) {
+//         console.log(data);
+//         var ht ="";
+//         var  th="<option>请选择</option>"
+//         for(var i=0;i<data.data.length;i++){
+//             ht+= "<option id=" +data.data[i].id+">"+data.data[i].title+"</option>"
+//         };
+//         $(".sqrlx").html(th+ht);
+//     }
+// });
+// 申请类型 
+
+ function typep(){
+     $.ajax({
+        tyep:"post",
+        url:"https://sys.t7c.net/index.php/home/Data/proposer_type",
+        data:{jg_id:jg_id},
+        dataType:"json",
+        success:function (data){
+            console.log(data);
+            sqrdata=[];
+            sqind = data.data;
+            for(var i=0;i<data.data.length;i++){
+                sqrdata.push(data.data[i].title)
+            };
+            var mobileSelect1 = new MobileSelect({
+                trigger: '.gzry',
+                title: '请选择',
+                wheels: [{
+                    data: sqrdata
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    $(".gzry").val(data);
+                    var imgFileHTML="";
+                    var CertificatesHTML="";
+                    for(var i=0;i<sqind.length;i++){
+                        if(data==sqind[i].title){
+                            order_type =sqind[i].id;
+                            for (var j = 0; j < sqind[i].required_type.length; j++) {
+                                if (j == sqind[i].required_type.length - 1) {
+                                    CertificatesHTML += sqind[i].required_type[j] + '证件';
+                                } else {
+                                    CertificatesHTML += sqind[i].required_type[j] + '证件,';
+                                }
+                            }
+                            for(var j=0;j<sqind[i].file_num;j++){
+                                imgFileHTML+=`<div class="bq_conFile">
+                                                <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+                                                <input type="file" class="img_1 imgde" name="">
+                                            </div>`;
+                            }
+                        }
+                    }
+                    $('.Certificates').html('需要上传' +CertificatesHTML);
+                    $('.bq_conFiles').html(imgFileHTML);
+                    // jgry_name =data;
+                    // for(var i=0;i<redata.length;i++){
+                    //     if(data==redata.jgmc){
+                    //         jgry_id =redata.id; 
+                    //     }
+                    // };
+                    $('.mobileSelect').eq(2).remove();
+                    select();
+                }
+        })
+        }
+    })
+ }
+
+// $.ajax({
+//     tyep:"post",
+//     url:"https://sys.t7c.net/index.php/home/Data/order_type",
+//     data:{},
+//     dataType:"json",
+//     success:function (data) {
+//         console.log(data);
+//         var ht ="";
+//         var  th="<option>请选择</option>"
+//         for(var i=0;i<data.data.length;i++){
+//             ht+= "<option id=" +data.data[i].id+">"+data.data[i].title+"</option>"
+//         };
+//         $("#myselect").html(th+ht);
+//     }
+// });
+// 选择类别myselect
+var xzwew=[];
+ function select(){
+    $.ajax({
+        tyep:"post",
+        url:"https://sys.t7c.net/index.php/home/Data/order_type",
+        data:{jg_id:jg_id},
+        dataType:"json",
+        success:function (data){
+            console.log(data);
+            xzqw = data.data;
+            for(var i=0;i<data.data.length;i++){
+                xzwew.push(data.data[i].title)
+            };
+            var mobileSelect1 = new MobileSelect({
+                trigger: '#myselect',
+                title: '请选择类别',
+                wheels: [{
+                    data: xzwew
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    $("#myselect").val(data);
+                    // order_note =data;
+                     $('.mobileSelect').eq(3).remove();
+                    
+                }
+        })
+        }
+    })
+      
+ }
+   // });
+     $('.bq_conFiles').on('change','.img_1',function() {
+        var file = this.files[0];
+        var bq_conFile=$(this);
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde1 = e.target.result.split(",")[1];
+                bq_conFile.prev().attr("src", e.target.result)
+            };
+        }
+    });
+$(".img_2").change(function(){
+     var file = this.files[0];
+       if (window.FileReader) {    
+                var reader = new FileReader();    
+                reader.readAsDataURL(file);    
+                //监听文件读取结束后事件    
+              reader.onloadend = function (e) {
+                   // 图片base64  imgde2=e.target.result.split(",")[1];
+                   $(".img2").attr("src",e.target.result)
+                };    
+           }
+});
+$(".img_3").change(function(){   
+     var file = this.files[0];
+       if (window.FileReader) {    
+                var reader = new FileReader();    
+                reader.readAsDataURL(file);    
+                //监听文件读取结束后事件    
+              reader.onloadend = function (e) {
+                   // 图片base64
+                    imgde3=e.target.result.split(",")[1];
+                   $(".img3").attr("src",e.target.result)
+                };    
+           } 
+});
+$(".btn").click(function(){
+    
+    order_note = $("#mytext").val();
+    // order_time = new Data($("#date3").val());
+    order_time =  $.myTime.DateToUnix($(".date3").val());
+    
+    console.log(jg_id)
+    if(access_token.length==0){
+        tishi("请登录");
+        return false;
+    }else if($(".gzc").val().length==0){
+        tishi("请选择援助中心");
+        return false;
+    }else if($(".gzry").val().length==0){
+        tishi("请选择申请人");
+        return false;
+    }else if($("#myselect").val().length==0){
+        tishi("请选择类别");
+        return false;
+    }else if($(".date3").val().length==0){
+        tishi("请选择时间");
+        return false;
+    }else if(order_note.length==0){
+        tishi("请选择填写备注");
+        return false;
+    }else{
+         var upload="";
+         for(var i=0;i<$('.img1').length;i++){
+             if($('.img1').eq(i).attr('src')!='./img/tianjia.jpg'){
+                 if(i==$('.img1').length-1){
+                     upload+=$('.img1').eq(i).attr('src').split(',')[1];
+                 }else{
+                     upload+=$('.img1').eq(i).attr('src').split(',')[1]+';';
+                 }
+             }else{
+                 tishi("请完善附件信息");
+                 return false;
+             }
+         }
+        // console.log("111111111111111111111111111111111111111111111"+upload);
+        // return false;
+        $('.load').show();
+        $.ajax({
+                type:'post',
+                url:'https://sys.t7c.net/index.php/home/Handle/order',
+                data:{
+                    access_token:access_token,
+                    type:"2",
+                    jg_id:jg_id,
+                    jg_name:jg_name,
+                    order_note:order_note,
+                    order_time:order_time,
+                    order_type:order_type,
+                    upload:upload,
+                    qy:qy
+                },   
+                async:false,
+                dataType:'json', 
+                async: false,   
+                success:function(data){
+                    $('.load').hide();
+                    console.log(data)
+                    if(data.state==1){
+                        tishi(data.msg);
+                         setTimeout(function(){
+                             history.go(-1);
+                         },1000)
+                        
+                    }else{
+                         tishi("预约失败,请重新预约")
+                    }
+                }
+            })
+    }
+
+});
+   
+ 
+// $(".ipt1").change(function(){
+//         var formData= new FormData(); //FormData对象用以将数据编译成键值对，以便用XMLHttpRequest来发送数据。其主要用于发送表单数据
+//         var img_file=le=document.getElementByItById("upload");  // 原生获取元素
+//         var access_token="IfAmYbzyyii1ylkmv3wy_x0lxiKThn9v_1540781278";  //数据
+//         var fileObj=img_mg_file.files[0];[0];  //  获取文件 数据
+//            formData.append("im("image",fileObj);  // 图片
+//            formData.append("ac("access_token","IfAmYbzyyii1ylkmv3wy_x0lxiKThn9v_1540781278");  //用户标示
+
+//         $.ajax({
+//             type:'post',
+//             url:'l:'http://jl.yunkuang123.com/api/merchants/image',
+   
+//             data:formData,    //data存formData对象
+//             processData : false,
+//             contentType : false,
+//             async:false,
+//             dataType:'json', 
+//             async: false,   
+//             success:function(data){
+//                    console.log(dat(data);
+//                 image=ge=data.data.urlPath;
+//   ;
+//             }
+//         })
+// })
+$.extend({
+		myTime: {
+			CurTime: function() {
+				return Date.parse(new Date()) / 1000;
+			},
+			DateToUnix: function(string) {
+				var f = string.split(' ', 2);
+				var d = (f[0] ? f[0] : '').split('-', 3);
+				var t = (f[1] ? f[1] : '').split(':', 3);
+				return(new Date(
+					parseInt(d[0], 10) || null,
+					(parseInt(d[1], 10) || 1) - 1,
+					parseInt(d[2], 10) || null,
+					parseInt(t[0], 10) || null,
+					parseInt(t[1], 10) || null,
+					parseInt(t[2], 10) || null
+				)).getTime() / 1000;
+			},
+			UnixToDate: function(unixTime, isFull, timeZone) {
+				if(typeof(timeZone) == 'number') {
+					unixTime = parseInt(unixTime) + parseInt(timeZone) * 60 * 60;
+				}
+				var time = new Date(unixTime * 1000);
+				var ymdhis = "";
+				ymdhis += time.getUTCFullYear() + "-";
+				ymdhis += (time.getUTCMonth() + 1) + "-";
+				ymdhis += time.getUTCDate();
+				if(isFull === true) {
+					ymdhis += "" + time.getUTCHours() + ":";
+					ymdhis += time.getUTCMinutes() + ":";
+					ymdhis += time.getUTCSeconds();
+				}
+				return ymdhis;
+			}
+		}
+	});
+</script>
+</html>

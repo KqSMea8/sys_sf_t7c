@@ -1,0 +1,236 @@
+.content{
+	width: 100%;
+}
+.content img {
+	width: 100%;
+}
+#configHead {
+	height: 100px;
+}
+/*历史收益*/
+.history{
+	width: 100%;
+	height: 1066px;
+	background: #FFFFFF;
+}
+.history_title{
+	width: 300px;
+	height: 105px;
+	padding: 75px 0;
+	margin: 0 auto;
+}
+.history_title span{
+	width: 300px;
+	height: 30px;
+	display: inline-block;
+	color: #222222;
+	font-size: 26px;
+	line-height: 30px;
+	text-align: center;
+}
+.history_title div{
+	width: 300px;
+	height: 47px;
+	background: url(../images/line.png) no-repeat center;
+	display: inline-block;
+}
+.history_title p{
+	width: 300px;
+	height: 26px;
+	display: inline-block;
+	line-height: 26px;
+	font-size: 22px;
+	color: #222222;
+	text-align: center;
+}
+.history_slider{
+	width: 1490px;
+	height: 808px;
+	margin: 0 auto;
+}
+.left,.right{
+	margin: 320px 40px 400px 40px;
+	width: 66px;
+	height: 66px;
+	/*-webkit-tap-highlight-color:rgba(0,0,0,0);*/
+	outline: none;
+	/*border: none;*/
+}
+.left{
+	float: left;
+	background: url(../images/left.png) no-repeat center;
+}
+.right{
+	float: right;
+	background: url(../images/right.png) no-repeat center;
+}
+/*.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    width: 66px;
+	height: 66px;
+    left: 0px;
+    right: auto;
+    background: url(../images/left.png) no-repeat center;
+}
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+    opacity: 1;
+    cursor: auto;
+    pointer-events: none;
+}*/
+
+.swiper-button-prev, .swiper-button-next {
+    position: static; 
+}
+.slider_img{
+	width: 1190px;
+	height: 600px;
+	display: inline-block;
+	box-shadow: #C0C0C0 10px 10px 34px 5px ;
+	position: relative;
+	overflow: hidden;
+}
+.slider_img_all{
+	position: relative;
+	width: 5600px;
+	height: 600px;
+	list-style: none;
+	white-space: nowrap;
+	display: inline-block;
+}
+.silder_img_all>li{	
+	float: left;
+	width: 1190px;
+	height: 600px;
+	/*position: relative;*/
+	
+}
+.slider_img_all img{
+	width: 1190px;
+	height: 600px;
+	/*float: left;*/
+	/*display: inline-block;*/
+}
+.slider_btn{
+	width: 340px;	
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.swiper-pagination{
+	position: static;
+}
+.swiper-pagination-bullet {
+	margin-left: 24px;
+    width: 40px;
+	height: 5px;
+    display: inline-block;
+    border-radius: 0;
+    background: #000;
+    opacity: 0.2;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #007aff;
+}
+/*.slider_btn li{
+	list-style: none;
+	width: 40px;
+	height: 5px;
+	margin-left: 24px;
+	display: inline-block;
+
+}*/
+/*.slider_active{
+	background: #094adc;
+}
+.slider_blur{
+	background: #e5e5e5;
+}*/
+/*related*/
+.related{
+	width: 100%;
+	/*height: 960px;*/
+}
+/*our team*/
+.team_title{
+	width: 300px;
+	height: 105px;
+	padding: 75px 0;
+	margin: 0 auto;
+}
+.team_title span{
+	width: 300px;
+	height: 30px;
+	display: inline-block;
+	color: #222222;
+	font-size: 26px;
+	line-height: 30px;
+	text-align: center;
+}
+.team_title div{
+	width: 300px;
+	height: 47px;
+	background: url(../images/line.png) no-repeat center;
+	display: inline-block;
+}
+.team_title p{
+	width: 300px;
+	height: 26px;
+	display: inline-block;
+	line-height: 26px;
+	font-size: 22px;
+	color: #222222;
+	text-align: center;
+}
+.team_item{
+	width: 1200px;
+	border: 1px #E5E5E5 solid;
+	box-shadow: #C0C0C0 10px 10px 34px 5px ;
+	margin: 0 auto;
+	margin-bottom:75px ;
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.team_demo{
+	width:475px;
+	height: 170px;
+	display: inline-block;
+	padding: 45px 60px;
+}
+.team_demo_content{
+	width: 475px;
+	height: 105px;
+}
+.left_tx{
+	float: left;
+	width:105px;
+	height: 105px;
+	border-radius: 100px;
+	margin-right:25px;
+	margin-bottom:20px;
+}
+.left_tx > img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.right_name{
+	width: 340px;
+	height: 17px;
+	font-size: 16px;
+	display: inline-block;
+	color: #222222;
+	margin-top:27px ;
+}
+.right_job{
+	width: 360px;
+	height: 15px;
+	font-size: 14px;
+	margin-top: 16px;
+	color: #888888;
+}
+.team_demo_skill{
+	width: 475px;
+	font-size: 14px;
+	overflow: auto;
+	color: #888888;
+}

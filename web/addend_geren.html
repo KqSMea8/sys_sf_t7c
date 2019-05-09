@@ -1,0 +1,152 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/mydata.css">
+    <title>我的资料</title>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+<style>
+    .tishi {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 3rem;
+        height: auto;
+        padding: .3rem;
+        display: none;
+        background: rgba(0, 0, 0, .5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -1.5rem;
+        z-index: 999999;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <a href="javascript:window.history.back(-1);" class="x"><img src="img/zuojiantou.png"></a>
+        <h6>我的资料</h6>
+        <span class="keep">保存</span>
+    </header>
+    <div class="data_head">
+
+        <div class="data_m">我的头像
+            <div class="right"><img class="files" src="img/3_6.png" id="showImg"><input type="file" onchange="previewf(this)" class="file" id="file" name="file"></div>
+        </div>
+        <div class="data_m">用户名
+            <div class="right"><input class="uname xm" type="text" readonly onfocus='this.blur()' placeholder="请填写" /></div>
+        </div>
+        <div class="data_m">手机号码
+            <div class="right"><input class="uname lxdh" type="text" readonly onfocus='this.blur()' placeholder="请填写" /></div>
+        </div>
+        <div class="data_m">邮箱
+            <div class="right"><input class="uname yx" type="text" placeholder="请填写" /></div>
+        </div>
+        <div class="data_m">身份证号码
+            <div class="right"><input class="uname zjh" style="width: 4rem" type="text" readonly onfocus='this.blur()' placeholder="请填写" /></div>
+        </div>
+        <div class="data_m">QQ
+            <div class="right"><input class="uname qqq" type="text" placeholder="请填写" /></div>
+        </div>
+        <div class="data_m">地址
+            <div class="right"><input class="uname dz" type="text" placeholder="请填写" /></div>
+        </div>
+
+    </div>
+    <p class="tishi"></p>
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    function previewf(file) {
+        var showImg = document.getElementById('showImg');
+        if (file.files && file.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(evt) {
+                //alert(evt.target.result)
+                $("#showImg").attr("src", evt.target.result)
+            }
+            reader.readAsDataURL(file.files[0]);
+        } else {
+            // alert(2)
+            showImg.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
+        }
+    }
+    var access_token = localStorage.getItem("access_token");
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Personal/mine",
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data)
+            $("#showImg").attr("src", data.data.tx)
+            $(".xm").val(data.data.xm);
+            $(".lxdh").val(data.data.lxdh);
+            $(".yx").val(data.data.yx);
+            $(".qqq").val(data.data.qq);
+            $(".zjh").val(data.data.zjh);
+            //$(".qq").text(data.data.xm);
+            $(".dz").val(data.data.lxdz);
+            /*$(".xm").text(data.data.xm);*/
+
+
+        }
+    })
+    $(".keep").click(function() {
+
+        var xm = $(".xm").val(),
+            lxdh = $(".lxdh").val(),
+            yx = $(".yx").val(),
+            zjh = $(".zjh").val(),
+            dz = $(".dz").val();
+        var uname = $(".qqq").val();
+        console.log(uname);
+        var fileObj = $("#file")[0].files[0];
+        var formData = new FormData();
+        console.log(xm, lxdh, yx, zjh, dz)
+        if (fileObj) {
+            formData.append("avator", fileObj);
+        }
+        formData.append("xm", xm);
+        formData.append("lxdh", lxdh);
+        formData.append("yx", yx);
+        formData.append("xm", xm);
+        formData.append("zjh", zjh);
+        formData.append("lxdz", dz);
+        formData.append("qq", uname);
+        formData.append('access_token', access_token);
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/mine_update",
+            data: formData,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                $(".tishi").text(data.msg);
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                if (data.state == "1") {
+                    setTimeout(function() {
+                        history.go(-1);
+                    }, 600)
+
+                } else if (data.state == -2) {
+                    setTimeout(function() {
+                        window.location.href = "./login.html";
+                    }, 600)
+                }
+            }
+        })
+    })
+</script>

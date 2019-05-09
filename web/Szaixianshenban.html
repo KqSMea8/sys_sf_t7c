@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/mobileSelect.css">
+    <script src="js/mobileSelect.js"></script>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>在线申办</title>
+    <style>
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .25rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .125rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+        
+        body,
+        html {
+            background-color: white;
+        }
+        
+        .act {
+            color: #196394;
+            border-bottom: #196394 2px solid;
+        }
+        
+        .items {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+        }
+        
+        .items>li {
+            width: 1.9rem;
+            text-align: center;
+        }
+        
+        .rengong {
+            width: 100%;
+            height: 0.6rem;
+            border-bottom: 1px solid #d3d1d1
+        }
+        
+        .item {
+            width: 6rem;
+            height: 2rem;
+            margin: 0 auto;
+        }
+        
+        .selects {
+            width: 6rem;
+            margin: 1rem 0.8rem;
+            height: 0.8rem;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            margin: 1rem auto 1rem;
+            text-align: center;
+            height: 2rem;
+        }
+        
+        .hang {
+            height: 0.6rem;
+            width: 100%;
+            display: flex;
+        }
+        
+        .zuo {
+            color: #000000;
+            height: 0.8rem;
+            width: 2.5rem;
+            text-align: right;
+            padding-right: 0.2rem;
+            /*line-height: 0.8rem;*/
+        }
+        
+        .you {
+            /*height: 0.8rem;*/
+            width: 4.8rem;
+            line-height: 0.8rem;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            margin: 1.5rem auto 1rem;
+            text-align: center;
+        }
+        
+        select {
+            border: 1px solid #999999;
+        }
+        
+        .title {
+            font-size: 0.28rem;
+            font-weight: bold;
+        }
+        
+        .xuanze {
+            width: 2.1rem;
+            height: .5rem;
+            border: 1px solid #999;
+            margin-top: .15rem;
+            display: inline-block;
+            padding-bottom: .15rem;
+            overflow: hidden;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body style="overflow: scroll">
+    <p class="tishi"></p>
+    <header class="header">
+        <a href="javascript:history.go(-1)">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">在线申办</div>
+    </header>
+    <div class="content">
+        <div class="rengong">
+            <ul class="items">
+                <li class="shenban act">申办项目</li>
+                <li class="xietong">司法协同</li>
+            </ul>
+            <div class="con">
+                <div class="sbxm">
+                    <div class="hang">
+                        <div class="zuo">选择鉴定类别</div>
+                        <div class="you">
+                            <span class="xuanze xl1" style="line-height: 1.5;">请选择</span>
+                            <!-- <select name="" id="" class="select2" style="width: 2.1rem;height:  0.5rem">
+							<option value="123">法医类</option>
+							<option value="456">司法会计类</option>
+						</select> -->
+                            <!-- <span class="xuanze xl2" style="line-height: 1.5;">请选择</span> -->
+                            <!-- <select name="" id="" class="select2" style="width: 2.1rem;height:  0.5rem">
+							<option value="123">法医病理</option>
+							<option value="456">法医临床</option>
+						</select> -->
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">区域</div>
+                        <div class="you">
+                            <span class="xuanze xzz1" style="line-height: 1.5;">请选择</span>
+                            <!-- <select name="" id="" class="select2" style="width: 4.3rem;height:  0.5rem">
+                            <option value="123">123</option>
+                            <option value="456">456</option>
+                            <option value="758">789</option>
+                        </select> -->
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">鉴定机构</div>
+                        <div class="you">
+                            <span class="xuanze xl3" style="line-height: 1.5;">请选择</span>
+                            <!-- <select name="" id="" class="select2" style="width: 4.3rem;height:  0.5rem">
+							<option value="123">123</option>
+							<option value="456">456</option>
+							<option value="758">789</option>
+						</select> -->
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">
+                            <span class="title">申请人信息</span>
+                        </div>
+                        <div class="you"></div>
+                    </div>
+                    <div class="xinjia" style="display:block">
+                        <div class="hang">
+                            <div class="zuo">当事人姓名</div>
+                            <div class="you"><input type="text" placeholder="请填写" style="text-align:left;" class="dsr_xingming"></div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人身份证号</div>
+                            <div class="you"><input type="text" placeholder="请填写" style="text-align:left;" onblur="isCardNo($(this).val(),$(this).attr('id'))" id="dsr_shenfenz" class="dsr_shenfenz"></div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人手机号</div>
+                            <div class="you"><input type="text" placeholder="请填写" style="text-align:left;" onblur="checkMobile($(this).val(),$(this).attr('id'))" id="dsr_shoujihao" class="dsr_shoujihao"></div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">验证码</div>
+                            <div class="you"><input style="width: 1.4rem;text-align: left;" placeholder="请填写" type="text" class="gz_lianxi4"><input class="verify_f" style="width:1.5rem;background:#fff;outline:none;margin-left: .2rem;border: #000 solid .01rem;" type="button"
+                                    id="dfafd" value="发送验证码"></div>
+                        </div>
+                    </div>
+                    <div class="old" style="display:none">
+                        <div class="hang">
+                            <div class="zuo">当事人姓名</div>
+                            <div class="you dsr_xingming">
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人身份证号</div>
+                            <div class="you dsr_shenfenz">
+                                12564589658952214
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人手机号</div>
+                            <div class="you dsr_shoujihao">
+                                15011487598
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">
+                            <span class="title">对方信息</span>
+                        </div>
+                        <div class="you">
+                            <span class="xuanze other_info" style="line-height: 1.5;width: 3.2rem;">请选择</span>
+                        </div>
+                    </div>
+                    <div class="other_list" style="display:none">
+                        <div class="hang">
+                            <div class="zuo">当事人姓名</div>
+                            <div class="you">
+                                <input type="text" placeholder="请填写" class="df_xingming" style="text-align: left;">
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人身份证号</div>
+                            <div class="you">
+                                <input type="text" placeholder="请填写" class="df_shenfenzheng" id="kjsf" onblur="isCardNo($(this).val(),$(this).attr('id'))" style="text-align: left;">
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人手机号</div>
+                            <div class="you">
+                                <input type="text" placeholder="请填写" class="df_shoujihao" id="dfssd" onblur="checkMobile($(this).val(),$(this).attr('id'))" style="text-align: left;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other_lists" style="display:none">
+                        <div class="hang">
+                            <div class="zuo">当事人机构名称</div>
+                            <div class="you">
+                                <input type="text" placeholder="请填写" class="dfjg_xingming" style="text-align: left;">
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人机构地址</div>
+                            <div class="you">
+                                <input type="text" placeholder="请填写" class="dfjg_shenfenzheng" style="text-align: left;">
+                            </div>
+                        </div>
+                        <div class="hang">
+                            <div class="zuo">当事人机构电话</div>
+                            <div class="you">
+                                <input type="text" placeholder="请填写" class="dfjg_shoujihao" id="dfjg_shoujihao" onblur="checkMobile($(this).val(),$(this).attr('id'))" style="text-align: left;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quediv">
+                        <div class="queding qd1" id="btn">
+                            确定
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="con-xt" style="display: none;">
+                <style>
+                    .hang {
+                        height: 0.8rem;
+                        width: 100%;
+                        display: flex;
+                        padding-left: 0.2rem;
+                        padding-right: 0.2rem;
+                    }
+                    
+                    .hang_1 {
+                        height: 2.2rem;
+                        width: 100%;
+                        display: flex;
+                        padding-left: 0.2rem;
+                        padding-right: 0.2rem;
+                    }
+                    
+                    .hang_1>.you>div>div>img {
+                        position: absolute;
+                        width: 2.8rem;
+                        height: 2.3rem;
+                    }
+                    
+                    .zuo {
+                        color: #000000;
+                        height: 0.8rem;
+                        width: 2.7rem;
+                        text-align: left;
+                        padding-right: 0.2rem;
+                        line-height: 0.8rem;
+                    }
+                    
+                    .zuo_1 {
+                        color: #000000;
+                        height: 0.8rem;
+                        width: 100%;
+                        text-align: left;
+                        padding-right: 0.2rem;
+                        line-height: 0.8rem;
+                    }
+                    
+                    .you {
+                        /*height: 0.8rem;*/
+                        width: 4.8rem;
+                        line-height: 0.8rem;
+                    }
+                    
+                    .sbxm>div:nth-child(3) {
+                        height: 0.5rem;
+                        line-height: 0.5rem;
+                    }
+                    
+                    .sbxm>div:nth-child(4) {
+                        /*		height: 2rem;*/
+                        line-height: 0.5rem;
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div {
+                        display: flex;
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div>div {
+                        position: relative
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div>div>input.file {
+                        position: absolute;
+                        left: 0;
+                        top: 0.5rem;
+                    }
+                    
+                    .sbxm>div:nth-child(4)>.you>div>div>img {
+                        width: 1.3rem;
+                        height: 1.5rem;
+                        margin-right: 0.2rem;
+                        line-height: 0.5rem;
+                        margin-top: 0.2rem;
+                    }
+                    
+                    input.file {
+                        width: 2.5rem;
+                        opacity: 0;
+                        height: 2rem;
+                    }
+                    
+                    .queding {
+                        width: 4rem;
+                        background-color: #196394;
+                        height: 0.8rem;
+                        text-align: center;
+                        color: white;
+                        font-size: 0.32rem;
+                        line-height: 0.8rem;
+                        border-radius: 5px;
+                        margin: 0 auto;
+                    }
+                    
+                    .quediv {
+                        margin: 1rem auto 0rem;
+                        text-align: center;
+                    }
+                    
+                    th,
+                    td {
+                        text-align: center;
+                        height: 0.5rem;
+                    }
+                    
+                    .xl3 {
+                        width: 4.3rem;
+                    }
+                    .xzz1{
+                        width: 4.3rem;
+                    }
+                </style>
+                <div class="sbxm">
+                    <div class="hang">
+                        <div class="zuo">办案人员姓名</div>
+                        <div class="you dsr_xingming">
+                            牡丹江
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">手机号</div>
+                        <div class="you dsr_shoujihao">
+                            51651561231
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">协同机构</div>
+                        <div class="you">
+                            <span class="select9" id="myselect" style="display: inline-block; border: 1px solid #999;width: 4.3rem;height:  0.7rem">请选择</span>
+                        </div>
+                    </div>
+                    <div class="hang" style="margin-top: 0.2rem">
+                        <div class="zuo_1">提供法律援助通知书</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img1"><input type="file" name="file" class="file" id="file1" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">受援人姓名</div>
+                        <div class="you">
+                            <input type="text" placeholder="请填写" class="syr_xingming" style="text-align: left;">
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">身份证号</div>
+                        <div class="you">
+                            <input type="text" placeholder="请填写" id="asffs" onblur="isCardNo($(this).val(),$(this).attr('id'))" class="syr_shenfen" style="text-align: left;">
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo">手机号</div>
+                        <div class="you">
+                            <input type="text" placeholder="请填写" id="ajfl" onblur="checkMobile($(this).val(),$(this).attr('id'))" class="syr_shouji" style="text-align: left;">
+                        </div>
+                    </div>
+
+                    <div class="hang">
+                        <div class="zuo_1">公安机关采取强制措施决定书</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img2"><input type="file" name="file" class="file" id="file2" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo_1">公安机关受案登记表</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake imgfromd"><input type="file" name="file" class="file" id="fileformd" accept="image/*"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="hang">
+                        <div class="zuo_1">公安机关立案决定书</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img3"><input type="file" name="file" class="file" id="file3" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo_1">公安机关权利义务告知书</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img4"><input type="file" name="file" class="file" id="file4" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo_1">公安机关第一次讯问（询问）笔录</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img5"><input type="file" name="file" class="file" id="file5" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo_1">公安机关呈请法律援助报告书</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img6"><input type="file" name="file" class="file" id="file6" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hang">
+                        <div class="zuo_1">侦查终结后需给法律援助机构（律师）一份起诉意见书</div>
+
+                    </div>
+                    <div class="hang_1">
+                        <div class="zuo"></div>
+                        <div class="you">
+                            <div>
+                                <div><img src="img/dagshirenzp.png" alt="" class="avator-btn-fake img7"><input type="file" name="file" class="file" id="file7" accept="image/*"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="quediv">
+
+                        <div class="queding qd2">确定</div>
+                        <div style="width: 100%;height: 1rem">
+
+                        </div>
+                    </div>
+                    <div style="width: 100%;height: 1rem;"></div>
+                </div>
+                <div style="display: none">
+                    <div>
+                        <form>
+                            <p>
+                                <span></span>
+
+                            </p>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    $(".footer").load("footer.html")
+
+    function checkMobile(val, id) {
+        if (val.length == 0) {
+            return false;
+        }
+        // var sMobile = document.mobileform.mobile.value 
+        if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(val))) {
+            // showTips("请填写正确的手机号"); 
+            tishi("请填写正确的手机号")
+            $("#" + id).val("");
+            // document.mobileform.mobile.focus(); 
+            return false;
+        }
+    }
+
+    function isCardNo(card, id) {
+        if (card.length == 0) {
+            return false;
+        }
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+        if (card.length != 0) {
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (reg.test(card) === false) {
+                tishi("身份证号格式不正确");
+                $("#" + id).val("")
+                return false;
+            }
+        }
+    }
+    $(function() {
+        $(".items li").click(function() {
+            $(this).addClass("act").siblings().removeClass();
+        })
+        $(".shenban").click(function() {
+            $(".con-xt").hide();
+            $(".con").show();
+        })
+        $(".xietong").click(function() {
+            $(".con").hide();
+            $(".con-xt").show();
+        })
+    });
+    //上传文件
+    // $(".avator-btn-fake").click(function(){
+    // 		$("#file1").click();
+    // });
+    // $("#file1").change(function(){
+    // 		var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    // 		if(null == file){
+    // 				return false;
+    // 		}
+    // 		var file_reader = new FileReader();
+    // 		file_reader.onload = (function(){
+    // 				var image_url = this.result;        // 这是图片的路径
+    // 				$(".avator-btn-fake").attr('src', image_url);
+    // 		});
+    // 		file_reader.readAsDataURL(file);
+    // });$(".avator-btn-fake2").click(function(){
+    // 		$("#file2").click();
+    // });
+    // $("#file2").change(function(){
+    // 		var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    // 		if(null == file){
+    // 				return false;
+    // 		}
+    // 		var file_reader = new FileReader();
+    // 		file_reader.onload = (function(){
+    // 				var image_url = this.result;        // 这是图片的路径
+    // 				$(".avator-btn-fake2").attr('src', image_url);
+    // 		});
+    // 		file_reader.readAsDataURL(file);
+    // });$(".avator-btn-fake3").click(function(){
+    // 		$("#file3").click();
+    // });
+    // $("#file3").change(function(){
+    // 		var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+    // 		if(null == file){
+    // 				return false;
+    // 		}
+    // 		var file_reader = new FileReader();
+    // 		file_reader.onload = (function(){
+    // 				var image_url = this.result;        // 这是图片的路径
+    // 				$(".avator-btn-fake3").attr('src', image_url);
+    // 		});
+
+    // 		file_reader.readAsDataURL(file);
+    // });
+    //对方当事人信息
+    var otherHTML = ['对方当事人信息', '对方当事人机构', '无'];
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.other_info',
+        title: '请选择',
+        wheels: [{
+            data: otherHTML
+        }],
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function(indexArr, data) {
+            //console.log(data);
+        },
+        callback: function(indexArr, data) {
+            if (data == otherHTML[0]) {
+                $('.other_info').attr('index', '1');
+                $('.other_list').show();
+                $('.other_lists').hide();
+            } else if (data == otherHTML[1]) {
+                $('.other_info').attr('index', '2');
+                $('.other_list').hide();
+                $('.other_lists').show();
+            } else {
+                $('.other_info').attr('index', '0');
+                $('.other_list').hide();
+                $('.other_lists').hide();
+            }
+        }
+    })
+
+    // ===========鉴定类型
+    var access_token = localStorage.getItem("access_token");
+    var xl1_id;
+    var xl2_id;
+    var xl1 = [];
+
+    $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Data/jd_type',
+            data: {},
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                // console.log(data);
+                var tk1 = data.data;
+                for (var i = 0; i < data.data.length; i++) {
+                    xl1.push(data.data[i].title);
+                }
+
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '.xl1',
+                    title: '请选择',
+                    wheels: [{
+                        data: xl1
+                    }],
+                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                    transitionEnd: function(indexArr, data) {
+                        // console.log(data);
+                    },
+                    callback: function(indexArr, data) {
+                        // console.log(data);
+                        fgld = data + "";
+                        $(".xl1").attr("value", data)
+                        for (var i = 0; i < tk1.length; i++) {
+                            if (data == tk1[i].title) {
+                                xl1_id = tk1[i].id;
+
+                            }
+                        }
+
+                       /* $.ajax({
+                            type: 'post',
+                            url: 'https://sys.t7c.net/index.php/home/Data/jd_type',
+                            data: {
+                                id: xl1_id
+                            },
+                            dataType: 'json',
+                            async: false, //同步异步
+                            success: function(data) {
+                                console.log(data)
+                                if (data.data == null) {
+                                    $(".tishi").text("该类别下暂无科目");
+                                    $(".tishi").fadeIn().delay(800).fadeOut();
+                                }
+                                var tk2 = data.data;
+                                var xl2 = [];
+                                for (var i = 0; i < data.data.length; i++) {
+                                    xl2.push(data.data[i].title);
+                                }
+                                var mobileSelect2 = new MobileSelect({
+                                    trigger: '.xl2',
+                                    title: '请选择',
+                                    wheels: [{
+                                        data: xl2
+                                    }],
+                                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                    transitionEnd: function(indexArr, data) {
+                                        //console.log(data);
+                                    },
+                                    callback: function(indexArr, data) {
+                                        console.log(data);
+                                        fgld = data + "";
+                                        $("#xz2").attr("value", data)
+                                        for (var i = 0; i < tk2.length; i++) {
+                                            if (data == tk2[i].title) {
+                                                xl2_id = tk2[i].id;
+                                            }
+                                        }
+                                        $('.mobileSelect:last-child').remove();
+                                    }
+                                })
+
+
+                            }
+                        })
+*/
+                    }
+                })
+
+            }
+        })
+        // ============鉴定机构
+    var lk3 //下拉框id；
+    var xl3 = []; // 下拉框数组
+    var qy;
+   /// console.log(xl1_id)
+    $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Data/area",
+            data: {},
+            dataType: 'json',
+            success: function(data) {
+                // console.log(data);
+                var typeHTML = [];
+                var index = data.data;
+                for (var i = 0; i < data.data.length; i++) {
+                    typeHTML.push(data.data[i].name);
+                }
+                //             console.log(typeHTML)
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '.xzz1',
+                    title: '请选择区域',
+                    wheels: [{
+                        data: typeHTML
+                    }],
+                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                    transitionEnd: function(indexArr, data) {
+                        //console.log(data);
+                    },
+                    callback: function(indexArr, data) {
+                        //                        console.log(data);
+                         $(".xl3").text("")
+                        $(".xzz1").text(data)
+                        for (i = 0; i < index.length; i++) {
+                            if (data == index[i].name) {
+                               
+                                qy=index[i].id;
+                            }
+                        };
+                        $.ajax({
+                            type: 'post',
+                            url: 'https://sys.t7c.net/index.php/home/Data/sifajd',
+                            data: {qy:qy},
+                            dataType: 'json',
+                            async: false, //同步异步
+                            success: function(data) {
+                                // console.log(data);
+                                xl3=[];
+                                $(".xl3").text("")
+                                var tk3 = data.data;
+                                if(data.data!=null && data.data!=""){
+                                    for (var i = 0; i < data.data.length; i++) {
+                                    xl3.push(data.data[i].jgmc)
+                                }
+                                }
+                                
+                                var mobileSelect3 = new MobileSelect({
+                                    trigger: '.xl3',
+                                    title: '请选择鉴定机构',
+                                    wheels: [{
+                                        data: xl3
+                                    }],
+                                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                    transitionEnd: function(indexArr, data) {
+                                        //console.log(data);
+                                    },
+                                    callback: function(indexArr, data) {
+                                        // console.log(data);
+                                        fgld = data + "";
+                                        $(".xl3").text(data)
+                                        for (var i = 0; i < tk3.length; i++) {
+                                            if (data == tk3[i].jgmc) {
+                                                lk3 = tk3[i].id;
+                                            }
+                                        }
+                                         $('.mobileSelect:last-child').remove();
+                                    }
+                                })
+
+                            }
+                        })
+                    }
+                })
+            }
+    })
+    
+
+
+    // ===========申请人信息
+    var tokenState;
+    $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Personal/mine',
+            data: {
+                access_token: access_token
+            },
+            dataType: 'json',
+            async: true, //同步异步
+            success: function(data) {
+                // console.log(data);
+                tokenState = data.state;
+                if (data.state != '-2') {
+                    $(".old").show();
+                    $('.xinjia').hide();
+                    $(".dsr_xingming").text(data.data.xm);
+                    $(".dsr_shenfenz").text(data.data.zjh);
+                    $(".dsr_shoujihao").text(data.data.lxdh);
+                    // $('.old').css('display','block');
+                } else {
+                    $('.xinjia').show();
+                    $(".old").hide();
+
+                }
+
+            }
+        })
+        //=================================验证码
+    var yzm;
+    var tim = 60;
+    var timer;
+    $(".verify_f").click(function() {
+        clearInterval(timer)
+            // $(".verify_f").attr("disabled","disabled");
+        var mobile = $(".dsr_shoujihao").val();
+        if (mobile.length != 0) {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+                data: {
+                    mobile: mobile
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        tishi(data.msg);
+                        yzm = data.data.yzm;
+                        // $(this).attr("disabled","disabled");
+                        timer = setInterval(function() {
+                            tim--;
+                            $("#dfafd").val(tim + "s");
+                            if (tim <= 0) {
+                                // $("#dfafd").removeAttr("disabled");
+                                tim = 60;
+                                $("#dfafd").val("重新发送");
+                                clearInterval(timer)
+                            }
+                        }, 1000)
+                    } else {
+                        $("#dfafd").val("发送失败");
+                    }
+
+                }
+            })
+        } else {
+            tishi("请输入手机号");
+        }
+
+    })
+
+    function tishi(text) {
+        $(".tishi").text(text);
+        $(".tishi").fadeIn().delay(500).fadeOut();
+    }
+    // =============提交
+   
+    $(".qd1").click(function() {
+        if (tokenState == '-2') {
+            var name = $(".dsr_xingming").val();
+            var id_card = $(".dsr_shenfenz").val();
+            var verify_code = $(".gz_lianxi4").val();
+            var mobile = $(".dsr_shoujihao").val();
+        }
+         console.log($(".dfjg_xingming").val())
+        var otherInfo = $('.other_info').attr('index');
+        var xl3_text = $(".xl3").text();
+        var df_xingming = $(".df_xingming").val();
+        var df_shenfenzheng = $(".df_shenfenzheng").val();
+        var df_shoujihao = $(".df_shoujihao").val();
+        var adverse_jg_name = $(".dfjg_xingming").val();
+        var adverse_jg_address = $(".dfjg_shenfenzheng").val();
+        var adverse_jg_mobile = $(".dfjg_shoujihao").val();
+        /*if (xl2_id == undefined) {
+            tishi("请选择鉴定类别");
+            return false;
+        }*/
+        if (lk3 == undefined) {
+            tishi("请选择鉴定机构");
+            return false;
+        }
+        if (tokenState == '-2') {
+            if (!name) {
+                tishi("请填写当事人姓名");
+
+                return false;
+            } else if (!id_card) {
+                tishi("请填写当事人身份证号");
+
+                return false;
+            } else if (!mobile) {
+                tishi("请填写当事人手机号");
+
+                return false;
+            } else if (!verify_code) {
+                tishi("请填写验证码");
+
+                return false;
+            }
+        }
+        if (otherInfo == undefined) {
+            tishi("请选择对方当事人信息");
+            return false;
+        } else {
+            if (otherInfo == 1) {
+                if (df_xingming == "") {
+                    tishi("请填写对方当事人姓名");
+                    return false;
+                } else if (df_shenfenzheng == "") {
+                    tishi("请填写对方当事人身份证号");
+                    return false;
+                } else if (df_shoujihao == "") {
+                    tishi("请填写对方当事人联系电话");
+                    return false;
+                }
+            } else if (otherInfo == 2) {
+                if (adverse_jg_name == "") {
+                    tishi("请填写对方当事人机构名称");
+                    return false;
+                } else if (adverse_jg_address == "") {
+                    tishi("请填写对方当事人机构地址");
+                    return false;
+                } else if (adverse_jg_mobile == "") {
+                    tishi("请填写对方当事人机构电话");
+                    return false;
+                }
+            } else if (otherInfo == 0) {
+
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/jd_bid',
+            data: {
+                access_token: access_token,
+                jg_id: lk3,
+                jg_name: xl3_text,
+                jd_type: xl2_id,
+                adverse_name: df_xingming,
+                adverse_idnum: df_shenfenzheng,
+                adverse_tel: df_shoujihao,
+                name: name,
+                jd_cate: otherInfo,
+                id_card: id_card,
+                verify_code: verify_code,
+                mobile: mobile,
+                adverse_jg_name: adverse_jg_name,
+                adverse_jg_address: adverse_jg_address,
+                adverse_jg_mobile: adverse_jg_mobile,
+                qy:qy,
+                jd_type:xl1_id
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    tishi("提交成功");
+
+                    setTimeout(function() {
+                        history.go(-1);
+                    }, 1000)
+                } else {
+                    tishi(data.msg);
+
+                }
+            }
+        })
+    })
+
+
+    var imgde1;
+    var imgde2;
+    var imgde3;
+    var imgde4;
+    var imgde5;
+    var imgde6;
+    var imgde7;
+    var fileformdss;
+    $("#file1").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde1 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img1").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file2").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde2 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img2").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#fileformd").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                fileformdss = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".fileformd").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file3").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde3 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img3").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file4").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde4 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img4").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file5").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde5 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img5").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file6").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde6 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img6").attr("src", e.target.result)
+            };
+        }
+    });
+    $("#file7").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde7 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img7").attr("src", e.target.result)
+            };
+        }
+    });
+
+    $(".qd2").click(function() {
+        var syr_xingming = $(".syr_xingming").val();
+        var syr_shenfen = $(".syr_shenfen").val();
+        var syr_shouji = $(".syr_shouji").val();
+
+        // if($(".xl2").text().length==0){
+        // 	$("hi").定科目");
+        //  
+        //       return false;
+        // }else if($(".xl3").text().length==0){
+        // 	$("hi").选择机构");
+        //  
+        //       return false;
+        // }else if ($(".df_xingming").text().length==0) {
+        // 	$("hi").填写对方当事人姓名");
+        //  
+        //       return false;
+        // }else if ($(".df_shenfenzheng").text().length==0) {
+        // 	$("hi").填写对方当事人身份证号");
+        //  
+        //       return false;
+        // }else if ($(".df_shoujihao").text().length==0) {
+        // 	$("hi").填写对方当事人手机号");
+        //  
+        //       return false;
+        // };
+        if ($(".img1").attr("src").length < 40) {
+            tishi("请选择援助通知书");
+
+        } else if ($(".syr_xingming").val().length == 0) {
+            tishi("请填写受援人姓名");
+
+        } else if ($(".syr_shenfen").val().length == 0) {
+            tishi("请填写受援人身份证号");
+
+        } else if ($(".syr_shouji").val().length == 0) {
+            tishi("请填写受援人手机号");
+
+        } else if ($(".img2").attr("src").length < 40) {
+            tishi("请选择援助决定书");
+
+        } else if ($(".imgfromd").attr("src").length < 40) {
+            tishi("请选择援助通知书");
+
+        } else if ($(".img3").attr("src").length < 40) {
+            tishi("请选择立案决定书");
+
+        } else if ($(".img4").attr("src").length < 40) {
+            tishi("请选择义务告知书");
+
+        } else if ($(".img5").attr("src").length < 40) {
+            tishi("请选择询问笔录");
+
+        } else if ($(".img6").attr("src").length < 40) {
+            tishi("请选择援助报告书");
+
+        } else if ($(".img7").attr("src").length < 40) {
+            tishi("请选择起诉意见书");
+
+        }
+
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/jd_synergy',
+            data: {
+                access_token: access_token,
+                adverse_name: syr_xingming,
+                adverse_idnum: syr_shenfen,
+                adverse_tel: syr_shouji,
+                aid: imgde1,
+                decide: imgde2,
+                decide2: imgde3,
+                inform: imgde4,
+                take_down: imgde5,
+                report: imgde6,
+                opinion: imgde7,
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.status == 1) {
+                    tishi("提交成功");
+
+                    setTimeout(function() {
+                        // window.location.href="shifajianding.html";
+                        history.go(-1);
+                    }, 1000)
+                } else if (data.state == -2) {
+                    return false;
+                } else {
+                    tishi(data.msg);
+
+                }
+            }
+        })
+    })
+</script>

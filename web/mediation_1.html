@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交通事故调解 </title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/mediation.css">
+    <script src="./js/shipei.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;"> <img onclick="javascript:window.history.go(-1);" src="./img/return_03.png" alt=""></a>
+                </div>
+                <div class="title">
+                    <p>交通事故调解</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="jiafang">
+                <a class="tiaozhuan">
+                <p>
+                    乙方当事人请扫描以下二维码
+                </p>
+                <p><img class="erweima" src="./img/1536289363.png" alt=""></p>
+                <p>
+                    可通过扫描二维码来进行快捷立案
+                </p>
+                    </a>
+            </div>
+            
+        </div>
+    </section>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+    var access_token=localStorage.getItem("access_token");
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+        return unescape(r[2]);
+        return null;
+    } 
+    var id=getUrlParms("id");
+    var src=getUrlParms("srcs");
+    $(".erweima").attr("src",src);
+    $(".tiaozhuan").click(function(){
+        window.location.href="mediationtwo_1.html?id="+id;
+    })
+
+</script>
+</html>

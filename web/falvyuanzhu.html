@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />  
+    <meta name="renderer" content="ie-comp" /> 
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>法律援助判决书</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/gongzhengchu.css">
+<script type="text/javascript">
+ 　　document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+</script>
+</head>
+<body>
+	<div class="header">
+		<a href="javascript:;" onclick="JavaScript:history.back(-1);">
+			<img src="img/fh.png">
+		</a>
+		<h5>法律援助判查询</h5>
+	</div>
+	<div class="fl">
+        <a href="javascript:;">
+            <span class="active">个人用户</span>
+        </a>
+        <a href="javascript:;">
+            <span>司法机关</span>
+        </a>
+    </div>
+    <div class="container">
+    	<div class="item1_t">
+    		<div class="fom">
+    			<div>姓名</div>
+    			<div>
+                    <input type="text" name="">
+                </div>
+    		</div>
+    		<div class="fom">
+    			<div>身份证号</div>
+    			<div>
+                    <input type="text" name="">
+                </div>
+    		</div>
+    		<div class="fom">
+    			<div>手机号</div>
+    			<div>
+                    <input type="button" value="发送验证吗" name="">
+					<span>默认为注册手机号</span>
+    			</div>
+    		</div>
+    		<div class="fom">
+    			<div>验证码</div>
+    			<div>
+                    <input type="text" name="">
+                </div>
+    		</div>
+    		<div class="zhu">
+                <span>注：</span>
+                目前仅可查询与绑定身份证相关的鉴定书
+            </div>
+    		<input type="button" name="" value="查询">
+    	</div>
+    <div class="item1_t" style="display: none;">
+    	<div class="fom">
+    		<div>选择查询方式</div>
+    		<div>
+	    		<select>
+	    			<option>请选择</option>
+	    			<option>工作人员信息</option>
+	    			<option>机构信息</option>
+	    		</select>
+    		</div>
+    	</div>
+    	<div class="fom">
+    		<div>选择查询方式</div>
+    		<div>
+                <input type="text" name="">
+            </div>
+    	</div>
+    	<input type="button" name="" value="查询">
+    </div>
+</div>
+<div style="width: 100%;height: 1rem"></div>
+<div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(".fl>a").each(function(){
+        var index=$(this).index();
+        console.log(index);
+        console.log($(".item1").eq(index))
+        $(this).click(function(){
+            $(".fl>a>span").removeClass('active');
+            $(".fl>a>span").eq(index).addClass('active').siblings().removeClass('active');
+            $(".container>div").eq(index).stop(true).show().siblings().stop(true).hide();
+        });
+    })
+</script>
+</html>

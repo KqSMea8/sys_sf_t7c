@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title></title>
+    <style>
+        html,
+        body {
+            background-color: white;
+        }
+        
+        .tou {
+            height: 1.7rem;
+            width: 100%;
+            background-color: #196394;
+            position: relative;
+            text-align: center;
+        }
+        
+        .tou>div>img:nth-child(1) {
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+        
+        .act {
+            color: #196394;
+            border-bottom: #196394 2px solid;
+        }
+        
+        .items {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0.25rem;
+            height: 0.8rem;
+            line-height: 0.7rem;
+        }
+        
+        .items>li {
+            text-align: center;
+            padding: 0 0.1rem;
+        }
+        
+        .hang {
+            /*height: 0.8rem;*/
+            width: 100%;
+            display: flex;
+        }
+        
+        .zuo {
+            color: #000000;
+            height: 0.8rem;
+            width: 2.8rem;
+            text-align: right;
+            padding-right: 0.2rem;
+            line-height: 0.8rem;
+        }
+        
+        .you {
+            /*height: 0.8rem;*/
+            width: 4.8rem;
+            line-height: 0.8rem;
+        }
+        
+        .hang1 {
+            height: 0.8rem;
+            width: 100%;
+            display: flex;
+            padding: 0 0.15rem;
+            justify-content: space-between;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+        
+        .hang1>div {
+            border-radius: 5px;
+            background-color: #196394;
+            color: #fff;
+            text-align: center;
+            padding: 0.2rem;
+            width: 1.6rem;
+        }
+        
+        .title {
+            font-size: 0.32rem;
+            margin: 0 auto;
+            line-height: 0.8rem;
+        }
+        
+        textarea {
+            line-height: normal;
+            border: 1px solid #b5b5b5;
+            width: 100%;
+            height: 2rem;
+            border-radius: 2px;
+            outline: none;
+            resize: none;
+            font-size: .25rem;
+            color: #999999;
+        }
+        
+        .showImg,
+        .showVideo {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .showImg img,
+        .showVideo video {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+        
+        .showVideo video {
+            max-height: 80%;
+        }
+        
+        .video .videoCon {
+            position: relative;
+            width: 80%;
+        }
+        
+        .video img {
+            width: 1.15rem;
+            height: 1.15rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -0.575rem;
+            margin-top: -0.575rem;
+        }
+        
+        .showVideoBg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            margin-left: -1.5rem;
+            padding: .2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            border-radius: 0.1rem;
+            display: none;
+        }
+        
+        .dd {
+            width: 4.8rem;
+            float: right;
+            margin-top: -1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="javascript:history.go(-1)"><img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;"></a>
+        <h3 class="shenban_title"></h3>
+        <span class="nav_txt_you"></span> </header>
+    <div class="tou">
+        <div><img src="" alt=""><br>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hang">
+            <div class="title"></div>
+        </div>
+
+        <div>
+            <div class="hang con1">
+                <div class="zuo"></div>
+                <div class="you uname"> <span></span> </div>
+            </div>
+            <div class="hang con2">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <div class="hang con3">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <div class="hang con4">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <div class="hang con5">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <div class="hang con6">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <div class="hang con7">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <div class="hang con8">
+                <div class="zuo"></div>
+                <div class="you utime"> <span></span> </div>
+            </div>
+            <!-- <div class="hang">
+      <div class="zuo">申办详细信息</div>
+      <div class="you uinfo"> <span></span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo"></div>
+      <div class="you uadress"> <span></span> </div>
+    </div>
+    <div class="hang cld">
+      <div class="zuo"></div>
+      <div class="you utype"> <span></span> </div>
+    </div>
+    <div class="hang">
+      <div class="zuo"></div>
+      <div class="you uIs"> <span></span> </div>
+   
+    </div> -->
+            <!-- <div class="hang pingjia lddf">
+      <div class="zuo" style="line-height: 0;margin-top: 0.1rem">备注</div>
+      <div class="clfdd dd">
+      </div>
+    </div> -->
+            <div class="hang cld">
+                <div class="zuo" style="line-height: 0;margin-top: 0.1rem">包含附件</div>
+                <div class="you uScience">
+                    <div class="cl">
+                        <img src="" alt="" style="width: 2.8rem;height: 1.8rem">
+                    </div>
+                </div>
+            </div>
+            <div class="hang video" style="display:none;">
+                <div class="zuo" style="line-height: 0;margin-top: 0.1rem">视频文件</div>
+                <div class="you">
+                    <div class="videoCon">
+                        <img src="img/play.png">
+                        <video class="playVideo" style="width:100%;height:3rem;" src=""></video>
+                    </div>
+                </div>
+            </div>
+            <div class="hang clddd">
+                <div class="zuo" style="line-height: 0;margin-top: 0.1rem">补充材料</div>
+                <div class="you uScien">
+                    <div class="cl">
+                        <img class="bccl" src="" alt="" style="width: 2.8rem;height: 1.8rem">
+                    </div>
+                </div>
+            </div>
+            <div class="hang pingjia">
+                <div class="zuo" style="line-height: 0;margin-top: 0.1rem">评价：</div>
+                <!-- <div class="you uScience"> -->
+                <div class="clfd dd">
+                    <div>
+                        <input type="radio" checked="checked" name="">
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div style="height: 1.8rem ;width: 100%;padding: 0 0.2rem;">
+
+                <div class="hang1">
+                    <div class="adopt">通过</div>
+                    <div class="refuse">拒绝</div>
+                    <div class="supplement">补充</div>
+                    <div class="wc" style="margin:0 auto; display:none;">已完成</div>
+                </div>
+                <div style="width: 100%;height: 1rem"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div style="width: 100%;height: 1rem;"></div> -->
+    <div class="footer"></div>
+    <div class="showImg">
+        <img src="">
+    </div>
+    <div class="showVideo">
+        <div class="showVideoBg"></div>
+        <video controls src=""></video>
+    </div>
+    <div class="clyj">
+        <div class="lkf">
+
+        </div>
+        <div class="kdfj">
+            <p>处理结果</p>
+            <textarea class="texsdd" placeholder="请输入处理意见"></textarea>
+            <button class="adopts">确定</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    .clyj {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: none;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    .clyj .kdfj {
+        position: absolute;
+        width: 6rem;
+        height: auto;
+        top: 35%;
+        left: 50%;
+        padding: .2rem;
+        margin-left: -3rem;
+        background: #fff;
+        border-radius: .1rem;
+        text-align: center;
+        z-index: 9;
+    }
+    
+    .lkf {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -10z
+    }
+    
+    .clyj .kdfj>p {
+        text-align: center;
+        font-size: .35rem;
+        line-height: .5rem;
+    }
+    
+    .clyj .kdfj>textarea {
+        padding: .05rem;
+        font-size: .3rem;
+    }
+    
+    .clyj .kdfj>button {
+        width: 2rem;
+        height: 0.6rem;
+        line-height: .6rem;
+        border: 0;
+        margin-top: .2rem;
+        border-radius: .1rem;
+        color: #fff;
+        background: #196394;
+    }
+    
+    .pingjia {
+        display: none;
+    }
+</style>
+<script src="js/jquery.js"></script>
+<script>
+    $(".hang1").on("click", ".dijsi", function() {
+        $(".clyj").show();
+    })
+
+    $(".lkf").click(function() {
+        $(".clyj").hide();
+    })
+    $(".footer").load("footer.html");
+
+    function showTips(text) {
+        $('body').append('<p class="tishi">' + text + '</p>');
+        if ($('.tishi').css('display') == 'none') {
+            $('.tishi').fadeIn();
+            setTimeout(function() {
+                $('.tishi').fadeOut();
+                $('.tishi').remove();
+            }, 3000)
+        }
+    }
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    var splx = localStorage.getItem("splx");
+    var yhlx = localStorage.getItem("yhlx");
+    var access_token = localStorage.getItem("access_token");
+    
+    // 头像获取
+    var zjhNum;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Personal/mine',
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            $('.tou>div>img').attr('src', data.data.tx);
+            zjhNum = data.data.zjh;
+        }
+    })
+    var status = getUrlParms('status');
+    var statusId = getUrlParms('id');
+    var types = getUrlParms('type');
+    if (status == 0) {
+        status = 1;
+    }
+    if (splx == 4) {
+        if (types == 1){
+            $(".supplement").hide();
+        }
+    }
+    console.log(status);
+  	console.log(types);
+    if (types == 2) {
+        if (status == 0 || status == 1) {
+            $(".clddd").hide();
+            $(".supplement").hide();
+            $(".cld").show();
+        } else if (status == 2 || status == 5 || status == 3) {
+            $(".clddd").hide();
+            $(".supplement").hide();
+        } else if (status == 4) {
+            $(".hang1").hide();
+            $(".supplement").hide();
+            $(".clddd").hide();
+        } else if (status == 6) {
+            $(".clddd").hide()
+        } else if (status == 7) {
+
+            $(".clddd").hide();
+            $(".hang1").hide();
+
+        }
+        $(".supplement").hide();
+    } else if (types == 3) {
+        if (status == 0 || status == 1 || status == 2) {
+            // $(".hang1").find("div").eq(0).attr("class","dijsi");
+            // $(".clfdd").show();
+            $(".clddd").hide();
+            $(".supplement").hide();
+            $(".cld").show();
+        } else if (status == 4) {
+            $(".hang1").hide();
+            $(".supplement").hide();
+            $(".clddd").hide();
+        } else if (status == 5) {
+            $(".hang1").hide();
+            $(".clddd").hide();
+        } else if (status == 6) {
+            $(".hang1").hide();
+            $(".clddd").hide();
+        }
+    } else if (types == 1) {
+        if (status == 0 || status == 1) {
+            // $(".clddd")
+            $(".clddd").hide();
+        } else if (status == 3) {
+            $(".supplement").hide();
+        } else if (status == 5) {
+            $(".hang1").hide();
+        } else if (status == 4) {
+            $(".hang1").hide();
+            $(".supplement").hide();
+            $(".clddd").hide();
+        } else if(status == 7){//拒绝
+        	$(".hang1").hide();
+        }
+
+    }
+
+    var tempURL;
+    var a = 0;
+    if (splx == 1) { //公证
+        if (types == 1) { //申办
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/gzc_bid_list';
+            a = 1;
+        } else if (types == 2) { //投诉
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/complain_list';
+            a = 2;
+        } else if (types == 3) { //预约
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/order_list';
+            a = 3;
+        }
+    } else if (splx == 2) { //法律援助
+        if (types == 1) { //申办
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/yz_bid_list';
+            a = 4;
+        } else if (types == 2) { //投诉
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/complain_list';
+            a = 5;
+        } else if (types == 3) { //预约
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/order_list';
+            a = 6;
+        }
+    } else if (splx == 3) { //人民调解
+        if (types == 1) { //申办
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/tj_bid_list';
+            a = 7;
+        } else if (types == 2) { //投诉
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/complain_list';
+            a = 8;
+        } else if (types == 3) { //预约
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/tj_order_list';
+            a = 9;
+        }
+    } else if (splx == 4) { //司法鉴定
+        if (types == 1) { //申办
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/jd_bid_list';
+            a = 10;
+        } else if (types == 2) { //投诉
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/complain_list';
+            a = 11;
+        } else if (types == 3) { //预约
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/jd_order_list';
+            a = 12;
+        }
+    } else if (splx == 5) { //律师预约
+        if (types == 1) { //申办
+            // tempURL='https://sys.t7c.net/index.php/home/Handle/tj_order_list';
+        } else if (types == 2) { //投诉
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/complain_list';
+            a = 13
+        } else if (types == 3) { //预约
+            tempURL = 'https://sys.t7c.net/index.php/home/Handle/ls_order_list';
+            a = 14
+        }
+    }
+    $('body').on('click', '.playVideo', function() {
+        var videoSrc = $(this).attr('src');
+        $('.showVideo video').attr('src', videoSrc);
+        $('.showVideo').fadeIn();
+        $('.showVideo').css('display', 'flex');
+    })
+    $('.showVideoBg').click(function() {
+        $('.showVideo').fadeOut();
+    })
+    $.ajax({
+        type: 'post',
+        url: tempURL,
+        data: {
+            access_token: access_token,
+            type: splx,
+            id: statusId
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            var term = data.data.ct_time;
+            var pjtext;
+            if (data.data.replenish == null || data.data.replenish == "") {
+                $(".clddd").hide();
+            } else {
+                $(".clddd").show();
+            }
+            if (status == 6) {
+                if (data.data.evaluate == 1) {
+                    pjtext = "非常满意"
+                } else if (data.data.evaluate == 2) {
+                    pjtext = "满意"
+                } else if (data.data.evaluate == 3) {
+                    pjtext = "一般"
+                } else if (data.data.evaluate == 4) {
+                    pjtext = "不满意"
+                } else if (data.data.evaluate == 0) {
+                    pjtext = "未评价"
+                };
+                var ht = "<div><input type='radio' name='ddfsa'checked />" + pjtext + "</div>";
+                $(".clfd").html(ht)
+                $(".pingjia").show();
+            };
+            if (types == 3) {
+                $(".clfdd").text(data.data.order_note);
+                $(".lddf").show();
+            }
+
+            // var date = new Date(term * 1000);
+            // Y = date.getFullYear() + '-';
+            // M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+            // D = date.getDate() + ' ';
+            // var is_call;
+            $(".bccl").attr("src", data.data.replenish)
+            if (data.data.is_call == 1) {
+                is_call = '是';
+            } else {
+                is_call = '否';
+            }
+            console.log(a)
+            if (a == 1 || a == 4) {
+                var html1 = "";
+              	if(data.data.upload != null){
+                	for (var i = 0; i < data.data.upload.length; i++) {
+                    	html1 += `<img src="${data.data.upload[i].savepath}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                	}
+                }
+                
+                // var html=`<img src="${data.data.birth_img}" alt="" style="width: 2.8rem;height: 1.8rem"><br><img src="${data.data.contrary_img}" alt="" style="width: 2.8rem;height: 1.8rem"><br><img src="${data.data.front_img}" alt="" style="width: 2.8rem;height: 1.8rem"><br><img src="${data.data.household_img}" alt="" style="width: 2.8rem;height: 1.8rem">`
+                $(".uScience").html(html1);
+            } else if (a == 15) {
+                var html1 = "";
+              	if(data.data.upload != null){
+                	for (var i = 0; i < data.data.upload.length; i++) {
+                    	html1 += `<img src="${data.data.upload[i].savepath}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                	}
+                }
+                
+                $(".uScience").html(html1);
+            } else if (a == 7 || a == 9) {
+                var html2 = `<img src="${data.data.proposerfront_img}" alt="" style="width: 2.8rem;height: 1.8rem"><br><img src="${data.data.proposercontrary_img}" alt="" style="width: 2.8rem;height: 1.8rem"><br><img src="${data.data.adversefront_img}" alt="" style="width: 2.8rem;height: 1.8rem"><br><img src="${data.data.adversecontrary_img}" alt="" style="width: 2.8rem;height: 1.8rem">`
+                $(".uScience").html(html2);
+            } else if (a == 2 || a == 8 || a == 10 || a == 11 || a == 6) {
+                var html1 = "";
+              	if(data.data.img != null){
+                	for (var i = 0; i < data.data.img.length; i++) {
+                    	html1 += `<img src="${data.data.img[i].savepath}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                	}
+                }
+                $(".uScience").html(html1);
+            } else if (a == 11) {
+              var html1 = "";
+              	if(data.data.adjunct != null){
+                	html1 = `<img src="${data.data.adjunct}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                }
+                $(".uScience").html(html1);
+            } else if (a == 13) {
+                var html1 = "";
+              	if(data.data.adjunct != null){
+                	for (var i = 0; i < data.data.adjunct.length; i++) {
+                    	html1 += `<img src="${data.data.adjunct[i].savepath}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                	}
+                }
+                $(".uScience").html(html1);
+            } else if (a == 3) {
+                var html1 = "";
+              	if(data.data.img != null){
+                	for (var i = 0; i < data.data.img.length; i++) {
+                    	html1 += `<img src="${data.data.img[i].savepath}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                	}
+                }
+                
+                $(".uScience").html(html1);
+            } else if (a == 5) {
+                var html1 = "";
+              	if(data.data.img != null){
+                	for (var i = 0; i < data.data.img.length; i++) {
+                    	html1 += `<img src="${data.data.img[i].savepath}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                	}
+                }
+                
+                $(".uScience").html(html1);
+            } else if(a == 12){
+
+              var html1 = "";
+              	if(data.data.adjunct != null){
+                	html1 = `<img src="${data.data.adjunct}" alt="" style="width: 2.8rem;height: 1.8rem"><br>`;
+                }
+                $(".uScience").html(html1);
+            }
+            $('.utime>span').html(term);
+            if (splx == 4) {
+                $('.uinfo>span').html('鉴定处名称：' + data.data.jg_name);
+
+            } else {
+                $('.uinfo>span').html('公证处名称：' + data.data.jg_name);
+            }
+
+            $('.uadress>span').html('公证使用地：' + data.data.jg_address);
+            $('.utype>span').html('公证业务类型：' + data.data.name);
+            $('.uIs>span').html('上门服务：' + is_call);
+            if (splx == 1) { //公证
+                //if (a == 12 || a == 15 || a == 8 || a == 14) {
+                if (a == 1) {
+                    if (data.data.is_call == 1) {
+                        data.data.is_call = '是';
+                    } else {
+                        data.data.is_call = '否';
+                    }
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.proposer_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.proposer_idnum + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.proposer_tel + '</span> </div>');
+                    $('.con4').html('<div class="zuo">申请时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">申办详细信息</div><div class="you"> <span style="width:4.5rem;display:inline-block;">1、公正使用地： ' + data.data.jg_address + '</span> </div>');
+                    $('.con6').html('<div class="zuo"></div><div class="you"> <span>2、公正业务类型： ' + data.data.name + '</span> </div>');
+                    $('.con7').html('<div class="zuo"></div><div class="you"> <span>3、上门服务： ' + data.data.is_call + '</span> </div>');
+                    $('.con8').hide();
+                    $('.title').html(data.data.proposer_name + '公证申办');
+                    // $('.uname>span').html(data.data.proposer_name);
+
+                } else if (a == 2 || a == 8 || a == 10 || a == 12) {
+                    $('.con1').html('<div class="zuo">被投诉公证员</div><div class="you"> <span>' + data.data.jgry_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">投诉人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con3').html('<div class="zuo">投诉人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con4').html('<div class="zuo">投诉人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con5').html('<div class="zuo">投诉时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con6').html('<div class="zuo">投诉类别</div><div class="you"> <span>' + data.data.complain_type + '</span> </div>');
+                    $('.con7').html('<div class="zuo">投诉标题</div><div class="you"> <span>' + data.data.title + '</span> </div>');
+                    $('.con8').html('<div class="zuo">投诉内容</div><div class="you"> <span>' + data.data.text + '</span> </div>');
+                    $('.video video').attr('src', data.data.video);
+                    $('.video').show();
+                    $('.title').html(data.data.jgry_name + '公证投诉');
+                } else if (a == 3 || a == 5 || a == 9 || a == 11 || a == 13) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con4').html('<div class="zuo">预约时间</div><div class="you"> <span>' + data.data.order_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">预约类别</div><div class="you"> <span>' + data.data.order_type + '</span> </div>');
+                    $('.con6').html('<div class="zuo">备注</div><div class="you"> <span>' + data.data.order_note + '</span> </div>');
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.personal_name + '公证预约');
+                }
+            } else if (splx == 2) { //法律援助
+                //if (a == 1 || a == 15 || a == 7 || a == 14) {
+                if (a == 4) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.proposer_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.proposer_idnum + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.proposer_tel + '</span> </div>');
+                    $('.con4').html('<div class="zuo">申请时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">申办详细信息</div><div class="you"> <span style="width:4.5rem;display:inline-block;">1、申请人类型： '+ data.data.proposer_type +'</span> </div>');
+					$('.con6').html('<div class="zuo"></div><div class="you"> <span>2、申请事项： '+ data.data.item +'</span> </div>');
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.proposer_name + '法律援助申办');
+                    // $('.uname>span').html(data.data.proposer_name);
+                    // $('.utype>span').html('公证业务类型：'+data.data.proposer_type);
+                    // $(".uadress").parent().css("display","none");
+                //} else if (a == 2 || a == 8 || a == 10 || a == 12) {
+                  } else if (a == 5) {
+                    $('.con1').html('<div class="zuo">被投诉工作人员</div><div class="you"> <span>' + data.data.jgry_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">投诉人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con3').html('<div class="zuo">投诉人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con4').html('<div class="zuo">投诉人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con5').html('<div class="zuo">投诉时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con6').html('<div class="zuo">投诉类别</div><div class="you"> <span>' + data.data.complain_type + '</span> </div>');
+                    $('.con7').html('<div class="zuo">投诉标题</div><div class="you"> <span>' + data.data.title + '</span> </div>');
+                    $('.con8').html('<div class="zuo">投诉内容</div><div class="you"> <span>' + data.data.text + '</span> </div>');
+                    // $('.uname>span').html(data.data.jgry_name);
+                    $('.video video').attr('src', data.data.video);
+                    $('.video').show();
+                    $('.title').html(data.data.jgry_name + '法律援助投诉');
+                //} else if (a == 3 || a == 9 || a == 11 || a == 13) {
+                } else if (a == 6) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con4').html('<div class="zuo">预约时间</div><div class="you"> <span>' + data.data.order_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">预约类别</div><div class="you"> <span>' + data.data.order_type + '</span> </div>');
+                    $('.con6').html('<div class="zuo">备注</div><div class="you"> <span>' + data.data.order_note + '</span> </div>');
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.personal_name + '法律援助预约');
+                }
+            } else if (splx == 3) { //人民调解
+                if (a == 1 || a == 15 || a == 7 || a == 14) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.proposer_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.proposer_idnum + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.proposer_tel + '</span> </div>');
+                    $('.con4').html('<div class="zuo">申请时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">调解类别</div><div class="you"> <span>' + data.data.tj_type + '</span> </div>');
+                    $('.con6').hide();
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.proposer_name + '人民调解申办');
+                } else if (a == 2 || a == 4 || a == 8 || a == 10 || a == 12) {
+                    $('.con1').html('<div class="zuo">被投诉调解员</div><div class="you"> <span>' + data.data.jgry_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">投诉人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con3').html('<div class="zuo">投诉人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con4').html('<div class="zuo">投诉人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con5').html('<div class="zuo">投诉时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con6').html('<div class="zuo">投诉类别</div><div class="you"> <span>' + data.data.complain_type + '</span> </div>');
+                    $('.con7').html('<div class="zuo">投诉标题</div><div class="you"> <span>' + data.data.title + '</span> </div>');
+                    $('.con8').html('<div class="zuo">投诉内容</div><div class="you"> <span>' + data.data.text + '</span> </div>');
+                    $('.video video').attr('src', data.data.video);
+                    $('.video').show();
+                    $('.title').html(data.data.jgry_name + '人民调解投诉');
+                } else if (a == 3 || a == 5 || a == 9 || a == 11 || a == 13) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con4').html('<div class="zuo">预约时间</div><div class="you"> <span>' + data.data.order_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">预约类别</div><div class="you"> <span>' + data.data.order_type + '</span> </div>');
+                    $('.con6').html('<div class="zuo">备注</div><div class="you"> <span>' + data.data.order_note + '</span> </div>');
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.personal_name + '人民调解预约');
+                }
+            } else if (splx == 4) { //司法鉴定
+                if (types == 1) {
+                    $(".cld").hide();
+                }
+                //if (a == 1 || a == 15 || a == 7 || a == 14) {
+                if (a == 10) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.proposer_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.proposer_idnum + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.proposer_tel + '</span> </div>');
+                    if(data.data.jd_cate==0){
+                        $('.con4').html('<div class="zuo">对方当事人信息</div><div class="you"> <span style="width:4.5rem;display:inline-block;">无</span> </div>');
+                        $('.con5').hide();
+                        $('.con6').hide();
+                    }else if(data.data.jd_cate==1){
+                        $('.con4').html('<div class="zuo">对方当事人信息</div><div class="you"> <span style="width:4.5rem;display:inline-block;">当事人姓名： '+ data.data.adverse_name +'</span> </div>');
+                        $('.con5').html('<div class="zuo"></div><div class="you"> <span>当事人身份证号： '+ data.data.adverse_idnum +'</span> </div>');
+                        $('.con6').html('<div class="zuo"></div><div class="you"> <span>当事人手机号： '+ data.data.adverse_tel +'</span> </div>');
+                    }else{
+                        $('.con4').html('<div class="zuo">对方当事人机构</div><div class="you"> <span style="width:4.5rem;display:inline-block;">当事人机构名称： '+ data.data.adverse_jg_name +'</span> </div>');
+                        $('.con5').html('<div class="zuo"></div><div class="you"> <span>当事人机构地址： '+ data.data.adverse_jg_address +'</span> </div>');
+                        $('.con6').html('<div class="zuo"></div><div class="you"> <span>当事人机构电话： '+ data.data.adverse_jg_mobile +'</span> </div>');
+                    }
+                    $('.con7').html('<div class="zuo">申请时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con8').html('<div class="zuo">申办类别</div><div class="you"> <span>' + data.data.jd_type + '</span> </div>');
+                    $('.title').html(data.data.proposer_name + '司法鉴定申办');
+                } else if (a == 2 || a == 4 || a == 8 || a == 11) {
+                    $('.con1').html('<div class="zuo">被投诉鉴定员</div><div class="you"> <span>' + data.data.jgry_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">投诉人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con3').html('<div class="zuo">投诉人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con4').html('<div class="zuo">投诉人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con5').html('<div class="zuo">投诉时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con6').html('<div class="zuo">投诉类别</div><div class="you"> <span>' + data.data.complain_type + '</span> </div>');
+                    $('.con7').html('<div class="zuo">投诉标题</div><div class="you"> <span>' + data.data.title + '</span> </div>');
+                    $('.con8').html('<div class="zuo">投诉内容</div><div class="you"> <span>' + data.data.text + '</span> </div>');
+                    $('.video video').attr('src', data.data.video);
+                    $('.video').show();
+                    $('.title').html(data.data.jgry_name + '司法鉴定投诉');
+                } else if (a == 12) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con4').html('<div class="zuo">预约时间</div><div class="you"> <span>' + data.data.order_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">预约类别</div><div class="you"> <span>' + data.data.jd_type + '</span> </div>');
+                    $('.con6').html('<div class="zuo">备注</div><div class="you"> <span>' + data.data.order_note + '</span> </div>');
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.personal_name + '司法鉴定预约');
+                }
+            } else if (splx == 5) { //律师预约
+                if (a == 1 || a == 15 || a == 7) {
+                    $('.uname>span').html(data.data.proposer_name);
+                    $('.title').html(data.data.proposer_name + '律师预约申办');
+                    $('.utype>span').html('公证业务类型：' + data.data.proposer_type);
+                    $(".uadress").parent().css("display", "none");
+                } else if (a == 13) {
+                    $('.con1').html('<div class="zuo">被投诉律师</div><div class="you"> <span>' + data.data.jgry_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">投诉人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con3').html('<div class="zuo">投诉人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con4').html('<div class="zuo">投诉人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con5').html('<div class="zuo">投诉时间</div><div class="you"> <span>' + data.data.ct_time + '</span> </div>');
+                    $('.con6').html('<div class="zuo">投诉类别</div><div class="you"> <span>' + data.data.complain_type + '</span> </div>');
+                    $('.con7').html('<div class="zuo">投诉标题</div><div class="you"> <span>' + data.data.title + '</span> </div>');
+                    $('.con8').html('<div class="zuo">投诉内容</div><div class="you"> <span>' + data.data.text + '</span> </div>');
+                    $('.video video').attr('src', data.data.video);
+                    $('.video').show();
+                    $('.title').html(data.data.jgry_name + '律师预约投诉');
+                } else if (a == 14) {
+                    $('.con1').html('<div class="zuo">申请人姓名</div><div class="you"> <span>' + data.data.personal_name + '</span> </div>');
+                    $('.con2').html('<div class="zuo">申请人身份证号</div><div class="you"> <span>' + data.data.personal_id_card + '</span> </div>');
+                    $('.con3').html('<div class="zuo">申请人联系方式</div><div class="you"> <span>' + data.data.personal_mobile + '</span> </div>');
+                    $('.con4').html('<div class="zuo">预约时间</div><div class="you"> <span>' + data.data.order_time + '</span> </div>');
+                    $('.con5').html('<div class="zuo">预约类别</div><div class="you"> <span>' + data.data.order_type + '</span> </div>');
+                    $('.con6').html('<div class="zuo">备注</div><div class="you"> <span>' + data.data.order_note + '</span> </div>');
+                    $('.con7').hide();
+                    $('.con8').hide();
+                    $('.title').html(data.data.personal_name + '律师预约预约');
+                }
+            }
+
+            var imgHTML = "";
+            var fileType = "";
+            if (data.data.replenish != null) {
+                for (var i = 0; i < data.data.replenish.length; i++) {
+                    fileType = data.data.replenish[i].savepath;
+                    fileType = fileType.substr(fileType.lastIndexOf('.'));
+                    fileType = fileType.substr(1);
+                    if (fileType == 'png') {
+                        imgHTML += '<img src="' + data.data.replenish[i].savepath + '" alt="" style="max-width: 1.5rem;max-height: 1.5rem">'
+                    } else {
+                        imgHTML += '<a href="' + data.data.replenish[i].savepath + '"><img src="img/filePreview.png" style="max-width: 1.5rem;max-height: 1.5rem"></a>'
+                    }
+                }
+            }
+            $('.uScien').html(imgHTML);
+        }
+    })
+    $('.uScien').on('click', 'img', function() {
+        var imgSRC = $(this).attr('src');
+        var imgWidth = $(this).width();
+        var imgHeight = $(this).height();
+        var Multiple = $(window).width() / imgWidth;
+        $('.showImg>img').attr('src', imgSRC);
+        // $('.showImg>img').css('margin-top',"-4.1rem");
+        if ($('.showImg').css('display') == 'none') {
+            $('.showImg').fadeIn();
+            $('.showImg').css('display', 'flex');
+            $("body").css("overflow-y", "hidden")
+        }
+
+    })
+    $('.uScience').on('click', 'img', function() {
+        var imgSRC = $(this).attr('src');
+        var imgWidth = $(this).width();
+        var imgHeight = $(this).height();
+        var Multiple = $(window).width() / imgWidth;
+        $('.showImg>img').attr('src', imgSRC);
+        // $('.showImg>img').css('margin-top',"-4.1rem");
+        console.log($('.showImg>img').width());
+        if ($('.showImg').css('display') == 'none') {
+            $('.showImg').fadeIn();
+            $('.showImg').css('display', 'flex');
+            $("body").css("overflow-y", "hidden")
+        }
+
+    })
+    $('.showImg').click(function() {
+        if ($(this).css('display') == 'block' || $(this).css('display') == 'flex') {
+            $(this).fadeOut();
+            $("body").css("overflow-y", "scroll");
+        }
+    })
+    if (status == 1) {
+        // alert(status);
+        showList(status, statusId, '', '');
+    }
+
+    function showList(status, id, refuse_cause, replenish_cause) {
+        if (types == 1) {
+            url = 'https://sys.t7c.net/index.php/home/Approval/tid_changeStatus';
+        } else if (types == 2) {
+            url = 'https://sys.t7c.net/index.php/home/Approval/complain_changeStatus';
+        } else if (types == 3) {
+            url = 'https://sys.t7c.net/index.php/home/Approval/order_changeStatus';
+        }
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: {
+                access_token: access_token,
+                type: splx,
+                status: status,
+                refuse_cause: refuse_cause,
+                replenish_cause: replenish_cause,
+                id: id
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (status != 1) {
+                    if (data.status == 1) {
+                        javascript: history.go(-1);
+                    }
+                    else {
+                        showTips(data.msg);
+                    }
+                }
+            }
+        })
+    }
+    var resetStatus;
+    $('.adopt').click(function() {
+            status = 2;
+        showList(status, statusId, '', '');
+    })
+    $('.refuse').click(function() {
+        resetStatus = 1;
+        // status=7;
+        limitImport(".texsdd", 50);
+        $('.kdfj p').html('拒绝原因');
+        $('.texsdd').attr('placeholder', '请输入拒绝原因，最多输入50个字');
+        $(".clyj").fadeIn();
+        // showList(status,statusId);
+    })
+    $('.supplement').click(function() {
+        resetStatus = 2;
+        // status=3;
+        if (types == 1 || types == 2) {
+            limitImport(".texsdd", 50);
+            $('.kdfj p').html('补充材料原因');
+            $('.texsdd').attr('placeholder', '请输入补充材料原因，最多输入50个字');
+            $(".clyj").fadeIn();
+        }
+        // showList(status,statusId);
+    })
+
+    function limitImport(str, num) {
+        $(document).on('input propertychange', str, function() {
+            var self = $(this);
+            var content = self.val();
+            if (content.length > num) {
+                self.val(content.substring(0, num));
+            }
+        });
+    }
+    $(".adopts").click(function() {
+        var texsdd = $(".texsdd").val();
+        if (resetStatus == 1) {
+            status = 7;
+            if(texsdd=="" || texsdd==null || texsdd==undefined){
+                showTips('拒绝原因不能为空');
+            }else{
+                showList(status, statusId, texsdd, '');
+            }
+        } else {
+            status = 3;
+            if(texsdd=="" || texsdd==null || texsdd==undefined){
+                showTips('补充材料原因不能为空');
+            }else{
+                showList(status, statusId, '', texsdd);
+            }
+        }
+    })
+    if (status == 2 || status == 5) {
+        $(".adopt").hide();
+        $(".refuse").hide();
+        $(".supplement").hide();
+        $(".wc").show();
+    } else if (status == 6) {
+        $(".adopt").hide();
+        $(".refuse").hide();
+        $(".supplement").hide();
+        $(".wc").hide();
+    }
+    if (types == 2) {
+        if (status == 2 || status == 4) {
+            $(".adopt").hide();
+            $(".refuse").hide();
+            $(".supplement").hide();
+            $(".wc").show();
+        } else if (status == 6) {
+            $(".adopt").hide();
+            $(".refuse").hide();
+            $(".supplement").hide();
+            $(".wc").hide();
+        } else if (status == 5) {
+            $(".adopt").hide();
+            $(".refuse").hide();
+            $(".supplement").hide();
+            $(".wc").hide();
+        }
+    }
+    $(".wc").click(function() {
+        if (types == 2) {
+            status = 5;
+        } else {
+            status = 5;
+        }
+        showList(status, statusId, '', '');
+    })
+</script>

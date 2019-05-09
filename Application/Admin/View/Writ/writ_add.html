@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑文书';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑文书</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">文书标题：</th>
+                            <td>
+                                <input type="text" name="title" class="input uname" size="40" value="{$list.title}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">文书文件：</th>
+                            <td>
+                                <input type="file" name="path">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120"></th>
+                            <td>
+                                <if condition="$list['path'] neq ''">
+                                   {$list['path']}
+                                </if>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">案卷号：</th>
+                            <td>
+                                <input type="text" name="files_id" class="input uname" size="40" value="{$list.files_id}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">关键词：</th>
+                            <td>
+                                <textarea name="keyword" style="width: 400px; height: 150px;">{$list.keyword}</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                <div class="Item hr">
+                    <div class="current">甲方</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">姓名：</th>
+                            <td>
+                                <input type="text" name="name" class="input uname" size="40" value="{$list.name}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">身份证号：</th>
+                            <td>
+                                <input type="text" name="id_card" class="input uname" size="40" value="{$list.id_card}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">手机号：</th>
+                            <td>
+                                <input type="text" name="mobile" class="input uname" size="40" value="{$list.mobile}"/>
+                            </td>
+                        </tr>
+                    </table>
+                <div class="Item hr">
+                    <div class="current">乙方</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">姓名：</th>
+                            <td>
+                                <input type="text" name="name2" class="input uname" size="40" value="{$list.name2}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">身份证号：</th>
+                            <td>
+                                <input type="text" name="id_card2" class="input uname" size="40" value="{$list.id_card2}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">手机号：</th>
+                            <td>
+                                <input type="text" name="mobile2" class="input uname" size="40" value="{$list.mobile2}"/>
+                            </td>
+                        </tr>
+                    </table>
+                <div class="Item hr">
+                    <div class="current">第三方</div>
+                </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">姓名：</th>
+                            <td>
+                                <input type="text" name="name3" class="input uname" size="40" value="{$list.name3}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">身份证号：</th>
+                            <td>
+                                <input type="text" name="id_card3" class="input uname" size="40" value="{$list.id_card3}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">手机号：</th>
+                            <td>
+                                <input type="text" name="mobile3" class="input uname" size="40" value="{$list.mobile3}"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <if condition="$list['type'] neq ''">
+                    <input type="hidden" name="type" value="{$list.type}"/>
+                    <else />
+                    <input type="hidden" name="type" value="{$_GET['type']}"/>
+                    </if>
+
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

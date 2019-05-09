@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>用户管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='用户列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">用户列表11</div>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>id</td>
+                                <td>姓名</td>
+                                <td>性别</td>
+                                <td>手机</td>
+                                <!-- <td>类型</td> -->
+                                <td>注册时间</td>
+                                <td>最后登录时间</td>
+                                <!-- <td>状态</td> -->
+                                <td width="150">操作</td>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                               <tr align="center" id="{$vo.id}">
+                               <td>{$vo.id}</td>
+                               <td>{$vo.xm}</td>
+                               <td>{$vo.xb}</td>
+                               <td>{$vo.lxdh}</td>
+                               <!-- <td>{$vo.yhlx}</td> -->
+                               <td>{$vo.zcsj}</td>
+                               <td>{$vo.zhdlsj}</td>
+                               <!-- <td><a href="javascript:void(0);" title="激活" onclick="changeAttr({$vo.id},this)"><img src="__PUBLIC__/Img/action_{$vo.state}.png" border="0"></a></td> -->
+                                <td>[ <a href="__URL__/acount?id={$vo.id}">统计 </a> ]<!--  [ <a link="{:U('News/wd_del/',array('id'=>$vo['id']))}" href="javascript:void(0)" name="{$vo.name}" class="del">删除 </a> ] --></td>
+                            </tr>
+                        </volist>
+                        <tr><td><td colspan="10" align="right">{$page}</td></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <script type="text/javascript">
+            $(function(){
+                $(".del").click(function(){
+                    var delLink=$(this).attr("link");
+                    $this = $(this);
+                    popup.confirm('你真的打算删除【<b>'+$(this).attr("name")+'</b>】吗?','温馨提示',function(action){
+                        if(action == 'ok'){
+                            delByLink(delLink,$this);
+                        }
+                    });
+                    return false;
+                });
+            });
+            function changeAttr(id,v){
+                $.get('{:U("User/state_change")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

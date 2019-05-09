@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" type="text/css" href="css/gonshi2.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+  　　document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+    </script>
+    <title>公示内容</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">政务公开</div>
+    </header>
+    <div class="container">
+        <ul class="items">
+            <!-- <li>
+                <a href="xingzhengchufa.html">
+                    <img src="img/xzcf.png" alt="行政处罚">
+                    <br>
+                    <span>行政处罚</span>
+                </a>
+            </li>
+            <li>
+                <a href="lvsiniandukaohe.html">
+                    <img src="img/ls.png" alt="律师年度考核">
+                    <br>
+                    <span>律师年度考核</span>
+                </a>
+            </li>
+            <li>
+                <a href="gongzhengyuanniandukaohe.html">
+                    <img src="img/gzy.png" alt="公证年度考核">
+                    <br>
+                    <span>公证年度考核</span>
+                </a>
+            </li>
+            <li>
+                <a href="sifajiandingniandukaohe.html">
+                    <img src="img/sfjd.png" alt="司法鉴定年度考核">
+                    <br>
+                    <span>司法鉴定年度考核</span>
+                </a>
+            </li>
+            <li>
+                <a href="anliku.html">
+                    <img src="img/al.png" alt="案例库">
+                    <br>
+                    <span>案例库</span>
+                </a>
+            </li> -->
+        </ul>
+    </div>
+<div style="width: 100%;height: 1rem"></div>
+<div class="fooder"></div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/load.js"></script>
+<script type="text/javascript">
+    $.ajax({
+            type:"POST",
+            url:"http://sf.wokerr.com/index.php/home/Data/affair_type",
+            data:{},
+            dataType:'json',
+            success:function(data){
+                  console.log(data)
+                  var html="";
+                  for(var i=0;i<data.data.length;i++){
+                    html+="<li id='"+data.data[i].id+"' class='tab"+data.data[i].id+"'>"+
+                            "<a >"+
+                                "<img src='"+data.data[i].img_url+"'>"+
+                                "<br>"+
+                                "<span>"+data.data[i].name+"</span>"+
+                            "</a>"+
+                        "</li>"  
+                  }
+                  $(".items").html(html);
+                  $(".tab2").click(function(){
+                    var id=$(this).attr("id");
+                    window.location.href="xingzhengchufa.html?type="+id;
+                  })
+                  $(".tab3").click(function(){
+                    var id=$(this).attr("id");
+                    window.location.href="lvsiniandukaohe.html?type="+id;
+                  })
+                  $(".tab4").click(function(){
+                    var id=$(this).attr("id");
+                    window.location.href="gongzhengyuanniandukaohe.html?type="+id;
+                  })
+                  $(".tab5").click(function(){
+                    var id=$(this).attr("id");
+                    window.location.href="sifajiandingniandukaohe.html?type="+id;
+                  })
+
+            }
+      })
+</script>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>交通事故调解 </title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/mediation.css">
+    <script src="./js/shipei.js"></script>
+</head>
+<style>
+    .text input[type="file"] {
+        width: 15rem;
+        height: 10rem;
+        position: absolute;
+        left: 29px;
+        opacity: 0;
+        z-index: 10;
+    }
+    
+    .tishi {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 6rem;
+        height: auto;
+        padding: .5rem;
+        display: none;
+        background: rgba(0, 0, 0, .5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -3rem;
+        z-index: 999999;
+    }
+</style>
+
+<body>
+    <p class="tishi"></p>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;"> <img onclick="javascript:window.history.go(-1);" src="./img/return_03.png" alt=""></a>
+                </div>
+                <div class="title">
+                    <p>交通事故调解</p>
+                </div>
+                <div class="title_1">
+                    <!-- <a href="mediation_1.html" title="">
+                        <p>乙方二维码</p>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="text">
+                <p>姓名</p>
+                <input type="text" class="jtsg_tj1">
+                <br>
+            </div>
+            <div class="text">
+                <p>身份证</p>
+                <input type="text" onblur="isCardNo($(this).val())" class="jtsg_tj2">
+                <br>
+            </div>
+            <div class="text">
+                <p>手机号</p>
+                <input type="text" style="width:10.5rem;" onblur="checkMobile($(this).val())" class="jtsg_tj3"><input type="button" class="verify_f" name="" value="发送验证码" style="width:6.2rem;margin-left:.2rem; text-align:center; background:#fff; border:1px solid #999; font-size:14px; padding:0;">
+                <br>
+            </div>
+            <div class="text">
+                <p class="yanzhengma">验证码</p>
+                <input type="text" class="jtsg_tj4">
+                <br>
+            </div>
+            <div class="text">
+                <p>事故位置</p>
+                <input type="text" class="shigun">
+                <br>
+            </div>
+            <div class="text">
+                <p>定位信息</p>
+                <input type="text" class="weizhi">
+                <br>
+            </div>
+            <div class="text">
+                <p>行车执照</p>
+                <img src="./img/shangchuan.png" alt="" class="img1">
+                <input type="file" id="file1" class="file1">
+            </div> <br>
+            <div class="text">
+                <p>驾照</p>
+                <img src="./img/shangchuan.png" alt="" class="img2">
+                <input type="file" id="file2" class="file2">
+            </div><br>
+            <div class="text">
+                <p>身份证正面</p>
+                <img src="./img/shangchuan.png" alt="" class="img3">
+                <input type="file" id="file3" class="file3">
+            </div><br>
+            <div class="text">
+                <p>身份证反面</p>
+                <img src="./img/shangchuan.png" alt="" class="img4">
+                <input type="file" id="file4" class="file4">
+            </div><br>
+
+            <div class="text lkd">
+                <p>事故照片上传</p>
+                <img src="./img/shangchuan.png" alt="" class="img5">
+                <input type="file" id="file5" class="file5" style=" width: 3rem;height: 8rem;opacity: 1;position: absolute;left: 0; opacity: 0;">
+                <img src="./img/shangchuan.png" alt="" class="img6">
+                <input type="file" id="file6" class="file6" style=" width: 3rem;height: 8rem;opacity: 1;position: absolute;left: 6rem; opacity: 0;">
+                <img src="./img/shangchuan.png" alt="" class="img7">
+                <input type="file" id="file7" class="file7" style=" width: 3rem;height: 8rem;opacity: 1;position: absolute;left: 13rem; opacity: 0;">
+            </div><br>
+            <div class="ldkf">
+                <input class="ij" type="submit" value="提交">
+            </div>
+        </div>
+    </section>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pfxLjAaZ1R42UYibN7YlMPzSdALx1UGq"></script>
+<script>
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    var id = getUrlParms("id");
+    var access_token = localStorage.getItem("access_token");
+    var imgde1;
+    var imgde2;
+    var imgde3;
+    var imgde4;
+    var imgde5;
+    var imgde6;
+    var imgde7;
+    $("#file1").change(function() {
+        var img_file = document.getElementsByClassName("file1")[0];
+        fileObj = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde1 = e.target.result.split(",")[1];
+
+                console.log(imgde1)
+                $(".img1").attr("src", e.target.result)
+            };
+        }
+    })
+    $("#file2").change(function() {
+        var img_file = document.getElementsByClassName("file2")[0];
+        fileObj1 = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde2 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img2").attr("src", e.target.result)
+            };
+        }
+    })
+    $("#file3").change(function() {
+        var img_file = document.getElementsByClassName("file3")[0];
+        fileObj2 = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde3 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img3").attr("src", e.target.result)
+            };
+        }
+    })
+    $("#file4").change(function() {
+        var img_file = document.getElementsByClassName("file4")[0];
+        fileObj3 = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde4 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img4").attr("src", e.target.result)
+            };
+        }
+    })
+
+    $("#file5").change(function() {
+        var img_file = document.getElementsByClassName("file5")[0];
+        fileObj3 = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde5 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img5").attr("src", e.target.result)
+            };
+        }
+    })
+    $("#file6").change(function() {
+        var img_file = document.getElementsByClassName("file6")[0];
+        fileObj3 = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde6 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img6").attr("src", e.target.result)
+            };
+        }
+    })
+    $("#file7").change(function() {
+        var img_file = document.getElementsByClassName("file7")[0];
+        fileObj3 = img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                // var  dd = e.target.result.indexOf(",");
+                imgde7 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img7").attr("src", e.target.result)
+            };
+        }
+    })
+
+    // ===========验证码
+    var yzm;
+    var tim = 60;
+    var timer;
+    $(".verify_f").click(function() {
+        clearInterval(timer)
+        var mobile = $(".jtsg_tj3").val();
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+            data: {
+                mobile: mobile
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                showTips(data.msg)
+                if (data.state == 1) {
+                    yzm = data.data.yzm;
+                    timer = setInterval(function() {
+                        tim--;
+                        $(".verify_f").val(tim);
+                        if (tim <= 0) {
+                            tim = 60;
+                            $(".verify_f").val("重新发送");
+                            clearInterval(timer)
+                        }
+                    }, 1000)
+                } else {
+                    $(".verify_f").val("发送失败");
+                }
+
+            }
+        })
+    })
+
+    // var xm;
+    // var zjh;
+    // var lxdh
+    // $.ajax({
+    //         type:'post',
+    //         url:'https://sys.t7c.net/index.php/home/Personal/mine',
+    //         data:{
+    //             access_token:access_token
+    //         },
+    //         dataType:'json', 
+    //         async: false,   //同步异步
+    //         success:function(data){
+    //             console.log(data);
+    //             xm=data.data.xm;
+    //             zjh=data.data.zjh;
+    //             lxdh=data.data.lxdh
+    //         }
+    //     })
+    // if(access_token!=""||access_token!=null||access_token!= undefined){
+    //     $(".jtsg_tj1").val(xm);
+    //     $(".jtsg_tj2").val(zjh);
+    //     $(".jtsg_tj3").val(lxdh);
+    //     $(".jtsg_tj3").css("width","17rem")
+    //     $(".verify_f").hide();
+    //     $(".jtsg_tj4").hide();
+    //     $(".yanzhengma").hide();
+    // }
+    var jd, wd;
+    var cid = 35;
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function(r) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var position = {
+                lng: r.point.lng,
+                lat: r.point.lat
+            }
+            if (cid == 'sort') {
+                sort(position);
+            } else {
+                positions(position, cid);
+            }
+            //alert('您的位置：'+r.point.lng+','+r.point.lat);
+            /*  $(".jd").text(r.point.lng)
+              $(".wd").text(r.point.lat)*/
+
+            jd = r.point.lng;
+            wd = r.point.lat;
+            getAddress(r.point.lng, r.point.lat);
+        } else {
+            alert('获取当前位置失败,请确定您开启了定位服务');
+        }
+    }, {
+        enableHighAccuracy: true
+    });
+
+    //该js函数是必须要的不然要报错
+    function positions(json, cid) {}
+
+    //根据经纬度获取具体地址信息
+    function getAddress(lng, lat) {
+        /* var map = new BMap.Map("allmap");*/
+        var point = new BMap.Point(lng, lat);
+        /*map.centerAndZoom(point,12);*/
+        var geoc = new BMap.Geocoder();
+        geoc.getLocation(point, function(rs) {
+            var addComp = rs.addressComponents;
+
+
+            var names = "";
+            for (var name in addComp) {
+                names += name + ": " + addComp[name] + ", ";
+            }
+            // alert(names);
+
+            //alert(addComp.province + "," + addComp.city + "," + addComp.district + "," + addComp.street + "," + addComp.streetNumber);
+            $(".weizhi").val(addComp.province + "" + addComp.city + "" + addComp.district + "" + addComp.street + "" + addComp.streetNumber);
+        });
+    }
+
+    function isCardNo(card) {
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+        if (card.length != 0) {
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (reg.test(card) === false) {
+                showTips("身份证号格式不正确");
+                // $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".jtsg_tj2").val("")
+                return false;
+            }
+        }
+    }
+
+    function showTips(text) {
+        $('body').append('<p class="tishi" style="display: none;">' + text + '</p>');
+        if ($('.tishi').css('display') == 'none') {
+            $('.tishi').stop(true).fadeIn();
+            setTimeout(function() {
+                $('.tishi').stop(true).fadeOut();
+                $('.tishi').remove();
+            }, 3000);
+        }
+    }
+
+    function checkMobile(val) {
+        // var sMobile = document.mobileform.mobile.value 
+        if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(val))) {
+            showTips("请填写正确的手机号");
+            $(".jtsg_tj3").val("");
+            // document.mobileform.mobile.focus(); 
+            return false;
+        }
+    }
+
+
+
+    $(".ij").click(function() {
+        var shigu = $(".shigu").val();
+        var weizhi = $(".weizhi").val();
+        var upload = imgde5 + ";" + imgde6 + ";" + imgde7
+        var jtsg_tj1 = $(".jtsg_tj1").val();
+        var jtsg_tj2 = $(".jtsg_tj2").val();
+        var jtsg_tj3 = $(".jtsg_tj3").val();
+        var jtsg_tj4 = $(".jtsg_tj4").val();
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/traffic_accident2',
+            data: {
+                id: id,
+                name: jtsg_tj1,
+                id_card: jtsg_tj2,
+                mobile: jtsg_tj3,
+                verify_code: jtsg_tj4,
+                license: imgde1,
+                driving_license: imgde2,
+                front_img: imgde3,
+                contrary_img: imgde4,
+                upload: upload,
+                place: weizhi,
+                jd: jd,
+                wd: wd,
+                address: shigu
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    if (data.status == 1) {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                        setTimeout(function() {
+                            window.location.href = "renmintiaojie.html?type=" + 3;
+                        }, 1000);
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            }
+        })
+    })
+</script>
+
+</html>

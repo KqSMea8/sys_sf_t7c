@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*全局样式*/
+*{padding:0;margin:0;}
+div,dl,dt,dd,form,h1,h2,h3,h4,h5,h6,img,ol,ul,li,table,th,td,p,span,a{border:0;}
+img,input{border:none;vertical-align:middle;}
+img {max-width: 100%;height: auto;width: auto\9; /* ie8 */}
+body{font-family:Tahoma,Arial,Helvetica,"宋体";text-align:center;background:#FFF;color:#000;}
+html{overflow-y:scroll;-webkit-text-size-adjust: none;}
+ul,ol{list-style-type:none;}
+/* th,td,input{font-size:12px;} */
+h3{font-size:14px;}
+button{border:none;cursor:pointer;font-size:12px;background-color:transparent;}
+select{border-width:1px;_zoom:1;border-style:solid;padding-top:2px;font-size:12px;}
+.clear{clear:both;font-size:1px;height:0;visibility:hidden;line-height:0;}
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{zoom:1;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;}
+{text-decoration:none;color:#f60;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+.video embed, .video object, .video iframe { width: 100%; height: auto;}
+a:link {
+text-decoration: none;
+}
+a:visited {
+text-decoration: none;
+}
+a:hover {
+text-decoration: none;
+}
+a:active {
+text-decoration: none;
+}

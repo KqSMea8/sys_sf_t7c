@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查询列表</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reserve.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+</head>
+<body>
+    <div id="header">
+        <span>分数查询</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="table_down" id="_20">
+      <!-- <a href="pufakaosicj.html" title="">
+            <div class="each">
+                <span>查询类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a> -->
+        <!--   <a href="pufakaosicj.html" title="">
+            <div class="each">
+                <span>查询类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="pufakaosicj.html" title="">
+            <div class="each">
+                <span>查询类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a> -->
+    </div>
+<div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".footer").load("footer2.html");
+    var access_token=localStorage.getItem("access_token");
+    $.ajax({
+            type:"POST",
+            url:"http://sf.wokerr.com/index.php/home/News/score_inquiry",
+            data:{access_token:access_token},
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+               if(data.state==1){
+                var html="";
+                for(var i=0;i<data.data.length;i++){
+                   html+=`<a  class="bon" id="${data.data[i].id}">
+                                <div class="each">
+                                    <span>${data.data[i].name}</span>
+                                    <span class="right">${data.data[i].createtime}</span>
+                                </div>
+                            </a>`
+                }
+                $(".table_down").html(html);
+                bon();
+               }
+            }
+    })
+    function bon(){
+        $(".bon").click(function(){
+            var id=$(this).attr("id");
+            window.location.href="pufakaosicj.html?id="+id;
+        })
+    }
+</script>
+</html>

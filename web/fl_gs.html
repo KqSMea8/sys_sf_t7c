@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#F2F2F2;font-size: 50px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hdwt.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <title>工伤</title>
+</head>
+
+<body>
+    <header class="header" style="padding:0;">
+        <button id="go_befer">上一页</button>
+        <a href="javascript::">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">工伤</div>
+        <button id="chogntian">重填</button>
+    </header>
+    <div class="content">
+        <div class="neirong_con">
+            <div class="sele_each">
+                <div class="question">1.事故发生的时间：</div>
+                <!-- <input type="text" class="demo-input every " placeholder="请选择日期" id="test1" style="width:100%;height: 55px;"> -->
+                <input readonly type="text" id="date10" placeholder="请选择日期" style="width:100%;height: 55px;" class="every">
+                <button class="xiayiye" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">2.事故发生地点：</div>
+                <select class="form-control" id="cmbProvince" name="cmbProvince"></select>
+                <select class="form-control" id="cmbCity" name="cmbCity"></select>
+                <select class="form-control" id="cmbArea" name="cmbArea"></select>
+                <button class="address_three_sub" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">3.用工单位的属性 ：</div>
+                <div class="sele_each_list">公司</div>
+                <div class="sele_each_list">个体商户</div>
+                <div class="sele_each_list">自然人</div>
+                <div class="sele_each_list">其他组织</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">4.是否属于在工作时间受伤：</div>
+                <div class="sele_each_list">工作时间内</div>
+                <div class="sele_each_list">上下班途中</div>
+                <div class="sele_each_list">午休或准备工作时</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">5.是否属于在工作地点内受伤：</div>
+                <div class="sele_each_list">工作地点</div>
+                <div class="sele_each_list">在上下班途中</div>
+                <div class="sele_each_list">工作休息区域</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">6.是否属于因工作原因受伤 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">7.是否与单位签订书面的劳动合同 ：</div>
+                <div class="sele_each_list">已签订</div>
+                <div class="sele_each_list">未签订</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">8.用工单位是否为申请人投保工伤保险或其他意外伤害保险：</div>
+                <div class="sele_each_list">以购买</div>
+                <div class="sele_each_list">未购买</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">9.申请人是否掌握在此单位工作的证明：</div>
+                <div class="sele_each_list">掌握</div>
+                <div class="sele_each_list">未掌握</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">10.申请人是否能提供证实其发生工伤经过的证人：</div>
+                <div class="sele_each_list">能</div>
+                <div class="sele_each_list">不能</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">11.申请人目前健康状况 ：</div>
+                <div class="sele_each_list">住院治疗</div>
+                <div class="sele_each_list">已出院</div>
+                <div class="sele_each_list">因经济困难在家待治疗</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">12.申请人是否已经过确认劳动关系程序 ：</div>
+                <div class="sele_each_list">掌握</div>
+                <div class="sele_each_list">未掌握</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">13.用人单位是否承认申请人是其单位的工作人员 ：</div>
+                <div class="sele_each_list">承认</div>
+                <div class="sele_each_list">否认</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">14.用人单位是否承认申请人是在其单位工作中受伤：</div>
+                <div class="sele_each_list">承认</div>
+                <div class="sele_each_list">否认</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">15.用人单位是否愿意对申请人做出适当的赔偿 ：</div>
+                <div class="sele_each_list">愿意</div>
+                <div class="sele_each_list">不愿意</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">16.申请人与用人单位是否经过调解 ：</div>
+                <div class="sele_each_list">经过</div>
+                <div class="sele_each_list">未经过</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">17.申请人是否已将此工伤赔偿案件诉至法院或劳动人事争议仲裁委员会 ：</div>
+                <div class="sele_each_list">经过</div>
+                <div class="sele_each_list">未经过</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/szl/qweq.js"></script>
+    <script src="./js/szl/jsAddress.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($('.form-control').length) {
+                addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+            }
+        });
+    </script>
+  	<script type="text/javascript">
+		//var arr1 = [];
+      	var str2 = '';
+        var sele_each = document.getElementsByClassName("sele_each");
+        //1时间
+        var xiayiye = sele_each[0].getElementsByClassName("xiayiye");
+        xiayiye[0].addEventListener('click', function() {
+                var tt1 = sele_each[0].getElementsByTagName('input')[0].value;
+                //arr1[0] = $(this).siblings(".question").text() + tt1;
+          		str2 += '申请人于 ' + tt1 + ' 在 ';
+                console.log(str2);
+          		
+            }, false);
+        //2地区
+        var address_three_sub = sele_each[1].getElementsByClassName("address_three_sub")[0];
+        var form_control_con = sele_each[1].getElementsByClassName("form-control");
+        address_three_sub.addEventListener('click', function() {
+                var province_ress = $("#cmbProvince").val();
+                var city_ress = $("#cmbCity").val();
+                var area_ress = $("#cmbArea").val();
+                //arr1[1] = $(this).parent().find(".question").text() + province_ress + city_ress + area_ress;
+          		
+          		str2 += province_ress + city_ress + area_ress + '的一家 ';
+                console.log(str2);
+            }, false);
+        //3用工单位的属性
+        var temp_v1 = sele_each[2].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v1.length; i++) {
+            temp_v1[i].addEventListener('click',function(){
+                //arr1[2] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += $(this).text() + ' 中，';
+                console.log(str2);
+            });
+        }
+        //4是否属于在工作时间受伤
+        var temp_v2 = sele_each[3].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v2.length; i++) {
+            temp_v2[i].addEventListener('click',function(){
+                //arr1[3] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '在 ' + $(this).text() + ' ，';
+                console.log(str2);
+            });
+        }
+        //5是否属于在工作地点内受伤
+        var temp_v3 = sele_each[4].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v3.length; i++) {
+            temp_v3[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '受伤地点位于' + $(this).text() + ' ，';
+                console.log(str2);
+            });
+        }
+        //是否属于因工作原因受伤
+        var temp_v4 = sele_each[5].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v4.length; i++) {
+            temp_v4[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '' + $(this).text() + ' 因工作的原因遭受伤害，';
+                console.log(str2);
+            });
+        }
+        //7是否与单位签订书面的劳动合同
+        var temp_v5 = sele_each[6].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v5.length; i++) {
+            temp_v5[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '与用人单位 ' + $(this).text() + ' 书面的劳动合同，';
+                console.log(str2);
+            });
+        }
+        //8用工单位是否为申请人投保工伤保险或其他意外伤害保险
+        var temp_v6 = sele_each[7].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v6.length; i++) {
+            temp_v6[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '单位 ' + $(this).text() + ' 工伤保险或其他意外伤害保险，';
+                console.log(str2);
+            });
+        }
+        //9申请人是否掌握在此单位工作的证明
+        var temp_v7 = sele_each[8].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v7.length; i++) {
+            temp_v7[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '申请人 ' + $(this).text() + ' 在此单位工作的证明，';
+                console.log(str2);
+            });
+        }
+        //10申请人是否能提供证实其发生工伤经过的证人
+        var temp_v8 = sele_each[9].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v8.length; i++) {
+            temp_v8[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '' + $(this).text() + ' 提供证实其发生工伤经过的证人。';
+                console.log(str2);
+            });
+        }
+         //11申请人目前健康状况
+        var temp_v9 = sele_each[10].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v9.length; i++) {
+            temp_v9[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '申请人目前处于 ' + $(this).text() + ' 中，';
+                console.log(str2);
+            });
+        }
+      
+         //12申请人是否已经过确认劳动关系程序
+        var temp_v10 = sele_each[11].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v10.length; i++) {
+            temp_v10[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += ' ' + $(this).text() + ' 确认劳动关系程序，';
+                console.log(str2);
+            });
+        }
+        //13用人单位是否承认申请人是其单位的工作人员
+        var temp_v11 = sele_each[12].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v11.length; i++) {
+            temp_v11[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '用人单位 ' + $(this).text() + ' 申请人是其单位的工作人员，';
+                console.log(str2);
+            });
+        }
+        //14用人单位是否承认申请人是在其单位工作中受伤
+        var temp_v12 = sele_each[13].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v12.length; i++) {
+            temp_v12[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '并且 ' + $(this).text() + ' 申请人是在其单位工作中受伤，';
+                console.log(str2);
+            });
+        }
+        //15用人单位是否愿意对申请人做出适当的赔偿
+        var temp_v13 = sele_each[14].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v13.length; i++) {
+            temp_v13[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '同时 ' + $(this).text() + ' 对申请人做出适当的赔偿，';
+                console.log(str2);
+            });
+        }
+        //16申请人与用人单位是否经过调解
+        var temp_v14 = sele_each[15].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v14.length; i++) {
+            temp_v14[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += '此案 ' + $(this).text() + ' 调解，';
+                console.log(str2);
+            });
+        }
+        //17申请人是否已将此工伤赔偿案件诉至法院或劳动人事争议仲裁委员会
+        var temp_v15 = sele_each[16].getElementsByClassName("sele_each_list");
+        for (var i = 0; i < temp_v15.length; i++) {
+            temp_v15[i].addEventListener('click',function(){
+                //arr1[4] = $(this).parent().find(".question").text() + $(this).text();
+              	str2 += $(this).text() + '将此工伤赔偿案件诉至法院或劳动人事争议仲裁委员会。现申请法律援助，望予以援助。';
+              	localStorage.setItem("daan", str2);
+                console.log(str2);
+              	return false;
+            });
+        }
+      	localStorage.setItem("daan", str2);
+  	</script>
+    <script src="./js/szl/laydate.js"></script>
+    <!-- 改成你的路径 -->
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+    </script>
+    <script src="./js/szl/werw.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script type="text/javascript" src="./js/szl/rolldate.js"></script>
+</body>
+
+</html>

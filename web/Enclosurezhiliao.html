@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>附件信息</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/biddingquery.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/shipei.js"></script>
+</head>
+<style>
+    .section img {
+        width: auto;
+        max-width: 50%;
+        margin: 2rem;
+        max-height: 8rem;
+        display: inline-block;
+        float: left;
+    }
+    .img_fj {
+        border-bottom: #eee solid .01rem;
+    }
+    .section img:nth-child(even) {
+        margin-left: 2.5rem;
+    }
+    
+    .img_fj {
+        border-bottom: #eee solid .01rem;
+    }
+    
+    .img_fj p {
+        width: 100%;
+        padding: .35rem;
+        float: left;
+    }
+    
+    .img_fj div {
+        display: inline-block;
+    }
+    .showImg,.showVideo{
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.8);
+        position:fixed;
+        display:none;
+        top:0;
+        left:0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .showImg img,.showVideo video{
+        width: auto;
+        max-width:100%;
+        height:auto;
+        vertical-align: middle;
+    }
+    .showVideo video{
+        max-height:80%;
+    }
+    .video{
+        display: none;
+        padding:0 1rem;
+        padding-bottom:3rem;
+    }
+    .video .videoCon{
+        position:relative;
+    }
+    .video img{
+        width:4.15rem;
+        height:4.15rem;
+        position:absolute;
+        left:50%;
+        top:50%;
+        margin-left:-2.075rem;
+        margin-top:-2.075rem;
+    }
+    .showVideoBg{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    .tousuImg{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+         flex-wrap:wrap;
+    }
+    .tousuImg img{
+        width: 45%;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;">
+                        <img onclick="javascript:window.history.go(-1);" src="./img/return_03.png" alt="">
+                    </a>
+                </div>
+                <div class="title">
+                    <p>附件信息</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="img_fj">
+                <p></p>
+                <div class="dffs">
+                    <!-- <img src="./images/fond.jpg" alt=""> -->
+                </div>
+            </div>
+            <!-- <img src="../png/ios/公证员@2x.png" alt="">
+            <img src="../png/ios/公证员@2x.png" alt=""> -->
+        </div>
+        <div class="video">
+            <div class="zuo" style="line-height: 2rem;margin-top: 0.1rem">视频文件</div>
+            <div class="you">
+                <div class="videoCon">
+                    <img src="img/play.png">
+                    <video class="playVideo" style="width:100%;max-height:10rem;" src=""></video>
+                </div>               
+            </div>
+        </div>
+        <div class="tousuImg">
+           <!--  <img src="img/3.jpg">
+            <img src="img/3.jpg"> -->
+        </div>
+    </section>
+    <div class="showImg">
+        <img src="">
+    </div>
+    <div class="showVideo">
+        <div class="showVideoBg"></div>
+        <video controls src=""></video>
+    </div>
+
+<!--         <div class="footer2">
+        
+    </div> -->
+    
+</body>
+<script type="text/javascript">
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    // 获取图片真实高度
+    function getImageWidth(url, callback) {
+        var img = new Image();
+        img.src = url;
+        // 如果图片被缓存，则直接返回缓存数据
+        if (img.complete) {
+            callback(img.width, img.height);
+        } else {
+            img.onload = function() {
+                callback(img.width, img.height);
+            }
+        }
+    }
+    $(".section").on('click', 'img', function() {
+        var imgSRC = $(this).attr('src');
+        var imgWidth = $(this).width();
+        var imgHeight = $(this).height();
+        var Height = $(window).height();
+        var Width = $(window).width();
+        var Multiple = $(window).width() / imgWidth;
+        $('.showImg>img').attr('src', imgSRC);
+
+        if ($('.showImg').css('display') == 'none') {
+            $('.showImg').fadeIn();
+            $('.showImg').css('display','flex');
+            $("body").css("overflow-y", "scroll");
+        }
+
+    })
+    $('body').on('click','.playVideo',function (){
+		var videoSrc=$(this).attr('src');
+		$('.showVideo video').attr('src',videoSrc);
+		$('.showVideo').fadeIn();
+		$('.showVideo').css('display','flex');
+	})
+	$('.showVideoBg').click(function(){
+		$('.showVideo').fadeOut();
+	})
+    $('.showImg').click(function() {
+        $(this).fadeOut();
+        $("body").css("overflow-y", "scroll");
+    })
+    var access_token = localStorage.getItem("access_token");
+    var type = getUrlParms("type");
+    var add = localStorage.getItem("fujian");
+    console.log(add);
+    // return false;
+    var id = getUrlParms("id");
+    var status = getUrlParms("status");
+    $.ajax({
+        type: 'post',
+        url: add,
+        data: {
+            access_token: access_token,
+            type: type,
+            id: id
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // console.log(data.data.img)
+            var ht = "";
+            var html = "";
+            var djd = "";
+            var kdf;
+            var uploadht = "";
+            var MytousuIMG = "";
+            for (var i=0;i<data.data.upload.length;i++) {
+                MytousuIMG +=`
+                    <img src='${data.data.upload[i].savepath}'>
+                `
+            }
+            
+            $(".tousuImg").html(MytousuIMG);
+            if(data.data.video!=null){
+                $('.playVideo').attr('src',data.data.video);
+                $(".video").show()
+            }
+            if (status == 1) {
+                for (var i = 0; i < data.data.priceData.length; i++) {
+                    for (var j = 0; j < data.data.upload.length; j++) {
+                        if (data.data.priceData[i].id == data.data.upload[j].pid) {
+                            ht += " <img src = " + data.data.upload[j].savepath + ">";
+                        }
+                    }
+                    html += '<div class="img_fj"><p>' + data.data.priceData[i].title + '</p><div class="dffs"> ' + ht + '</div></div>'
+                    ht = "";
+                };
+                $(".section").html(html);
+                for (var x = 0; x < data.data.upload.length - 1; x++) {
+                    uploadht += '<div class="img_fj">' +
+                        '<p></p>' +
+                        '<div class="dffs">' +
+                        '<img src="' + data.data.upload[x].savepath + '" alt="">' +
+                        '</div>' +
+                        '</div>';
+                }
+            } else if (status == 0) {
+                var html = "";
+
+                html = ` <div class="img_fj">
+                            <p>当事人身份证</p>
+                            <div class="dffs">
+                                <img src="${data.data.adversecontrary_img}" alt="">
+                                <img src="${data.data.adversefront_img}" alt="">
+                            </div>
+                        </div> 
+                        <div class="img_fj">
+                            <p>对方当事人身份证</p>
+                            <div class="dffs">
+                                <img src="${data.data.proposercontrary_img}" alt="">
+                                <img src="${data.data.proposerfront_img}" alt="">
+                            </div>
+                        </div>`;
+                $(".section").html(html)
+            } else if (status == 3) {
+                for (var j = 0; j < data.data.adjunct.length; j++) {
+                    // if (data.data.img[i].id == data.data.upload[j].pid) {
+                    ht += " <img src = " + data.data.adjunct[j].savepath + ">";
+                    // }
+                }
+                html += '<div class="img_fj"><div class="dffs"> ' + ht + '</div></div>'
+                ht = "";
+                $(".section").html(html);
+
+            } else {
+                
+                for (var j = 0; j < data.data.adjunct.length; j++) {
+                    // if (data.data.img[i].id == data.data.upload[j].pid) {
+                    ht += " <img src = " + data.data.adjunct[j].savepath + ">";
+                    // }
+                }
+                html += '<div class="img_fj"><div class="dffs"> ' + ht + '</div></div>'
+                ht = "";
+                $(".section").html(html);
+
+            }
+            if (data.data.replenish == "" || data.data.replenish == null) {
+                console.log("sdaf");
+            } else {
+
+                // for (var i = 0; i < data.data.replenish.length; i++) {
+
+                //     djd += '<img src=' + datad.data.replenish[i] + ' alt="">'
+                // }
+                // kdf = '<div class="img_fj"><p></p><div class="dffs">' + djd + '</div></div>'
+            }
+            // $(".section").html(uploadht);
+
+
+
+        }
+
+    })
+</script>
+
+</html>

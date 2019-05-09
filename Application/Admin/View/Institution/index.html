@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>机构/人员-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='机构/人员';
+        </php>
+        <include file="Common:intoHead" />
+        <style type="text/css">
+            #Right{
+                float:left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:lefts" />
+                <div class="Item hr mainBodyRight" style="width: 1690px;">
+                    <!-- <select id="jg" class="jg">
+                        <option value="0">全部</option>
+                        <option value="1">公证处</option>
+                        <option value="2">律师事务所</option>
+                        <option value="3">法律援助</option>
+                        <option value="4">人民调解机构</option>
+                        <option value="5">法律服务所</option>
+                        <option value="6">司法鉴定所</option>
+                        <option value="7">司法所</option>
+                        <option value="8">司法行政机关</option>
+                    </select> -->
+                    <input type="hidden" id="jg" value="">
+                    <!-- <select id="type" class="type">
+                        <option value="0">机构</option>
+                        <option value="1">人员</option>
+                    </select>
+                    <button class="btn btns" id="btns">确定</button> -->
+                    <div style="width: 150px;float: right;"><button type="button" id="btnAdd" class="btn btnAdd">添加机构</button></div>
+                </div>
+                <div id="iframe" style="float:right;width:1650px;height:800px;border:0;"></div>
+
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <script type="text/javascript">
+            function showFirme(test){
+                $.ajax({
+                    url:test,
+                    cache : true,
+                    async : false,
+                    success : function(html) {
+                        $("#iframe").html(html);
+                    }
+                })
+            }
+            $(function(){
+              //右侧内容宽度高度
+              	//body宽度document.body.offsetWidth
+              	var body_width = document.body.offsetWidth;
+              	console.log('---' + body_width);
+              	var mainBodyRight = body_width - 250;
+              	var iframeWidth = mainBodyRight - 20;
+              	$(".mainBodyRight").css('width',mainBodyRight + "px");
+              	$("#iframe").css('width',iframeWidth + "px");
+              	//$("#Right").css('width',iframeWidth + "px");
+              //
+                $(".del").click(function(){
+                    // alert('123456');
+                    return false;
+                    var delLink=$(this).attr("link");
+                    $this = $(this);
+                    popup.confirm('你真的打算删除2【<b>'+$(this).attr("name")+'</b>】吗?','温馨提示',function(action){
+                        if(action == 'ok'){
+                            delByLink(delLink,$this);
+                            //top.window.location.href=delLink;
+                        }
+                    });
+                    return false;
+                });
+                var addHref;
+                $('#jg').change(function(){
+                    if($(this).val()!=0){
+                        var type=$('#type').val();
+                        // var typeHTML="";
+                        if(type==0){
+                            if($(this).val()==1){
+                                addHref='{:U('Institution/gzc_add')}?qy='+index;
+                            }else if($(this).val()==2){
+                                addHref='{:U('Institution/ls_add')}?qy='+index;
+                            }else if($(this).val()==3){
+                                addHref='{:U('Institution/yz_add')}?qy='+index;
+                            }else if($(this).val()==4){
+                                addHref='{:U('Institution/tj_add')}?qy='+index;
+                            }else if($(this).val()==5){
+                                addHref='{:U('Institution/fw_add')}?qy='+index;
+                            }else if($(this).val()==6){
+                                addHref='{:U('Institution/jd_add')}?qy='+index;
+                            }else if($(this).val()==7){
+                                addHref='{:U('Institution/sfs_add')}?qy='+index;
+                            }else if($(this).val()==8){
+                                addHref='{:U('Institution/xzjg_add')}?qy='+index;
+                            }
+                            $('.btnAdd').html('添加'+$(this).children("option:selected").text());
+                            $('.btnAdd').attr('onclick','showFirme("'+ addHref +'")');
+                            $('.btnAdd').parent().show();
+                        }else{
+                            $('.btnAdd').parent().hide();
+                        }
+                    }else{
+                        $('.btnAdd').parent().hide();
+                    }
+                })
+                $('#type').change(function(){
+                    var type=$('#jg').val();
+                    if($(this).val()!=0){
+                        $('.btnAdd').parent().hide();
+                    }else{
+                        if(type!=0){
+                            if(type==1){
+                                addHref='{:U('Institution/gzc_add')}?qy='+index;
+                            }else if(type==2){
+                                addHref='{:U('Institution/ls_add')}?qy='+index;
+                            }else if(type==3){
+                                addHref='{:U('Institution/yz_add')}?qy='+index;
+                            }else if(type==4){
+                                addHref='{:U('Institution/tj_add')}?qy='+index;
+                            }else if(type==5){
+                                addHref='{:U('Institution/fw_add')}?qy='+index;
+                            }else if(type==6){
+                                addHref='{:U('Institution/jd_add')}?qy='+index;
+                            }else if(type==7){
+                                addHref='{:U('Institution/sfs_add')}?qy='+index;
+                            }
+                            $('.btnAdd').html('添加'+$('#jg').children("option:selected").text());
+                            $('.btnAdd').attr('onclick','showFirme("'+ addHref +'")');
+                            $('.btnAdd').parent().show();
+                        }else{
+                            $('.btnAdd').parent().hide();
+                        }
+                    }
+                })
+                $('body').on('click','.btns',function(){
+                    jg=$('#jg').val();
+                    type=$('#type').val();
+                    if(type!=0){
+                        $('.btnAdd').parent().hide();
+                    }
+                    $.ajax({
+                        type:'get',
+                        url:'{:U('Institution/jg')}',
+                        data:{
+                            qy:index,
+                            type:jg,
+                            cate:type
+                        },
+                        dataType:'',
+                        success:function(data){
+                            // console.log(data);
+                            $('#iframe').html(data);
+                            var html;
+                            if(jg==1){
+                                addHref='{:U('Institution/gzc_add')}?qy='+index;
+                                html='{:U('Institution/right')}';
+                            }else if(jg==2){
+                                addHref='{:U('Institution/ls_add')}?qy='+index;
+                                html='{:U('Institution/ls')}';
+                            }else if(jg==3){
+                                addHref='{:U('Institution/yz_add')}?qy='+index;
+                                html='{:U('Institution/yz')}';
+                            }else if(jg==4){
+                                addHref='{:U('Institution/tj_add')}?qy='+index;
+                                html='{:U('Institution/tj')}';
+                            }else if(jg==5){
+                                addHref='{:U('Institution/fw_add')}?qy='+index;
+                                html='{:U('Institution/fw')}';
+                            }else if(jg==6){
+                                addHref='{:U('Institution/jd_add')}?qy='+index;
+                                html='{:U('Institution/jd')}';
+                            }else if(jg==7){
+                                addHref='{:U('Institution/sfs_add')}?qy='+index;
+                                html='{:U('Institution/sfs')}';
+                            }
+                            $('.btnAdd').html('添加'+$('#jg').children("option:selected").text());
+                            $('.btnAdd').attr('onclick','showFirme("'+ addHref +'")');
+                            // showFirme(html);
+                            // if(data.state==1){
+                                // $('#iframe').attr('src','right.html');
+                                // self.location.reload();
+                                // document.getElementById('iframe').window.location.reload();
+                            // }
+                        }
+                    })
+                })
+            });
+            function changeAttr(id,v){
+                $.get('{:U("News/changeAttr")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+            function changeStatus(id,v){
+                $.get('{:U("News/changeStatus")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+                   $(".spanClick").on('click',function(){
+                    jg=$('#jg').val();
+                    type=$('#type').val();
+                  	var jg_name = $(this).text();
+                   // if(type!=0){
+                        //$('.btnAdd').parent().hide();
+                   // }
+                    $.ajax({
+                        type:'get',
+                        url:'{:U('Institution/jg')}',
+                        data:{
+                            qy:index,
+                            type:jg,
+                            cate:type
+                        },
+                        dataType:'',
+                        success:function(data){
+                            console.log(data);
+                            $('#iframe').html(data);
+
+                            var html;
+                            if(jg==1){
+                                addHref='{:U('Institution/gzc_add')}?qy='+index;
+                                html='{:U('Institution/right')}';
+                            }else if(jg==2){
+                                addHref='{:U('Institution/ls_add')}?qy='+index;
+                                html='{:U('Institution/ls')}';
+                            }else if(jg==3){
+                                addHref='{:U('Institution/yz_add')}?qy='+index;
+                                html='{:U('Institution/yz')}';
+                            }else if(jg==4){
+                                addHref='{:U('Institution/tj_add')}?qy='+index;
+                                html='{:U('Institution/tj')}';
+                            }else if(jg==5){
+                                addHref='{:U('Institution/fw_add')}?qy='+index;
+                                html='{:U('Institution/fw')}';
+                            }else if(jg==6){
+                                addHref='{:U('Institution/jd_add')}?qy='+index;
+                                html='{:U('Institution/jd')}';
+                            }else if(jg==7){
+                                addHref='{:U('Institution/sfs_add')}?qy='+index;
+                                html='{:U('Institution/sfs')}';
+                            }
+                            $('.btnAdd').html('添加' + jg_name);
+                            $('.btnAdd').attr('onclick','showFirme("'+ addHref +'")');
+
+                        }
+                    })
+            });
+        </script>
+    </body>
+</html>

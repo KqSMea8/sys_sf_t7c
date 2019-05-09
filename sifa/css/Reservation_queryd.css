@@ -1,0 +1,121 @@
+.section {
+    width: 22.5rem;
+    overflow: hidden;
+    margin: 1rem auto;
+}
+
+.section-information {
+    width: 99%;
+    position: relative;
+    border: .0625rem solid #cccccc;
+    margin: .5rem auto;
+    padding-top: .5rem;
+}
+
+.status {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+    background: rgb(25, 99, 148);
+}
+
+.status span {
+    color: #ffffff;
+    font-size: .8rem;
+    line-height: 1rem;
+}
+
+.information {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.information p {
+    display: inline-block;
+    height: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-left: 1rem;
+    font-size: .9rem;
+}
+
+.information span {
+    margin-left: .5rem;
+    font-size: .9rem;
+}
+
+.inf-text {
+    width: 10rem;
+    display: inline-block;
+    float: left;
+    height: auto;
+    margin-left: 7rem;
+    margin-top: -1.5rem;
+}
+
+.inf-text span {
+    margin: 0;
+}
+
+.text-txt {
+    display: inline-block;
+    /* text-align: left; */
+    font-weight: 100;
+    height: 4rem;
+    float: right;
+    margin-right: 2rem;
+}
+
+.text-txt span {
+    width: 5rem;
+    font-size: .9rem;
+    line-height: 2rem;
+    display: inline-block;
+}
+
+.information:nth-child(7) p {
+    height: 4rem;
+}
+
+
+/* 
+.text-txt span input {
+    float: right;
+} */
+
+.seach {
+    width: 100%;
+    height: 1.875rem;
+}
+
+.seach input {
+    margin-top: .625rem;
+    height: 1.875rem;
+    width: 80%;
+    border-radius: .625rem;
+    border: #797979 solid .0625rem;
+    margin-left: .9375rem;
+}
+
+.tousu {
+    width: 100%;
+    height: 3.75rem;
+    position: relative;
+}
+
+/* .tousu button {
+    height: 1.875rem;
+    width: 7.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: .375rem;
+    border: #858585 .0625rem solid;
+    background: #196394;
+    color:#fff;
+} */

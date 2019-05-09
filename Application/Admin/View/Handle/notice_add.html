@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑公告';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑公告</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">公告标题：</th>
+                            <td>
+                                <input type="text" name="title" class="input uname" size="40" value="{$list.title}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">公告内容：</th>
+                            <td>
+                                <textarea class="content" style="height: 300px; width: 50%;" name="text">{$list['text']}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">注意：</th>
+                            <td>
+                                如果该类型下有多条公告，则显示启用的最新公告
+                            </td>
+                        </tr>
+                    </table>
+                     <if condition="$list['type'] neq ''">
+                    <input type="hidden" name="type" value="{$list.type}"/>
+                    <else />
+                    <input type="hidden" name="type" value="{$_GET['type']}"/>
+                    </if>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

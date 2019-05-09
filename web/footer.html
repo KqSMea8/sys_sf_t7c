@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+</head>
+<style type="text/css" media="screen">
+    .fooder {
+        height: 1rem;
+        width: 100%;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+    }
+    
+    .item2 {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid #cccccc;
+    }
+    
+    .item2>li>a {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 1.3rem;
+        height: 1.4rem;
+        line-height: 0.5rem;
+    }
+    
+    .item2>li>a>img {
+        float: left;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 0.05rem;
+    }
+    
+    .item2>li>a>span {
+        text-align: center;
+        color: #000000;
+        width: 100%;
+        height: 0.4rem;
+        font-size: .24rem;
+    }
+    
+    .tishis {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 3rem;
+        height: auto;
+        padding: .2rem;
+        display: none;
+        background: rgba(0, 0, 0, .5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -1.5rem;
+        z-index: 999999;
+    }
+    .myClass{
+    	position: relative;
+    }
+    .xiaoxi{
+    	width:15px;
+    	height:15px;
+    	background:red;
+    	position:absolute;
+    	border-radius: 50%;
+    	right:0px;
+    	top:3px;
+    	text-align: center;
+    	line-height: 15px;
+    	font-size:12px;
+    	color:#fff;
+    }
+</style>
+
+<body>
+    <div class="fooder">
+        <ul class="item2">
+            <li>
+                <a href="index.html">
+                    <img src="img/souye.png" alt="">
+                    <span style="color: #000">双鸭山首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="chaxun.html">
+                    <img src="img/chaxun.png" alt="">
+                    <span>查询服务</span>
+                </a>
+            </li>
+            <li>
+                <a class="yhlx">
+                    <img src="img/jieda.png" alt="">
+                    <span>咨询解答</span>
+                </a>
+            </li>
+            <li>
+                <a class="myClass" onclick="denglu('xiaoxizhongxin.html')">
+                    <img src="img/xiaoxi.png" alt="">
+                    <span>消息中心</span>
+                </a>
+            </li>
+            <li>
+                <a onclick="denglu('gerenxinxi.html')">
+                    <img src="img/wode2.png" alt="">
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    function showTips(text) {
+        $('body').append('<p class="tishis" style="display: none;">' + text + '</p>');
+        if ($('.tishis').css('display') == 'none') {
+            $('.tishis').stop(true).fadeIn();
+            setTimeout(function() {
+                $('.tishis').stop(true).fadeOut();
+                $('.tishis').remove();
+            }, 800);
+        }
+    };
+
+    function denglu(url) {
+        // var localStorage.getItem("access_token");
+        // if(localStorage.getItem("access_token")==""){
+        $.ajax({
+                type: "POST",
+                url: "https://sys.t7c.net/index.php/home/Personal/mine",
+                data: {
+                    access_token: access_token
+                },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == -2) {
+                        showTips("请登录");
+                        setTimeout(function() {
+                            window.location.href = "login.html";
+                        }, 800);
+                    } else {
+                        window.location.href = url;
+                    }
+                }
+            })
+            // $(".tishi").fadeIn().delay(500).fadeOut();
+
+        // }else{
+
+        // 		 window.location.href=url;
+
+        // }
+    }
+   
+        // var localStorage.getItem("access_token");
+        // if(localStorage.getItem("access_token")==""){
+        $.ajax({
+                type: "POST",
+                url: "https://sys.t7c.net/index.php/home/Personal/xxred",
+                data: {
+                    access_token: access_token
+                },
+                dataType: 'json',
+                success: function(data) {
+    				$('.myClass').append('<p class="xiaoxi" ></p>');
+
+                    xiaoxi = data.data;
+
+					if(data.state == 1){
+						//显示红点
+						$(".xiaoxi").append(xiaoxi)
+						$(".xiaoxi").show()
+						
+					}else{
+						$(".xiaoxi").hide()
+						//隐藏红点
+						
+						
+					}
+                }
+            })
+            // $(".tishi").fadeIn().delay(500).fadeOut();
+
+        // }else{
+
+        // 		 window.location.href=url;
+
+        // }
+
+    var yhlx = localStorage.getItem('yhlx');
+    var access_token = localStorage.getItem("access_token");
+
+    $('.yhlx').click(function() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/mine",
+            data: {
+                access_token: access_token
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                tokenType = data.state;
+                if (tokenType == '-2') {
+                    $('.yhlx').attr('href', 'javascript:;');
+//                  showTips('请登录');
+//                  setTimeout(function() {
+//                      window.location.href = "login.html"
+//                  }, 800)
+                    window.location.href = "zaixainjieda.html";
+                } else {
+                    if (yhlx == 2) {
+                        window.location.href = "liaotianliebiao.html";
+                    } else {
+                        window.location.href = "zaixainjieda.html";
+                    }
+                }
+            }
+        })
+    })
+</script>

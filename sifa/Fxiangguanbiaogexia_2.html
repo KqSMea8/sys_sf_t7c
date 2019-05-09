@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相关样表</title>
+     <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+    <script type="text/javascript" src="js/flexible.js"></script>
+</head>
+<body>
+    <div id="header">
+        <span>相关样表</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="table_down">
+        <!-- <div class="each">
+          <a href="">
+              <span>XXXX合同-1</span>
+              <span class="right">2018-8-8</span>
+          </a>
+            
+        </div>
+        <div class="each">
+            <span>XXXX合同-2</span>
+            <span class="right">2018-8-8</span>
+        </div> -->
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(".footer").load("footer2.html");
+function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var id = getUrlParms("id");
+     $.ajax({
+            type:"POST",
+            url:"http://sf.wokerr.com/index.php/home/Data/form_info",
+            data:{id:id},
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+               var html="";
+              for(var i=0;i<data.data.length;i++){
+                html+=`<div class="each" id="${data.data[i].id}">
+                          
+                              <span>${data.data[i].title}</span>
+                              <span class="right">${data.data[i].ct_time}</span>
+                         
+                            
+                        </div>`
+               }
+               $(".table_down").html(html);
+                
+            }
+     })
+</script>
+
+</html>

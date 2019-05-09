@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>司法所列表-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='司法所列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div id="Right" style="float:none;width:100%">
+            <div class="Item hr">
+                <div class="current">司法所列表</div>
+                <!-- <div style="width: 150px;float: right;"><button type="button" class="btn" onclick="window.location.href='{:U('Institution/sfs_add')}'">添加司法所</button><button type="button" class="btn" onclick="window.location.href='{:U('Institution/sfs_member_add')}'">添加机构人员</button></div>
+ -->            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                <thead>
+                    <tr>
+                        <td>机构编码</td>
+                        <td>机构名称</td>
+                        <td>设立区域类型</td>
+                        <td>设立区域</td>
+                        <td>司法所长（负责人）</td>
+                        <td>执业区域</td>
+                        <td>添加时间</td>
+                        <td>人员信息</td>
+                        <td width="180">操作</td>
+                    </tr>
+                </thead>
+                <volist name="list" id="vo">
+                    <tr align="center" id="{$vo.id}">
+                        <td>{$vo.sfsbm}</td>
+                        <td>{$vo.jgmc}</td>
+                        <td>{$vo.slqylx}</td>
+                        <td>{$vo.slqy}</td>
+                        <td>{$vo.sfsz}</td>
+                        <td>{$vo.qy}</td>
+                        <td>{$vo.createtime|date="Y-m-d H:i:s",###}</td>
+                        <td><a id="{$vo.id}" class="memberList_sfs" href="javascript:;">人员列表 </a></td>
+                        <td>
+                        <!-- <if condition="$cate eq 1">
+                        [ <a id="{$vo.id}" class="memberList_sfs" href="javascript:;">人员列表 </a> ]
+                        </if> -->
+                        [ <a id="{$vo.id}" class="editList_sfs" href="javascript:;">编辑 </a> ] [ <a link="{:U('Institution/sfs_del/',array('id'=>$vo['id']))}" href="javascript:void(0)" name="{$vo.name}" class="del">删除 </a> ]</td>
+                    </tr>
+                </volist>
+                <tr><td colspan="6" align="right" id="page">{$page}</td></tr>
+            </table>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $(".del").click(function(){
+                    var delLink=$(this).attr("link");
+                    $this = $(this);
+                    popup.confirm('你真的打算删除【<b>'+$(this).attr("name")+'</b>】吗?','温馨提示',function(action){
+                        if(action == 'ok'){
+                            delByLink(delLink,$this);
+                            //top.window.location.href=delLink;
+                        }
+                    });
+                    return false;
+                });
+                $('body').on('click','.memberList_sfs',function(){
+                    var id=$(this).attr('id');
+                    var url='__URL__/sfs_member_add?gid='+id;
+                    $("#btnAdd",window.parent.document).attr('onclick','showFirme("'+ url +'")');
+                    $("#btnAdd",window.parent.document).html('添加司法所人员');
+                    $("#btnAdd",window.parent.document).parent().show();
+                    var urls='__URL__/sfs_member?id='+id;
+                    showFirme(urls);
+                })
+            });
+            $('body').on('click','.editList_sfs',function(){
+                var id=$(this).attr('id');
+                var url='__URL__/sfs_add?id='+id;
+                showFirme(url);
+            })
+            function changeAttr(id,v){
+                $.get('{:U("News/changeAttr")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+            function changeStatus(id,v){
+                $.get('{:U("News/changeStatus")}?id='+id,function(data){
+                    if(data.status==1){
+                        $(v).html(data.info);
+                    }
+                });
+            }
+
+            $('#page a').click(function(e){
+                 e.preventDefault();
+
+                 var str = $(this).attr('href');
+                 var str_arr = str.split('/');
+                 var qy = str_arr[str_arr.indexOf('qy')+1];//区域
+                 var type = str_arr[str_arr.indexOf('type')+1];//type
+                 var cate = str_arr[str_arr.indexOf('cate')+1];//cate
+                 var p = str_arr[str_arr.indexOf('p')+1];//p
+                    $.ajax({
+                        type:'get',
+                        url:'{:U('Institution/jg')}',
+                        data:{
+                            qy:qy,
+                            type:type,
+                            cate:cate,
+                            p:p
+                        },
+                        dataType:'',
+                        success:function(data){
+                            $('#iframe').html(data);
+                        }
+                    })
+            });
+        </script>
+    </body>
+</html>

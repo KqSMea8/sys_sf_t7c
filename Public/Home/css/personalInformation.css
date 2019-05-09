@@ -1,0 +1,724 @@
+body{
+	background-color: #f7f8fa;
+}
+.code{
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+/*--------------------- 左边导航-------------------*/
+.p_Content{
+	position: relative;
+	margin: 0 auto;
+	width: 1200px;
+}
+.p_ContentLeft{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	padding: 30px 15px 30px 60px;
+	width: 260px;
+	border:1px solid #eee;
+	background-color: #fff;
+}
+.p_ContentLeft a{
+	display: block;
+	text-decoration : none;
+	font-size: 18px;
+	line-height: 24px;
+}
+.panel-group .panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
+     border-top: 1px solid #fff; 
+}
+.panel-title{
+	position: relative;
+}
+.titleImgOne::before{
+	position: absolute;
+	content: "";
+	width: 24px;
+	height: 24px;
+	left: -44px;
+	background: url(../images/personal/wodezhanghu.png) no-repeat center;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.titleImgTwo::before{
+	position: absolute;
+	content: "";
+	width: 24px;
+	height: 24px;
+	left: -44px;
+	background: url(../images/personal/zijinguanli.png) no-repeat center;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.titleImgThree::before{
+	position: absolute;
+	content: "";
+	width: 24px;
+	height: 24px;
+	left: -44px;
+	background: url(../images/personal/jijincanpin.png) no-repeat center;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.titleRight{
+	position: absolute;
+	right: 0;
+	line-height: 24px;
+	top: 2px;
+	color: #ccc;
+}
+.titleImgFour::before{
+	position: absolute;
+	content: "";
+	width: 24px;
+	height: 24px;
+	left: -44px;
+	background: url(../images/personal/jijincanpin.png) no-repeat center;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.titleImgFive::before{
+	position: absolute;
+	content: "";
+	width: 24px;
+	height: 24px;
+	left: -44px;
+	background: url(../images/personal/yaoqinghaoyou.png) no-repeat center;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.panel-body{
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: 16px;
+	line-height: 30px;
+	cursor:pointer;
+}
+/*----------------------- right主体 -----------------------*/
+.p_ContentRight {
+	margin-left: 330px;
+	width: 890px;
+	min-height: 560px;
+}
+/*---------------------- 我的账户 ---------------*/
+.myAccount{
+	/*display: none;*/
+	width: 100%;
+}
+.accountTop,
+.accountBotttom{
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #eee;
+	background-color: #fff;
+}
+.accountTop{
+	padding-bottom: 0;
+}
+.myAccountTitle{
+	margin-bottom: 30px;
+	text-indent: 1em;
+	font-size: 16px;
+	border-left:2px solid #2a96fb;
+}
+.accountTopTitle{
+	padding-left: 120px;
+	font-size: 16px;
+	color: #ccc;
+	line-height: 40px;
+	border-top: 1px solid #eee;
+}
+.accountTopTitle > div {
+	float: left;
+	width: 33.33%;
+}
+.hideMoneyBtn{
+	margin-left: 50px;
+	display: inline-block;
+	width: 46px;height: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+.accountTopContent{
+	font-size: 0;
+	line-height: 60px;
+	border-top: 1px solid #eee;
+}
+.accountTopContent > div {
+	display: inline-block;
+}
+.accountCurrency{
+	width: 120px;
+	font-size: 16px;
+	color: #ccc;
+}
+.accountInvest,
+.accountGain,
+.accountRemaining{
+	width: 234px;
+	font-size: 20px;
+	color: #222;
+}
+.accountInvest{
+	color: #2a96fb;
+}
+			/*-------------------- 以下和基金样式相同 -------------------*/
+.accountBotttom{
+	margin-top: 30px;
+}
+.accountBottomTitle > div {
+	float: left;
+	margin: 0 30px;
+	min-width: 100px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 50px;
+	cursor: pointer;
+}
+.accountBottomActive{
+	color: #59a3fa;
+	border-bottom: 1px solid #59a3fa;
+}
+.sortBanner{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #eee;
+}
+.sortSelector{
+	display: inline-block;
+}
+.sortSelector > div {
+	display: inline-block;
+	margin: 0 30px;
+	padding: 0 6px;
+	cursor: pointer;
+}
+.fundContent {
+	width: 100%;
+	margin-top: 14px;
+}
+.fundTitleName {
+	color: #034786;
+}
+.fundContent span {
+	color: #59a3fa;
+}
+.fundTitle {
+	height: 50px;
+	line-height: 50px;
+}
+.fundTitle > div {
+	display: inline-block;
+	margin-right: 60px;
+}
+.fundContentDetail{
+	width: 100%;
+}
+.fundContentDetail > div{
+	float: left;
+	width: 164px;
+	font-size: 16px;
+}
+.fundContentDetail p {
+	line-height: 24px;
+}
+.detailNum {
+	font-size: 18px;
+	color: #59a3fa;
+}
+.fundDetailOpenBox{
+	height: 68px;
+	line-height: 68px;
+	text-align: center;
+}
+.fundContentDetail .fundDetailOpen{
+	display: inline-block;
+	cursor: pointer;
+}
+/*---------------------------------------------- 资金管理 --------------------------------------*/
+		/*------------------------ 充值 + 提现 -----------------------*/
+.rechargeMoney,
+.useMoney{
+	display: none;
+	width: 100%;
+}
+.accountInformation,
+.rechargeMoneyBox,
+.useMoneyBox{
+	padding: 30px;
+	border:1px solid #eee;
+	background-color: #fff;
+}
+.rechargeMoneyBox,
+.useMoneyBox{
+	margin-top: 20px;
+}
+.rechargeMoneyTitle,
+.useMoneyTitle,
+.transactionRecordTitle{
+	margin-bottom: 30px;
+	text-indent: 1em;
+	font-size: 16px;
+	border-left:2px solid #2a96fb;
+}
+.accountInformationTitle{
+	padding-left: 120px;
+	font-size: 16px;
+	color: #ccc;
+	line-height: 40px;
+	border-top: 1px solid #eee;
+}
+.accountInformationTitle > div{
+	display: inline-block;
+	width: 280px;
+	font-size: 16px;
+	color: #ccc;
+	line-height: 50px;
+}
+.moneyInformation{
+	border-top: 1px solid #eee;
+	line-height: 60px;
+}
+.moneyInformation > div {
+	float: left;
+}
+.accountBalance{
+	width: 284px;
+	font-size: 20px;
+	color: #59a3fa;
+}
+.accountUse{
+	width: 280px;
+	font-size: 20px;
+}
+.rechargeMoneyBtn > span,
+.useMoneyBtn > span{
+	display: inline-block;
+	margin-left: 100px;
+	margin-top: 20px;
+	color: #fff;
+	width: 100px;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 36px;
+	background-color: #59a3fa;
+	cursor: pointer;
+}
+		/*-------------------------------- 交易记录 -------------------------*/
+.transactionRecord{
+	display: none;
+	padding: 30px;
+	width: 100%;
+	border:1px solid #eee;
+	background-color: #fff;
+}
+.recordSmallTitle{
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	/*padding-left: 1em;*/
+}
+.recordTime,
+.recordType{
+	font-size: 16px;
+}
+.recordTime > div,
+.recordType > div{
+	display: inline-block;
+	margin: 0 10px;
+	width: 70px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.orderDetailTitle > div,
+.orderDetailContent > div{
+	display: inline-block;
+	width: 250px;
+}
+.orderDetailTitle > div:nth-child(2),
+.orderDetailContent > div:nth-child(2){
+	width: 150px;
+}
+.orderDetailTitle > div:nth-child(3),
+.orderDetailContent > div:nth-child(3){
+	width: 130px;
+}
+.orderDetailTitle > div:nth-child(4),
+.orderDetailContent > div:nth-child(4){
+	width: 150px;
+}
+.orderDetailTitle > div:nth-child(5),
+.orderDetailContent > div:nth-child(5){
+	width: 120px;
+}
+.orderDetailTitle > div{
+	font-size: 16px;
+	line-height: 60px;
+}
+.orderDetailContent > div{
+	font-size: 16px;
+	color: #ccc;
+	line-height: 30px;
+}
+/*-------------------------------------- 基金产品 ---------------------------------*/
+		/*--------------------------- ICO基金-所有基金共用样式 -----------------------------*/
+.fundProduct{
+	display: none;
+	width: 100%;
+}
+.fundProductDetail{
+	position: relative;
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #eee;
+	background-color: #fff;
+}
+.fundProductTitle{
+	margin-bottom: 30px;
+	text-indent: 1em;
+	font-size: 16px;
+	border-left:2px solid #2a96fb;
+}
+.fundProductBuyBtn{
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	color: #fff;
+	width: 100px;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 36px;
+	background-color: #59a3fa;
+	cursor: pointer;
+}
+.fundTotalDetail > div,
+.fundMultipleDetail > div{
+	display: inline-block;
+	width: 200px;
+	line-height: 30px;
+	color: #ccc;
+}
+.fundMoneyNum{
+	color: #333;
+	font-size: 20px;
+}
+		/*------------------------- 基金的申购、赎回页面 ---------------------*/
+.sellFundProduct{
+	display: none;
+}
+.sellFundProduct,
+.sellFundTop,
+.sellFundBottom{
+	width: 100%;
+}
+.sellFundTop{
+	position: relative;
+	margin-bottom: 20px;
+	height: 400px;
+}
+.sellFundTopL,
+.sellFundTopR,
+.sellFundBottom{
+	padding: 30px;
+	border: 1px solid #eee;
+	background-color: #fff;
+}
+.sellFundTopL{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 600px;
+	height: 400px;
+	color: #ccc;
+}
+.sellFundTopR{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 270px;
+	height: 400px;
+}
+.sellFundTitle > div{
+	display: inline-block;
+	width: 160px;
+}
+.fundName{
+	color: #0583f3;
+	font-size: 16px;
+}
+.sellFundTitle{
+	padding-bottom: 30px;
+	border-bottom: 1px solid #eee;
+}
+.sellFundDetail{
+	padding: 10px 0;
+	border-bottom: 2px solid #7ECEF4;
+	text-align: center;
+}
+.sellFundDetail p{
+	color: #7ECEF4;
+	font-size: 20px;
+}
+.sellFundDetail > div{
+	float: left;
+	margin: 10px 0;
+	width: 170px;
+}
+.sellFundProcess img{
+	margin-bottom: 12px;
+}
+.sellFundProcess > div{
+	position: relative;
+	float: left;
+	margin-top: 20px;
+	width: 170px;
+	line-height: 24px;
+	text-align: center;
+}
+.sellFundProcess span{
+	position: absolute;
+	top: 40px;
+	right: -10px;
+	font-size: 20px;
+}
+.fundHeaderImg{
+	padding-top: 50px;
+	text-align: center;
+}
+.fundApplying,
+.finishTime,
+.fundJoinPerson{
+	text-align: center;
+	font-size: 16px;
+	line-height: 30px;
+	color: #ccc;
+}
+.finishTime > span,
+.fundJoinPerson > span{
+	padding: 0 6px;
+	color: #666;
+}
+.fundOperateBtn{
+	margin-top: 50px;
+	font-size: 0;
+}
+.fundBuyBtn,
+.fundSellBtn{
+	display: inline-block;
+	margin: 0 12px;
+	color: #fff;
+	width: 80px;
+	border-radius: 18px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 32px;
+	background-color: #59a3fa;
+	cursor: pointer;
+}
+.sellFundBottomTop{
+	font-size: 16px;
+	border-bottom: 1px solid #eee;
+}
+.sellFundBottomTop > li.active{
+	color: #59a3fa;
+	border-bottom: 2px solid #59a3fa;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+    color: #555;
+    background-color: #fff;
+}
+.nav > li > a:hover, 
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #fff;
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+    border: 1px solid #fff; 
+    border-bottom-color: transparent;
+}
+.nav-tabs > li > a:hover {
+    border-color: #fff;
+}
+.sellFundBottomTop > li span{
+	color: #222;
+}
+.sellFundBottomTop > li.active span{
+	color: #59a3fa;
+}
+
+.sellFundBottomCont{
+	padding-top: 10px;
+	height: 500px;
+}
+.sellFundBottomCont .active{
+	color: #222;
+	font-size: 14px;
+}
+#productDes p{
+	height: 490px;
+	text-indent: 2em;
+	overflow-y: auto;
+}
+#productVal > img{
+	margin-top: -10px;
+	width: 828px;
+	height: 490px;
+}
+/*------------------------ 站内信息 -----------------------*/
+.webInformation{
+	display: none;
+	padding: 30px;
+	width: 100%;
+	height: 600px;
+	overflow: scroll;
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+.webInforTitle{
+	margin-bottom: 30px;
+	text-indent: 1em;
+	font-size: 16px;
+	border-left:2px solid #2a96fb;
+}
+.systemInfor{
+	margin-top: -1px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	line-height: 24px;
+}
+.systemInforTitle{
+	padding-top: 6px;
+}
+.systemInforDetail{
+	padding-bottom: 6px;
+}
+.systemFooter{
+	width: 160px;
+	margin-left: auto;
+}
+.systemFooter div{
+	display: inline-block;
+	padding: 16px 0 16px 0;
+	width: 48%;
+	text-align: center;
+	cursor: pointer;
+}
+/*--------------------- 邀请好友 -------------------*/
+.invitingFriend{
+	display: none;
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	border: 1px solid #eee;
+}
+.invitingTitle{
+	margin-bottom: 30px;
+	text-indent: 1em;
+	font-size: 16px;
+	border-left:2px solid #2a96fb;
+}
+.invitingImg{
+	width: 830px;
+	height: 269px;
+}
+.invitingImg img{
+	width: 100%;
+	height: 100%;
+}
+.explain{
+	width: 100%;
+	height: 157px;
+	border-bottom: 1px solid #eee;
+}
+.explain > div {
+	float: left;
+	display: inline-block;
+	padding-left: 100px;
+	height: 100%;
+	font-size: 0;
+}
+.explain .numData{
+	margin-top: 50px;
+	font-size: 26px;
+	color: #59a3fa;
+}
+.explain .contentData{
+	margin-top: 16px;
+	font-size: 18px;
+	color: #ccc;
+}
+.invitingDetail{
+	width: 100%;
+	text-indent: 2em;
+}
+.detailTitle{
+	height: 70px;
+}
+.detailTitle div{
+	float: left;
+	width: 33.33%;
+	font-size: 16px;
+	line-height: 70px;
+}
+.detailContent{
+	width: 100%;
+	height: 34px;
+}
+.detailContent div{
+	float: left;
+	width: 33.33%;
+	font-size: 14px;
+	line-height: 34px;
+	color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

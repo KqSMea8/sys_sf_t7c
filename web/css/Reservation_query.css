@@ -1,0 +1,99 @@
+.section {
+    width: 22.5rem;
+    overflow: hidden;
+    margin: .5rem auto;
+}
+
+.section-information {
+    width: 99%;
+    position: relative;
+    border: 1px solid #cccccc;
+    margin: .5rem auto;
+    padding-top: .5rem;
+}
+
+.status {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+    background: rgb(25, 99, 148);
+}
+
+.status span {
+    color: #ffffff;
+    font-size: .8rem;
+    line-height: 1rem;
+}
+
+.sousuo input {
+    height: 1.5rem;
+    outline: none;
+    width: 18rem;
+    padding-left: .5rem;
+    font-size: .8rem;
+    border-radius: .7rem;
+}
+
+.sousuo span {
+    margin-left: .8rem;
+}
+
+.information {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.information p {
+    display: inline-block;
+    height: 2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-left: 1rem;
+    font-size: .9rem;
+}
+
+.information span {
+    margin-left: .5rem;
+    font-size: .9rem;
+}
+
+.inf-text {
+    width: 10rem;
+    display: inline-block;
+    float: left;
+    height: auto;
+    margin-left: 7rem;
+    margin-top: -1.5rem;
+}
+
+.inf-text span {
+    margin: 0;
+}
+
+.text-txt {
+    display: inline-block;
+    /* text-align: left; */
+    font-weight: 100;
+    height: 4rem;
+    float: right;
+    margin-right: 2rem;
+}
+
+.text-txt span {
+    width: 5rem;
+    font-size: .9rem;
+    line-height: 2rem;
+    display: inline-block;
+}
+
+.information:nth-child(7) p {
+    height: 4rem;
+}
+
+
+/* 
+.text-txt span input {
+    float: right;
+} */

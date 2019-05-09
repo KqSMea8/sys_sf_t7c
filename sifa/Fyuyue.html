@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预约查询</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/Reservation_query2.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+
+    <script src="./js/shipei.js"></script>
+    <style>
+        .information:nth-child(7) p {
+            height: auto;
+            float: left;
+        }
+        
+        .information:nth-child(8) p {
+            height: 2rem;
+        }
+        
+        input {
+            outline: none;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            margin-left: -3rem;
+            padding: .5rem;
+            text-align: center;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            border-radius: 0.25rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;"> <img onclick="javascript:window.history.go(-1);" src="./img/更多(1).png" alt=""></a>
+                </div>
+                <div class="title">
+                    <p>预约查询</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="seach">
+        <input type="text">
+        <span>搜索</span>
+    </div>
+    <section>
+        <div class="section">
+         
+            <div class="section-information">
+                <div class="status">
+                    <span>待处理</span>
+                </div>
+                <div class="information">
+                    <p>预约的公证处：</p>
+                    <span>牡丹江公证处</span>
+                </div>
+                <div class="information">
+                    <p>预约的当事人：</p>
+                    <span>李小龙</span>
+                </div>
+                <div class="information">
+                    <p>预约的公证员：</p>
+                    <span>王毅</span>
+                </div>
+                <div class="information">
+                    <p>预约的类别：</p>
+                    <span>财产援助</span>
+                </div>
+                <div class="information">
+                    <p>预约的时间：</p>
+                    <span>2018-10-21</span>
+                </div>
+                <div class="information">
+                    <p>预约的备注：</p>
+                    <div class="inf-text"><span>最近几天有些事情，希望可以预约在下个月的下旬</span></div>
+                </div>
+                <div class="information ldfg" style="height: 5rem;">
+                    <p>满意度评价：</p>
+                    <div class="text-txt">
+                        <span><input type="radio"name="evaluate">非常满意</span>
+                        <span><input type="radio"name="evaluate">满意</span><br>
+                        <span><input type="radio"name="evaluate">一般</span>
+                        <span><input type="radio"name="evaluate">不满意</span>
+                    </div>
+                </div>
+                <div style="width: 80%;height: 3rem; margin: .5rem auto;">
+                    <div class="btn" onclick="window.location.href= 'fair.html';return false" style="margin-top: 0; float: left;">
+                        确认提交
+                    </div>
+                    <div class="btn" onclick="window.location.href= '';return false" style="margin-top: 0; float: right;clear: none;">
+                        取消预约
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="width: 100%;height:3.125rem"></div>
+    <div class="footer"></div>
+</body>
+<script type="text/javascript">
+    // $(".footer").load("footer2.html");
+</script>
+<script>
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    function showTips(text) {
+        $("body").append('<p class="tishi">' + text + '</p>');
+        if ($(".tishi").css('display') == 'none') {
+            $(".tishi").stop(true).fadeIn();
+            setTimeout(function() {
+                $(".tishi").fadeOut();
+            }, 1500);
+            setTimeout(function(){
+                $(".tishi").remove();
+            },2000)
+        }
+    }
+    var access_token = localStorage.getItem("access_token");
+  //个人信息
+  var myname;
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Personal/mine',
+    data:{
+        access_token:access_token
+    },
+    dataType:'json', 
+    async: true,   //同步异步
+    success:function(data){
+        console.log(data);
+        myname=data.data.xm;
+        $.ajax({
+        type: "post",
+        url: "http://sf.wokerr.com/index.php/home/Handle/order_list",
+        data: {
+            access_token: access_token,
+            type:"1"
+        },
+        dataType: "json",
+        success: function(data) {
+            console.log(data);
+            var ht = "";
+            var status,state,pinjia;
+            for(var i=0;i<data.data.length;i++){
+                console.log(i)
+                if(data.data[i].status==0){
+                    status ="待处理";
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data[i].ct_time+'</span></div><div class="information" style="padding-bottom:3rem;"><p>预约的备注：</p><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="btn quedin"  style="margin-top: 0; float: left;margin-top: -2.5rem; margin-left: 8rem;" id='+data.data[i].id+'>取消预约</div></div>' 
+                }else if(data.data[i].status==1){
+                    status ="已处理";
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data[i].ct_time+'</span></div><div class="information" style="padding-bottom:3rem;"><p>预约的备注：</p><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="btn quedin"  style="margin-top: 0; float: left;margin-top: -2.5rem; margin-left: 8rem;" id='+data.data[i].id+'>取消预约</div></div>' 
+                }else if(data.data[i].status==2){
+                    status ="已撤销";
+                  
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data[i].ct_time+'</span></div><div class="information" style="padding-bottom:3rem;"><p>预约的备注：</p><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="btn quedin"  style="margin-top: 0; float: left;margin-top: -2.5rem; margin-left: 8rem;" id='+data.data[i].id+'>取消预约</div></div>' 
+                }else if(data.data[i].status==3){
+                    status ="已完成";
+                 
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data[i].ct_time+'</span></div><div class="information" style="padding-bottom:3rem;"><p>预约的备注：</p><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="btn quedin"  style="margin-top: 0; float: left;margin-top: -2.5rem; margin-left: 8rem;" id='+data.data[i].id+'>取消预约</div></div>' 
+                }else if(data.data[i].status==4) {
+                    status ="已完成";
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data[i].ct_time+'</span></div><div class="information"><p>预约的备注：</p><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p><div class="text-txt" style="    margin-right: 6rem;"><span><input type="radio"name="evaluate'+i+'" checked value="1">'+pinjia+'</span></div></div></div></div>' 
+
+                }else if(data.data[i].status==5){
+                    status ="已完成";
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p ><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p ><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p ><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p ><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p ><span>'+data.data[i].ct_time+'</span></div><div class="information"><p>预约的备注：</p ><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p ><div class="text-txt"><span><input type="radio"name="evaluate" value="1">非常满意</span><span><input type="radio"name="evaluate" value="2">满意</span><br><span><input type="radio"name="evaluate" value="3">一般</span><span><input type="radio"name="evaluate" value="4">不满意</span></div></div><div style="width: 80%;height: 3rem; margin: .5rem auto;"><div class="btn quedin"  style="margin-top: 0; float: left;" id='+data.data[i].id+'>确认提交</div><div class="btn quxiao"  style="margin-top: 0; float: right;clear: none;" id='+data.data[i].id+'>取消预约</div></div></div>' 
+
+                }else{
+                    status ="已完成";
+                    state = data.data[i].evaluate;
+                    if(state==1){
+                        pinjia="非常满意"
+                    }else if(state==2){
+                        pinjia="满意"
+                    }else if(state==3){
+                        pinjia="一般"
+                    }else if(state==4){
+                        pinjia="不满意"
+                    }
+                    ht += '<div class="section-information" ><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p ><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p ><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p ><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p ><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p ><span>'+data.data[i].ct_time+'</span></div><div class="information"><p>预约的备注：</p ><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p ><div class="text-txt" style="margin-right:6rem;"><span><input type="radio"name="evaluate" checked value="1">'+pinjia+'</span></div></div></div>'  
+                }
+                // ht += '<div class="section-information"><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 8rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data[i].jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data[i].jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data[i].order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data[i].ct_time+'</span></div><div class="information"><p>预约的备注：</p><div class="inf-text"><span>'+data.data[i].order_note+'</span></div></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p><div class="text-txt"><span><input type="radio"name="evaluate" value="1">非常满意</span><span><input type="radio"name="evaluate" value="2">满意</span><br><span><input type="radio"name="evaluate" value="3">一般</span><span><input type="radio"name="evaluate" value="4">不满意</span></div></div><div style="width: 80%;height: 3rem; margin: .5rem auto;"><div class="btn quedin"  style="margin-top: 0; float: left;" id='+data.data[i].id+'>确认提交</div><div class="btn quxiao"  style="margin-top: 0; float: right;clear: none;" id='+data.data[i].id+'>取消预约</div></div></div>' 
+            };
+            $(".section").html(ht);
+          
+            var btn = document.getElementsByClassName('quedin');
+            for(var i=0;i<btn.length;i++){
+                btn[i].addEventListener("click",function(){
+                    if($(this).parent().siblings(".ldfg").find("input:radio").is(":checked")==false){
+                        showTips("请评价")
+                    }else{
+                        var id = $(this).attr("id");
+                        var pj;
+                        $(this).parent().siblings(".ldfg").find("input:radio").each(function(j){
+                            if(this.checked){
+                                pj=$(this).val();
+                            }
+                        });
+                        $.ajax({
+                            type:"post",
+                            url:"http://sf.wokerr.com/index.php/home/Handle/order_evaluate",
+                            data:{
+                                access_token:access_token,
+                                type:"1",
+                                evaluate:pj,
+                                id:id
+                            },
+                            dataType:"json",
+                            success:function(data){
+                                console.log(data);
+                                showTips(data.msg)
+                                // window.location.reload();
+                            }
+                        })  
+                    }
+                })
+            }
+            var btn1 = document.getElementsByClassName('quxiao');
+            for(var i=0;i<btn.length;i++){
+                btn1[i].addEventListener("click",function(){
+                    if($(this).parent().siblings(".ldfg").find("input:radio").is(":checked")==false){
+                        showTips("请评价")
+                    }else{
+                        var id = $(this).attr("id");
+                        var pj;
+                        $(this).parent().siblings(".ldfg").find("input:radio").each(function(j){
+                            if(this.checked){
+                                pj=$(this).val();
+                            }
+                        });
+                        $.ajax({
+                            type:"post",
+                            url:"http://sf.wokerr.com/index.php/home/Handle/order_cancel",
+                            data:{
+                                access_token:access_token,
+                                type:"2",
+                                // evaluate:pj,
+                                id:id
+                            },
+                            dataType:"json",
+                            success:function(data){
+                                console.log(data);
+                                // if(data.status==1){
+                                    showTips(data.msg)
+
+                                    window.location.reload();
+                                // }
+                            }
+                        })  
+                    }
+                   
+                })
+            }
+        },
+        error: function() {
+            showTips("服务器连接失败，请稍后再试");
+        }
+    });
+    }
+})
+
+   
+ 
+    // {
+        // onclick="window.location.href= 'fair.html';return false"
+    // }
+</script>
+
+
+</html>

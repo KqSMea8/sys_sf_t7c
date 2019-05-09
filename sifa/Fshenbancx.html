@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>申办查询</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/biddingquery.css">
+    <script src="./js/shipei.js"></script>
+	<style>
+	.bq_con>.right>div{
+			width: 50%;
+			line-height:1.3rem;
+		}
+	</style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;">
+                        <img onclick="javascript:window.history.go(-1);" src="./img/return_03.png" alt="">
+                    </a>
+                </div>
+                <div class="title">
+                    <p>申办查询</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="Applyname">
+                <div class="text">
+                    <p>申请人姓名</p>
+                    <span class="name">张三丰</span>
+                </div>
+                <div class="text">
+                    <p>申请时间</p>
+                    <span class="time">2018/03/25</span>
+                </div>
+                <div class="text">
+                    <p>受理机构</p>
+                    <span class="mechanism">受理机构</span>
+                </div>
+                <div class="text">
+                    <p>受理状态</p>
+                    <span class="status">待审批</span>
+                </div>
+                <div class="text tts">
+                    <p>申办详细信息</p>
+                    <div class="text-txt">
+                        <p>法援中心名称：北京公证处</p>
+                        <p>申请人类型：类型</p>
+                        <p>申请事项：类型1</p>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>包含附件</p>
+                    <a href="Enclosurezhiliao.html">
+                        <span class="Enclosure">张**得附件资料</span>
+                    </a>
+                </div>
+                <div class="text tts">
+                    <p>补充材料</p>
+                    <div class="text-txt">
+                        <img src="img/tianjia.jpg" alt="">
+                    </div>
+                </div>
+				<div class="bq_con" style="display: flex;margin-bottom: 1rem;margin-left:2rem">
+                    <div class="left" style="font-size: 0.8rem">满意度评价</div>
+                    <div class="right" style="display: flex;flex-wrap:wrap;padding-left:1rem;font-size: 0.8rem">
+                        <div>
+                            <input type="radio" name="t">非诚满意
+                        </div>
+                        <div>
+                            <input type="radio" name="t">满意
+                        </div>
+                        <div>
+                            <input type="radio" name="t">一般
+                        </div>
+                        <div>
+                            <input type="radio" name="t">不满意
+                        </div>
+                    </div>
+                </div>
+				<div style="width: 90%;margin: 1rem auto;height: 2.5rem;">
+                    <div class="btn" onclick="window.location.href= 'falvyuanzu.html';return false" style="margin-top: 0.2rem;float: left;">
+                        确认提交
+                    </div>
+                    <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+                        撤销申办
+                    </div>
+                </div>
+                <div id="tan">
+                    <div class="tan_center">
+                        <p>
+                            撤销原因
+                        </p>
+                        <div class="tan_one">
+                            <textarea id="tar"  name="" style="resize: none;width: 100%;height: 90%;border: none;outline: none;font-size: 1rem;" placeholder="请在此输入撤销原因"></textarea>
+                        </div>
+                        <div class="yuanyin">
+                            请输入撤销原因!
+                        </div>
+                        <div class="tan_two">
+                            <span class="tan_two_span2">确认撤销</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="width: 100%;height: 3.125rem;"></div>
+<div class="footer"></div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+    $(".footer").load("footer2.html")
+    $('#btn').click(function(){
+        $('#tan').show();
+    })
+    $('.tan_two_span2').click(function(){
+        if($.trim($("#tar").val())==""){
+            $('.yuanyin').show();
+        }else{
+            $('#tan').hide();
+        }
+    })
+</script>

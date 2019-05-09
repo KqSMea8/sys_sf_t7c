@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>调解书</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/gongzhengchu.css">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+
+    <script src="./js/mobileSelect.js"></script>
+    <style>
+        .fl a {
+            width: 33%;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            padding: .5rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -3rem;
+            z-index: 999999;
+        }
+    </style>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <div class="header">
+        <a href="javascript:;" onclick="JavaScript:history.back(-1);">
+            <img src="img/fh.png">
+        </a>
+        <h5>法律援助判决书</h5>
+    </div>
+    <div class="fl">
+        <a href="javascript:;">
+            <span class="active">个人用户</span>
+        </a>
+        <a href="javascript:;"><span>人工查询</span></a>
+        <a href="javascript:;">
+            <span>司法机关</span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="item1_t">
+            <div class="fom">
+                <div>姓名</div>
+                <div><input type="text" name="" class="name1"></div>
+            </div>
+            <div class="fom">
+                <div>身份证号</div>
+                <div><input type="text" name="" style="border:none;background:none" disabled="disabled" class="ID"></div>
+            </div>
+            <div class="fom">
+                <div>手机号</div>
+                <div><input type="button" value="发送验证码" name="" class="yzm1" style="margin-top:.08rem">
+                    <span class="phone1">默认为注册手机号</span>
+                </div>
+            </div>
+            <div class="fom">
+                <div>验证码</div>
+                <div><input type="text" name="" class="verify_code"></div>
+            </div>
+            <div class="zhu"><span>注：</span>目前仅可查询与绑定身份证相关的鉴定书</div>
+            <input type="button" name="" value="查询" class="gebtn">
+        </div>
+
+        <!-- =====人工查询 -->
+        <div class="item1_t" style="display: none;">
+            <div class="fom">
+                <div>姓名</div>
+                <div><input type="text" name="" class="name2"></div>
+            </div>
+            <div class="fom">
+                <div>身份证号</div>
+                <div><input type="text" name="" class="id_card1" style="border:1px solid #999;"></div>
+            </div>
+            <div class="fom">
+                <div>案卷编号</div>
+                <div><input type="text" class="files_id" name=""></div>
+            </div>
+            <div class="fom">
+                <div>手机号</div>
+                <div><input onkeyup='this.value=this.value.replace(/\D/gi,"")' type="text" style="width: 55%;" class="mobile"><input type="button" class="verify_f" value="发送验证码" class="yzm2" name="" style="margin-top: 0.1rem;
+    position: absolute;
+    right: .8rem;
+    /* float: right; */
+    width: 1.5rem;
+    height: 0.43rem;
+    text-align: center;
+    line-height: .23rem;
+    font-size: .20rem;">
+                    <!--                     <span>默认为注册手机号</span> -->
+                </div>
+            </div>
+            <div class="fom">
+                <div>验证码</div>
+                <div><input type="text" name="" class="yzm" onkeyup='this.value=this.value.replace(/\D/gi,"")'></div>
+            </div>
+            <div class="zhu"><span>注：</span>目前仅可查询与绑定身份证相关的鉴定书</div>
+            <input type="button" name="" value="查询" class="inquire_2">
+        </div>
+
+
+        <div class="item1_t" style="display: none;">
+            <div class="fom">
+                <div>选择查询方式</div>
+                <div>
+                    <input type="text" readonly onfocus="this.blur()" class="myselect" />
+                    <!-- <select id="myselect">
+                                    <option>请选择</option>
+                                    <option value="1">登录</option>
+                                    <option value="2">查询</option>
+                                </select> -->
+                </div>
+            </div>
+            <div id="val_1">
+                <div class="fom">
+                    <div>姓名</div>
+                    <div><input type="text" name="" class="name"></div>
+                </div>
+                <div class="fom">
+                    <div>身份证号</div>
+                    <div><input type="text" name="" class="id_card"></div>
+                </div>
+                <div class="fom">
+                    <div>手机验证码</div>
+                    <div>
+                        <input type="button" value="发送验证码" name="" style="margin-top:.08rem">
+                        <span class="phone1">默认为注册手机号</span>
+                    </div>
+                </div>
+                <div class="fom">
+                    <div>验证码</div>
+                    <div><input type="text" name="" class="verify_code1"></div>
+                </div>
+
+            </div>
+            <div id="val_2">
+                <div class="fom">
+                    <div>输入用户名</div>
+                    <div><input type="text" name="" class="named"></div>
+                </div>
+                <div class="fom">
+                    <div>输入案卷号</div>
+                    <div><input type="text" name="" class="files_id"></div>
+                </div>
+                <div class="fom">
+                    <div>输入身份证号</div>
+                    <div><input type="text" name="" class="sfzId"></div>
+                </div>
+
+            </div>
+            <input type="button" name="" value="查询" class="butt">
+        </div>
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+</script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".fl>a").each(function() {
+        var index = $(this).index();
+        console.log(index);
+        console.log($(".item1").eq(index))
+        $(this).click(function() {
+            $(".fl>a>span").removeClass('active');
+            $(".fl>a>span").eq(index).addClass('active').siblings().removeClass('active');
+            $(".container>div").eq(index).stop(true).show().siblings().stop(true).hide();
+        });
+    })
+
+    var access_token = localStorage.getItem("access_token");
+    var lxdh;
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Personal/mine",
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data)
+            lxdh = data.data.lxdh;
+            $(".ID").val(data.data.zjh);
+            $(".phone1").attr("title", data.data.lxdh)
+
+        }
+    })
+
+    var yzm1;
+    var tim = 60;
+    var timer;
+    $(".yzm1").click(function() {
+        clearInterval(timer)
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+            data: {
+                mobile: lxdh
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    yzm1 = data.data.yzm;
+                    timer = setInterval(function() {
+                        tim--;
+                        $(".yzm1").val(tim);
+                        if (tim <= 0) {
+                            tim = 60;
+                            $(".yzm1").val("重新发送");
+                            clearInterval(timer)
+                        }
+                    }, 1000)
+                } else {
+                    $(".verify_f").val("发送失败");
+                }
+
+            }
+        })
+    })
+
+    //点个人查询
+    $(".gebtn").click(function() {
+            var name = $(".name1").val();
+            var id_card = $(".ID").val();
+            var mobile = $(".phone1").attr("title");
+            var verify_code = $(".verify_code").val();
+            $.ajax({
+                type: "POST",
+                url: "https://sys.t7c.net/index.php/home/Organ/writ",
+                data: {
+                    access_token: access_token,
+                    type: 3,
+                    cate: 1,
+                    name: name,
+                    id_card: id_card,
+                    mobile: mobile,
+                    verify_code: verify_code
+                },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data)
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+
+
+                }
+            })
+        })
+        //司法机关查询
+        //查询类别
+
+    var Myselect = ['登录查询', '查询'],
+        cate;
+
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.myselect',
+        title: '请选择查询类别',
+        wheels: [{
+            data: Myselect
+        }],
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function(indexArr, data) {
+            //console.log(data);
+        },
+        callback: function(indexArr, data) {
+            $(".myselect").val(data)
+
+            console.log(data[0]);
+            if (data[0] == "登录查询") {
+                cate = 1
+            } else if (data[0] == "查询") {
+                cate = 2
+            }
+            if (cate == 1) {
+                $('#val_1').show();
+                $('#val_2').hide();
+            } else if (cate == 2) {
+                $('#val_2').show();
+                $('#val_1').hide();
+            }
+            $(".myselect").parent().parent().attr("title", cate)
+        }
+    });
+
+    var yzm2;
+    var tim = 60;
+    var timer;
+    $(".yzm2").click(function() {
+        clearInterval(timer)
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+            data: {
+                mobile: lxdh
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    yzm1 = data.data.yzm;
+                    timer = setInterval(function() {
+                        tim--;
+                        $(".yzm2").val(tim);
+                        if (tim <= 0) {
+                            tim = 60;
+                            $(".yzm2").val("重新发送");
+                            clearInterval(timer)
+                        }
+                    }, 1000)
+                } else {
+                    $(".verify_f").val("发送失败");
+                }
+
+            }
+        })
+    })
+
+    $(".butt").click(function() {
+            var cate = $(this).siblings(".fom").attr("title");
+            console.log(cate)
+            if (cate == 1) {
+                var name = $(".name2").val();
+                var mobile = $(".phone1").attr("title");
+                var id_card = $(".id_card1").val();
+                var verify_code = $(".verify_code1").val()
+                $.ajax({
+                    type: "POST",
+                    url: "https://sys.t7c.net/index.php/home/Organ/writ",
+                    data: {
+                        access_token: access_token,
+                        type: 3,
+                        cate: cate,
+                        name: name,
+                        id_card: id_card,
+                        mobile: mobile,
+                        verify_code: verify_code
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data)
+
+
+
+                    }
+                })
+            } else if (cate == 2) {
+                var name = $(".named").val();
+                var files_id = $(".files_id").val();
+                var id_card = $(".sfzId").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://sys.t7c.net/index.php/home/Organ/writ",
+                    data: {
+                        access_token: access_token,
+                        type: 3,
+                        cate: cate,
+                        name: name,
+                        id_card: id_card,
+                        files_id: files_id
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data)
+
+
+
+                    }
+                })
+            }
+        })
+        // =========人工查询
+        // 
+        // ==================验证码
+    var yzm;
+    var tim = 60;
+    var timer;
+    $(".verify_f").click(function() {
+            clearInterval(timer)
+            var mobile = $(".mobile").val();
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+                data: {
+                    mobile: mobile
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        yzm = data.data.yzm;
+                        timer = setInterval(function() {
+                            tim--;
+                            $(".verify_f").val(tim);
+                            if (tim <= 0) {
+                                tim = 60;
+                                $(".verify_f").val("重新发送");
+                                clearInterval(timer)
+                            }
+                        }, 1000)
+                    } else {
+                        $(".verify_f").val("发送失败");
+                    }
+
+                }
+            })
+        })
+        // ==============人工查询
+    $(".inquire_2").click(function() {
+        var name = $(".name").val();
+        var id_card = $(".id_card").val();
+        var mobile = $(".mobile").val();
+        var files_id = $(".files_id").val();
+        yzm = $(".yzm").val();
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Organ/writ',
+            data: {
+                access_token: access_token,
+                mobile: mobile,
+                verify_code: yzm,
+                id_card: id_card,
+                name: name,
+                files_id: files_id,
+                type: 3,
+                cate: 3
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    window.location.href = "chaxun.html";
+                } else {
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                }
+            }
+        })
+    })
+</script>
+
+</html>

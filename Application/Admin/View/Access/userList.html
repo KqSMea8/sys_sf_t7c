@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>权限管理-后台管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='会员列表';
+        </php>
+        <include file="Common:intoHead" />
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">会员列表</div>
+                        <div style="width: 100px;float: right;"><button type="button" class="btn" onclick="window.location.href='{:U('Access/add_user')}'">添加会员</button></div>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>VIP等级</td>
+                                <td>名字</td>
+                                <td>注册时间</td>
+                                <td>登录时间</td>
+                                <td>电话</td>
+                                <td>回扣率</td>
+                                <td>状态</td>
+                                <td width="150">操作</td>
+                            </tr>
+                        </thead>
+                        <volist name="list" id="vo">
+                            <tr align="center" aid="{$vo.aid}">
+                                <td>{$vo.id}</td>
+                                <td>{$vo.vip}</td>
+                                <td>{$vo.user_name}</td>
+                                <td>{$vo.user_registertime|date='Y-m-d H:i:s',###}</td>
+                                <td>{$vo.user_logintime}</td>
+                                <td>{$vo.tel}</td>
+                                <td>{$vo.rate}</td>
+                                <td><if condition="$vo.status eq 1">
+                                        <a class="stateClick " href="javascript:void(0); " index="{$vo.aid} "  title="推荐 " onclick="onstate({$vo.aid},this) "><img src="/Public/Img/action_1.png " border="0 "></a>
+                                        <else/>
+                                        <a class="stateClick " href="javascript:void(0); " index="{$vo.aid} "  title="推荐 " onclick="onstate({$vo.aid},this) "><img src="/Public/Img/action_0.png " border="0 "></a>
+                                       </if>
+                                </td>
+                                <td>[ <a href="{:U('Access/add_user/',array('id'=>$vo['id']))}">编辑 </a> ] [ <a link="{:U('Access/user_del/',array('id'=>$vo['id']))}" href="javascript:void(0)" name="{$vo.name}" class="del">删除 </a> ]</td>
+                            </tr>
+                        </volist>
+                        <tr><td><td colspan="9" align="right">{$page}</td></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+    </body>
+</html>
+<script type="text/javascript">
+//	$(".stateClick").click(onstate({$vo.aid},this));
+	
+            function onstate(id,v){
+                $.ajax({
+                    type:"get",
+                    url:"{:U("Access/user_change")}",
+                    data:{id:id},
+                    dataType:"json",
+                    success:function(data){
+                    	console.log(data);
+                        if(data.data==1){
+                            $(v).html('<img src="/Public/Img/action_1.png" border="0">');
+                        }else if(data.data==0){
+                            $(v).html('<img src="/Public/Img/action_0.png" border="0">');
+                        }
+                    }
+                })
+            }
+    $(function(){
+        $(".del").click(function(){
+            var delLink=$(this).attr("link");
+            $this = $(this);
+            popup.confirm('你真的打算删除【<b>'+$(this).attr("name")+'</b>】吗?','温馨提示',function(action){
+                if(action == 'ok'){
+                    delByLink(delLink,$this);
+                }
+            });
+            return false;
+        });
+    });
+</script>

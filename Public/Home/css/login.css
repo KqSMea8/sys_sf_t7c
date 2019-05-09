@@ -1,0 +1,134 @@
+*{border: 0;padding: 0;margin: 0;}
+body{
+	-moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+.header{
+	width: 80%;
+	height: 140px;
+}
+.header img{
+	display: inline-block;
+	margin-left: 360px;
+}
+.content{
+	width: 100%;
+	height: 500px;
+	background: url(../images/loginBg.jpg) no-repeat center;
+	background-size: 100% 100%;
+}
+.content_table{
+	width: 400px;
+	height: 360px;
+	display:inline-block ;
+	border-radius: 5px;
+	margin: 80px 0;
+	margin-left: 50%;
+	background:#fff;	
+}
+.content_table .tit{
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 24px;
+	color: #616161;
+	font-weight:400 ;
+}
+.list{
+	margin: 0 auto;
+	height: 216px;
+	width: 340px;
+}
+.list  li{
+	width: 340px;
+	height: 50px;
+	border: 1px solid #b9b8b8;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	list-style: none;
+}
+.list li span{
+	width: 52px;
+	height: 50px;
+	float: left;
+}
+.list li input{
+	width: 174px;
+	height: 48px;
+	border: 0;
+	outline: none;
+}
+.list .idCodeBox{
+	position: relative;
+	display: inline-block;
+	top: -22px;
+	width: 226px;
+}
+.list > .yzmBox{
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+.list > .yzmBox > img{
+	width: 100%;
+	height: 100%;
+}
+.list .userName{
+	background: url(../images/inputBg/icon1.png) no-repeat center;
+}
+.list .pswd{
+	background: url(../images/inputBg/icon2.png) no-repeat center;
+}
+.list .idCode{
+	background: url(../images/inputBg/icon3.png) no-repeat center;
+}
+.loginBtn{
+	width: 214px;
+	height: 44px;
+	margin: 0 auto;
+	clear: both;
+	background: #59a4ff;
+	border-radius:5px ;
+	text-align: center;
+	line-height: 44px;
+	color: #fdfcfc;
+	font-size: 20px;
+	cursor: pointer;
+}
+.forgetPassword{
+	margin-top: 10px;
+	text-align: right;
+	padding-right: 30px;
+}
+.footer{
+	width: 100%;
+}
+.footer .footer_content{
+	width: 700px;
+	height: 111px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+.footer_content .footer_btn a{
+	font-size: 16px;	
+	color: #222222;
+	text-decoration: none;
+	letter-spacing: 5px;
+}
+.footer_content .footer_btn span {
+	margin: 0 26px;
+}
+.footer_content p{
+	width: 100%;
+	height: 16px;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 16px;
+	color: #222222;
+}

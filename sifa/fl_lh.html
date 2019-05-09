@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#F2F2F2;font-size: 50px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hdwt.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <title>离婚</title>
+</head>
+
+<body>
+    <header class="header" style="padding:0;">
+        <button id="go_befer"onclick="javascript:window.history.go(-1);">上一页</button>
+        <a href="javascript::">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">离婚</div>
+        <button id="chogntian">重填</button>
+    </header>
+    <div class="content">
+        <div class="neirong_con">
+            <div class="sele_each">
+                <div class="question">1.此前是否起诉过离婚 ： </div>
+                <div class="sele_each_list">经过</div>
+                <div class="sele_each_list">未经过</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">2.申请人在此次离婚纠纷中立场 ：</div>
+                <div class="sele_each_list">要求离婚者</div>
+                <div class="sele_each_list">被要求离婚者</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">3.申请人对此离婚纠纷的意愿 ：</div>
+                <div class="sele_each_list">同意离婚</div>
+                <div class="sele_each_list">不同意离婚</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">4.离婚的主要原因 ：</div>
+                <div class="sele_each_list">有配偶者与他人长期以夫妻关系同居</div>
+                <div class="sele_each_list">家庭暴力</div>
+                <div class="sele_each_list">吸毒酗酒恶习</div>
+                <div class="sele_each_list">犯罪</div>
+                <div class="sele_each_list">不尽家庭成员义务</div>
+                <div class="sele_each_list">常年分居</div>
+                <div class="sele_each_list">对方离家下落不明</div>
+                <div class="sele_each_list">争吵不休</div>
+                <div class="sele_each_list">一方患有重疾、精神类疾病、残疾</div>
+                <div class="sele_each_list">其他</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">5.夫妻间是否有共同财产 ：</div>
+                <div class="sele_each_list">有</div>
+                <div class="sele_each_list">没有</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">6.夫妻是否有未成年婚生子女 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">没有</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">7.夫妻是否有夫妻共同债务 ：</div>
+                <div class="sele_each_list">有</div>
+                <div class="sele_each_list">没有</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/szl/qweq.js"></script>
+    <script src="./js/szl/jsAddress.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($('.form-control').length) {
+                addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+            }
+        });
+    </script>
+    <script src="./js/szl/laydate.js"></script>
+    <!-- 改成你的路径 -->
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+    </script>
+    <script src="./js/szl/werw.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script type="text/javascript" src="./js/szl/rolldate.js"></script>
+</body>
+
+</html>

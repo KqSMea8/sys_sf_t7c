@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>添加管理员-权限管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='添加管理员';
+        </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+    <div class="wrap"> <include file="Common:head" />
+        <div class="mainBody"> <include file="Common:left" />
+            <div id="Right">
+                <div class="contentArea">
+                    <div class="Item hr">
+                        <div class="current">添加管理员</div>
+                    </div>
+                    <form action="{:U('Access/add_admin')}" method="post" enctype="multipart/form-data">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                            <tr>
+                                <th width="120">昵称：</th>
+                                <td><input  name="nickname" type="text" class="input" size="40" value="{$info.nickname}" /></td>
+                            </tr>
+                            <tr id="hidetr">
+                            	<th width="120">上传头像图片：</th>
+                            	<td><input type="file" class="input" size="60" name="img" value=""/></td>
+                        	</tr>
+                            <tr>
+                                <th>邮件地址：</th>
+                                <td><input <if condition="ACTION_NAME eq 'editAdmin'"> disabled="disabled"</if> name="email" size="40" class="input" type="text" value="{$info.email}" /></td>
+                            </tr>
+                            <tr>
+                                <th>密码：</th>
+                                <td><input class="input" name="pwd" type="password" size="40" value="{$info.pwd}" /></td>
+                            </tr>
+                            <tr>
+                                <th>备注：</th>
+                                <td><textarea name="remark" value="{$info.remark}" rows="5" cols="57">{$info.remark}</textarea></td>
+                            </tr>
+                            <tr>
+                                <th>状态：</th>
+                                <td>
+                                    <select name="status" style="width: 80px;">
+                                        <if condition="$info.status eq 1">
+                                            <option value="1" selected>启用</option>
+                                            <option value="0">禁用</option>
+                                            <else/>
+                                            <option value="1">启用</option>
+                                            <option value="0" selected>禁用</option>
+                                        </if>
+                                    </select>
+                                    如果禁用了将无法登陆本系统</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>最大权限：</th>
+                                <td>
+                                	<select name="import" style="width: 80px;">
+                                        <if condition="$info.import eq 1">
+                                            <option value="1" selected>启用</option>
+                                            <option value="0">禁用</option>
+                                            <else/>
+                                            <option value="1">启用</option>
+                                            <option value="0" selected>禁用</option>
+                                        </if>
+                                    </select>
+                                </td>
+                            </tr>
+                            <php>if($info['loc']){</php>
+                       	 	<tr>
+                            	<th>图片显示：</th>
+                            	<td><a href="__UPLOAD__/{$info.loc}" target="_blank"><img src="__UPLOAD__/{$info.loc}" border="0" height="100" width="100"></a></td>
+                        	</tr>
+                        	<php>}</php>
+                        </table>
+                        <input type="hidden" name="aid" value="{$info.aid}"/>
+                    </form>
+                    <div class="commonBtnArea">
+                        <button class="btn submit">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+    $(".submit").click(function(){
+            <if condition="ACTION_NAME neq 'add_admin'">
+//          if(!isEmail($("input[name='email']").val())){
+//          popup.alert("账号邮件地址格式错误");
+//          return false;
+//      }
+        if($.trim($("input[name='pwd']").val())==''){
+            popup.alert("密码不能为空");
+            return false;
+        }
+            </if>
+            commonAjaxSubmit();
+            
+    })
+</script>
+</body>
+</html>

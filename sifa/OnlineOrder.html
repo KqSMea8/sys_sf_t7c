@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线预约</title>
+    <!-- <script src="./js/jquery-1.11.3.min.js"></script> -->
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+    <script src="./js/mobileSelect.js"></script>
+</head>
+<style>
+
+</style>
+</head>
+
+<body>
+    <div id="header">
+        <span>在线预约</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="nav_fir">
+        <div class="nav_first">
+           <input type="text" readonly class="gzc">
+            <span>选择公证处</span>
+        </div>
+        <div class="nav_first">
+                <input type="text" readonly class="gzry">
+            <!-- <select class="sqrlx">
+                <option value="">请选择</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select> -->
+            <span>申请人类型</span>
+        </div>
+        <div class="nav_first">
+                <input type="text" readonly class="sqrlx">
+            <!-- <select class="gzry" >
+                <option value="">请选择</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select> -->
+            <span>选择公证员</span>
+        </div>
+        <div class="nav_first" style="height:2rem">
+            <input type="text" id="myselect">
+            <!-- <select id="myselect">
+                <option value="">请选择</option>
+                <option value="1">123</option>
+                <option value="2">123</option>
+                <option value="3">123</option>
+                <option value="4">123</option>
+            </select> -->
+            <span>选择类别</span>
+        </div>
+        <div class="yaojian" style="padding-left:8rem;line-height:1.5rem;color:#888;height:1.5rem;">
+         <p></p>
+        </div>
+        <div class="nav_first">
+            <input type="text" class="date3" placeholder="请选择时间">
+            <span>选择时间</span>
+        </div>
+        <div class="nav_first" style="height: 5rem">
+            <textarea name="" id="mytext"></textarea>
+            <span style="line-height:1rem">填写备注</span>
+        </div>
+    </div>
+   <div class="BidQuery">
+        <div class="bq_con" >
+            <span class="left" style="float:left">上传附件</span>
+            <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+            <input type="file" class="img_1 imgde" name="">
+            <img src="./img/tianjia.jpg" class="img2" alt="">
+             <input type="file" class="img_2 imgde" name="">
+            <img src="./img/tianjia.jpg" class="img3" alt="">
+             <input type="file" class="img_3 imgde" name="">
+           <!--  <p style="margin-left:6.875rem;">可上传1-5张图片</span> -->
+        </div>
+    </div>
+    <div style="width: 70%;margin: 3rem auto 0;height: 2.5rem;margin-bottom:2rem;">
+        <div class="btn" return false" style="margin-top: 0.2rem;">
+            提交预约
+        </div>
+        <!-- <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+            撤销预约
+        </div> -->
+    </div>
+<div style="width: 100%;height: 3.125rem"></div>
+<p class="tishi"> sdaf</p>
+<!-- <div class="footer"></div> -->
+<style>
+.bq_con{
+    position: relative;
+}
+    .imgde{
+        position: absolute;
+        width: 4.6875rem;
+        height: 5.625rem;
+        overflow: hidden;
+        vertical-align: middle;
+        opacity: 0;
+        top: .61rem;
+    }
+    .img_1 {
+        left: 7.7875rem;
+    }
+    .img_2 {
+        left: 12.7rem;
+    }
+    .img_3{
+        left: 17.7rem;
+    }
+    .nav_first textarea{
+        font-size: 1rem;
+    }
+    .tishi{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 6rem;
+        height: auto;
+        padding: .5rem;
+        display: none;
+        background: rgba(0,0,0,.5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -3rem;
+    }
+</style>
+
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+        $(".footer").load("footer2.html");
+</script>
+<script src="js/jquery.js"></script>
+<script>
+    var gzkarr=[];
+    //  var mobileSelect1 = new MobileSelect({
+    //                 trigger: '.gzc',
+    //                 title: '请选择',
+    //                 wheels: [{
+    //                     data: quyu
+    //                 }],
+    //                 position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+    //                 transitionEnd: function(indexArr, data) {
+    //                     //console.log(data);
+    //                 },
+    //                 callback: function(indexArr, data) {
+
+    //                 }
+    //     })
+window.onload = function() {
+    new rolldate.Date({
+        el: '.date3',
+        format: 'YYYY-MM-DD hh:mm',
+        beginYear: 1990,
+        endYear: 2020
+    })
+$('#myselect').click(function(){
+        var myselect = $('#myselect').val();
+        console.log(myselect);
+        if(myselect == '1'){
+            $('.yaojian p').html('需上传要件1111');
+        }else if( myselect == '2' ){
+            $('.yaojian p').html('需上传要件2222');
+        }else if( myselect == '3' ){
+            $('.yaojian p').html('需上传要件3333');
+        }else if( myselect == '4' ){
+            $('.yaojian p').html('需上传要件4444');
+        }
+    })
+}
+</script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+<script type="text/javascript" src="js/rolldate.js"></script>
+<script type="text/javascript">
+    var  jg_id,jg_name,jgry_id,jgry_name,order_note,order_time,order_type;
+    var imgde1="",imgde2="",imgde3="";
+    var gzcsj;
+    var access_token = localStorage.getItem("access_token")
+    //公证处
+     $.ajax({
+        tyep:"post",
+        url:"http://sf.wokerr.com/index.php/home/Data/gzc",
+        data:{},
+        dataType:"json",
+        success:function (data) {
+            console.log(data);
+            gzcsj = data.data;
+            for(var i=0;i<data.data.length;i++){
+                gzkarr.push(data.data[i].jgmc)
+            };
+            var mobileSelect1 = new MobileSelect({
+                    trigger: '.gzc',
+                    title: '请选择',
+                    wheels: [{
+                        data: gzkarr
+                    }],
+                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                    transitionEnd: function(indexArr, data) {
+                        //console.log(data);
+                    },
+                    callback: function(indexArr, data) {
+                        $(".gzc").val(data);
+                        jg_name =data+"";
+                        for(var i=0;i<gzcsj.length;i++){
+                            if(data==gzcsj[i].jgmc){
+                                jg_id =gzcsj[i].id; 
+                            }
+                        };
+                        console.log(jg_id)
+                        lkdf()
+                    }
+            })
+        }
+
+    });
+
+        
+function tishi(text){
+    $(".tishi").text(text);
+    $(".tishi").fadeIn().delay(1500).fadeOut();
+};
+var gzre=[],redata;
+// 公证员
+ function lkdf(){
+         $.ajax({
+            tyep:"post",
+            url:"http://sf.wokerr.com/index.php/home/Data/gzc",
+            data:{jg_id:jg_id},
+            dataType:"json",
+            success:function (data){
+                console.log(data);
+                redata = data.data;
+                for(var i=0;i<data.data.length;i++){
+                    gzre.push(data.data[i].fzr)
+                };
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '.sqrlx',
+                    title: '请选择',
+                    wheels: [{
+                        data: gzre
+                    }],
+                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                    transitionEnd: function(indexArr, data) {
+                        //console.log(data);
+                    },
+                    callback: function(indexArr, data) {
+                        $(".sqrlx").val(data);
+                        jgry_name =data+"";
+                        console.log(redata)
+                        for(var i=0;i<redata.length;i++){
+                            if(data==redata[i].fzr){
+                                jgry_id =redata[i].id; 
+                            }
+                        };
+                        console.log(jgry_id)
+                    }
+            })
+            }
+        })
+    };
+     // $(".gzc").change(function() {
+// $(".gzry").change(function(){
+//     jgry_id=$(this).find("option:selected").attr("id");
+//     jgry_name = $(this).find("option:selected").text();
+// });
+// $("#myselect").change(function(){
+//     order_type=$(this).find("option:selected").attr("id");
+// });
+// $.ajax({
+//     tyep:"post",
+//     url:"http://sf.wokerr.com/index.php/home/Data/proposer_type",
+//     data:{},
+//     dataType:"json",
+//     success:function (data) {
+//         console.log(data);
+//         var ht ="";
+//         var  th="<option>请选择</option>"
+//         for(var i=0;i<data.data.length;i++){
+//             ht+= "<option id=" +data.data[i].id+">"+data.data[i].title+"</option>"
+//         };
+//         $(".sqrlx").html(th+ht);
+//     }
+// });
+// 申请类型
+var sqrdata=[],sqind;
+$.ajax({
+    tyep:"post",
+    url:"http://sf.wokerr.com/index.php/home/Data/proposer_type",
+    data:{jg_id:jg_id},
+    dataType:"json",
+    success:function (data){
+        console.log(data);
+        // sqind = data.data;
+        for(var i=0;i<data.data.length;i++){
+            sqrdata.push(data.data[i].title)
+        };
+        var mobileSelect1 = new MobileSelect({
+            trigger: '.gzry',
+            title: '请选择',
+            wheels: [{
+                data: sqrdata
+            }],
+            position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+            transitionEnd: function(indexArr, data) {
+                //console.log(data);
+            },
+            callback: function(indexArr, data) {
+                $(".gzry").val(data);
+                // jgry_name =data;
+                // for(var i=0;i<redata.length;i++){
+                //     if(data==redata.jgmc){
+                //         jgry_id =redata.id; 
+                //     }
+                // };
+            }
+    })
+    }
+})
+// $.ajax({
+//     tyep:"post",
+//     url:"http://sf.wokerr.com/index.php/home/Data/order_type",
+//     data:{},
+//     dataType:"json",
+//     success:function (data) {
+//         console.log(data);
+//         var ht ="";
+//         var  th="<option>请选择</option>"
+//         for(var i=0;i<data.data.length;i++){
+//             ht+= "<option id=" +data.data[i].id+">"+data.data[i].title+"</option>"
+//         };
+//         $("#myselect").html(th+ht);
+//     }
+// });
+// 选择类别myselect
+var xzwew=[],xzqw;
+$.ajax({
+    tyep:"post",
+    url:"http://sf.wokerr.com/index.php/home/Data/proposer_type",
+    data:{jg_id:jg_id},
+    dataType:"json",
+    success:function (data){
+        console.log(data);
+        xzqw = data.data;
+        for(var i=0;i<data.data.length;i++){
+            xzwew.push(data.data[i].title)
+        };
+        var mobileSelect1 = new MobileSelect({
+            trigger: '#myselect',
+            title: '请选择',
+            wheels: [{
+                data: xzwew
+            }],
+            position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+            transitionEnd: function(indexArr, data) {
+                //console.log(data);
+            },
+            callback: function(indexArr, data) {
+                $("#myselect").val(data);
+                // order_note =data;
+                for(var i=0;i<xzqw.length;i++){
+                    if(data==xzqw[i].title){
+                        order_type =xzqw[i].id; 
+                    }
+                };
+            }
+    })
+    }
+})
+     // });
+$(".img_1").change(function(){   
+     var file = this.files[0];
+       if (window.FileReader) {
+                var reader = new FileReader();    
+                reader.readAsDataURL(file);    
+                //监听文件读取结束后事件    
+              reader.onloadend = function (e) {
+                   // 图片base64
+                   // var  dd = e.target.result.indexOf(",");
+                    imgde1=e.target.result.split(",")[1];
+                   $(".img1").attr("src",e.target.result)
+                };    
+           }
+});
+$(".img_2").change(function(){
+     var file = this.files[0];
+       if (window.FileReader) {    
+                var reader = new FileReader();    
+                reader.readAsDataURL(file);    
+                //监听文件读取结束后事件    
+              reader.onloadend = function (e) {
+                   // 图片base64  imgde2=e.target.result.split(",")[1];
+                   $(".img2").attr("src",e.target.result)
+                };    
+           }
+});
+$(".img_3").change(function(){   
+     var file = this.files[0];
+       if (window.FileReader) {    
+                var reader = new FileReader();    
+                reader.readAsDataURL(file);    
+                //监听文件读取结束后事件    
+              reader.onloadend = function (e) {
+                   // 图片base64
+                    imgde3=e.target.result.split(",")[1];
+                   $(".img3").attr("src",e.target.result)
+                };    
+           } 
+});
+$(".btn").click(function(){
+    order_note = $("#mytext").val();
+    // order_time = new Data($("#date3").val());
+    order_time =  (new Date()).valueOf($("#date3").val());
+    console.log(order_time);
+    var upload = imgde1+";"+imgde2+";"+imgde3;
+    console.log(jg_id)
+    if(access_token.length==0){
+        tishi("请登录")
+    }else if(jg_id==""){
+        tishi("请选择公证处")
+    }else if(jgry_id==""){
+        tishi("请选择公证员")
+    }else if(order_time.length==0){
+        tishi("请选择时间")
+    }else if(order_note.length==0){
+        tishi("请选择填写备注")
+    }else if(upload.length==0){
+        tishi("请选择图片")
+    }else{
+        $.ajax({
+                type:'post',
+                url:'http://sf.wokerr.com/index.php/home/Handle/order',
+                data:{
+                    access_token:access_token,
+                    type:"1",
+                    jg_id:jg_id,
+                    jg_name:jg_name,
+                    jgry_id:jgry_id,
+                    jgry_name:jgry_name,
+                    order_note:order_note,
+                    order_time:order_time,
+                    order_type:order_type,
+                    upload:upload
+                },   
+                async:false,
+                dataType:'json', 
+                async: false,   
+                success:function(data){
+                    console.log(data)
+                    if(data.status==1){
+                        tishi(data.msg)
+                        window.location.href= 'fair.html'
+                    }else if(data.status==1) {
+                           tishi("预约失败,请重新预约")
+                    }else{
+                         tishi("预约失败,请重新预约")
+                    }
+                }
+            })
+    }
+
+});
+   
+ 
+// $(".ipt1").change(function(){
+//         var formData= new FormData(); //FormData对象用以将数据编译成键值对，以便用XMLHttpRequest来发送数据。其主要用于发送表单数据
+//         var img_file=le=document.getElementByItById("upload");  // 原生获取元素
+//         var access_token="IfAmYbzyyii1ylkmv3wy_x0lxiKThn9v_1540781278";  //数据
+//         var fileObj=img_mg_file.files[0];[0];  //  获取文件 数据
+//            formData.append("im("image",fileObj);  // 图片
+//            formData.append("ac("access_token","IfAmYbzyyii1ylkmv3wy_x0lxiKThn9v_1540781278");  //用户标示
+
+//         $.ajax({
+//             type:'post',
+//             url:'l:'http://jl.yunkuang123.com/api/merchants/image',
+   
+//             data:formData,    //data存formData对象
+//             processData : false,
+//             contentType : false,
+//             async:false,
+//             dataType:'json', 
+//             async: false,   
+//             success:function(data){
+//                    console.log(dat(data);
+//                 image=ge=data.data.urlPath;
+//   ;
+//             }
+//         })
+// })
+</script>
+</html>

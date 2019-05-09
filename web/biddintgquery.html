@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>申办查询</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/biddingquery.css">
+    <script src="./js/shipei.js"></script>
+    <style>
+        .bq_con>.right>div {
+            width: 50%;
+            line-height: 1.3rem;
+        }
+        
+        b {
+            font-weight: normal;
+        }
+        
+        .fileimg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        
+        .no {
+            width: 1rem;
+            height: 1rem;
+            margin-top: .3rem;
+            float: left;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            padding: .5rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -3rem;
+            z-index: 999999;
+        }
+        
+        #fasdf {
+            background: #196394;
+            color: #fff;
+            margin-right: .5rem;
+            padding: .25rem;
+            border-radius: .2rem;
+        }
+        
+        .Enclosure {
+            /* width: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            white-space: nowrap; */
+            padding: 0;
+            background: none;
+            border-radius: 0;
+            line-height: 1.3rem;
+            height: 1rem;
+        }
+        
+        .fjcx>span {
+            background: gainsboro;
+            padding: .1rem 1rem .1rem 0;
+            border-radius: .25rem;
+        }
+        
+        .Responsible {
+            width: 10rem;
+            display: inline-block;
+            margin-top: 0rem;
+            height: 3rem;
+            vertical-align: top;
+            margin-top: .25rem;
+            line-height: 1.5rem;
+        }
+      .refuse_cause{
+      		display:none;
+      }
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;">
+                        <img onclick="javascript:history.go(-1);" src="./img/return_03.png" alt="">
+                    </a>
+                </div>
+                <div class="title">
+                    <p>申办查询</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="Applyname">
+                <!-- <div class="text">
+                    <p>申请人姓名</p>
+                    <span class="name"></span>
+                    <span id="fasdf" class="status">待审批</span>
+                </div> -->
+                <div class="text">
+                    <p>申请时间</p>
+                    <span class="time"></span>
+                    <span id="fasdf" class="status">待审批</span>
+                </div>
+                <div class="text">
+                    <p>受理机构</p>
+                    <span class="mechanism"></span>
+                </div>
+                <div class="text">
+                    <p>机构地址</p>
+                    <span class="Responsible"></span>
+                </div>
+                <div class="text">
+                    <p>机构电话</p>
+                    <span class="moble"></span>
+                </div>
+                <!-- <div class="text">
+                    <p>受理状态</p>
+                    
+                </div> -->
+                <div class="text tts" style="min-height: 4rem">
+                    <p>申办详细信息</p>
+                    <div class="text-txt">
+                        <p>机构名称：<b class="jg"></b></p>
+                        <p>类别：<b class="kinds"></b></p>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>包含附件</p>
+                    <a class="fjcx">
+                        <span><span class="Enclosure">张**得附件资料</span>...的附件资料</span>
+                    </a>
+                </div>
+              	<div class="text refuse_cause">
+                    <p>未通过理由</p>
+                    <a class="">
+                        <span class="refuse_cause1"></span>
+                    </a>
+                </div>
+              	<div class="text tts bc">
+                    <p>补充理由</p>
+                    <a class="">
+                        <span class="replenish_cause1"></span>
+                    </a>
+                </div>
+                <div class="text tts bc">
+                    <p>补充材料</p>
+                    <div class="text-txt">
+                        <img src="img/tianjia.jpg" class="imgg">
+                        <input type="file" class="fileimg" />
+                    </div>
+                </div>
+                <div class="bq_con pingjia" style="display: flex;margin-bottom: 1rem;margin-left:2rem">
+                    <div class="left" style="font-size: 0.8rem;    width: 5rem;">满意度评价</div>
+                    <div class="right" id='rightdd' style="display: flex;flex-wrap:wrap;padding-left:.2rem;font-size: 0.8rem">
+                        <div><img src="img/no.png" class="no" title="1"><span style="margin-left:.5rem;margin-top:.2rem;float:left;">非诚满意</span></div>
+                        <div><img src="img/no.png" class="no" title="2"><span style="margin-left:.5rem;margin-top:.2rem;float:left;">满意</span></div>
+                        <div><img src="img/no.png" class="no" title="3"><span style="margin-left:.5rem;margin-top:.2rem;float:left;">一般</span></div>
+                        <div><img src="img/no.png" class="no" title="4"><span style="margin-left:.5rem;margin-top:.2rem;float:left;">不满意</span></div>
+                    </div>
+                </div>
+                <div style="width: 90%;margin: 1rem auto;height: 2.5rem;" class="anniu">
+                    <div class="btn qrtj" style="margin-top: 0.2rem;float: left;">
+                        确认提交
+                    </div>
+                    <div class="btn cxsb" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+                        撤销申办
+                    </div>
+                </div>
+                <div id="tan">
+                    <div class="tan_center">
+                        <p>
+                            撤销原因
+                        </p>
+                        <div class="tan_one">
+                            <textarea id="tar" name="" style="resize: none;width: 100%;height: 90%;border: none;outline: none;font-size: 1rem;" placeholder="请在此输入撤销原因"></textarea>
+                        </div>
+                        <div class="yuanyin">
+                            请输入撤销原因!
+                        </div>
+                        <div class="tan_two">
+                            <span class="tan_two_span2">确认撤销</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/jquery.js"></script>
+<script>
+    $(".footer").load("footer2.html")
+    $('#btn').click(function() {
+        $('#tan').show();
+    })
+
+    var access_token = localStorage.getItem("access_token");
+
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        D = date.getDate() + ' ';
+        h = date.getHours() + ':';
+        m = date.getMinutes() + ':';
+        s = date.getSeconds();
+        return Y + M + D + h + m + s;
+    }
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var id = getUrlParms("id");
+    var urldd;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Handle/tj_bid_list',
+        data: {
+            access_token: access_token,
+            id: id
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            urldd = "https://sys.t7c.net/index.php/home/Handle/tj_bid_list"
+            var is_call;
+            var status;
+            $(".name").text(data.data.proposer_name);
+            $(".Enclosure").text(data.data.proposer_name[0]);
+            // var a = parseInt(data.data.ct_time);
+            // var b = a * 1000;
+            // var d = timestampToTime(b);
+
+            $(".time").text(data.data.ct_time);
+            $(".mechanism").text(data.data.jg_name);
+            $(".Responsible").text(data.data.jg_address);
+            $(".moble").text(data.data.jg_mobile)
+          	$(".refuse_cause1").text(data.data.refuse_cause);
+          	$(".replenish_cause1").text(data.data.replenish_cause);
+            if (data.data.status == 0) {
+                status = "待审批"
+                $(".pingjia").hide();
+                $(".qrtj").hide();
+                $(".cxsb").css("float", "none");
+                $(".bc").hide();
+            } else if (data.data.status == 1) {
+                status = "审批中";
+                $(".pingjia").hide();
+                $(".qrtj").hide();
+                $(".cxsb").css("float", "none");
+                $(".bc").hide();
+            } else if (data.data.status == 2) {
+                status = "审批通过";
+                $(".pingjia").hide();
+                $(".qrtj").hide();
+                $(".cxsb").css("float", "none");
+                $(".bc").hide();
+            } else if (data.data.status == 3) {
+                status = "需补充材料"
+                $(".cxsb").hide();
+                $(".pingjia").hide();
+                $(".qrtj").css("float", "none");
+            } else if (data.data.status == 4) {
+                status = "已撤销";
+                $(".pingjia").hide();
+                $(".qrtj").hide();
+                $(".cxsb").hide();
+                $(".bc").hide();
+            } else if (data.data.status == 5) {
+                status = "未评价";
+                $(".cxsb").hide();
+                $(".qrtj").css("float", "none");
+                $(".bc").hide();
+            } else if (data.data.status == 6) {
+                status = "已完成";
+                var da = data.data.evaluate;
+                if (da == 1) {
+                    var th = "<div><input type='radio' checked name='radio' />非常满意</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+
+                } else if (da == 2) {
+                    var th = "<div><input type='radio' checked name='radio' />满意</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+
+                } else if (da == 3) {
+                    var th = "<div><input type='radio' checked name='radio' />一般</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+                } else if (da == 4) {
+                    var th = "<div><input type='radio' checked name='radio' />不满意</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+                } else if (da == 0) {
+                    $("#rightdd").html("未评价");
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+                }
+                $(".pingjia").show();
+                $(".qrtj").hide();
+                $(".cxsb").hide();
+                $(".bc").hide();
+            } else if (data.data.status == 7) {
+                status = "审核未通过";
+                $(".pingjia").hide();
+                $(".qrtj").hide();
+                $(".cxsb").hide();
+                $(".bc").hide();
+              	$(".refuse_cause").css('display','block');
+            }
+            $(".status").text(status);
+
+            $(".jg").text(data.data.jg_name);
+            $(".kinds").text(data.data.tj_type);
+        }
+    });
+    $(".fjcx").click(function() {
+        localStorage.setItem("fujian", urldd);
+        window.location.href = "Enclosurezhiliao.html?id=" + id + "&status=0&type=3";
+    })
+
+    //附件上传
+    var upload;
+    $('.fileimg').change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                upload = e.target.result.split(",")[1];
+                $(".imgg").attr("src", e.target.result)
+                    // $.ajax({
+                    //     type:'post',
+                    //     url:'https://sys.t7c.net/index.php/home/Handle/tj_bid_replenish',
+                    //     data:{
+                    //        upload:upload,
+                    //        id:id,
+                    //        access_token:access_token
+                    //     },
+                    //     dataType:'json', 
+                    //     async: false,   //同步异步
+                    //     success:function(data){
+                    //         //console.log(data);
+
+                //     }
+                // })
+            };
+        }
+    });
+    //满意度
+    $(".no").click(function() {
+
+            if ($(this).attr("src") == "img/no.png") {
+                $(this).attr("src", "img/yes.png");
+                $(this).parent().siblings().find("img").attr("src", "img/no.png");
+                $(this).addClass("check").parent().siblings().find("img").removeClass('check');
+            }
+        })
+        // ===================撤销申办
+    $('.tan_two_span2').click(function() {
+        var val = $("#tar").val();
+        if ($.trim($("#tar").val()) == "") {
+            $('.yuanyin').show();
+        } else {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/tj_bid_cancel',
+                data: {
+                    id: id,
+                    access_token: access_token,
+                    cause: val
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        javascript: history.go(-1);
+                    }
+                    else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        }
+    })
+
+
+    // ==============确认提交
+    $(".qrtj").click(function() {
+        if (upload != undefined) {
+            // $(".qr_tijiao").click(function(){
+            $.ajax({
+                    type: 'post',
+                    url: 'https://sys.t7c.net/index.php/home/Handle/tj_bid_replenish',
+                    data: {
+                        access_token: access_token,
+                        id: id,
+                        upload: upload
+                    },
+                    dataType: 'json',
+                    async: false, //同步异步
+                    success: function(data) {
+                        console.log(data);
+                        if (data.state == 1) {
+                            $(".tishi").text(data.msg);
+                            $(".tishi").fadeIn().delay(500).fadeOut();
+                            setTimeout(function() {
+                                window.location.href = "sbcx_2.html";
+                            }, 1000)
+                        } else {
+                            $(".tishi").text(data.msg);
+                            $(".tishi").fadeIn().delay(500).fadeOut();
+                        }
+                    }
+                })
+                // })
+
+        } else {
+            var evaluat = $(".check").attr("title");
+
+            // =============提交评价
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/tj_bid_evaluate',
+                data: {
+                    access_token: access_token,
+                    id: id,
+                    evaluate: evaluat
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000)
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        }
+    })
+</script>

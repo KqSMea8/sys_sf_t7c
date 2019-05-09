@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预约查询</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/Reservation_query2.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="./css/rolldate.css">
+    <script src="./js/shipei.js"></script>
+    <style>
+        .information:nth-child(7) p {
+            height: auto;
+            float: left;
+        }
+        
+        .information:nth-child(8) p {
+            height: 2rem;
+        }
+        
+        input {
+            outline: none;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            margin-left: -3rem;
+            padding: .5rem;
+            text-align: center;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            border-radius: 0.25rem;
+            display: none;
+            z-index: 9999999999999999999999999999999999999999;
+        }
+        
+        .section>div {
+            border: 0;
+        }
+        
+        .information p {
+            width: 6.3rem;
+        }
+        
+        .dflkd {
+            padding: .25rem;
+            background: #196394;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: 2rem;
+        }
+        
+        .ggyuyue {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            background: rgba(0, 0, 0, .5);
+            height: 92.5%;
+        }
+        
+        .quiso {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .dflkd {
+            padding: .25rem;
+            background: #196394;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: 2rem;
+        }
+        
+        .dlkf {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -9.5rem;
+            width: 18rem;
+            height: 10rem;
+            margin-top: -5rem;
+            background: #fff;
+            border-radius: .25rem;
+            padding: .5rem;
+        }
+        
+        .dlkf p {
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            border-bottom: 1px solid #999;
+        }
+        
+        .dlkf input {
+            width: 9.5rem;
+            margin: 1.5rem auto;
+            height: 2rem;
+            padding-left: .5rem;
+        }
+        
+        .dlkf button {
+            padding: .5rem 2rem;
+            border: 0;
+            border-radius: .25rem;
+            color: #fff;
+            background: #196394;
+        }
+        
+        .information {
+            width: 21rem;
+            height: 2rem;
+        }
+        .section .information p{
+            text-align: left;
+            font-size:.8rem;
+        }
+        .section .information span{
+            line-height: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;"> <img onclick="javascript:window.history.go(-1);" src="./img/更多(1).png" alt=""></a>
+                </div>
+                <div class="title">
+                    <p>预约查询</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- <div class="seach">
+        <input type="text">
+        <span>搜索</span>
+    </div> -->
+    <section>
+        <div class="section">
+
+            <!-- <div class="section-information">
+                <div class="status">
+                    <span>待处理</span>
+                </div>
+                <div class="information">
+                    <p>预约的公证处：</p>
+                    <span>牡丹江公证处</span>
+                </div>
+                <div class="information">
+                    <p>预约的当事人：</p>
+                    <span>李小龙</span>
+                </div>
+                <div class="information">
+                    <p>预约的公证员：</p>
+                    <span>王毅</span>
+                </div>
+                <div class="information">
+                    <p>预约的类别：</p>
+                    <span>财产援助</span>
+                </div>
+                <div class="information">
+                    <p>预约的时间：</p>
+                    <span>2018-10-21</span>
+                </div>
+                <div class="information">
+                  height:auto;  <p>预约的备注：</p>
+                    <div class="inf-text"><span>最近几天有些事情，希望可以预约在下个月的下旬</span></div>
+                </div>
+                <div class="information ldfg" style="height: 5rem;">
+                    <p>满意度评价：</p>
+                    <div class="text-txt">
+                        <span><input type="radio"name="evaluate">非常满意</span>
+                        <span><input type="radio"name="evaluate">满意</span><br>
+                        <span><input type="radio"name="evaluate">一般</span>
+                        <span><input type="radio"name="evaluate">不满意</span>
+                    </div>
+                </div>
+                <div style="width: 80%;height: 3rem; margin: .5rem auto;">
+                    <div class="btn" onclick="window.location.href= 'fair.html';return false" style="margin-top: 0; float: left;">
+                        确认提交
+                    </div>
+                    <div class="btn" onclick="window.location.href= '';return false" style="margin-top: 0; float: right;clear: none;">
+                        取消预约
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <div class="ggyuyue">
+        <div class="quiso"></div>
+        <div class="dlkf">
+
+            <div style="    text-align: center; ">
+                <p>更改预约时间</p>
+                <input type="text" class="odfos" onfocus="this.blur()" placeholder="请选择预约时间" readonly="readonly">
+            </div>
+            <div style=" text-align: center; ">
+                <button class="quid">确定</button>
+                <button class="fsfd">取消</button>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;height:3.125rem"></div>
+    <div class="footer"></div>
+    <p class="tishi"></p>
+</body>
+<script type="text/javascript">
+    // $(".footer").load("footer2.html");
+</script>
+<script src="./js/rolldate.js"></script>
+<script>
+    var datdfda;
+    new rolldate.Date({
+        el: '.odfos',
+        format: 'YYYY-MM-DD hh:mm',
+        beginYear: 1990,
+        endYear: 2020,
+        confirmBefore: function(el, date) {
+            var d = Date.parse(new Date()) / 1000;
+
+            datdfda = new Date(date).getTime() / 1000;
+            if (datdfda <= d) {
+                // tishi('选择日期不能小于当前时间');
+                $(".tishi").text('选择日期不能小于当前时间');
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                return false;
+            };
+            if (datdfda < yyudata) {
+                // tishi('所选时间必需在预约时间之后');
+                $(".tishi").text('所选时间必需在预约时间之后');
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".odfos").val("");
+                return false;
+            }
+        }
+    })
+    $(".ggyuyue .quid").click(function() {
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/order_savetime',
+            data: {
+                access_token: access_token,
+                type: "1",
+                id: id,
+                order_time: datdfda
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+
+                $(".tishi").text(data.msg);
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                if (data.data.status == -1) {
+
+                }
+                setTimeout(function() {
+                    $(".ggyuyue").fadeOut()
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 600)
+                })
+            }
+        })
+    })
+    $(".section").on("click", ".dflkd", function() {
+        if (new Date($(this).siblings().text().split("：")[1].toString()).getTime() / 1000 < Date.parse(new Date()) / 1000) {
+            $(".tishi").text("已过预约时间，无法修改");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+            // $(this).attr("disabled", "disabled");
+
+        } else {
+            $(".ggyuyue").fadeIn();
+        }
+        // console.log($(this).siblings().text())
+        // console.log()
+
+    });
+
+    $(".quid,.quiso,.fsfd").click(function() {
+        $(".ggyuyue").fadeOut();
+    })
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    function showTips(text) {
+        $("body").append('<p class="tishi">' + text + '</p>');
+        if ($(".tishi").css('display') == 'none') {
+            $(".tishi").stop(true).fadeIn();
+            setTimeout(function() {
+                $(".tishi").fadeOut();
+            }, 1500);
+            setTimeout(function() {
+                $(".tishi").remove();
+            }, 2000)
+        }
+    }
+    var access_token = localStorage.getItem("access_token");
+    if (access_token == "") {
+        // alert("请登录");
+        window.location.href = "login.html";
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/mine",
+            data: {
+                access_token: access_token
+            },
+            dataType: 'json',
+            success: function(data) {
+                if (data.state != "1") {
+                    window.location.href = "login.html";
+                }
+            }
+        })
+    };
+    $(".section").on("click", ".dfka", function() {
+        localStorage.setItem("fujian", urlf);
+
+        window.location.href = "Enclosurezhiliao.html?id=" + id + "&type=1"
+    })
+
+    //个人信息
+    var myname;
+    var urlf;
+    var yyudata;
+    var id = getUrlParms("id")
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Personal/mine',
+        async: false,
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: true, //同步异步
+        success: function(data) {
+            console.log(data);
+            myname = data.data.xm;
+            $.ajax({
+                type: "post",
+                url: "https://sys.t7c.net/index.php/home/Handle/order_list",
+                async: false,
+                data: {
+                    access_token: access_token,
+                    id: id,
+                    type: "1"
+                },
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    urlf = "https://sys.t7c.net/index.php/home/Handle/order_list";
+                    yyudata = new Date(data.data.order_time).getTime() / 1000;
+                    var ht = "";
+                    var status, state, pinjia;
+                    // for (var i = 0; i < data.data.length; i++) {
+                    console.log(i)
+                    if (data.data.status == 0) {
+                        status = "待审核";
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div class="information" style="padding-bottom:1rem;height:auto;"><p>预约的备注：</p><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div><div class="btn quxiao"  style="margin-top: 0; float: left;margin-top: 1rem; margin-left: 8rem;" id=' + data.data.id + '>取消预约</div></div>'
+                    } else if (data.data.status == 1) {
+                        status = "审核中";
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p><span>' + data.data.order_time + '</span> <span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div class="information" style="padding-bottom:1rem;height:auto;"><p>预约的备注：</p><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div><div class="btn quxiao"  style="margin-top: 0; float: left;margin-top: 1rem; margin-left: 8rem;" id=' + data.data.id + '>取消预约</div></div>'
+                    } else if (data.data.status == 2) {
+                        status = "已通过";
+
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div class="information" style="padding-bottom:1rem;height:auto;"><p>预约的备注：</p><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div><div class="btn quxiao"  style="margin-top: 0; float: left;margin-top: 1rem; margin-left: 8rem;" id=' + data.data.id + '>取消预约</div></div>'
+                    } else if (data.data.status == 3) {
+                        status = "处理中";
+
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div class="information" style="padding-bottom:1rem;height:auto;"><p>预约的备注：</p><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div></div>'
+                    } else if (data.data.status == 4) {
+                        status = "已撤销";
+                        state = data.data.evaluate;
+                        if (state == 1) {
+                            pinjia = "非常满意"
+                        } else if (state == 2) {
+                            pinjia = "满意"
+                        } else if (state == 3) {
+                            pinjia = "一般"
+                        } else if (state == 4) {
+                            pinjia = "不满意"
+                        }
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div style="padding-bottom: 1.5rem;" class="informationheight:auto;"><p>预约的备注：</p><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div></div>'
+
+                    } else if (data.data.status == 5) {
+                        status = "未评价";
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p ><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p ><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p ><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p ><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p ><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div class="informationheight:auto;"><p>预约的备注：</p ><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p ><div class="text-txt"><span><input type="radio"name="evaluate" value="1">非常满意</span><span><input type="radio"name="evaluate" value="2">满意</span><br><span><input type="radio"name="evaluate" value="3">一般</span><span><input type="radio"name="evaluate" value="4">不满意</span></div></div><div style="width: 80%;height: 3rem; margin: .5rem auto;"><div class="btn quedin"  style="margin-top: 1rem; " id=' + data.data.id + '>确认提交</div></div></div>'
+
+                    } else if (data.data.status == 6) {
+                        status = "已评价";
+                        state = data.data.evaluate;
+                        if (state == 1) {
+                            pinjia = "非常满意"
+                        } else if (state == 2) {
+                            pinjia = "满意"
+                        } else if (state == 3) {
+                            pinjia = "一般"
+                        } else if (state == 4) {
+                            pinjia = "不满意"
+                        }
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p ><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p ><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p ><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p ><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p ><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div class="informationheight:auto;"><p>预约的备注：</p ><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p ><div class="text-txt" style="margin-right:6rem;"><span><input type="radio" name="evaluated' + i + '" checked  class="radio" value="1">' + pinjia + '</span></div></div></div>'
+                    } else {
+                        status = "审核未通过";
+                        ht += '<div class="section-information" ><div class="status"><span class="sda">' + status + '</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >' + data.data.jg_name + '</span></div><div class="information"><p>预约的当事人：</p><span>' + myname + '</span></div><div class="information"><p>预约的公证员：</p><span>' + data.data.jgry_name + '</span></div><div class="information"><p>预约的类别：</p><span>' + data.data.order_type + '</span></div><div class="information"><p>预约的时间：</p><span>' + data.data.order_time + '</span><span class="dflkd" style="margin-left:1rem;">更改时间</span></div><div style="padding-bottom: 1.5rem;" class="informationheight:auto;"><p>预约的备注：</p><div class="inf-text"><span>' + data.data.order_note + '</span></div></div><div class="information" ><p>附件资料：</p><span class="dfka" style="padding: .2rem;background: gainsboro;border-radius: .2rem;"><span style="vertical-align:top">' + myname[0] + '...</span>的附件资料</span></div></div>'
+                    }
+                    // ht += '<div class="section-information"><div class="status"><span class="sda">'+status+'</span></div><div class="information"><p>预约的公证处：</p><span style="width: 11rem;overflow: hidden;height: 1rem;white-space: nowrap;text-overflow: ellipsis;" >'+data.data.jg_name+'</span></div><div class="information"><p>预约的当事人：</p><span>'+myname+'</span></div><div class="information"><p>预约的公证员：</p><span>'+data.data.jgry_name+'</span></div><div class="information"><p>预约的类别：</p><span>'+data.data.order_type+'</span></div><div class="information"><p>预约的时间：</p><span>'+data.data.ct_time+'</span></div><div class="informationheight:auto;"><p>预约的备注：</p><div class="inf-text"><span>'+data.data.order_note+'</span></div></div><div class="information ldfg" style="height: 5rem;"><p>满意度评价：</p><div class="text-txt"><span><input type="radio"name="evaluate" value="1">非常满意</span><span><input type="radio"name="evaluate" value="2">满意</span><br><span><input type="radio"name="evaluate" value="3">一般</span><span><input type="radio"name="evaluate" value="4">不满意</span></div></div><div style="width: 80%;height: 3rem; margin: .5rem auto;"><div class="btn quedin"  style="margin-top: 0; float: left;" id='+data.data.id+'>确认提交</div><div class="btn quxiao"  style="margin-top: 0; float: right;clear: none;" id='+data.data.id+'>取消预约</div></div></div>' 
+                    // };
+
+                    $(".section").html(ht);
+                    // for(var i=0;i<data.data.length;i++){
+                    //      if(data.data.status==5){
+                    //         console.log("sdaf")
+                    //            $(".quxiao").eq(i).hide();
+                    //       }
+                    // }
+                    if (data.data.status == 4 || data.data.status == 5 || data.data.status == 6 || data.data.status == 7) {
+                        $(".section .dflkd").hide();
+                    }
+                    if (data.data.save_status == 1) {
+
+                        $(".section .dflkd").css("background", "#aaa");
+                    }
+                    $(".radio").eq(0).attr("checked", "checked")
+                    var btn = document.getElementsByClassName('quedin');
+                    for (var i = 0; i < btn.length; i++) {
+                        btn.addEventListener("click", function() {
+                            if ($(this).parent().siblings(".ldfg").find("input:radio").is(":checked") == false) {
+                                showTips("请评价")
+                            } else {
+                                var id = $(this).attr("id");
+                                var pj;
+                                $(this).parent().siblings(".ldfg").find("input:radio").each(function(j) {
+                                    if (this.checked) {
+                                        pj = $(this).val();
+                                    }
+                                });
+                                $.ajax({
+                                    type: "post",
+                                    url: "https://sys.t7c.net/index.php/home/Handle/order_evaluate",
+                                    data: {
+                                        access_token: access_token,
+                                        type: "1",
+                                        evaluate: pj,
+                                        id: id
+                                    },
+                                    dataType: "json",
+                                    success: function(data) {
+                                        console.log(data);
+                                        showTips(data.msg)
+                                        window.location.reload();
+                                    }
+                                })
+                            }
+                        })
+                    }
+                    $(".section .section-information").on('click', '.quxiao', function() {
+
+                        var id = $(this).attr("id");
+                        console.log(id)
+                        var pj;
+                        // $(this).parent().siblings(".ldfg").find("input:radio").each(function(j){
+                        //     if(this.checked){
+                        //         pj=$(this).val();
+                        //     }
+                        // });
+                        $.ajax({
+                                type: "post",
+                                url: "https://sys.t7c.net/index.php/home/Handle/order_cancel",
+                                data: {
+                                    access_token: access_token,
+                                    type: "1",
+                                    // evaluate:pj,
+                                    id: id
+                                },
+                                dataType: "json",
+                                success: function(data) {
+                                    console.log(data);
+                                    // if(data.status==1){
+                                    showTips(data.msg)
+
+                                    window.location.reload();
+                                    // }
+                                }
+                            })
+                            // }
+
+
+                    })
+                    var btn1 = document.getElementsByClassName('quxiao');
+                    for (var i = 0; i < btn.length; i++) {
+                        btn1.addEventListener("click", function() {
+                            // if($(this).parent().siblings(".ldfg").find("input:radio").is(":checked")==false){
+                            //     showTips("请评价")
+                            // }else{
+                            //         var id = $(this).attr("id");
+                            //         console.log(id)
+                            //         var pj;
+                            //         $(this).parent().siblings(".ldfg").find("input:radio").each(function(j){
+                            //             if(this.checked){
+                            //                 pj=$(this).val();
+                            //             }
+                            //         });
+                            //         $.ajax({
+                            //             type:"post",
+                            //             url:"https://sys.t7c.net/index.php/home/Handle/order_cancel",
+                            //             data:{
+                            //                 access_token:access_token,
+                            //                 type:"1",
+                            //                 // evaluate:pj,
+                            //                 id:id
+                            //             },
+                            //             dataType:"json",
+                            //             success:function(data){
+                            //                 console.log(data);
+                            //                 // if(data.status==1){
+                            //                     showTips(data.msg)
+
+                            //                     window.location.reload();
+                            //                 // }
+                            //             }
+                            //         })  
+                            //     // }
+
+                        })
+                    }
+                },
+                error: function() {
+                    showTips("服务器连接失败，请稍后再试");
+                }
+            });
+        }
+    })
+
+
+
+    // {
+    // onclick="window.location.href= 'fair.html';return false"
+    // }
+</script>
+
+
+</html>

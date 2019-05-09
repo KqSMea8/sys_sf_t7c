@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/gonggao.css">
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <script type="text/javascript">
+  　　document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+    </script>
+    <title>用户注册与服务协议</title>
+</head>
+<body>
+    <div class="header">
+        <a href="register.html"><img src="img/fh.png"></a>
+        <h6 style="color: white">用户注册与服务协议</h6>
+    </div>
+    <div class="ctn">
+        <p></p>
+    </div>
+    <div class="ty">
+        <div>
+            <a href="register.html" title="" class="ty_a"><img src="img/check.png"></a>
+            <span class="ty_span">同意用户注册与服务协议</span>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$.ajax({
+        type:"POST",
+        url:"http://sf.wokerr.com/index.php/home/Data/agreement",
+         data:{},
+        dataType:'json',
+        success:function(data){
+            console.log(data);
+           $(".ctn p").html(data.data.user_agreement)
+        }
+})
+$(".ty_a").click(function(){
+    $(this).find("img").attr("src","img/checked.png")
+})
+</script>

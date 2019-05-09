@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+
+    <script src="./js/mobileSelect.js"></script>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+
+    <title>在线解答</title>
+    <style>
+        body,
+        html {
+            background-color: white;
+        }
+        
+        .act {
+            color: #196394;
+            border-bottom: #196394 2px solid;
+        }
+        
+        .items {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        
+        .items>li {
+            width: 1.9rem;
+            text-align: center;
+        }
+        
+        .rengong {
+            width: 100%;
+        }
+        
+        .con>div:nth-child(1) {
+            width: 100%;
+            padding-top: 1.4rem;
+            text-align: center;
+        }
+        
+        .item {
+            width: 6rem;
+            height: 2rem;
+            margin: 0 auto;
+        }
+        
+        .selects {
+            width: 6rem;
+            margin: 1rem 0.7rem;
+            height: 0.8rem;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            margin: 3rem auto 1rem;
+            text-align: center;
+        }
+        
+        .tc {
+            width: 100%;
+            height: 100%;
+            background: rgb(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        
+        .zixun {
+            width: 100%;
+        }
+        
+        .zixun span {
+            width: 27%;
+            line-height: .7rem;
+            background: #196394;
+            display: block;
+            margin: 1rem auto;
+            color: #fff;
+            border-radius: .1rem;
+        }
+        
+        .fuwu input {
+            display: block;
+            width: 80%;
+            height: .7rem;
+            margin: 0 auto;
+            margin-top: .5rem;
+            text-align: left;
+            padding: 0 .3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">在线解答</div>
+    </header>
+    <div class="content">
+        <div class="rengong">
+            <ul class="items">
+                <li>自助法律咨询</li>
+                <li>人工服务</li>
+            </ul>
+            <div class="con">
+                <div>
+                    <div>
+                        <img src="img/zhixun.png" alt="" style="width:  4.5rem">
+                        <p>在线咨询...</p>
+                        <p class="zixun"><span>开始自主咨询</span></p>
+                    </div>
+                </div>
+                <div style="display: none" class="fuwu">
+                    <!-- <select name="" id="1" class="selects">
+				 		<option value="">服务区域</option>
+				 		<option value="1">北京一区</option>
+				 		<option value="2">上海二区</option>
+				 		<option value="3">朝阳三区</option>
+				 	</select>
+				 	<select name="" id="2" class="selects">
+				 		<option value="">服务类别</option>
+				 		<option value="1">人事诉讼</option>
+				 		<option value="2">法律援助</option>
+				 		<option value="3">公正查询</option>
+				 	</select> -->
+                    <input type="text" readonly placeholder="服务区域" style="cursor: pointer;" class="quyuj1" />
+                    <input type="text" readonly placeholder="服务类别" style="cursor: pointer;" class="jigouj1" />
+                    <div class="quediv">
+                        <div class="queding">确定</div>
+                    </div>
+                    <div class="tc">
+                        <div class="tc_center">
+                            <div class="one">
+                                联系客服
+                            </div>
+                            <div class="two">
+                                <span>我们将会全心全意为您提供满意周到的咨询服务,也希望您能支持和监督我们的服务!</span>
+                                <div class="two_btn1">
+                                    <a>
+									在线客服
+									</a>
+                                </div>
+                                <div class="two_btn2">
+                                    关闭
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:7.5rem;height:100%;"><iframe class="ifr" style="border:none; width:100%; height:100%; overflow-x:hidden;overflow-y:scroll; display:block; display: none; position:absolute; top:.9rem; left:0; " scrolling="no" src="https://ai.12348.gov.cn/">
+		
+	</iframe>
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+</script>
+
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    $(".zixun").click(function() {
+        $(".ifr").show();
+    })
+    $(function() {
+
+        $(".rengong ul li").each(function() {
+
+            var index = $(this).index();
+
+            $(".rengong ul li").eq(0).addClass("act");
+
+            $(this).click(function() {
+
+                //alert(index);
+
+                $(this).addClass("act").siblings().removeClass("act");
+
+                $(".con>div").eq(index).stop(true).show().siblings().stop(true).hide();
+
+            })
+
+        })
+
+    })
+
+    $('.two_btn2').click(function() {
+        $('.tc').hide();
+    })
+    $('.queding').click(function() {
+            $('.tc').show();
+        })
+        //服务区域
+    var quyu = [],
+        area, jigou = [],
+        id;
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Data/area",
+        data: {},
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+            var index = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                quyu.push(data.data[i].name)
+            }
+            console.log(quyu);
+            var mobileSelect1 = new MobileSelect({
+                trigger: '.quyuj1',
+                title: '请选择区域',
+                wheels: [{
+                    data: quyu
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    //console.log(indexArr);
+                    $(".quyuj1").attr("value", data)
+                    for (i = 0; i < index.length; i++) {
+                        if (data == index[i].name) {
+                            area = index[i].id;
+
+                        }
+                    };
+
+                }
+            });
+        }
+    })
+    var jigou = ['公证', '法律援助', '司法鉴定', '律师', '法考'];
+    var jigous = ['1', '2', '3', '4', '5'];
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.jigouj1',
+        title: '请选择机构',
+        wheels: [{
+            data: jigou
+        }],
+        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+        transitionEnd: function(indexArr, data) {
+            //console.log(data);
+        },
+        callback: function(indexArr, data) {
+            $(".jigouj1").attr("value", data)
+            for (i = 0; i < jigou.length; i++) {
+                if (data == jigou[i]) {
+                    id = jigous[i];
+
+                }
+            };
+            console.log(id)
+        }
+    });
+    var isType = localStorage.getItem('yhlx');
+    $('.two_btn1>a').click(function() {
+        if (isType == 1) {
+            window.location.href = "liaotianliebiaos.html?id=" + area + '&type=' + id;
+        } else {
+            window.location.href = "liaotianliebiao.html";
+        }
+    })
+</script>

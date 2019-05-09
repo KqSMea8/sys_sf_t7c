@@ -1,0 +1,39 @@
+.content{
+	width: 100%;
+	height: 600px;
+	display: inline;
+}
+.content img{
+	width: 100%;
+	height: 600px;
+}
+.problem{
+	width: 1200px;
+	margin: 0 auto;
+	
+}
+.problem>p{
+	font-size: 24px;
+	color: #555555;
+	padding:20px 0 40px 0;
+}
+.answer{
+	width: 1080px;
+	padding: 15px 60px;
+	margin-bottom: 40px;
+	box-shadow: 2px 2px 12px #999999;
+}
+.answer p{
+	width: 100%;
+	height: 50px;
+font-size: 18px;
+color: #222222;
+line-height: 50px;
+letter-spacing:2px
+}
+.answer div{
+	font-size: 18px;
+	color: #222222;
+	line-height: 40px;
+	letter-spacing: 2px;
+}

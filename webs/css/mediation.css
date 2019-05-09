@@ -1,0 +1,83 @@
+.section {
+    width: 22rem;
+    height: 100%;
+    overflow: hidden;
+    margin: .5rem auto;
+}
+
+.jiafang,
+yifang {
+    width: 14rem;
+    margin: 0 auto;
+}
+
+.jiafang p:nth-child(1),
+.yifang p:nth-child(1) {
+    font-size: 1rem;
+    text-align: center;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.jiafang p:nth-child(2),
+.yifang p:nth-child(2) {
+    width: 9rem;
+    height: 8.5rem;
+    margin: .25rem auto;
+}
+
+.jiafang p:nth-child(3),
+.yifang p:nth-child(3) {
+    font-size: .75rem;
+    text-align: center;
+    height: 2rem;
+    color: #999999;
+    line-height: 2rem;
+}
+
+.yifang {
+    margin-top: 2rem;
+}
+
+.text p {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+    font-size: .9rem;
+}
+
+.text input {
+    width: 17rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    font-size: .9rem;
+    outline: none;
+    margin-left: 3rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+}
+
+.text img {
+    width: 17rem;
+    margin-left: 4rem;
+    height: 11rem;
+}
+
+.lkd img {
+    width: 4.5rem;
+    height: 8rem;
+    margin-left: 2.3rem;
+}
+
+.ldkf {
+    text-align: center;
+}
+
+.ij {
+    padding: .3rem 2rem;
+    background: none;
+    border: 1px solid #196394;
+    border-radius: .3rem;
+	background-color: #196394;
+	color: white;
+}

@@ -1,0 +1,44 @@
+[ 2019-04-21T05:34:34+08:00 ] 117.179.126.126 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002924s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000291s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 4 ) LIMIT 1   [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.002112s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 4 ) [ RunTime:0.000605s ]
+
+[ 2019-04-21T09:12:50+08:00 ] 112.99.40.131 /index.php/home/News/judicial_info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003061s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /www/wwwroot/sf.t7c.net/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM pa_judicial j [ RunTime:0.000244s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM pa_judicial j
+SQL: SELECT j.*,t.name FROM pa_judicial j INNER JOIN pa_judicial_type t on j.type_id = t.id  WHERE ( j.id = 4 ) LIMIT 1   [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `pa_judicial` [ RunTime:0.002128s ]
+SQL: UPDATE `pa_judicial` SET `click`=click+1 WHERE ( id = 4 ) [ RunTime:0.000688s ]
+
+[ 2019-04-21T17:45:25+08:00 ] 107.170.200.70 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001044s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002955s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001085s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001171s ]
+

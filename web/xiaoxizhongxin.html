@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <!--[if lt IE 9]>
+
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+<![endif]-->
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<![endif]-->
+    <!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta)/IE7.js" type="text/javascript"></script>
+
+<![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/dialog.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>消息中心</title>
+    <style>
+        body,
+        html {
+            background-color: white;
+            color: #333333;
+        }
+        
+        .xinximulu {
+            margin-top: 0.03rem;
+        }
+        
+        .xinximulu>div {
+            background-color: white;
+            height: 1.75rem;
+            width: 100%;
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            display: flex;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        .xinximulu>div>div{
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .xinximulu>div>div>img {
+            max-width: 2.4rem;
+            max-height: 1.5rem;
+            display: block;
+            margin: 0 auto;
+            /* margin-top: 0.1rem; */
+            vertical-align: middle;
+        }
+        
+        .xinwentit {
+            font-size: 0.32rem;
+            color: #333;
+            font-weight: bold;
+            width: 4.5rem;
+            display: block;
+        }
+        
+        p {
+            color: #666666;
+        }
+        
+        .bfsj {
+            position: absolute;
+            bottom: 0.1rem;
+            right: 0.2rem;
+        }
+        
+        .sousuo {
+            width: 100%;
+            height: 1rem;
+            text-align: center;
+            line-height: 1rem;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        
+        .ss {
+            font-size: 0.32rem;
+            color: #333333;
+        }
+        
+        .input {
+            width: 5.6rem;
+            height: 0.6rem;
+            border: 0;
+            border-radius: 3px;
+            text-align: left;
+            padding-left: 0.1rem;
+            margin-right: 0.15rem;
+            border: 1px solid #999999;
+        }
+        
+        .hongdian {
+            display: inline-block;
+            width: 0.2rem;
+            height: 0.2rem;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            right: 0.1rem;
+            top: 0.1rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            margin-left: -1.5rem;
+            padding: .2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            border-radius: 0.1rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="overflow: scroll">
+    <header class="header">
+        <a href="javascript:;">
+            <img onClick="javascript:history.back(-1);" class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">消息中心</div>
+    </header>
+    <div class="content">
+        <div class="sousuo">
+            <input type="text" class="input">
+            <span class="ss">搜索</span>
+        </div>
+        <div class="xinximulu">
+            <!-- <div onclick="window.location.href= 'xiaoxixiangqing.html';return false">
+			<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+				<img src="img/bofangslt.png" alt="" >
+			</div>
+			<div style="position: relative;padding-top: 0.05rem">
+				<span class="hongdian"></span>
+				<span class="xinwentit">标题</span>
+				<p>内容概述内容概述内容概述内容概述内容概述内容概述</p>
+				<p class="bfsj">
+					<span style="color: #666666">2018-10-10</span>
+				</p>
+			</div>
+		</div> -->
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/rem.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    $(".footer").load("footer.html");
+
+    function showTips(text) {
+        $('body').append('<p class="tishi">' + text + '</p>');
+        if ($('.tishi').css('display') == 'none') {
+            $('.tishi').fadeIn();
+            setTimeout(function() {
+                $('.tishi').fadeOut();
+                $('.tishi').remove();
+            }, 3000)
+        }
+    }
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    var access_token = localStorage.getItem("access_token");
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Personal/message",
+        async: false,
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+            var tempHTML = "";
+            for (var i = 0; i < data.data.length; i++) {
+                var term = data.data[i].ct_time;
+                var date = new Date(term * 1000);
+                Y = date.getFullYear() + '-';
+                M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+                D = date.getDate() + ' ';
+                if (data.data[i].status == 1) {
+                    tempHTML += '<div id="' + data.data[i].id + '" status="' + data.data[i].status + '">' +
+                        '<div style="position: relative;width: 2.5rem;margin-right: 0.1rem;display:flex;">' +
+                        '<img src="' + data.data[i].img_url + '" alt="" >' +
+                        '</div>' +
+                        '<div style="position: relative;padding-top: 0.05rem">' +
+                        '<span class="xinwentit">' + data.data[i].title + '</span>' +
+                        '<p>' + data.data[i].text + '</p>' +
+                        '<p class="bfsj">' +
+                        '<span style="color: #666666">' + Y + M + D + '</span>' +
+                        '</p>' +
+                        '</div>' +
+                        '</div>';
+                } else {
+                    tempHTML += '<div id="' + data.data[i].id + '" status="' + data.data[i].status + '">' +
+                        '<div style="position: relative;width: 2.5rem;margin-right: 0.1rem;display:flex;">' +
+                        '<img src="' + data.data[i].img_url + '" alt="" >' +
+                        '</div>' +
+                        '<div style="position: relative;padding-top: 0.05rem">' +
+                        '<span class="hongdian"></span>' +
+                        '<span class="xinwentit">' + data.data[i].title + '</span>' +
+                        '<p>' + data.data[i].text + '</p>' +
+                        '<p class="bfsj">' +
+                        '<span style="color: #666666">' + Y + M + D + '</span>' +
+                        '</p>' +
+                        '</div>' +
+                        '</div>';
+                }
+            }
+            $('.xinximulu').html(tempHTML);
+            // $(".title").text(data.data.title);
+            // $(".tan_one").text(data.data.text)
+        }
+    });
+    $(".input").change(function() {
+        var title = $(".input").val();
+        if (title.length == 0) {
+            showTips("请输入查询条件");
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/message",
+            async: false,
+            data: {
+                access_token: access_token,
+                title: title
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                if (data.data.length == 0) {
+                    showTips("未查询到相关数据");
+                    $('.xinximulu').html("");
+                    return false;
+                }
+                var tempHTML = "";
+                for (var i = 0; i < data.data.length; i++) {
+                    var term = data.data[i].ct_time;
+                    var date = new Date(term * 1000);
+                    Y = date.getFullYear() + '-';
+                    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+                    D = date.getDate() + ' ';
+                    if (data.data[i].status == 1) {
+                        tempHTML += '<div id="' + data.data[i].id + '" status="' + data.data[i].status + '">' +
+                            '<div style="position: relative;width: 2.5rem;margin-right: 0.1rem;display:flex;">' +
+                            '<img src="' + data.data[i].img_url + '" alt="" >' +
+                            '</div>' +
+                            '<div style="position: relative;padding-top: 0.05rem">' +
+                            '<span class="xinwentit">' + data.data[i].title + '</span>' +
+                            '<p>' + data.data[i].text + '</p>' +
+                            '<p class="bfsj">' +
+                            '<span style="color: #666666">' + Y + M + D + '</span>' +
+                            '</p>' +
+                            '</div>' +
+                            '</div>';
+                    } else {
+                        tempHTML += '<div id="' + data.data[i].id + '" status="' + data.data[i].status + '">' +
+                            '<div style="position: relative;width: 2.5rem;margin-right: 0.1rem;display:flex;">' +
+                            '<img src="' + data.data[i].img_url + '" alt="" >' +
+                            '</div>' +
+                            '<div style="position: relative;padding-top: 0.05rem">' +
+                            '<span class="hongdian"></span>' +
+                            '<span class="xinwentit">' + data.data[i].title + '</span>' +
+                            '<p>' + data.data[i].text + '</p>' +
+                            '<p class="bfsj">' +
+                            '<span style="color: #666666">' + Y + M + D + '</span>' +
+                            '</p>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }
+                $('.xinximulu').html(tempHTML);
+                // $(".title").text(data.data.title);
+                // $(".tan_one").text(data.data.text)
+            }
+        });
+    })
+    $('.xinximulu>div').click(function(obj) {
+        var id = $(this).attr('id');
+        var is_writ = 0;
+        var access_token = localStorage.getItem("access_token");
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Personal/message_info",
+            async: false,
+            data: {
+                access_token: access_token,
+                id: id
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+            //文书类型消息
+            if(data.state == '-3'){alert(data.msg);is_writ = 1;}
+            }
+        });
+        if(is_writ == 1){return false;}
+        var id = $(this).attr('id');
+        var status = $(this).attr('status');
+        window.location.href = 'xiaoxixiangqing.html?id=' + id + '&status=' + status;
+    })
+</script>

@@ -1,0 +1,126 @@
+.section {
+    width: 20rem;
+    height: 100%;
+    margin: 1rem auto;
+}
+
+.Applyname p {
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    display: inline-block;
+    text-align: right;
+    width: 6rem;
+}
+
+.Applyname span {
+    font-weight: 100;
+    margin-left: 1rem;
+	font-size: 0.8rem;
+}
+
+.tts {
+    position: relative;
+    height: 8rem;
+}
+
+.text-txt {
+    position: absolute;
+    top: 0;
+    left: 7rem;
+    /* text-align: left; */
+    font-weight: 100;
+}
+
+.text-txt p {
+    display: block;
+    text-align: left;
+    font-weight: 100;
+    width: auto;
+}
+
+.text-txt span {
+    width: 5rem;
+    font-size: .9rem;
+    line-height: 2rem;
+    display: inline-block;
+}
+
+.text-txt span input {
+    float: right;
+    margin-top: .5rem;
+    text-align: right;
+}
+
+.Enclosure {
+    padding: .1rem 2.5rem;
+    background: rgba(242, 242, 242, 1);
+    border-radius: .7rem;
+}
+
+.text-txt img {
+    width: 8rem;
+    height: 5rem;
+    margin-top: 1rem;
+}
+
+.pj span {
+    font-size: .5rem;
+}
+#tan{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+    display:none;
+}
+.tan_center{
+    width: 80%;
+    height: 20rem;
+    margin: 8rem auto;
+    background: #fff;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+.yuanyin{
+    position: absolute;
+    bottom: 3rem;
+    left: 6.2rem;
+    color: red;
+    display: none;
+}
+.tan_two_span1{
+    display: inline-block;
+    width: .3rem;
+    height: .3rem;
+    border: 1px solid #000;
+    float: left;
+    margin-top: .35rem;
+    margin-left: .5rem;
+    border-radius: .15rem;
+}
+.tan_two_span2{
+    font-size: 1rem;
+    color: #196394;
+}
+.tan_center p{
+    line-height:  3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.tan_one{
+    width: 98%;
+    height: 14rem;
+    margin: 0 auto;
+    text-align: left;
+    overflow: auto;
+}
+.tan_two{
+    border-top: 1px solid #eee;
+    line-height: 3rem;
+}

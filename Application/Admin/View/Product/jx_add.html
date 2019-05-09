@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='添加绩效账户';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">添加绩效账户</div>
+                </div>
+                <form action="{:U('Product/jx_add/',array('id'=>$list['id']))}" method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">账户名称：</th>
+                            <td>
+                                <input type="text" name="name" class="input uname" size="40" value="{$list.name}"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="commonBtnArea" >
+                        <button class="btn submit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+       $(function(){
+           $(".submit").click(function(){
+//             commonAjaxSubmit();
+               $.ajax({
+               	type:"get",
+               	url:"{:U('Product/jx_add')}",
+               	async:false,
+               	data:{},
+               	dataType:"json",
+               	success:function(data){
+               		console.log(data);
+               	}
+               });
+           });
+       });
+    // $(function(){
+    //     var i = $(".info option:selected").text();
+    //         if(i != "比赛"){
+    //             $(".tr").css("display","none");
+    //         }else{
+    //             $(".tr").css("display","table-row");
+    //         }
+    //     $(".info").change(function(){
+    //         var info = $(".info option:selected").text();
+    //         if(info != "比赛"){
+    //             $(".tr").css("display","none");
+    //         }else{
+    //             $(".tr").css("display","table-row");
+    //         } 
+    //     })
+    // })
+</script>
+</body>
+</html>
+

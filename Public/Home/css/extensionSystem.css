@@ -1,0 +1,107 @@
+.content{
+	width: 100%;
+	display: inline;
+}
+.bgimg img{
+	width: 100%;
+	height: 600px;
+}
+.income{
+	width: 1200px;
+	height:600px;
+	margin: 0 auto;
+	margin-top:40px;
+	margin-bottom:40px;
+	box-shadow: 2px 2px 12px #999999;
+	padding-top:30px;
+	position:relative;
+}
+.income>ul{
+	list-style-type:none;
+}
+.income>ul li{
+	float:left;
+	font-size: 24px;
+	color: #555555;
+	padding-top:20px ;
+	margin-left:110px;
+	padding-bottom:20px;
+	
+}
+.income>ul li.bor{
+	border-bottom:#00a1e5 solid 2px;
+}
+.income div ul{
+	list-style-type:none;
+	position:absolute;
+	margin: 100px 0;
+	width: 1200px;
+	/*display:none;*/
+}
+.income div ul li{
+	padding: 0 110px;
+	color: #000000;
+	font-size: 18px;
+	text-align: left;
+	line-height:40px;
+}
+.income .income_table{
+	width: 1200px;
+	margin: 60px 0;
+    position:absolute;
+    display:none;
+}
+.income .income_table thead th{
+	width: 225px;
+	height: 90px;
+	padding: 0 110px;
+	color: #000000;
+	font-size: 24px;
+	text-align: left;
+}
+.income .income_table thead th:nth-of-type(3){
+	width: 100px;
+}
+.income .income_table .income_list{
+	display: block;
+	height:430px;
+	overflow:scroll;
+}
+.income .income_table .income_list td{
+	width: 225px;
+	height: 53px;
+	padding: 0 110px;
+	color: #999999;
+	font-size: 22px;
+	text-align: left;
+}
+.income .income_table .income_list td:nth-of-type(3){
+	width: 100px;
+}
+.dbimg{
+	width: 100%;
+	height: 400px;
+	background: url(../images/invitingFriendsbg.jpg) no-repeat center;
+	
+}
+.dbimg p{
+	padding-top: 145px;
+	font-size: 50px;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+}
+.dbimg a{
+	width: 240px;
+	height: 70px;
+	display: inline-block;
+	margin-top: 60px;
+	text-decoration: none;
+	color:#FFFFFF;
+	border: 1px #FFFFFF solid;
+	text-align: center;
+	line-height: 70px;
+	border-radius: 50px;
+	font-size: 34px;
+	margin-left: 43%;
+}

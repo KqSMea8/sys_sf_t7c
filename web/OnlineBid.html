@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>在线申办</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/mobileSelect.css">
+    <style>
+        input {
+            border: 1px solid #999999;
+        }
+        
+        .sczp {
+            width: 100%;
+            vertical-align: top;
+            text-align: inherit;
+            margin: 0 auto;
+        }
+        
+        .mine_img {
+            position: relative;
+        }
+        
+        .mine_img input {
+            position: absolute;
+            width: 305px;
+            height: 180px;
+            z-index: 5;
+            opacity: 0;
+        }
+        
+        .mine_img img {
+            position: absolute;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            padding: .5rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -3rem;
+            z-index: 999999;
+        }
+        
+        .nav_first span {
+            width: 59.5%;
+            display: block;
+            float: right;
+            margin-right: 1.5rem;
+            line-height: 1.875rem;
+            text-align: left;
+            border: 1px solid #ccc;
+            height: 26px;
+        }
+        
+        .nav_first div {
+            display: block;
+            float: right;
+            margin-right: 1rem;
+            line-height: 1.875rem;
+            text-align: right;
+        }
+        
+        .tijiao {
+            height: 5.75rem;
+        }
+        
+        .sujubioa {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            display: none;
+            left: 0;
+            background: #fff;
+            z-index: 9;
+        }
+        
+        .jiazai {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+        }
+        
+        .jiazai img {
+            position: absolute;
+            width: 5rem;
+            top: 50%;
+            left: 50%;
+            margin-left: -2.5rem;
+        }
+    </style>
+
+</head>
+<script src="js/mobileSelect.js"></script>
+
+<body>
+    <p class="tishi"></p>
+    <div id="header">
+        <span>在线申办</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+
+    <!-- =================第一个页面 -->
+    <div class="list1">
+        <div class="nav_fir">
+            <div class="nav_first">
+                <span class="xzz1">请选择</span>
+                <div>选择区域</div>
+            </div>
+            <div class="nav_first">
+                <span class="xz1">请选择</span>
+                <div>选择公证处</div>
+            </div>
+            <div class="nav_first">
+                <span id="xz2">请选择</span>
+                <div>公证员</div>
+            </div>
+            <div class="nav_first">
+                <input type="text" class="gz_lianxi" disabled="disabled">
+                <div>公证员联系方式</div>
+            </div>
+            <div class="nav_first">
+                <input type="text" style="visibility: hidden">
+                <div>公证员照片</div>
+            </div>
+            <div class="nav_first">
+                <img src="" class="gz_tupian" alt="" style="width: 12rem;height: auto;margin-left: 8rem">
+                <div></div>
+            </div>
+            <div class="sczp"></div>
+        </div>
+
+        <div class="next" style="margin-top: 3rem;">
+            <button id="btn" class="next1">下一步</button>
+        </div>
+    </div>
+
+    <!-- ================第二个页面 -->
+    <div class="list2" style="display: none;">
+        <div class="nav_radio">
+            <div class="left">
+                <span>业务类型</span>
+            </div>
+            <div class="right yewuleixing" style="padding-top: 0.5rem">
+                <label><input name="Fruit" type="radio" value="" />业务类型 </label>
+                <label><input name="Fruit" type="radio" value="" />业务类型 </label><br>
+                <label><input name="Fruit" type="radio" value="" />业务类型 </label>
+                <label><input name="Fruit" type="radio" value="" />业务类型 </label><br>
+                <label><input name="Fruit" type="radio" value="" />业务类型 </label>
+                <label><input name="Fruit" type="radio" value="" />业务类型 </label><br>
+            </div>
+
+        </div>
+        <div class="nav_fir" style="margin-top: -0.85rem">
+            <div class="nav_first">
+                <span class="xz3">请选择</span>
+                <div>使用地</div>
+            </div>
+            <div class="nav_first">
+                <span class="xz4">请选择</span>
+                <div>用途</div>
+            </div>
+
+            <div class="nav_first">
+                <span class="xz5">请选择</span>
+                <div>翻译语言</div>
+            </div>
+            <div class="shangmen">
+                <span>是否需要上门服务</span>
+                <span style="display: inline-block;margin-left: 0.3rem;text-align: center;" class="fuwu1"> 
+               <input name="Fruit1" class="ra radio2" type="radio" value="" id="1" /><label> 是</label>&nbsp; 
+                <input name="Fruit1" class="ra radio2" type="radio" checked value="" id="2" /> <label>否</label> 
+            </span>
+                <p style="    width: 15rem; margin-left: 7rem;padding-top: 5px;">温馨提示：上门服务需要与公证员联系，确认是否符合条件</p>
+            </div>
+        </div>
+        <div class="next" style="position:fixed;bottom: 3.125rem;text-align: center;">
+            <button style="position: initial;" class="nextss">上一步</button>
+            <button style="position: initial;" class="next2">下一步</button>
+        </div>
+    </div>
+
+    <!-- ================第三个页面 -->
+
+    <div class="list3" style="display: none; padding-bottom: 2rem;">
+        <div class="nav_first" style="margin-top:2rem;">
+            <input type="text" class="gz_lianxi1" readonly="readonly" style="margin-right:2.5625rem; background:;">
+            <div style="margin-right:2rem;">姓名</div>
+        </div>
+        <div class="nav_first">
+            <input type="text" class="gz_lianxi2" readonly="readonly" onblur="isCardNo($(this).val())" style="margin-right:2.5625rem;">
+            <div style="margin-right:2rem;">身份证号</div>
+        </div>
+        <div class="nav_first">
+            <input type="text" class="gz_lianx3" onblur="checkMobile($(this).val())" readonly="readonly" style="margin-right:8.1rem; width:35%;">
+            <input type="button" class="verify_f hid1" value="发送验证码" style="width: 21%;
+    text-align: center;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    right: 1rem;">
+            <div style="margin-right:2rem;">手机号</div>
+        </div>
+        <div class="nav_first hid">
+            <input type="text" class="gz_lianxi4" style="margin-right:2.5625rem;">
+            <div style="margin-right:2rem;">验证码</div>
+        </div>
+
+        <div class="nav_qita">
+            <div class="mine_info">
+                <span>身份证正面</span>
+                <div class="mine_img">
+                    <input class="file1" type="file">
+                    <img class="img1" src="./img/tianjia.jpg" alt="">
+                </div>
+            </div>
+            <div class="mine_info">
+                <span>身份证反面</span>
+                <div class="mine_img">
+                    <input class="file2" type="file">
+                    <img class="img2" src="./img/tianjia.jpg" alt="">
+                </div>
+            </div>
+            <div class="mine_info">
+                <span>户口本</span>
+                <div class="mine_img">
+                    <input class="file3" type="file">
+                    <img class="img3" src="./img/tianjia.jpg" alt="">
+                </div>
+            </div>
+            <div class="mine_info">
+                <span>出生证明</span>
+                <div class="mine_img">
+                    <input class="file4" type="file">
+                    <img class="img4" src="./img/tianjia.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="next" style="text-align: center;    margin-top: 50px;
+        ">
+            <!-- <div class="next" style="position:fixed;bottom: 3.125rem;text-align: center;"> -->
+            <button style="position: initial;" class="nextdd">上一步</button>
+            <button style="position: initial;" class="next3">下一步</button>
+        </div>
+    </div>
+
+    <!-- ==============第四个页面 -->
+
+    <div class="list4" style="display: none">
+        <div class="hang" style="margin-top: 2rem">
+            <div class="zuo">申请人姓名:</div>
+            <div class="you y1">
+                牡丹江公证处
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">申请人身份证号:</div>
+            <div class="you y2">
+                15345645618946515486
+            </div>
+        </div>
+        <div class="hang" id="hang">
+            <div class="zuo">手机号:</div>
+            <div class="you">
+                <span class="y3">12345678910</span> <span id="icon" class="iconfont icon-question"></span>
+                <span id="you_text"></span>
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">选择区域:</div>
+            <div class="you q4">
+                牡丹江公证处
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">选择公证处:</div>
+            <div class="you y4">
+                牡丹江公证处
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">公证员:</div>
+            <div class="you y5">
+                牡丹江
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">公证员联系方式:</div>
+            <div class="you y6">
+                15245565895
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">使用地:</div>
+            <div class="you y7">
+                牡丹江
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">用途:</div>
+            <div class="you y8">
+                用途类型
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">翻译语言:</div>
+            <div class="you y9">
+                汉语
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">是否需要上门服务:</div>
+            <div class="you fuwu">
+                <input name="Fruit2" type="radio" checked="checked" value="" />
+                <lable class="zhuangt">&nbsp;是</lable>&nbsp;&nbsp;
+            </div>
+        </div>
+        <div class="img_dd">
+
+        </div>
+
+        <div class="memery">
+            <div class="mem_left">付款方式（<span style="color: #999999">现场缴费</span>）</div>
+            <div class="mem_right">
+                公证费：<span style="color:#FF0000">5000元</span>
+                <br><span class="xq_biao" tyle="color:#0066CC">产生费用详情 >> </span>
+            </div>
+        </div>
+        <div class="tijiao">
+            <button id="mid_lit" style="margin-bottom:3rem;" class="next4">提交</button>
+        </div>
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="footer"></div>
+    <!-- =============================费用详情================== -->
+    <div class="sujubioa"></div>
+    <div class="jiazai"><img src="./img/jiazaia.png" alt=""></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    var access_token = localStorage.getItem("access_token");
+    console.log(access_token);
+    $(".footer").load("footer2.html");
+    $(".xq_biao").click(function() {
+            $(".sujubioa").show();
+        })
+        // if(access_token==""||access_token==undefined){
+        //     $(".hid1").hide();
+        //     $(".hid").hide();
+        // }else{
+        //     $(".hid1").hide();
+        //     $(".hid").hide();
+        // }
+        // 判断是否登录
+    var token = localStorage.getItem("access_token");
+    var tokenState;
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Personal/mine",
+        data: {
+            access_token: token
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+            // if(data.state==-2){
+            // $(".tishi").text("请先登录");
+            // $(".tishi").fadeIn().delay(500).fadeOut();  
+            // }else
+            tokenState = data.state;
+            if (data.state == -2) {
+                $(".gz_lianxi1").removeAttr("readonly");
+                // window.location.href="addend_geren.html";
+            }
+        }
+    });
+
+    //===============验证
+
+    function isCardNo(card) {
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X 
+        if (card.length != 0) {
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (reg.test(card) === false) {
+                $(".tishi").text("身份证号格式不正确");
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".gz_lianxi2").val("")
+                return false;
+            }
+        }
+    };
+
+    function checkMobile(val) {
+        // var sMobile = document.mobileform.mobile.value 
+        if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(val))) {
+            $(".tishi").text("请填写正确的手机号");
+            $(".tishi").fadeIn().delay(500).fadeOut();
+            $(".gz_lianx3").val("");
+            // document.mobileform.mobile.focus(); 
+            return false;
+        }
+    }
+    // =============切换按钮
+    $(".next1").click(function() {
+        if ($(".xz1").text() == "" || $(".xz1").text() == '请选择') {
+            $(".tishi").text("请选择公证处");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else if ($("#xz2").text() == "" || $("#xz2").text() == '请选择') {
+            $(".tishi").text("请选择公证员");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else {
+            $(".list1").hide();
+            $(".list2").show();
+        }
+    });
+    var fw2
+    $(".nextss").click(function() {
+        $(".list2").hide();
+        $(".list1").show();
+    });
+    $(".nextdd").click(function() {
+        $(".list3").hide();
+        $(".list2").show();
+    })
+    var lksd = [];
+    var imgnum = 0;
+    $(".next2").click(function() {
+        if ($('.radio1').is(":checked") == false) {
+            $(".tishi").text("请选择业务类型");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else if ($(".xz3").text() == "" || $(".xz3").text() == "请选择") {
+            $(".tishi").text("请填写使用地");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else if ($(".xz4").text() == "" || $(".xz4").text() == "请选择") {
+            $(".tishi").text("请填写用途");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else if ($(".xz5").text() == "" || $(".xz5").text() == "请选择") {
+            $(".tishi").text("请填写翻译语言");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else if ($('.radio2').is(":checked") == false) {
+            $(".tishi").text("请选择是否需要上门服务");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        } else {
+            $(".list2").hide();
+            $(".list3").show();
+            $(".y1").text($(".gz_lianxi1").val());
+            $(".y2").text($(".gz_lianxi2").val());
+            $(".y3").text($(".gz_lianx3").val());
+            for (var i = 0; i < $(".radio2").length; i++) {
+                if ($(".radio2").eq(i).is(":checked") == true) {
+                    fw2 = $(".radio2").eq(i).attr("id");
+                }
+            };
+            localStorage.setItem("price", fw2);
+            $.ajax({
+                type: "post",
+                url: "https://sys.t7c.net/index.php/home/Data/price",
+                async: false,
+                data: {
+                    bussiness_id: fw2
+                },
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    if (data.data.length == 0) {
+                        imgnum = 1;
+                        $(".nav_qita").hide();
+                    }
+                    var html = "";
+                    var ht = '';
+                    var htmldk = "";
+                    var dlimg = "";
+                    zj = 0;
+                    for (var i = 0; i < data.data.length; i++) {
+                        zj = zj + parseInt(data.data[i].num);
+                    };
+                    $(".mem_right span").eq(0).text(zj + "元")
+                    for (var i = 0; i < data.data.length; i++) {
+                        for (var j = 0; j < parseInt(data.data[i].file_num); j++) {
+
+                            dlimg += ' <img class="img1dd" style="width:8rem;" src="" alt=""></br>'
+
+                        };
+                        htmldk += '<div class="nav_radio" style="padding:0;height:auto;">' +
+                            '<div class="left" id="nav_left"><span>' + data.data[i].title + '</span></div>' +
+                            ' <div class="right" style="margin-left:1.25rem;width: 50%;">' + dlimg + '</div>' +
+                            '</div>';
+
+                        dlimg = "";
+
+                    };
+                    $(".img_dd").html(htmldk)
+                    for (var i = 0; i < data.data.length; i++) {
+                        lksd.push(data.data[i].id)
+                        for (var j = 0; j < parseInt(data.data[i].file_num); j++) {
+
+                            ht += '<div class="mine_img"><span>'+ data.data[i].file_name[j]+'<span><input id=' + data.data[i].id + ' path="imgdf' + i + j + '" class="mine_file" type="file"><img class="dffd  imgdf' + i + j + '" src="./img/tianjia.jpg" alt=""></div>'
+
+                        };
+                        // console.log(ht);
+                        html += '<div class="mine_info" file_num="' + data.data[i].file_num + '"><span>' + data.data[i].title + '</span><div>' + ht + '</div></div>';
+                        ht = "";
+                    };
+                    $(".nav_qita").html(html);
+                }
+            })
+
+
+
+        }
+    })
+    var formdata = new FormData();
+    var imgbase = [];
+    var pth = [];
+    $(".next3").click(function() {
+        if (imgnum == 1) {
+            var dd = document.getElementsByClassName("dffd");
+            for (var i = 0; i < dd.length; i++) {
+                if (dd[i].src.length < 500) {
+                    $(".tishi").text("请完善附件资料");
+                    $(".tishi").fadeIn().delay(800).fadeOut();
+                    return false;
+                }
+            }
+        }
+        // var
+        // if ($(".nav_qita .mine_img").find("img").attr("src").length < 500) {
+        //     alert("fsda");
+        // }
+
+        for (var i = 0; i < $('.nav_qita .mine_info').length; i++) {
+            var imgHTML = "";
+            for (var j = 0; j < $('.nav_qita .mine_info').eq(i).attr('file_num'); j++) {
+                //var str = $('.nav_qita .mine_info').eq(i).children('div').children('.mine_img').eq(j).children('img').attr('src');
+              	var str = $('.nav_qita .mine_info').eq(i).children('div').children('.mine_img').eq(j).find('img').attr('src');
+              	
+                var str2 = str.split(',')[1];
+                var id = $('.nav_qita .mine_info').eq(i).children('div').children('.mine_img').eq(j).find('input').attr('id');
+
+                // imgbase[i][j] = new Array();var activeSubjectsObject = {};
+                // activeSubjectsObject.name = 'path';
+                // activeSubjectsObjects.name = 'id';
+                imgHTML += str2 + ';';
+                pth.push(str2);
+            }
+            var activeSubjectsObject = {
+                path: imgHTML,
+                id: id
+            };
+            imgbase.push(activeSubjectsObject);
+        }
+
+        // formdata.append('img', imgbase);
+        // $.ajax({
+        //     type: 'post',
+        //     url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid',
+        //     data: {
+        //         upload: imgbase
+        //     },
+        //     // contentType: false,
+        //     // processData: false,
+        //     dataType: 'json',
+        //     success: function(data) {
+        //         console.log(data);
+        //     }
+        // })
+        // console.log(imgbase);
+        // return false;
+        console.log(pth);
+        var imgdd = document.getElementsByClassName("img1dd");
+
+        for (var i = 0; i < pth.length; i++) {
+            imgdd[i].src = "data:image/jpeg;base64," + pth[i];
+        };
+      	
+        $(".y1").html($(".gz_lianxi1").val());
+        $(".y2").html($(".gz_lianxi2").val());
+        $(".y3").html($(".gz_lianx3").val());
+        if (tokenState != '-2') {
+            if ($(".file1").val() == "" || $(".file2").val() == "" || $(".file3").val() == "" || $(".file4").val() == "") {
+                $(".tishi").text("未填写完整1");
+                $(".tishi").fadeIn().delay(800).fadeOut();
+            } else {
+
+                $(".list3").hide();
+                $(".list4").show();
+                var d;
+                if (fw2 == 1) {
+                    d = "是"
+                } else {
+                    d = "否"
+                }
+                $(".zhuangt").text(d)
+            }
+        } else {
+            if ($(".file1").val() == "" || $(".file2").val() == "" || $(".file3").val() == "" || $(".file4").val() == "" || $('.gz_lianxi4').val() == "") {
+                $(".tishi").text("未填写完整2");
+                $(".tishi").fadeIn().delay(800).fadeOut();
+            } else {
+
+                $(".list3").hide();
+                $(".list4").show();
+                var d;
+                if (fw2 == 1) {
+                    d = "是"
+                } else {
+                    d = "否"
+                }
+                $(".zhuangt").text(d)
+            }
+        }
+    })
+
+    $(".gz_lianxi").val("");
+    $(".gz_tupian").attr("src");
+    //=================存最后提交需要信息
+
+    var Full_name;
+    var ID_number;
+    var phone_number;
+    var gzc;
+    var gzy;
+    var gz_phone;
+    var syd;
+    var yt;
+    var yuyan;
+    var fw;
+    var leixing;
+    var gzy_name;
+    var gzc_name;
+    // ================第一页接口  第一个select
+    var gzc;
+    var xz1 = [];
+    var lk1, lxdh, zp;
+    var xz2s = [];
+    var xzz1=[];
+    var qy;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/area',
+        data: {},
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // var html="";
+            var qk1 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].jgmc}</option>`;
+                xzz1.push(data.data[i].name);
+            }
+            // $(".select1").append(html);
+            console.log(xz1);
+            var mobileSelect = new MobileSelect({
+                trigger: '.xzz1',
+                title: '请选择',
+                wheels: [{
+                    data: xzz1
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                     $(".xz1").text("")
+                    $(".q4").text(data);
+                    $(".xzz1").attr("value", data)
+                    for (var i = 0; i < qk1.length; i++) {
+                        if (data == qk1[i].name) {
+                            qy = qk1[i].id;
+                        }
+                    }
+
+                    xz1= [];
+                    $.ajax({
+                        type: 'post',
+                        url: 'https://sys.t7c.net/index.php/home/Data/gzc',
+                        data: {qy:qy},
+                        dataType: 'json',
+                        async: false, //同步异步
+                        success: function(data) {
+                            console.log(data);
+                            // var html="";
+                            var tk = data.data;
+                            for (var i = 0; i < data.data.length; i++) {
+                                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].jgmc}</option>`;
+                                xz1.push(data.data[i].jgmc);
+                            }
+                            // $(".select1").append(html);
+                            console.log(xz1);
+                            var mobileSelect = new MobileSelect({
+                                trigger: '.xz1',
+                                title: '请选择',
+                                wheels: [{
+                                    data: xz1
+                                }],
+                                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                transitionEnd: function(indexArr, data) {
+                                    //console.log(data);
+                                },
+                                callback: function(indexArr, data) {
+                                    console.log(data);
+                                    fgld = data + "";
+                                    $(".y4").text(data);
+                                    $(".xz1").text(data)
+                                    for (var i = 0; i < tk.length; i++) {
+                                        if (data == tk[i].jgmc) {
+                                            gzc = tk[i].id;
+                                        }
+                                    }
+                                  $('.mobileSelect:last-child').remove();
+                                    xz2s = [];
+                                    $.ajax({
+                                        type: 'post',
+                                        url: 'https://sys.t7c.net/index.php/home/Data/gzc',
+                                        data: {
+                                            id: gzc
+                                        },
+                                        dataType: 'json',
+                                        async: false, //同步异步
+                                        success: function(data) {
+                                            console.log(data);
+                                            // var html1="";
+                                            var tk1 = data.data;
+                                            for (var i = 0; i < data.data.length; i++) {
+                                                // html1+=`<option value="" id="${data.data[i].id}" ur="${data.data[i].zp}" lxdh="${data.data[i].lxdh}">${data.data[i].xm}</option>`;
+                                                xz2s.push(data.data[i].xm)
+                                            }
+                                            // $(".select2").append(html1);
+                                            var mobileSelect1 = new MobileSelect({
+                                                trigger: '#xz2',
+                                                title: '请选择',
+                                                wheels: [{
+                                                    data: xz2s
+                                                }],
+                                                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                                transitionEnd: function(indexArr, data) {
+                                                    //console.log(data);
+                                                },
+                                                callback: function(indexArr, data) {
+                                                    console.log(data);
+                                                    fgld = data + "";
+                                                    $(".y5").text(data);
+                                                    $("#xz2").attr("value", data)
+                                                    for (var i = 0; i < tk1.length; i++) {
+                                                        if (data == tk1[i].xm) {
+                                                            lk1 = tk1[i].id;
+                                                            lxdh = tk1[i].lxdh;
+                                                            zp = tk1[i].zp;
+                                                        }
+                                                    }
+
+                                                    $(".gz_lianxi").val(lxdh);
+                                                    $(".y6").text(lxdh);
+                                                    $(".gz_tupian").attr("src", zp);
+                                                   $('.mobileSelect:last-child').remove();
+
+                                                }
+                                            })
+
+
+                                        }
+                                    })
+                                }
+                            })
+
+
+                        }
+                    })
+                }
+            })
+        }
+    })
+    
+
+
+    console.log(xz1);
+    $(".select1").change(function() {
+            gzc = $(this).find("option:selected").attr("id");
+            gzc_name = $(this).find("option:selected").text();
+        })
+        // =============第二个select
+    var zj;
+    // $.ajax({
+    //     type: "post",
+    //     url: "https://sys.t7c.net/index.php/home/Data/price",
+    //     data: {
+    //         bussiness_id: fw2
+    //     },
+    //     dataType: "json",
+    //     success: function(data) {
+    //         // body...
+    //         console.log(data);
+    //         zj = 0;
+    //         var ht = "";
+    //         for (var i = 0; i < data.data.length; i++) {
+    //             ht += " <tr><td>" + data.data[i].title + ":</td><td>" + data.data[i].num + "(元)</td></tr>";
+    //             zj = zj + parseInt(data.data[i].num);
+    //         };
+    //         $(".mem_right span").eq(0).text(zj + "元")
+    //     }
+    // });
+    $.ajax({
+        url: 'expenseDetail.html',
+        cache: true,
+        async: false,
+        success: function(html) {
+            $(".sujubioa").html(html);
+        }
+    })
+    $("#ddReturn").click(function() {
+        $(".sujubioa").hide();
+    })
+
+    // $("#xz2").click(function(){
+    //     if(gzc==undefined||gzc==""){
+    //         $(".tishi").text("请先选择公证处");
+    //         $(".tishi").fadeIn().delay(800).fadeOut(); 
+    //     }else{
+    //    $.ajax({
+    //         type:'post',
+    //         url:'https://sys.t7c.net/index.php/home/Data/gzc',
+    //         data:{
+    //             id:gzc
+    //         },
+    //         dataType:'json', 
+    //         async: false,   //同步异步
+    //         success:function(data){
+    //             console.log(data);
+    //             // var html1="";
+    //             var tk1=data.data;
+    //             for(var i=0;i<data.data.length;i++){
+    //                 // html1+=`<option value="" id="${data.data[i].id}" ur="${data.data[i].zp}" lxdh="${data.data[i].lxdh}">${data.data[i].xm}</option>`;
+    //                 xz2s.push(data.data[i].xm)
+    //             }
+    //             // $(".select2").append(html1);
+    //             var mobileSelect1 = new MobileSelect({
+    //                 trigger: '#xz2',
+    //                 title: '请选择公证元',
+    //                 wheels: [{
+    //                     data:xz2s
+    //                 }],
+    //                 position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+    //                 transitionEnd: function(indexArr, data) {
+    //                     //console.log(data);
+    //                 },
+    //                 callback: function(indexArr, data) {
+    //                     console.log(data);
+    //                     fgld = data + "";
+    //                     $("#xz2").attr("value", data)
+    //                     for (var i = 0; i < tk1.length; i++) {
+    //                         if (data == tk1[i].xm) {
+    //                                 lk1 = tk1[i].id;
+    //                                 lxdh=tk1[i].lxdh;
+    //                                 zp=tk1[i].zp;
+    //                             }
+    //                     }
+    //                 }
+    //             })
+
+
+    //         }
+    //     })
+    // } 
+    //     console.log(lxdh)  
+    //     $(".gz_lianxi").val(lxdh);
+    //     $(".gz_tupian").attr("src",zp); 
+    // })
+
+
+
+
+
+    // ===========选择前两个之后 出现用户电话 照片
+    $(".select2").change(function() {
+        gzy = $(this).find("option:selected").attr("id");
+        gzy_name = $(this).find("option:selected").text();
+        var ur = $(this).find("option:selected").attr("ur");
+        var gz_phone = $(this).find("option:selected").attr("lxdh");
+        $(".gz_lianxi").val(gz_phone);
+        $(".gz_tupian").attr("src", ur);
+    })
+
+
+    // ===============第二页  业务类型
+
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/business',
+        data: {},
+        dataType: 'json',
+        async: true, //同步异步
+        success: function(data) {
+            console.log(data);
+            var html = "";
+            for (var i = 0; i < data.data.length; i++) {
+                html += `<label><input name="Fruit" type="radio" class="radio1" id="${data.data[i].id}">${data.data[i].title}</label>`;
+            }
+            $(".yewuleixing").html(html);
+        }
+    })
+
+    // ============使用地
+    var lk3 //下拉框id；
+    var xz3 = []; // 下拉框数组
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/country',
+        data: {},
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // var html="";
+            var tk3 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].name}</option>`;
+                xz3.push(data.data[i].title)
+            }
+            // $(".select3").append(html);
+            var mobileSelect3 = new MobileSelect({
+                trigger: '.xz3',
+                title: '请选择',
+                wheels: [{
+                    data: xz3
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".y7").text(data);
+                    $(".xz3").attr("value", data)
+                    for (var i = 0; i < tk3.length; i++) {
+                        if (data == tk3[i].title) {
+                            lk3 = tk3[i].id;
+                        }
+                    }
+                }
+            })
+
+        }
+    })
+    $(".select3").change(function() {
+        syd = $(this).find("option:selected").attr("id");
+        console.log(syd)
+    })
+
+    //==============用途
+    var lk4;
+    var xz4 = [];
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/usedata',
+        data: {},
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // var html="";
+            var tk4 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].title}</option>`;
+                xz4.push(data.data[i].title)
+            }
+            // $(".select4").append(html);
+            var mobileSelect4 = new MobileSelect({
+                trigger: '.xz4',
+                title: '请选择',
+                wheels: [{
+                    data: xz4
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".y8").text(data);
+                    $(".xz4").attr("value", data)
+                    for (var i = 0; i < tk4.length; i++) {
+                        if (data == tk4[i].title) {
+                            lk4 = tk4[i].id;
+                        }
+                    }
+                }
+            })
+        }
+    })
+    $(".select4").change(function() {
+        yt = $(this).find("option:selected").attr("id");
+        console.log(yt)
+    })
+
+    // =============翻译语言
+    var lk5; //翻译语言id；
+    var xz5 = []; // 翻译语言数组
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Data/language',
+        data: {},
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // var html="";
+            var tk5 = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                // html+=`<option value="" id="${data.data[i].id}">${data.data[i].title}</option>`;
+                xz5.push(data.data[i].title)
+            }
+            // $(".select5").append(html);
+            var mobileSelect5 = new MobileSelect({
+                trigger: '.xz5',
+                title: '请选择',
+                wheels: [{
+                    data: xz5
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".y9").text(data);
+                    $(".xz5").attr("value", data)
+                    for (var i = 0; i < tk5.length; i++) {
+                        if (data == tk5[i].title) {
+                            lk5 = tk5[i].id;
+                        }
+                    }
+                }
+            })
+        }
+    })
+    $(".select5").change(function() {
+        yuyan = $(this).find("option:selected").attr("id");
+        console.log(yuyan)
+    })
+
+    // ===================用户信息
+
+
+
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Personal/mine',
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            if (data.state != '-2') {
+                ID_number = data.data.zjh;
+                Full_name = data.data.xm;
+                phone_number = data.data.lxdh;
+                $(".hid1").hide();
+                $(".hid").hide();
+                console.log(Full_name)
+                $(".gz_lianxi1").val(Full_name);
+                $(".gz_lianxi2").val(ID_number);
+                $(".gz_lianx3").val(phone_number);
+            } else {
+                $('.gz_lianxi1').removeAttr('readonly');
+                $('.gz_lianxi2').removeAttr('readonly');
+                $('.gz_lianx3').removeAttr('readonly');
+                $(".hid1").show();
+                $(".hid").show();
+            }
+        }
+    })
+
+    // ===============图片上传0
+    $(".nav_qita").on('change', '.mine_file', function() {
+        console.log(lksd);
+        var lkd;
+        // for (var i = 0; i < lksd.length; i++) {
+        // lkd = lkd + i;
+        var lkds = [];
+        // var idffsd = [];
+        var idd = $(this).attr("id");
+        // lkds.push("id:" + idd);
+        var file = this.files[0];
+        var index = $(this);
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+
+                // var  dd = e.target.result.indexOf(",");
+                var imgbases = e.target.result.split(",")[1];
+                // if(index.attr("id"))
+                // lkds.push("path:" + imgbases);
+                index.siblings("img").attr("src", e.target.result)
+                    // $('.mine_img').eq(index).find("img").attr();
+                    // $(this).next().attr("src", e.target.result)
+            };
+        };
+        // imgbase.push(lkds);
+        // }
+        // console.log(imgbase)
+        // console.log($(this).attr('path'));
+
+    })
+
+    // function imgdd(cla) {
+    // $("." + cla).change(function() {
+    // console.log(cla);
+    // var img_file = document.getElementsByClassName("file1")[0];
+    // fileObj = img_file.files[0];
+    // var file = this.files[0];
+    // if (window.FileReader) {
+    //     var reader = new FileReader();
+    //     reader.readAsDataURL(file);
+    //     //监听文件读取结束后事件    
+    //     reader.onloadend = function(e) {
+    //         // 图片base64
+    //         // var  dd = e.target.result.indexOf(",");
+    //         imgde1 = e.target.result.split(",")[1];
+
+    //         console.log(imgde1)
+    //         $(".img1").attr("src", e.target.result)
+    //     };
+    // }
+    // })
+    // }
+
+
+
+
+
+    // var imgde1;
+    // var imgde2;
+    // var imgde3;
+    // var imgde4;
+
+    // $(".file2").change(function() {
+    //     var img_file = document.getElementsByClassName("file2")[0];
+    //     fileObj1 = img_file.files[0];
+    //     var file = this.files[0];
+    //     if (window.FileReader) {
+    //         var reader = new FileReader();
+    //         reader.readAsDataURL(file);
+    //         //监听文件读取结束后事件    
+    //         reader.onloadend = function(e) {
+    //             // 图片base64
+    //             // var  dd = e.target.result.indexOf(",");
+    //             imgde2 = e.target.result.split(",")[1];
+    //             console.log(imgde1)
+    //             $(".img2").attr("src", e.target.result)
+    //         };
+    //     }
+    // })
+    // $(".file3").change(function() {
+    //     var img_file = document.getElementsByClassName("file3")[0];
+    //     fileObj2 = img_file.files[0];
+    //     var file = this.files[0];
+    //     if (window.FileReader) {
+    //         var reader = new FileReader();
+    //         reader.readAsDataURL(file);
+    //         //监听文件读取结束后事件    
+    //         reader.onloadend = function(e) {
+    //             // 图片base64
+    //             // var  dd = e.target.result.indexOf(",");
+    //             imgde3 = e.target.result.split(",")[1];
+    //             console.log(imgde1)
+    //             $(".img3").attr("src", e.target.result)
+    //         };
+    //     }
+    // })
+    // $(".file4").change(function() {
+    //     var img_file = document.getElementsByClassName("file4")[0];
+    //     fileObj3 = img_file.files[0];
+    //     var file = this.files[0];
+    //     if (window.FileReader) {
+    //         var reader = new FileReader();
+    //         reader.readAsDataURL(file);
+    //         //监听文件读取结束后事件    
+    //         reader.onloadend = function(e) {
+    //             // 图片base64
+    //             // var  dd = e.target.result.indexOf(",");
+    //             imgde4 = e.target.result.split(",")[1];
+    //             console.log(imgde1)
+    //             $(".img4").attr("src", e.target.result)
+    //         };
+    //     }
+    // })
+
+    // ======验证码
+
+    var yzm;
+    var tim = 60;
+    var timer;
+    $(".verify_f").click(function() {
+        clearInterval(timer)
+        var mobile = $(".gz_lianx3").val();
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Login/yzm',
+            data: {
+                mobile: mobile
+            },
+            dataType: 'json',
+            async: true, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    yzm = data.data.yzm;
+                    timer = setInterval(function() {
+                        tim--;
+                        $(".verify_f").val(tim + "s");
+                        if (tim <= 0) {
+                            tim = 60;
+                            $(".verify_f").val("重新发送");
+                            clearInterval(timer)
+                        }
+                    }, 1000)
+                } else {
+                    $(".verify_f").val("发送失败");
+                }
+
+            }
+        })
+    })
+
+
+    // ===========提交信息
+
+
+    $("#mid_lit").click(function() {
+      	//alert($(".gz_lianxi1").val() + $(".gz_lianxi2").val() + $(".gz_lianxi4").val() + $(".gz_lianx3").val());return false;
+       /* $(".jiazai").show();*/
+        if (access_token == "" || access_token == undefined || access_token == null) {
+
+            gz_phone = $(".gz_lianxi").val();
+            for(var i=0;i<$(".yewuleixing label").length;i++){
+                if ($(".yewuleixing label").eq(i).find("input").is(":checked") == true) {
+                    leixing = $(".yewuleixing label").eq(i).find("input").attr("id");
+                }
+            }
+            if ($(".fuwu1 input").is(":checked") == true) {
+                fw = $(".fuwu1 input").attr("id");
+                console.log(fw);
+            }
+            var gzc_name1 = $(".xz1").text();
+            var gzy_name1 = $("#xz2").text();
+            console.log(gzc_name1);
+            console.log(gzy_name1);
+          	
+            var name = $(".gz_lianxi1").val();
+            var id_card = $(".gz_lianxi2").val();
+            var verify_code = $(".gz_lianxi4").val();
+            var mobile = $(".gz_lianx3").val();
+          	console.log('--');
+          	console.log(imgbase);
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid',
+                data: {
+                    is_call: fw,//是否需要上门服务
+                    language_id: lk5,//翻译语言
+                    use_id: lk4,//用途
+                    country_id: lk3,//使用地
+                    bussiness_id: leixing,//业务类型
+                    jgry_tel: gz_phone,//机构人员电话
+                    jgry_name: gzy_name1,//机构人员姓名
+                    jgry_id: lk1,//机构人员id
+                    jg_id: gzc,//机构id
+                    jg_name: gzc_name1,//机构名称
+                    access_token: access_token,//用户token
+                  	name: name,//申请人姓名
+                    id_card: id_card,//申请人身份证号
+                    verify_code: verify_code,//验证码
+                    mobile: mobile,//申请人手机号
+                    upload: imgbase,//上传的图片
+                   
+                  	// contrary_img: imgde2,
+                    // household_img: imgde3,
+                    // birth_img: imgde2,
+                    
+                    price: zj,//费用 总价
+                    qy:qy
+                },
+                dataType: 'json',
+                async: true, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    $(".jiazai").fadeOut();
+                    if (data.state == 1) {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                        setTimeout(function() {
+                            window.history.go(-1);
+                            // window.location.href="fair.html";
+                        }, 1000)
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        } else {
+            gz_phone = $(".gz_lianxi").val();
+
+            for(var i=0;i<$(".yewuleixing label").length;i++){
+                if ($(".yewuleixing label").eq(i).find("input").is(":checked") == true) {
+                    leixing = $(".yewuleixing label").eq(i).find("input").attr("id");
+                }
+            }
+            if ($(".fuwu1 input").is(":checked") == true) {
+                fw = $(".fuwu1 input").attr("id");
+                console.log(fw);
+            }
+            var gzc_name1 = $(".xz1").text();
+            var gzy_name1 = $("#xz2").text();
+            console.log(gzc_name1);
+            console.log(gzy_name1);
+            var name = $(".gz_lianxi1").val();
+            var id_card = $(".gz_lianxi2").val();
+            var verify_code = $(".gz_lianxi4").val();
+            var mobile = $(".gz_lianx3").val();
+            var price = zj;
+            console.log(zj)
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid',
+                data: {
+                    is_call: fw2,
+                    language_id: lk5,
+                    use_id: lk4,
+                    country_id: lk3,
+                    bussiness_id: leixing,
+                    jgry_tel: gz_phone,
+                    jgry_name: gzy_name1,
+                    jgry_id: lk1,
+                    jg_id: gzc,
+                    jg_name: gzc_name1,
+                    access_token: access_token,
+                    upload: imgbase,
+                  	name:name,
+                  	verify_code: verify_code,
+                  	id_card:id_card,
+                  	mobile:mobile,
+                    // contrary_img: imgde2,
+                    // household_img: imgde3,
+                    // birth_img: imgde2,
+                    //access_token: access_token,
+                    price: zj,
+                    qy:qy
+
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    $(".jiazai").fadeOut();
+                    if (data.state == 1) {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                        setTimeout(function() {
+                             window.history.go(-1);
+                            // window.location.href="fair.html";
+                        }, 1000)
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+
+
+
+        }
+
+    })
+</script>
+<script src="js/select.js"></script>

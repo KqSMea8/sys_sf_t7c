@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="./js/register.js" defer="defer"></script>
+    <link rel="stylesheet" href="./css/register.css">
+    <script src="./js/shipei.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="content">
+        <img src="./img/4.png" alt="" onclick="window.location.href= 'login.html';return false">
+        <div class="logo">
+            <img src="./img/3.jpg" alt="">
+        </div>
+        <div class="con_nav">
+            <div class="each_con">
+                <input type="text" placeholder="请输入用户名(四个以内汉字)" class="name">
+                <span>用户名</span>
+            </div>
+            <div class="each_con">
+                <input type="text" placeholder="请输入身份证号" class="id_card">
+                <span>身份证号</span>
+            </div>
+            <div class="each_con">
+                <input type="text" placeholder="请输入手机号" class="tel">
+                <span>手机号</span>
+            </div>
+            <div class="each_con">
+                <button>发送验证码</button>
+                <input type="text" placeholder="验证码" style="width:43%;margin-right:0.465rem;">
+                <span>验证码</span>
+            </div>
+            <div class="each_con">
+                <input type="password" placeholder="请输入密码 " class="password">
+                <span>密码</span>
+            </div>
+            <div class="each_con">
+                <input type="password" placeholder="请再次输入密码 " class="password2">
+                <span>确认密码</span>
+            </div>
+            <div class="each_con">
+                <input type="text " placeholder="请输入工作单位 " class="work_unit ">
+                <span>工作单位</span>
+            </div>
+            <div class="each_con">
+                <input type="text " placeholder="请输入邮政编码 " class="post_code">
+                <span>邮政编码</span>
+            </div>
+            <div class="each_con">
+                <input type="text " placeholder="请输入地址 " class="address ">
+                <span>联系地址</span>
+            </div>
+        </div>
+    <!--     <div class="tongyi" onclick="window.location.href= 'xieyi.html';return false">
+            <img src="./img/1.png" alt="">
+            <span>同意《****注册用户协议》</span>
+        </div> -->
+        <button id="register"  style="font-size: 1rem">注册</button>
+        <div class="tongyi">
+            已有账号？<a href="login.html">登录</a>
+        </div>
+    </div>
+    <div id="footer "></div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+  localStorage.setItem("access_token","");
+$("#register").click(function(){
+  
+  var name=$(".name").val(),
+      id_card =$(".id_card ").val(),
+      tel =$(".tel ").val(),
+      password =$(".password").val(),
+      password2 =$(".password2").val(),
+      work_unit =$(".work_unit").val(),
+      post_code =$(".post_code ").val(),
+      address =$(".address").val();
+      $.ajax({
+            type:"POST",
+            url:"http://sf.wokerr.com/index.php/home/Login/register",
+            data:{name:name,id_card:id_card,tel:tel,password:password,password2:password2,work_unit:work_unit,post_code:post_code,address:address},
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+               if(data.state==1){
+                localStorage.setItem("access_token",data.data.access_token)
+                window.location.href="index.html";
+               }
+            }
+      })
+
+})
+
+</script>

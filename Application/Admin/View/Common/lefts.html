@@ -1,0 +1,100 @@
+<div id="Left">
+    <div id="control" class=""></div>
+    <div class="subMenuList">
+        <div class="itemTitle"><!-- <if condition="CONTROLLER_NAME eq 'Index'">常用操作<else/>子菜单</if> --> </div>
+        <!-- <ul>
+            <foreach name="sub_menu" item="sv">
+                <li><a href="{$sv.url}">{$sv.title}</a></li>
+            </foreach>
+        </ul> -->
+    </div>
+</div>
+<style type="text/css">
+    #aat a{
+        cursor: pointer;
+    }
+</style>
+<script type="text/javascript">
+
+    //所有机构类型
+    function add_all_jigou(id){
+        var all_jigou = new Array('公证处','律师事务所','法律援助','人民调解机构','法律服务所','司法鉴定所','司法所','司法行政机关');
+        var jigou_type = '<ul style="margin-left:10px">';
+        var jigou_len = all_jigou.length;
+        for(var k=0;k<jigou_len;k++){
+            jigou_type += '<li><a href="javascript:;" style="background:url(/Public/Admin/Img/ico-x.gif) no-repeat 15px 12px"><span class="spanClick" type="true" index="'+ id +'">'+all_jigou[k]+'</span></a></li>';
+        }
+        jigou_type += '</ul>';
+        return jigou_type;
+    }
+    var a = add_all_jigou('--');
+    // console.log(a);
+    //
+   function arrtohtml(html,arr){
+        var html="";
+        html += '<ul style="margin-left:10px">';
+        for(var i in arr){
+            if(arr[i]['son'].length > 0){
+                html += '<li><a href="javascript:;"><span class="spanClick" type="true" index="'+arr[i]['id']+'">'+arr[i]['name']+'</span></a>';
+                html += arrtohtml(html,arr[i]['son']);
+            }else{
+                html += '<li><a href="javascript:;" style="background:url(/Public/Admin/Img/ico-x.gif) no-repeat 15px 12px"><span class="spanClick" type="true" index="'+arr[i]['id']+'">'+arr[i]['name']+'</span>' ;
+                html+='<ul style="margin-left:10px">';
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="0" index="'+arr[i]['id']+'">全部</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="1" index="'+arr[i]['id']+'">公证处</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="2" index="'+arr[i]['id']+'">律师事务所</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="3" index="'+arr[i]['id']+'">法律援助</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="4" index="'+arr[i]['id']+'">人民调解机构</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="5" index="'+arr[i]['id']+'">法律服务所</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="6" index="'+arr[i]['id']+'">司法鉴定所</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="7" index="'+arr[i]['id']+'">司法所</san></a></li>'
+                html+='<li><a href="javascript:;"><san class="spanClick" type="true" jg="8" index="'+arr[i]['id']+'">司法行政机关</san></a></li>'
+                html+='</ul>'
+            }
+            html += '</a></li>';
+        }
+        html += '</ul>';
+        return html;
+    }
+    $.ajax({
+        url:'https://sys.t7c.net/index.php/home/Data/tree',
+        type:'post',
+        async:false,
+        data:{},
+        dataType:'json',
+        success:function(data){
+            console.log(data)
+
+            var html = arrtohtml('',data.data);
+            $('.subMenuList').html('<div class="itemTitle"><!-- <if condition="CONTROLLER_NAME eq 'Index'">常用操作<else/>子菜单</if> --> </div>'+html);
+            $('.subMenuList>ul').attr("id",'aat');
+            $('.subMenuList>ul').css("margin",'0');
+            $('#aat ul').css("display",'none');
+            $('.subMenuList>ul>li').attr("class",'nav-item');
+        }
+    })
+    var index;
+    $('.spanClick').on('click',function(event){
+        index=$(this).attr("index");
+        $("#jg").val($(this).attr('jg'));
+        $(this).css('color','#fff').parent().parent().siblings().children('a').children('.spanClick').css('color','#b9ddff');
+        event.stopPropagation()
+    })
+    $('#aat').on('click','a',function(){
+        /*if (!$('.nav').hasClass('nav-mini')) {*/
+        if($(this).next().length!=0){
+            if ($(this).next().css('display') == "none") {
+              	$(this).parent().siblings('li').children('ul').slideUp(200);
+                $(this).next('ul').slideDown(300);
+                $(this).css("background","url(/Public/Admin/Img/ico-x.gif) no-repeat 15px 12px");
+            }else{
+                //收缩已展开
+                $(this).next('ul').slideUp(300);
+                $('.nav-item.nav-show').removeClass('nav-show');
+                $(this).next('ul').children().children().children('span').css('color','#b9ddff');
+                $(this).css("background","url(/Public/Admin/Img/ico-y.gif) no-repeat 15px 12px");
+            }
+        }
+        //}
+    });
+</script>

@@ -1,0 +1,60 @@
+.content{
+	width: 100%;
+	height: 600px;
+	display: inline;
+}
+.content img{
+	width: 100%;
+	height: 600px;
+}
+.honor{
+	width: 1200px;
+	margin: 0 auto;
+	
+}
+.honor>p{
+	font-size: 24px;
+	color: #555555;
+	padding-top:20px ;
+}
+.honor>div{
+	width: 424px;
+	height: 700px;
+	margin-top: 50px;
+	padding: 50px 388px;
+	display: inline-block;
+	box-shadow: 2px 2px 12px #999999;
+}
+.honor>div img{
+	width: 424px;
+	height: 700px;
+}
+.cooperate{
+	width: 1200px;
+	margin: 0 auto;
+	
+}
+.cooperate>p{
+	font-size: 24px;
+	color: #555555;
+	padding-top:50px ;
+}
+.cooperate  .bank{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 1200px;
+}
+.cooperate .bank a{
+	width: 290px;
+	height: 120px;
+	margin-left: 3px;
+	margin-bottom:10px ;
+	display: inline-block;
+	box-shadow: 2px 2px 12px #999999;
+}
+.cooperate .bank a img{
+	width: 290px;
+	height: 120px;
+	overflow: hidden;
+	display: inline-block;
+}

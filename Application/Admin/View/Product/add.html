@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>添加、编辑产品-后台管理-{$site.SITE_INFO.name}</title>
+        <php>
+            $addCss="";
+            $addJs="";
+            $currentNav ='添加编辑产品';
+        </php>
+        <include file="Common:intoHead" />
+        <style>
+            div.spot {
+                float: left;
+                margin: 0 20px 0 0;
+                width: 220px;
+                min-height: 160px;
+                border: 2px dashed #ddd;
+            }
+            .droparea {
+                position: relative;
+                text-align: center;
+            }
+            .droparea .instructions {
+                opacity: 0.8;
+                background-color: #cccccc;
+                height: 25px;
+                z-index: 10;
+                zoom: 1;
+                background-position: initial initial;
+                background-repeat: initial initial;
+                cursor: pointer;
+            }
+            .droparea div, .droparea input {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .droparea input {
+                cursor: pointer;
+                opacity: 0;
+            }
+            .droparea div, .droparea input {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #uparea1,#uparea2,#uparea3{
+                height: 170px;
+                cursor: pointer;
+            }
+            .table1 th{
+            	width:120px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <include file="Common:head" />
+            <div class="mainBody">
+                <include file="Common:left" />
+                <div id="Right">
+                    <div class="Item hr">
+                        <div class="current">添加编辑产品</div>
+                    </div>
+                    <form action="{:U('Product/add')}" method="post" enctype="multipart/form-data">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                            <tr>
+                                <th width="100">填写基金名称：</th>
+                                <td><input id="title" type="text" class="input" size="60" name="info[title]" value="{$info.title}"/> <!-- <a href="javascript:void(0)" id="checkNewsTitle">检测是否重复</a> --></td>
+                            </tr>
+
+                            <tr>
+                                <th width="100">首页展示净值图：</th>
+                                <td>
+                               	<label><input type="radio" name="info[status]" value="1" <if condition="$info.status eq 1"> checked="checked"</if> /> 展示</label> &nbsp; 
+                                <label><input type="radio" name="info[status]" value="0" <if condition="$info.status eq 0"> checked="checked"</if> /> 不展示</label> 
+                               </td>
+                            </tr>
+                            <tr>
+                                <th>基金所属分类：</th>
+                                <td>
+                                    <select name="info[cid]">
+                                        <volist name="list" id="vo">
+                                            <if condition="$vo[cid] eq $info[cid]">
+                                                <option name="{$vo.cid}" value="{$vo.cid}" selected="selected">{$vo.fullname}</option>
+                                                <else/>
+                                                <option name="{$vo.cid}" value="{$vo.cid}">{$vo.fullname}</option>
+                                            </if>
+                                        </volist>
+                                        <!-- <volist name="info" id="vo">
+                                            <input type="rideo" name="" value=""/>
+                                        </volist> -->
+                                    </select></td>
+                            </tr>
+                            <tr>
+                                <th width="100">交易类型：</th>
+                                <td>
+                                    <label><input type="radio" name="info[jyid]" value="1" <if condition="$info.jyid eq 1"> checked="checked"</if> /> 浮动收益</label> &nbsp; 
+                                    <label><input type="radio" name="info[jyid]" value="2" <if condition="$info.jyid eq 2"> checked="checked"</if> /> 固定收益</label> 
+                                    <label><input type="radio" name="info[jyid]" value="3" <if condition="$info.jyid eq 3"> checked="checked"</if> /> 未定交易类型</label> &nbsp; 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th width="100">投入货币方式：</th>
+                                <td>
+                                <label><input type="radio" name="info[rid]" value="1" <if condition="$info.rid eq 1"> checked="checked"</if> /> 投入法币</label> &nbsp; 
+                                <label><input type="radio" name="info[rid]" value="2" <if condition="$info.rid eq 2"> checked="checked"</if> /> 投入数字货币</label> </td>
+                            </tr>
+                            <tr>
+                                <th>指定计价货币：</th>
+                                <td>
+                                    <volist name="data" id="vo">
+                                            <if condition="$vo[cid] eq 100">
+                                             <input type="radio" class="checkbox" name="info[zdid]" value="{$vo.cid}" checked="checked" />{$vo.name}
+                                            <else/>
+                                            <input type="radio" class="checkbox" name="info[zdid]" value="{$vo.cid}" />{$vo.name}
+                                            </if>
+                                    </volist>
+                                        <!-- <volist name="info" id="vo">
+                                            <input type="rideo" name="" value=""/>
+                                        </volist> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>允许的申购用货币：</th>
+                                <td>
+                                    <volist name="data" id="vo">
+                                            <if condition="$vo[cid] eq 100">
+                                             <input type="checkbox" class="checkbox" name="info[hid]" value="{$vo.cid}" checked="checked" />{$vo.name}
+                                            <else/>
+                                            <input type="checkbox" class="checkbox" name="info[hid]" value="{$vo.cid}" />{$vo.name}
+                                            </if>
+                                    </volist>
+                                        <!-- <volist name="info" id="vo">
+                                            <input type="rideo" name="" value=""/>
+                                        </volist> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th width="100">退出方式：</th>
+                                <td>
+                                <label>
+                                    <input type="radio" name="info[tid]" value="1" <if condition="$info.tid eq 1"> checked="checked"</if> /> 退出法币</label> &nbsp;
+                                    <label><input type="radio" name="info[tid]" value="2" <if condition="$info.tid eq 2"> checked="checked"</if> /> 退出数字货币</label> 
+                                 </td>
+                            </tr>
+                            <tr>
+                                <th>渠道费用账户：</th>
+                                <td>
+                                	<volist name="qudao" id="vo">
+                                	<label>
+                                    <input type="radio" class="checkbox" name="info[qid]" value="{$vo.id}" <if condition="$vo.tid eq 1"> checked="checked"</if> /> {$vo.name}</label> &nbsp;
+                                    </volist>
+                                    <!--<volist name="qudao" id="vo">
+                                        <if condition="$vo[uid] eq 2">
+                                         <input type="checkbox" class="checkbox" name="qid[{$vo.uid}]" value="{$vo.uid}"  />{$vo.nickname}
+                                        <else/>
+                                        <input type="checkbox" class="checkbox" name="qid[{$vo.uid}]" value="{$vo.uid}" />{$vo.nickname}
+                                        </if>
+                                    </volist>-->
+                                        <!-- <volist name="info" id="vo">
+                                            <input type="rideo" name="" value=""/>
+                                        </volist> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>绩效奖励账户：</th>
+                                <td>
+                                    <volist name="jixiao" id="vo">
+                                        <if condition="$vo[id] eq 1">
+                                         <input type="checkbox" class="checkbox" name="info[jid]" value="{$vo.id}" checked="checked" />{$vo.name}
+                                        <else/>
+                                        <input type="checkbox" class="checkbox" name="info[jid]" value="{$vo.id}" />{$vo.name}
+                                    </if>
+                                    </volist>
+                                        <!-- <volist name="info" id="vo">
+                                            <input type="rideo" name="" value=""/>
+                                        </volist> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>基金绩效奖励征收模式：</th>
+                                <td>
+                                    <select name="zid">
+                                    	<option value="1">退出模式</option>
+                                    	<option value="0">及时模式</option>
+                                        <!-- <volist name="info" id="vo">
+                                            <input type="rideo" name="" value=""/>
+                                        </volist> -->
+                                    </select></td>
+                            </tr>
+                            <tr>
+                            	<th>基金类型：</th>
+                                <td>
+                                    <select name="fb" class="fb">
+                                    	<option value="1">封闭类型</option>
+                                    	<option value="0">开放类型</option>
+                                    </select></td>
+                            </tr>
+                            <tr class="fb_jj">
+                                <th>基金份额：</th>
+                                <td><input type="number" class="input" size="20" name="info[tote]" value="{$info.tote}"/></td>
+                            </tr>
+                            <tr class="fb_nh">
+                                <th>年化预期：</th>
+                                <td><input type="number" class="input" size="20" name="info[rate]" value="{$info.rate}"/>(以%为单位)</td>
+                            </tr>
+                            <tr class="fb_qx">
+                                <th>封闭期限：</th>
+                                <td><input type="input" class="input" size="40" name="info[term]" value="{$info.term}"/>(以天为单位)</td>
+                            </tr>
+                            <tr>
+                                <th>基金估值：</th>
+                                <td><input type="number" class="input" size="20" name="info[price]" value="{$info.price}"/></td>
+                            </tr>
+                            
+                            <tr>
+                                <th>基金型号：</th>
+                                <td><input type="input" class="input" size="20" name="info[psize]" value="{$info.psize}"/></td>
+                            </tr>
+                            <tr>
+                                <th>产品关键词：</th>
+                                <td><input type="text" class="input" size="60" name="info[keywords]" value="{$info.keywords}"/> 多关键词间用半角逗号（,）分开，可用于做文章关联阅读条件</td>
+                            </tr>
+                            <tr>
+                                <th>投资条件：</th>
+                                <td><input type="text" class="input" size="20" name="info[require]" value="{$info.require}"/>(以元为单位)</td>
+                            </tr>
+                            <tr>
+                                <th>费用说明：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[explain]">{$info.explain}</textarea> </td>
+                            </tr>
+                            <tr>
+                                <th>赎回方式：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[ransom]">{$info.ransom}</textarea> </td>
+                            </tr>
+                          <!--   <tr>
+                                <th>地点：</th>
+                                <td><input type="text" class="input" size="60" name="info[address]" value="{$info.keywords}"/> </td>
+                            </tr> -->
+                            <!-- <tr>
+                                <th>要求：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[require]">{$info.require}</textarea> </td>
+                            </tr> -->
+                            
+                            <tr>
+                                <th>产品介绍：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[description]">{$info.description}</textarea> </td>
+                            </tr>
+                            <tr>
+                                <th>产品摘要：</th>
+                                <td><textarea class="input" style="height: 60px; width: 600px;" name="info[summary]">{$info.summary}</textarea> 如果不填写则系统自动截取文章前200个字符</td>
+                            </tr>
+                            <tr>
+                                <th>资产评估风险书：</th>
+                                <td><textarea class="content" style="height: 300px; width: 80%;" name="info[content]">{$info['content']}</textarea></td>
+                            </tr>
+                            <tr>
+                            	<th>合同：</th>
+                            	<td><textarea class="" style="height: 300px; width: 80%;" name="info[contract]">{$info['contract']}</textarea></td>
+                            </tr>
+                            <!-- <tr>
+                                <th>资产委托协议书：</th>
+                                <td><textarea class="content" style="height: 300px; width: 80%;" name="info[content]">{$info['content']}</textarea></td>
+                            </tr>
+                            <tr>
+                                <th>指数基金招募说明书：</th>
+                                <td><textarea class="content" style="height: 300px; width: 80%;" name="info[content]">{$info['content']}</textarea></td>
+                            </tr> -->
+                        <!--<php>if(empty($_GET['do'])){</php>-->
+                        <input type="hidden" name="info[id]" value="{$info.id}" />
+                        <!--<php>}else{
+                            $action_url='__URL__/add';
+                            }</php>-->
+                    
+                    <div class="commonBtnArea">
+                        <button value="submit" class="btn submit">提交</button>
+                    </div>
+                    </table>
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <include file="Common:foot" />
+        <js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+        <script type="text/javascript">
+            function del_image(num){
+                $('#image'+num).css('background-image','');
+                $('#image_'+num).val('');
+            }
+            $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=product'
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=product'
+                     //sdl:false
+                 });
+
+
+             });
+             $("#checkNewsTitle").click(function(){
+                 if($('#title').val()==''){
+                     popup.error('标题不能为空！');
+                     return false;
+                 }
+                 $.getJSON("__URL__/checkProductTitle", { title:$("#title").val(),id:"{$info.id}"}, function(json){
+                     $("#checkNewsTitle").css("color",json.status==1?"#0f0":"#f00").html(json.info);
+                 });
+             });
+                $(".submit").click(function(){
+                	
+                 if($('#title').val()==''){
+                     popup.error('标题不能为空！');
+                     return false;
+                 }
+                 // content.sync();
+                 commonAjaxSubmit();
+                 return false;
+					// $.ajax({
+					// 	type:"post",
+					// 	url:"{:U("Product/add")}",
+					// 	async:false,
+					// 	data:{},
+					// 	dataType:"json",
+					// 	success:function(data){
+					// 		console.log(data);
+					// 	}
+					// });
+                    
+                });
+            });
+            $(".fb").click(function(){
+            	if($(this).val()==1){
+            		$(".fb_jj").html('<th>基金份额：</th><td><input type="number" class="input" size="20" name="tote" value="{$info.tote}"/></td>');
+            		$(".fb_nh").html('<th>年化预期：</th><td><input type="number" class="input" size="20" name="info[rate]" value="{$info.rate}"/>(以%为单位)</td>');
+            		$(".fb_qx").html('<th>封闭期限：</th><td><input type="input" class="input" size="40" name="info[term]" value="{$info.term}"/>(以天为单位)</td>');
+            	}else{
+            		$(".fb_jj").html('');
+            		$(".fb_nh").html('');
+            		$(".fb_qx").html('');
+            	}
+            })
+        </script>
+    </body>
+</html>
+

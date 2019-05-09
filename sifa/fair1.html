@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<meta name="renderer" content="ie-comp" />
+		<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sale.css">
+		<link rel="stylesheet" type="text/css" href="css/gonshi.css">
+		<link rel="stylesheet" href="css/header.css">
+		<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+		</script>
+		<title>公证</title>
+	</head>
+<body style="background-color: white">
+<header class="header">
+	<a onClick="javascript:history.back(-1);">
+		<img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;" >
+	</a>
+	<div class="shenban_title">审批</div>
+</header>
+<div class="container">
+	<ul class="items">
+<!-- 		<li class="tiaomu">
+			申办
+		</li> -->
+		<li style="display:none">
+			<a href="zaixianshenpi1.html">
+				<img src="img/在线(1).png" alt="在线申办"><br>
+				<span>申办</span>
+			</a>
+		</li>
+		<li>
+			<a href="zaixianshenpi2.html">
+				<img src="img/在线投诉(1).png" alt="在线投诉"><br>
+				<span>投诉</span>
+			</a>
+		</li>
+		<li>
+			<a href="zaixianshenpi3.html">
+				<img src="img/在线预约.png" alt="在线预约"><br>
+				<span>预约</span>
+			</a>
+		</li>
+		<!-- <li class="tiaomu">
+			查询
+		</li>
+		<li>
+			<a href="sbcx.html">
+				<img src="img/查询(3).png" alt="申办查询"><br>
+				<span>申办查询</span>
+			</a>
+		</li>
+		<li>
+			<a href="tscx.html">
+				<img src="img/投诉查询.png" alt="投诉查询"><br>
+				<span>投诉查询</span>
+			</a>
+		</li>
+		<li>
+			<a href="Reservation_query.html">
+				<img src="img/预约查询.png" alt="预约查询"><br>
+				<span>预约查询</span>
+			</a>
+		</li>
+		<li class="tiaomu">
+			其他
+		</li>
+		<li>
+			<a href="table_Down.html?type=1">
+				<img src="img/xaingguanxaizai.png" alt="相关例表下载"><br>
+				<span>相关例表下载</span>
+			</a>
+		</li>
+		<li>
+			<a href="Fxiangguanbiaoge.html?type=1">
+				<img src="img/xzcf.png" alt="相关例表"><br>
+				<span>相关例表</span>
+			</a>
+		</li>
+		<li >
+			<a id="gg">
+				<img src="img/gonggao.png" alt=""><br>
+				<span>公告</span>
+			</a>
+		</li>-->
+	</ul>
+</div>
+
+<!-- <div id="tan">
+	<div class="tan_center">
+		<p class="title">
+			
+		</p>
+		<div class="tan_one" style="padding-left:.3rem;text-indent: .48rem;padding-top:.3rem;padding-right:.2rem">
+			
+		</div>
+		<div class="tan_two">
+			<span class="tan_two_span1"></span>
+			<span class="tan_two_span2">同意公告内容</span>
+		</div>
+	</div>
+</div>  -->
+<div style="width: 100%;height: 1rem"></div>
+<div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+		$(".fooder").load("footer.html");
+</script>
+<script type="text/javascript">
+	var types=localStorage.getItem('splx');
+	if(types!=5){
+		$('.items>li:first-child').show();
+	}
+	$('.tan_two_span1').click(function(){
+		$('#tan').hide();
+	})
+	$('#gg').click(function(){
+		if($('#tan').is(':hidden')){
+			$('#tan').show();
+		}
+	})
+	function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var type = getUrlParms("type");
+	 $.ajax({
+            type:"POST",
+            url:"http://sf.wokerr.com/index.php/home/Data/notice",
+            data:{type:type},
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+                $(".title").text(data.data.title);
+                $(".tan_one").text(data.data.text)
+            }
+     })
+</script>
+</html>

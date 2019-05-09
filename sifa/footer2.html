@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<style type="text/css" media="screen">
+a {
+    text-decoration: none;
+}
+
+.fooder {
+    height: 3.125rem;
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #999999;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer>div {
+    flex: 1;
+    text-align: center;
+}
+
+.footer>div>div>span {
+	display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.footer>div>div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+    text-align: center;
+}
+
+.footer>div>div>img {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    margin: 0.2rem auto;
+    
+}
+</style>
+
+<body>
+    <div class="fooder">
+        <div onclick="window.location.href='index.html'">
+        	<img src="img/souye.png" alt="">
+        	<span>首页</span>
+        </div>
+        <div onclick="window.location.href='chaxun.html'">
+        	<img src="img/chaxun.png" alt="">
+        	<span>查询服务</span>
+        </div>
+        <div onclick="window.location.href='zaixainjieda.html'">
+        	<img src="img/jieda.png" alt="">
+        	<span>咨询解答</span>
+        </div>
+        <div onclick="window.location.href='xiaoxizhongxin.html'">
+        	<img src="img/xiaoxi.png" alt="">
+        	<span>消息中心</span></div>
+        <div onclick="window.location.href='gerenxinxi.html'"><img src="img/wode2.png" alt=""><span>个人中心</span></div>
+    </div>
+</body>
+
+</html>

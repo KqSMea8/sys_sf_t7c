@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>律师年度考核</title>
+    <style>
+        body,
+        html {
+            background-color: white;
+        }
+        
+        .act {
+            color: #196394;
+            border-bottom: #196394 2px solid;
+        }
+        
+        .items {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+        }
+        
+        .items>li {
+            width: 1.9rem;
+            text-align: center;
+        }
+        
+        .rengong {
+            width: 100%;
+            height: 0.6rem;
+            border-bottom: 1px solid #d3d1d1
+        }
+        
+        .xinximulu {
+            margin-top: 0.03rem;
+        }
+        
+        .xinximulu>div {
+            background-color: white;
+            height: 1.3rem;
+            width: 100%;
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            display: flex;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        
+        .xinximulu>div>div {
+            width: 100%;
+            margin: 0.1rem;
+        }
+        
+        .xinwentit {
+            font-size: 0.32rem;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        p {
+            color: #666666;
+        }
+        
+        .bfsj {
+            position: absolute;
+            bottom: 0.1rem;
+            right: 0.2rem;
+        }
+        
+        .sousuo {
+            width: 100%;
+            height: 1rem;
+            text-align: center;
+            line-height: 1rem;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        
+        .ss {
+            font-size: 0.32rem;
+            color: #333333;
+        }
+        
+        .input {
+            width: 5.6rem;
+            height: 0.5rem;
+            /*	background-color: #d1d1d1;*/
+            border: 0;
+            border-radius: 3px;
+            text-align: left;
+            padding-left: 0.1rem;
+            margin-right: 0.15rem;
+            border: 1px solid #999999;
+        }
+        
+        .hang {
+            width: 100%;
+            height: 4.2rem;
+            border-bottom: 1px solid #d3d1d1;
+            padding: 0 0.6rem;
+        }
+        
+        .hang>div:nth-child(1) {
+            font-size: 0.32rem;
+            margin-top: 0.2rem;
+            line-height: 0.5rem;
+        }
+        
+        .hang>div:nth-child(2) {
+            position: relative;
+        }
+        
+        .hang>div:nth-child(2)>img:nth-child(2) {
+            width: 1.2rem;
+            height: 1.2rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a onclick="history.go(-1)"><img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;"></a>
+        <div class="shenban_title">律师年度考核</div>
+    </header>
+    <div class="content">
+        <div class="rengong">
+            <ul class="items">
+                <li cclass="act">机构年度考核</li>
+                <li>人员年度考核</li>
+            </ul>
+        </div>
+        <div class="con">
+            <div>
+                <div class="sousuo">
+                    <input type="text" class="input val1">
+                    <span class="ss seach1">搜索</span> </div>
+                <div class="xinximulu cate1">
+                    <!-- <div onclick="window.location.href= 'gongshixiangqing.html';return false">
+    			<div style="position: relative;padding-top: 0.05rem">
+    			<span class="xinwentit">XXX机构年度考核</span>
+    				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+    			</div>
+    			</div>	 <div onclick="window.location.href= 'gongshixiangqing.html';return false">
+    			<div style="position: relative;padding-top: 0.05rem">
+    			<span class="xinwentit">XXX机构年度考核</span>
+    				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+    			</div>
+    			</div>	 <div onclick="window.location.href= 'gongshixiangqing.html';return false">
+    			<div style="position: relative;padding-top: 0.05rem">
+    			<span class="xinwentit">XXX机构年度考核</span>
+    				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+    			</div>
+    			</div>	 <div onclick="window.location.href= 'gongshixiangqing.html';return false">
+    			<div style="position: relative;padding-top: 0.05rem">
+    			<span class="xinwentit">XXX机构年度考核</span>
+    				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+    			</div>
+    			</div>-->
+                </div>
+            </div>
+            <div style="display: none">
+                <div class="sousuo">
+                    <input type="text" class="input val2">
+                    <span class="ss seach2">搜索</span> </div>
+                <div class="xinximulu cate2">
+                    <!-- <div onclick="window.location.href= 'gongshixiangqing.html';return false">
+        			<div style="position: relative;padding-top: 0.05rem">
+        			<span class="xinwentit">赵XX人员年度考核</span>
+        				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+        			</div>
+        		</div>	 
+        		<div onclick="window.location.href= 'gongshixiangqing.html';return false">
+        			<div style="position: relative;padding-top: 0.05rem">
+        			<span class="xinwentit">钱XX人员年度考核</span>
+        				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+        			</div>
+        		</div>	 
+        		<div onclick="window.location.href= 'gongshixiangqing.html';return false">
+        			<div style="position: relative;padding-top: 0.05rem">
+        			<span class="xinwentit">孙XX人员年度考核</span>
+        				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+        			</div>
+        		</div>	 
+        		<div onclick="window.location.href= 'gongshixiangqing.html';return false">
+        			<div style="position: relative;padding-top: 0.05rem">
+        			<span class="xinwentit">李XX人员年度考核</span>
+        				<p class="bfsj"><span style="color: #666666">2018-10-10</span></p>
+        			</div>
+        		</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    $(".footer").load("footer.html");
+    var access_token = localStorage.getItem("access_token");
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var type = getUrlParms("type"),
+        cate = "1",
+        title1, title2;
+    cate1();
+
+    function cate1() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/News/affair",
+            data: {
+                access_token: access_token,
+                cate: 1,
+                title: title1,
+                type: type
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    if (data.data == null) {
+                        html = "";
+                    } else {
+                        for (var i = 0; i < data.data.length; i++) {
+                            html += `<div id="${data.data[i].id}">
+				    			<div style="position: relative;padding-top: 0.05rem">
+				    			<span class="xinwentit">${data.data[i].title}</span>
+				    				<p class="bfsj"><span style="color: #666666">${data.data[i].createtime}</span></p>
+				    			</div>
+				    			</div>`
+                        }
+                        $(".cate1").html(html);
+
+                        bon();
+                    }
+
+
+                } else {
+                    // alert(data.msg);
+                }
+
+            }
+        })
+    }
+    $(".cate2").on('click', 'div', function() {
+        var id = $(this).attr('id');
+        window.location.href = "gongshixiangqing.html?id=" + id;
+    })
+    $(".cate1").on('click', 'div', function() {
+        var id = $(this).attr('id');
+        window.location.href = "gongshixiangqing.html?id=" + id;
+    })
+
+    function cate2() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/News/affair",
+            data: {
+                access_token: access_token,
+                cate: 2,
+                title: title2,
+                type: type
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    if (data.data == null) {
+                        html = "";
+                    } else {
+                        for (var i = 0; i < data.data.length; i++) {
+                            html += `<div id="${data.data[i].id}">
+				    			<div style="position: relative;padding-top: 0.05rem">
+				    			<span class="xinwentit">${data.data[i].title}</span>
+				    				<p class="bfsj"><span style="color: #666666">${data.data[i].createtime}</span></p>
+				    			</div>
+				    			</div>`
+                        }
+                        $(".cate2").html(html);
+
+                        bon();
+                    }
+
+
+                } else {
+                    alert(data.msg);
+                }
+
+            }
+        })
+    }
+
+    $(".seach1").click(function() {
+        title1 = $(".val1").val();
+        console.log(title1);
+        cate1();
+    })
+    $(".seach2").click(function() {
+        title2 = $(".val2").val();
+        cate2();
+    })
+    $(".rengong ul li").each(function() {
+
+        var index = $(this).index();
+        var cate = index + 1;
+
+        $(".rengong ul li").eq(0).addClass("act");
+
+        $(this).click(function() {
+
+            $(this).addClass("act").siblings().removeClass("act");
+
+            $(".con>div").eq(index).stop(true).show().siblings().stop(true).hide();
+
+            if (cate == 1) {
+
+                cate1();
+            } else {
+                cate2();
+            }
+
+
+        })
+
+    })
+</script>

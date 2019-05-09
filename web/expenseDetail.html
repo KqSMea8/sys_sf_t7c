@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>费用明细</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <!-- <link rel="stylesheet" href="./css/zaixian.css"> -->
+</head>
+<style type="text/css">
+    table,
+    tr,
+    td {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    table {
+        width: 94%;
+        margin: 1rem auto;
+    }
+    
+    td {
+        height: 2rem;
+    }
+    
+    #ddReturn {
+        width: .6875rem;
+        position: absolute;
+        left: .625rem;
+        top: .625rem;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <span>费用明细</span>
+        <img src="./img/更多(1).png" alt="" id="ddReturn">
+    </div>
+    <table class="table" cellspacing="0">
+        <!--    <tr>
+            <td>XXX费:</td>
+            <td>1.00(元)</td>
+        </tr>
+        <tr>
+            <td>XXX费:</td>
+            <td>1.00(元)</td>
+        </tr>
+        <tr>
+            <td>XXX费:</td>
+            <td>1.00(元)</td>
+        </tr>
+        <tr>
+            <td>合计:</td>
+            <td>3.00(元)</td>
+        </tr> -->
+    </table>
+</body>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    // https://sys.t7c.net/index.php/home/Data/from
+    var price = localStorage.getItem("price");
+    $.ajax({
+        type: "post",
+        url: "https://sys.t7c.net/index.php/home/Data/price",
+        data: {
+            bussiness_id: price
+        },
+        dataType: "json",
+        success: function(data) {
+            // body...
+            console.log(data);
+            var zj = 0;
+            var ht = "";
+            for (var i = 0; i < data.data.length; i++) {
+                ht += " <tr><td>" + data.data[i].title + ":</td><td>" + data.data[i].num + "(元)</td></tr>";
+                zj = zj + parseInt(data.data[i].num);
+            };
+            th = "<tr><td>合计:</td><td>" + zj + "(元)</td></tr>"
+            $(".table").html(ht + th)
+        }
+    })
+</script>
+
+</html>

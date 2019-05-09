@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#F2F2F2;font-size: 50px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hdwt.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <title>劳动报酬</title>
+</head>
+
+<body>
+    <header class="header" style="padding:0;">
+        <button id="go_befer"onclick="javascript:window.history.go(-1);">上一页</button>
+        <a href="javascript::">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">劳动报酬</div>
+        <button id="chogntian">重填</button>
+    </header>
+    <div class="content">
+        <div class="neirong_con">
+            <div class="sele_each">
+                <div class="question">1.事故发生的时间：</div>
+                <input readonly type="text" id="date10" placeholder="请选择日期" style="width:100%;height: 55px;" class="every">
+                <button class="xiayiye" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">2.单位的地点 ：</div>
+                <select class="form-control" id="cmbProvince" name="cmbProvince"></select>
+                <select class="form-control" id="cmbCity" name="cmbCity"></select>
+                <select class="form-control" id="cmbArea" name="cmbArea"></select>
+                <button class="address_three_sub" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">3.是否与单位签订书面的劳动合同 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">4.在该单位工作时长 ：</div>
+                <div class="sele_each_list">不足一月</div>
+                <div class="sele_each_list">一个月至六个月</div>
+                <div class="sele_each_list">六个月以上不足一年</div>
+                <div class="sele_each_list">一年以上（含一年）</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">5.拖欠行为已发生多久：</div>
+                <div class="sele_each_list">一年以内</div>
+                <div class="sele_each_list">二年以内</div>
+                <div class="sele_each_list">三年以内</div>
+                <div class="sele_each_list">三年以上更长时间</div>
+                <div class="sele_each_list">时间虽长但劳动关系没有接触，且拖欠情况一直在持续 </div>
+            </div>
+            <div class="sele_each">
+                <div class="question">6.是否掌握在单位工作及工资约定方面相关的证据 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">7.是否掌握确定拖欠工资数额方面的证据 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">8.该单位目前是否仍正常运营中 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">9.此拖欠情况是否向市、辖区劳动监察大队反映过：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">10.拖欠的金额 ：</div>
+                <div class="sele_each_list">5000元以内</div>
+                <div class="sele_each_list">五千至一万元</div>
+                <div class="sele_each_list">一万元以上</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">11.此纠纷是否已经进入司法程序 ：</div>
+                <div class="sele_each_list">是</div>
+                <div class="sele_each_list">否</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/szl/qweq.js"></script>
+    <script src="./js/szl/jsAddress.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($('.form-control').length) {
+                addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+            }
+        });
+    </script>
+    <script src="./js/szl/laydate.js"></script>
+    <!-- 改成你的路径 -->
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+    </script>
+    <script src="./js/szl/werw.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script type="text/javascript" src="./js/szl/rolldate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑法律援助机构';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+        <div id="Right" style="float:none;width:100%">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑法律援助机构</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">法律援助机构名称：</th>
+                            <td>
+                                <input type="text" name="jgmc" class="input uname" size="40" value="{$list.jgmc}"/>
+                            </td>
+                            <th width="120">电话:</th>
+                            <td>
+                                <input type="text" name="dh" class="input uname" size="40" value="{$list.dh}"/>
+                            </td>
+                            <th width="120">地址:</th>
+                            <td>
+                                <input type="text" name="dz" class="input uname" size="40" value="{$list.dz}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">负责人:</th>
+                            <td>
+                                <input type="text" name="fzr" class="input uname" size="40" value="{$list.fzr}"/>
+                            </td>
+                            <th width="120">机构传真:</th>
+                            <td>
+                                <input type="text" name="jgcz" class="input uname" size="40" value="{$list.jgcz}"/>
+                            </td>
+                            <th width="120">机构邮编:</th>
+                            <td>
+                                <input type="text" name="jgyb" class="input uname" size="40" value="{$list.jgyb}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">执业区域：</th>
+                            <td>
+                                <if condition="$qy_id neq ''">
+                                        <input type="hidden" name="qy" value="{$qy_id}">
+                                        <volist name="qy" id="vo">
+                                            <if condition="$vo['id'] eq $qy_id">{$vo.name}</if>
+                                        </volist>
+                                <else />
+                                <select name="qy">
+                                <option value="0">请选择</option>
+                                    <volist name="qy" id="vo">
+                                        <option value="{$vo.id}" <if condition="$vo['id'] eq $list['qy']">selected</if>>{$vo.name}</option>
+                                    </volist>
+                                 </select>
+                                </if>
+                            </td>
+                            <th width="120">形象标识:</th>
+                            <td>
+                                <input type="file" name="jglg"/>
+                            </td>
+                            <th width="120">邮箱:</th>
+                            <td>
+                                <input type="text" name="yx" class="input uname" size="40" value="{$list.yx}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">行政区划:</th>
+                            <td>
+                                <input type="text" name="xzqh" class="input uname" size="40" value="{$list.xzqh}"/>
+                            </td>
+                            <th width="120">经度:</th>
+                            <td>
+                                <input type="text" name="jd" class="input uname" size="40" value="{$list.jd}"/>
+                            </td>
+                            <th width="120">纬度:</th>
+                            <td>
+                                <input type="text" name="wd" class="input uname" size="40" value="{$list.wd}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">简介:</th>
+                            <td>
+                                <textarea name="jgjj" cols="30" rows="10">{$list.jgjj}</textarea>
+                            </td>
+                            <th width="120">状态:</th>
+                            <td>
+                                <input type="radio" name="zt" value="1" <if condition="$list['zt'] eq 1">checked</if>>有效
+                                <input type="radio" name="zt" value="0" <if condition="$list['zt'] eq 0">checked</if>>无效
+                            </td>
+                        </tr>
+                         <tr>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" style="width:100%;right:auto;">
+                        <span class="btn submit">提交</span>
+                        <span class="btn back">返回</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+             $(".back").click(function(){
+                var url='__URL__/jg?qy='+index+'&type='+jg+'&cate='+type;
+                showFirme(url)
+             })
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             var url='__URL__/yz_add';
+             commonAjaxSubmits(url);
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

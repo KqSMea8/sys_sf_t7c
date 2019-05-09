@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+<!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+	<link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+  　　document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+    </script>
+    <title>在线解答</title>
+    <style>
+		body,html{
+			background-color: white;
+		}
+		.hang_left{
+			width: 100%;
+			min-height: 1.6rem;
+			padding: 0 0.2rem;
+			display: flex;
+		}
+		.hang_right{
+			width: 100%;
+			min-height: 1.6rem;
+			display: flex;
+			flex-direction:row-reverse;
+		}
+		.xinxi>p{
+			font-size: 0.12rem;
+			color: #666666;
+			background-image: url(img/duihuakuang.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			line-height: 1rem;
+		}
+		.hang_right>.touxiang{
+			line-height: 1.25rem;
+			position: relative;
+			width: 1rem;
+			height: 1rem;
+			margin-left: 0.2rem;
+		}.touxiang{
+			line-height: 1.25rem;
+			position: relative;
+			width: 1rem;
+			height: 1rem;
+			margin-right: 0.2rem;
+		}
+		.touxiang>img{
+			vertical-align: middle;
+			width: 1rem;
+			height: 1.05rem;
+		}
+		.xinxi{
+			padding-top: 0.28rem;
+			padding-bottom: 0.2rem;
+			max-width: 64%;
+		}
+		.neirong{
+			height: auto;
+			background-color: #DBDBDB;
+			border-radius: 4px;
+			padding: 0.1rem 0.15rem;
+			position: relative;
+			min-height: 0.8rem;
+			line-height: 0.5rem;
+		}
+.hang_left>.xinxi>.neirong:before,.hang_left>.xinxi>.neirong:after{
+content:"";/*:before和:after必带技能*/
+display:block;
+position:absolute;/*日常绝对定位*/
+top:0.25rem;
+width:0;
+height:0;
+border:0.15rem solid transparent;
+}
+.hang_left>.xinxi>.neirong:before{
+left:-0.28rem;
+border-right-color:#DBDBDB;
+}
+.hang_right>.xinxi>.neirong:before,.hang_right>.xinxi>.neirong:after{
+content:"";/*:before和:after必带技能*/
+display:block;
+position:absolute;/*日常绝对定位*/
+top:0.25rem;
+width:0;
+height:0;
+border:0.15rem solid transparent;
+}
+.hang_right>.xinxi>.neirong:before{
+right:-0.28rem;
+border-right-color:#DBDBDB;
+transform: rotateY(180deg);
+}
+		.fabu{
+			position: fixed;
+			bottom: 0;
+			display: flex;
+			width: 100%;
+			height: 0.95rem;
+			line-height: 0.95rem;
+			border-top: 1px solid #d3d1d1;
+			padding: 0 0.15rem;
+			background-color: white;
+		}
+		.fabu>div>img{
+			width: 0.4rem;
+			vertical-align: middle;
+		}
+		.fabu>div:nth-child(1){
+
+		}.fabu>div:nth-child(2){
+			margin: 0 0.1rem;
+		}.fabu>div:nth-child(3)>img:nth-child(1){
+			margin-right: 0.1rem;
+		}
+		.input{
+			width:5.6rem;
+			height: 0.5rem;
+			background-color: #d1d1d1;
+			border: 0;
+			border-radius: 3px;
+			text-align: left;
+			padding-left: 0.1rem;
+		}
+	</style>
+</head>
+<body style="position: relative;">
+    <header class="header">
+    	<a href="javascript::">
+    		<img onClick="javascript:history.back(-1);" class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+    	</a>
+    	<div class="shenban_title">在线解答</div>
+    </header>
+    <div class="content">
+     	<div class="hang_left">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+				<div class="neirong">
+					聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息
+				</div>
+			</div>
+		</div>
+		<div class="hang_right">
+			<div class="touxiang">
+				<img src="img/zhixun.png" alt="">
+			</div>
+			<div class="xinxi">
+				<div class="neirong">
+					聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息息聊天信息聊天信息聊天信息聊天信息聊天信息聊天信息
+				</div>
+		 	</div>
+		</div>
+	</div>
+	<div style="width: 100%;height: 1.5rem"></div>
+	<div class="fabu">
+		<div>
+			<img src="img/yuyin.png" alt="">
+		</div>
+		<div>
+			<input type="text" class="input">
+		</div>
+		<div>
+			<img src="img/biaoqing.png" alt="">
+			<img src="img/fabu.png" alt="" id="fabu">
+		</div>
+	</div>
+</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+	 $(function () {
+	$("#fabu").click(function(){
+		$(".content").append("<div class='hang_right'><div class='touxiang'><img src='img/zhixun.png' alt=''> </div><div class='xinxi'><div class='neirong'>"+$(".input").val()+"</div></div></div>  ");
+		$(".input").val('');
+var tt = getScrollHeight();
+var yy =getWindowHeight();
+　　　　document.documentElement.scrollTop = getScrollHeight()-getWindowHeight(); 
+document.body.style.overlfow='hidden'
+	})
+});
+	 function getScrollTop(){
+　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+　　if(document.body){
+　　　　bodyScrollTop = document.body.scrollTop;
+　　}
+　　if(document.documentElement){
+　　　　documentScrollTop = document.documentElement.scrollTop;
+console.log(documentScrollTop)
+　　}
+　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+　　return scrollTop;
+}
+//文档的总高度
+function getScrollHeight(){
+　　var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+　　if(document.body){
+　　　　bodyScrollHeight = document.body.scrollHeight;
+　　}
+　　if(document.documentElement){
+　　　　documentScrollHeight = document.documentElement.scrollHeight;
+　　}
+　　scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+　　return scrollHeight;
+}
+console.log(getScrollHeight())
+function getWindowHeight(){
+　　var windowHeight = 0;
+　　if(document.compatMode == "CSS1Compat"){
+　　　　windowHeight = document.documentElement.clientHeight;
+　　}else{
+　　　　windowHeight = document.body.clientHeight;
+　　}
+　　return windowHeight;
+}
+</script>
+<script>
+</script>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公证申办查询</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+    <link rel="stylesheet" href="./css/rolldate.css">
+    <style>
+        .bq_con>.right>div {
+            width: 50%;
+            line-height: 1.3rem;
+        }
+        
+        .bq_con {
+            position: relative;
+        }
+        
+        .imgde {
+            position: absolute;
+            width: 4.6875rem;
+            height: 5.625rem;
+            overflow: hidden;
+            vertical-align: middle;
+            opacity: 0;
+            top: .61rem;
+        }
+        
+        .img_1 {
+            left: 7.7875rem;
+        }
+        
+        .img_2 {
+            left: 12.7rem;
+        }
+        
+        .img_3 {
+            left: 17.7rem;
+        }
+        
+        .nav_first textarea {
+            font-size: 1rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            padding: .5rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -3rem;
+            z-index: 99999999999999999999999999999999;
+        }
+        
+        #fdfsf {
+            /* margin: 0;
+            width: 2rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            font-size: .7rem;
+            line-height: .71rem; */
+        }
+        
+        .bq_con img {
+            width: 11rem;
+            height: auto;
+        }
+        
+        .ggyuyue {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            background: rgba(0, 0, 0, .5);
+            height: 92.5%;
+        }
+        
+        .quiso {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .dflkd {
+            padding: .25rem;
+            background: #196394;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: 2rem;
+        }
+        
+        .dlkf {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -9.5rem;
+            width: 18rem;
+            height: 10rem;
+            margin-top: -5rem;
+            background: #fff;
+            border-radius: .25rem;
+            padding: .5rem;
+        }
+        
+        .dlkf p {
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            border-bottom: 1px solid #999;
+        }
+        
+        .dlkf input {
+            width: 9.5rem;
+            margin: 1.5rem auto;
+            height: 2rem;
+            padding-left: .5rem;
+        }
+        
+        .dlkf button {
+            padding: .5rem 2rem;
+            border: 0;
+            border-radius: .25rem;
+            color: #fff;
+            background: #196394;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <div id="header">
+        <span>申办查询</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="BidQuery">
+        <div class="bq_con">
+            <span class="left">
+                        <b>受理机构</b>
+                    </span>
+            <span class="right shoujijigou">牡丹江</span>
+        </div>
+        <div class="bq_con">
+            <span class="left">
+                            <b>申请人姓名</b>
+                        </span>
+            <span class="right name">张三丰</span>
+        </div>
+        <div class="bq_con">
+            <span class="left">
+                <b>公证员姓名</b>
+            </span>
+            <span class="right gz_name">牡丹江</span>
+        </div>
+        <div class="bq_con">
+            <span class="left" style="float:left">
+                <b>公证员电话</b>
+            </span>
+            <span class="right tel">牡丹江</span>
+        </div>
+        <div class="bq_con">
+            <span class="left" style="float:left">
+                <b>公证员照片</b>
+            </span>
+            <img class="gzyzp" src="./img/1_11.png" alt="">
+        </div>
+        <div class="bq_con">
+            <span class="left">
+                <b>申请时间</b>
+            </span>
+            <span class="right sqsj">2018-8-5</span>
+        </div>
+        <!-- <div class="bq_con">
+            <span class="left">
+                <b>预约时间</b>
+            </span>
+            <span class="right sqdddsj">2018-8-5</span>
+            <span class="dflkd">更改时间</span>
+    </div> -->
+
+        <div class="bq_con" style="position: absolute;top: 2.4rem;right: .11rem;text-align: center;">
+            <!-- <span class="left">
+                <b>受理状态</b>
+            </span> -->
+            <span class="right slzt" style="padding: .35rem;background: #196394;color: #fff;border-radius: .2rem;">待审批</span>
+        </div>
+        <div class="bq_con">
+            <span class="left">
+                <b>申办详细信息</b>
+            </span>
+            <!-- <span class="right slzt">待审批</span> -->
+        </div>
+        <div class="bq_con">
+            <!-- <span class="left">
+                <b></b>
+            </span> -->
+            <span class="right" style="margin-left: 7rem;">公证处名称：<span class="gzcmc" style="margin-top: 10px; margin-left: 0rem;">北京公证处</span></span>
+        </div>
+        <div class="bq_con">
+            <span class="left"></span>
+            <span class="right">公证使用地：<span class="syd"style="margin-top: 10px; margin-left: 0rem;">北京</span></span>
+        </div>
+        <div class="bq_con">
+            <span class="left"></span>
+            <span class="right">公证业务类型：<span class="lx" style="margin-top: 10px; margin-left: 0rem;">类型1</span></span>
+        </div>
+        <div class="bq_con">
+            <span class="left"></span>
+            <span class="right">上门服务：<span class="smfw" style="margin-top: 10px; margin-left: 0rem;">否</span></span>
+        </div>
+        <div class="bq_con">
+            <span class="left"></span>
+            <span class="right">附件资料：<span class="smfwdfd" style="margin-top: 10px; margin-left: 0rem;padding: 0.2rem .5rem;background: gainsboro;border-radius: 0.25rem;"><span id="fdfsf">王啥的</span>的附件资料</span>
+            </span>
+        </div>
+      	<div class="bq_con buchongliyou1" style="display:none;">
+            <span class="left">
+                            <b>补充理由</b>
+                        </span>
+            <span class="right buchongliyou"></span>
+        </div>
+      	<div class="bq_con refuse_cause" style="display:none;">
+            <span class="left">
+                            <b>未通过理由</b>
+                        </span>
+            <span class="right refuse_cause_data"></span>
+        </div>
+        <div class="bq_con buchong">
+            <span class="left" style="float:left">补充材料</span>
+            <img src="./img/tianjia.jpg" class="img1" alt="" style="margin-left:1%;">
+            <input type="file" class="img_1 imgde" name="">
+            <img src="./img/tianjia.jpg" class="img2" alt="">
+            <input type="file" class="img_2 imgde" name="">
+            <img src="./img/tianjia.jpg" class="img3" alt="">
+            <input type="file" class="img_3 imgde" name="">
+        </div>
+        <div class="bq_con pingjia" style="display: flex">
+            <div class="left">
+                <b>满意度评价</b>
+            </div>
+            <div class="right" id="rightdd" style="display: flex;flex-wrap:wrap;margin-left:1rem">
+                <div>
+                    <input type="radio" class="radio1" name="t" id="1"> 非常满意
+                </div>
+                <div>
+                    <input type="radio" class="radio1" name="t" id="2"> 满意
+                </div>
+                <div>
+                    <input type="radio" class="radio1" name="t" id="3"> 一般
+                </div>
+                <div>
+                    <input type="radio" class="radio1" name="t" id="4"> 不满意
+                </div>
+            </div>
+        </div>
+        <div style="width: 70%;margin: 1rem auto;height: 2.5rem;">
+            <div class="btn qrtj" style="margin-top: 0.2rem;float: left;">
+                确认提交
+            </div>
+            <div class="btn cxsb" id="btn" style="margin-top: 0.2rem;float: right;">
+                撤销申办
+            </div>
+        </div>
+        <div id="tan">
+            <div class="tan_center">
+                <p>
+                    撤销原因
+                </p>
+                <div class="tan_one">
+                    <textarea id="tar" name="" style="resize: none;width: 100%;height: 90%;border: none;outline: none;font-size: 1rem;" placeholder="请在此输入撤销原因"></textarea>
+                </div>
+                <div class="yuanyin">
+                    请输入撤销原因!
+                </div>
+                <div class="tan_two">
+                    <span class="tan_two_span2">确认撤销</span>
+                    <span class="tan_two_span3">取消撤销</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ggyuyue">
+        <div class="quiso"></div>
+        <div class="dlkf">
+
+            <div style="    text-align: center; ">
+                <p>更改预约时间</p>
+                <input type="text" class="odfos" onfocus="this.blur()" placeholder="请选择预约时间" readonly="readonly">
+            </div>
+            <div style=" text-align: center; ">
+                <button class="quid">确定</button>
+                <button class="fsfd">取消</button>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;height: 3.125rem"></div>
+    <div class="footer"></div>
+</body>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script src="./js/rolldate.js"></script>
+<script type="text/javascript">
+    var datdfda;
+    new rolldate.Date({
+        el: '.odfos',
+        format: 'YYYY-MM-DD hh:mm',
+        beginYear: 1990,
+        endYear: 2020,
+        confirmBefore: function(el, date) {
+            var d = Date.parse(new Date()) / 1000;
+
+            datdfda = new Date(date).getTime() / 1000;
+            if (datdfda <= d) {
+                // tishi('选择日期不能小于当前时间');
+                $(".tishi").text('选择日期不能小于当前时间');
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                return false;
+            };
+            if (datdfda < yyudata) {
+                // tishi('所选时间必需在预约时间之后');
+                $(".tishi").text('所选时间必需在预约时间之后');
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                $(".odfos").val("");
+                return false;
+            }
+        }
+    })
+    $(".dflkd").click(function() {
+        $(".ggyuyue").fadeIn();
+    });
+
+    $(".quid,.quiso,.fsfd").click(function() {
+        $(".ggyuyue").fadeOut();
+    })
+    $(".footer").load("footer2.html");
+    $('#btn').click(function() {
+        $('#tan').show();
+    })
+    $(".smfwdfd").click(function() {
+        localStorage.setItem("fujian", fujian);
+        window.location.href = 'Enclosurezhiliao.html?id=' + gz_id + "&status=1&type=1";
+    });
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+    $(".quid").click(function() {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/order_savetime',
+                data: {
+                    access_token: access_token,
+                    type: "1",
+                    id: gz_id,
+                    order_time: datdfda
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                }
+            })
+        })
+        // function timestampToTime(timestamp) {
+        //     var date = new Date(timestamp); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        //     Y = date.getFullYear() + '-';
+        //     M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        //     D = date.getDate() + ' ';
+        //     h = date.getHours() + ':';
+        //     m = date.getMinutes() + ':';
+        //     s = date.getSeconds();
+        //     return Y + M + D + h + m + s;
+        //  }
+    var gz_id = getUrlParms("id");
+    var yyudata;
+    var access_token = localStorage.getItem("access_token");
+    var fujian;
+    $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid_list',
+            data: {
+                access_token: access_token,
+                type: "1",
+                id: gz_id
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                fujian = "https://sys.t7c.net/index.php/home/Handle/gzc_bid_list";
+                // var ddf = JSON.parse(fujian);
+                // console.log(ddf);
+                var is_call;
+                var status;
+                $(".name").text(data.data.proposer_name);
+                $(".gz_name").text(data.data.jgry_name);
+                $(".gzyzp").attr("src", data.data.jgry_zp);
+                $(".tel").text(data.data.jgry_tel);
+                $(".sqdddsj").text(data.data.order_time);
+                yyudata = new Date(data.data.order_time).getTime() / 1000;
+                // console.log(yyudata);
+                $("#fdfsf").text(data.data.proposer_name[0]+'...');
+                $(".syd").text(data.data.country);
+                $(".lx").text(data.data.name)
+              	$(".buchongliyou").text(data.data.replenish_cause);
+              	$(".refuse_cause_data").text(data.data.refuse_cause);
+              	if(data.data.replenish_cause != ""){//补充理由字段不为空
+                	$(".buchongliyou1").css('display','block');
+                }
+              	if(data.data.refuse_cause != ""){//拒绝理由字段不为空
+                	$(".refuse_cause").css('display','block');
+                }
+                // var a=parseInt(data.data.ct_time);
+                // var b=a*1000;
+                // var d=timestampToTime(b);
+                // $(".sqsj").text(d);
+                // pingjia  评价  cxsb撤销   qrtj确认提交 buchong补充
+                $(".sqsj").text(data.data.ct_time)
+                $(".gzcmc").text(data.data.jg_name);
+                $(".shoujijigou").text(data.data.jg_name)
+                if (data.data.is_call == 1) {
+                    is_call = "是";
+                };
+                if (data.data.is_call == 2) {
+                    is_call = "否";
+                }
+                if (data.data.status == 0) {
+                    status = "待审核"
+                    $(".pingjia").hide();
+                    $(".qrtj").hide();
+                    $(".cxsb").css("float", "none");
+                    $(".buchong").hide();
+                } else if (data.data.status == 1) {
+                    status = "审核中";
+                    $(".pingjia").hide();
+                    $(".qrtj").hide();
+                    $(".cxsb").css("float", "none");
+                    $(".buchong").hide();
+                } else if (data.data.status == 2) {
+                    status = "已通过";
+                    $(".pingjia").hide();
+                    $(".qrtj").hide();
+                    $(".cxsb").css("float", "none");
+                    $(".buchong").hide();
+                } else if (data.data.status == 3) {
+                    status = "补充材料"
+                    $(".cxsb").hide();
+                    $(".pingjia").hide();
+                    $(".qrtj").css("float", "none");
+                } else if (data.data.status == 4) {
+                    status = "已撤销";
+                    $(".pingjia").hide();
+                    $(".qrtj").hide();
+                    $(".cxsb").hide();
+                    $(".buchong").hide();
+                } else if (data.data.status == 5) {
+                    status = "未评价";
+                    $(".cxsb").hide();
+                    $(".qrtj").css("float", "none");
+                    $(".buchong").hide();
+                } else if (data.data.status == 6) {
+                    status = "已完成";
+                    // $(".pingjia").hide();
+                    var da = data.data.evaluate;
+                    if (da == 1) {
+                        var th = "<div><input type='radio' checked name='radio' />非常满意</div>";
+                        $("#rightdd").html(th);
+                        $(".bq_con #rightdd").find("div").css("width", "100%");
+                    } else if (da == 2) {
+                        var th = "<div><input type='radio' checked name='radio' />满意</div>";
+                        $("#rightdd").html(th);
+                        $(".bq_con #rightdd").find("div").css("width", "100%");
+                    } else if (da == 3) {
+                        var th = "<div><input type='radio' checked name='radio' />一般</div>";
+                        $("#rightdd").html(th);
+                        $(".bq_con #rightdd").find("div").css("width", "100%");
+                    } else if (da == 4) {
+                        var th = "<div><input type='radio' checked name='radio' />不满意</div>";
+                        $("#rightdd").html(th);
+                        $(".bq_con #rightdd").find("div").css("width", "100%");
+                    } else if (da == 0) {
+                        $("#rightdd").html("未评价");
+                        $(".bq_con #rightdd").find("div").css("width", "100%");
+                    }
+                    // $(".right").find("div").eq(da).find("div").find("input").attr("checked","checked");
+                    // console.log(  $(".right").find("div").eq(da).find("div"))
+                    // if(data.data.evaluate)
+                    $(".qrtj").hide();
+                    $(".cxsb").hide();
+                    $(".buchong").hide();
+
+                } else if (data.data.status == 7) {
+                    status = "未通过";
+                    $(".pingjia").hide();
+                    $(".qrtj").hide();
+                    $(".cxsb").hide();
+                    $(".buchong").hide();
+                }
+                $(".smfw").text(is_call);
+                $(".slzt").text(status);
+                $(".lx").text(data.data.name);
+                $(".syd").text(data.data.area);
+
+                // $(".img1").attr("src",data.data.birth_img);
+                // $(".img2").attr("src",data.data.contrary_img);
+                // $(".img3").attr("src",data.data.front_img);
+            }
+        })
+        // ===================撤销申办
+    $('.tan_two_span2').click(function() {
+        var val = $("#tar").val();
+        if ($.trim($("#tar").val()) == "") {
+            $('.yuanyin').show();
+        } else {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid_cancel',
+                data: {
+                    id: gz_id,
+                    access_token: access_token,
+                    cause: val
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        javascript: history.go(-1);
+                    }
+                    else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        }
+    })
+
+$(".tan_two_span3").click(function(){
+    
+     $('#tan').hide();
+})
+    var imgde1;
+    var imgde2;
+    var imgde3;
+    $(".img_1").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde1 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img1").attr("src", e.target.result)
+            };
+        }
+    });
+    $(".img_2").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde2 = e.target.result.split(",")[1];
+                console.log(imgde2)
+                $(".img2").attr("src", e.target.result)
+            };
+        }
+    });
+    $(".img_3").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                // 图片base64
+                imgde3 = e.target.result.split(",")[1];
+                console.log(imgde3)
+                $(".img3").attr("src", e.target.result)
+            };
+        }
+    });
+
+    $(".qrtj").click(function() {
+        var upload = imgde1 + ";" + imgde2 + ";" + imgde3
+        if (imgde1 != undefined || imgde2 != undefined || imgde3 != undefined) {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid_replenish',
+                data: {
+                    access_token: access_token,
+                    id: gz_id,
+                    upload: upload
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        window.location.href = "sbcx.html";
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                    imgde1 = null;
+                    imgde2 = null;
+                    imgde3 = null;
+                }
+            })
+
+        } else {
+            // ==============确认提交
+            // var idss;
+            // if($(".radio1").is(":checked")==true){
+            //     idss=$(".radio1").attr("id");
+            //     console.log(this);
+            // }
+            // var id = $(this).attr("id");
+            var pj;
+            $(this).parent().siblings(".pingjia").find("input:radio").each(function(j) {
+                if (this.checked) {
+                    pj = $(this).attr("id");
+                }
+            });
+
+            // =============提交评价
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/gzc_bid_evaluate',
+                data: {
+                    access_token: access_token,
+                    id: gz_id,
+                    evaluate: pj
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        window.location.href = "sbcx.html";
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        }
+    })
+</script>
+
+</html>

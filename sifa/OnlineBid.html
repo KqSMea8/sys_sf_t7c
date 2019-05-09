@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>在线申办</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/mobileSelect.css">
+    <style>
+    input {
+        border: 1px solid #999999;
+    }
+
+    .sczp {
+        width: 100%;
+        vertical-align: top;
+        text-align: inherit;
+        margin: 0 auto;
+    }
+    .mine_img{
+        position: relative;
+    }
+    .mine_img input{
+        position: absolute;
+        width: 305px;
+        height: 180px;
+        z-index: 5;
+        opacity: 0;
+    }
+    .mine_img img{
+        position: absolute;
+    }
+    .tishi{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 6rem;
+        height: auto;
+        padding: .5rem;
+        display: none;
+        background: rgba(0,0,0,.5);
+        text-align: center;
+        color: #fff;
+        border-radius: .25rem;
+        margin-left: -3rem;
+        z-index: 999999;
+    }
+    .nav_first span{
+    width: 59.5%;
+    display: block;
+    float: right;
+    margin-right: 1.5rem;
+    line-height: 1.875rem;
+    text-align: left;
+    border: 1px solid #ccc;
+    height: 26px;
+}
+    .nav_first div{
+    display: block;
+    float: right;
+    margin-right: 1rem;
+    line-height:  1.875rem;
+    text-align: right;
+}
+    </style>
+</head>
+<script src="js/mobileSelect.js"></script>
+<body>
+    <p class="tishi"></p>
+    <div id="header">
+        <span>在线申办</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+
+<!-- =================第一个页面 -->
+<div class="list1">
+    <div class="nav_fir">
+        <div class="nav_first">
+            <span class="xz1"></span>
+            <div>选择公证处</div>
+        </div>
+        <div class="nav_first">
+            <span id="xz2"></span>
+            <div>公证员</div>
+        </div>
+        <div class="nav_first">
+            <input type="text" class="gz_lianxi" value="123156465185">
+            <div>公证员联系方式</div>
+        </div>
+        <div class="nav_first">
+            <input type="text" style="visibility: hidden">
+            <div>公证员照片</div>
+        </div>
+        <div class="nav_first">
+            <img src="img/1_11.png" class="gz_tupian" alt="" style="width: 10rem;height: 12rem;margin-left: 8rem">
+            <div></div>
+        </div>
+        <div class="sczp"></div>
+    </div>
+    
+    <div class="next" style="margin-top: 10rem;">
+        <button id="btn" class="next1">下一步</button>
+    </div>
+</div>
+
+<!-- ================第二个页面 -->
+<div class="list2" style="display: none;">
+       <div class="nav_radio">
+        <div class="left">
+            <span>业务类型</span>
+        </div>
+        <div class="right yewuleixing" style="padding-top: 0.5rem">
+            <label><input name="Fruit" type="radio" value="" />业务类型 </label>
+            <label><input name="Fruit" type="radio" value="" />业务类型 </label><br>
+            <label><input name="Fruit" type="radio" value="" />业务类型 </label>
+            <label><input name="Fruit" type="radio" value="" />业务类型 </label><br>
+            <label><input name="Fruit" type="radio" value="" />业务类型 </label>
+            <label><input name="Fruit" type="radio" value="" />业务类型 </label><br>
+        </div>
+
+    </div>
+    <div class="nav_fir" style="margin-top: -0.85rem">
+        <div class="nav_first">
+            <span class="xz3"></span>
+            <div>使用地</div>
+        </div>
+        <div class="nav_first">
+            <span class="xz4"></span>
+            <div>用途</div>
+        </div>
+
+        <div class="nav_first">
+            <span class="xz5"></span>
+            <div>翻译语言</div>
+        </div>
+        <div class="shangmen">
+            <span>是否需要上门服务</span>
+            <span style="display: inline-block;margin-left: 0.3rem" class="fuwu1"> 
+               <input name="Fruit1" class="ra" type="radio" value="" id="1" /><label> 是</label>&nbsp; 
+                <input name="Fruit1" class="ra" type="radio" value="" id="2" /> <label>否</label> 
+            </span>
+        </div>
+    </div>
+    <div class="next" style="position:fixed;bottom: 3.125rem;">
+        <button class="next2">下一步</button>
+    </div>
+</div>
+
+<!-- ================第三个页面 -->
+
+<div class="list3" style="display: none; padding-bottom: 2rem;">
+    <div class="nav_qita">
+        <div class="mine_info">
+            <span>身份证正面</span>
+            <div class="mine_img">
+                <input class="file1" type="file">
+                <img class="img1" src="./img/tianjia.jpg" alt="">
+            </div>
+        </div>
+        <div class="mine_info">
+            <span>身份证反面</span>
+            <div class="mine_img">
+                <input class="file2" type="file">
+                <img class="img2" src="./img/tianjia.jpg" alt="">
+            </div>
+        </div>
+        <div class="mine_info">
+            <span>户口本</span>
+            <div class="mine_img">
+                <input class="file3" type="file">
+                <img class="img3" src="./img/tianjia.jpg" alt="">
+            </div>
+        </div>
+        <div class="mine_info">
+            <span>出生证明</span>
+            <div class="mine_img">
+                <input class="file4" type="file">
+                <img class="img4" src="./img/tianjia.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="next">
+        <button class="next3">下一步</button>
+    </div>
+</div>
+
+<!-- ==============第四个页面 -->
+
+<div class="list4" style="display: none">
+       <div class="hang" style="margin-top: 2rem">
+        <div class="zuo">申请人姓名:</div>
+        <div class="you">
+            牡丹江公证处
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">申请人身份证号:</div>
+        <div class="you">
+            15345645618946515486
+        </div>
+    </div>
+    <div class="hang" id="hang">
+        <div class="zuo">手机号:</div>
+        <div class="you">
+            <span>12345678910</span> <span id="icon" class="iconfont icon-question"></span>
+            <span id="you_text"></span>
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">选择公证处:</div>
+        <div class="you">
+            牡丹江公证处
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">公证员:</div>
+        <div class="you">
+            牡丹江
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">公证员联系方式:</div>
+        <div class="you">
+            15245565895
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">使用地:</div>
+        <div class="you">
+            牡丹江
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">用途:</div>
+        <div class="you">
+            用途类型
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">翻译语言:</div>
+        <div class="you">
+            汉语
+        </div>
+    </div>
+    <div class="hang">
+        <div class="zuo">是否需要上门服务:</div>
+        <div class="you fuwu">
+            <input name="Fruit2" type="radio" id="1" value="" />
+            <lable>&nbsp;是</lable>&nbsp;&nbsp;
+            <input name="Fruit2" type="radio" id="2" value="" />
+            <lable>&nbsp;否</lable>
+        </div>
+    </div>
+    <div class="nav_radio" style="padding:0;height:6.25rem;">
+        <div class="left" id="nav_left">
+            <span>身份证正反面</span>
+            <span>出生证明</span>
+            <span>户口本</span>
+        </div>
+        <div class="right" style="margin-left:1.25rem;width: 50%;">
+            <img class="img1" style="width:50px;" src="" alt="">
+            <img class="img2" style="width:50px;" src="" alt=""><br>
+            <img class="img3" style="width:50px;" src="" alt=""><br>
+            <img class="img4" style="width:50px;" src="" alt="">
+        </div>
+    </div>
+    <div class="memery">
+        <div class="mem_left">付款方式（<span style="color: #999999">现场缴费</span>）</div>
+        <div class="mem_right">
+            公证费：<span style="color:#FF0000">5000元</span>
+            <br><span onclick=window.location.href="expenseDetail.html" style="color:#0066CC">产生费用详情 >> </span>
+        </div>
+    </div>
+    <div class="tijiao">
+        <button id="mid_lit" class="next4">提交</button>
+    </div>
+</div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="footer"></div>
+
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    var access_token=localStorage.getItem("access_token");
+    console.log(access_token);
+    $(".footer").load("footer2.html");
+
+// =============切换按钮
+    $(".next1").click(function(){
+        console.log($(".select1").find(":checked").text());
+        if($(".select1").find(":checked").text()=="请选择"||$(".select2").find(":checked").text()=="请选择"){
+            $(".tishi").text("未填写完整");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        }else{
+            $(".list1").hide();
+            $(".list2").show();          
+        }
+
+    });
+    var fw2
+    $(".next2").click(function(){
+        if($(".select3").find(":checked").text()=="请选择"||$(".select4").find(":checked").text()=="请选择"||$(".select5").find(":checked").text()=="请选择"){
+            $(".tishi").text("未填写完整");
+            $(".tishi").fadeIn().delay(800).fadeOut();
+        }else{
+            $(".list2").hide();
+            $(".list3").show();
+            if($(".fuwu1 input").is(":checked")==true){
+                fw2=$(".fuwu1 input").attr("id");
+            }
+
+        }       
+    })
+    $(".next3").click(function(){
+        if($(".file1").val()==""||$(".file2").val()==""||$(".file3").val()==""||$(".file4").val()==""){
+            $(".tishi").text("未填写完整");
+            $(".tishi").fadeIn().delay(800).fadeOut();            
+        }else{
+            $(".list3").hide();
+            $(".list4").show();
+            console.log($(".fuwu input").attr("id"))
+            if($(".fuwu").attr("id")==fw2){
+                $(".fuwu").is(":checked")="checked";
+            } 
+        }         
+    })
+
+$(".gz_lianxi").val("");
+$(".gz_tupian").attr("src"); 
+//=================存最后提交需要信息
+
+var Full_name;
+var ID_number;
+var phone_number;
+var gzc;
+var gzy;
+var gz_phone;
+var syd;
+var yt;
+var yuyan;
+var fw;
+var leixing;
+var gzy_name;
+var gzc_name;
+// ================第一页接口  第一个select
+var gzc;
+var xz1=[];
+var lk1,lxdh,zp;
+var xz2s=[];
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Data/gzc',
+    data:{},
+    dataType:'json', 
+    async: false,   //同步异步
+    success:function(data){
+        console.log(data);
+        // var html="";
+        var tk=data.data;
+        for(var i=0; i<data.data.length;i++){
+            // html+=`<option value="" id="${data.data[i].id}">${data.data[i].jgmc}</option>`;
+            xz1.push(data.data[i].jgmc);
+        }
+        // $(".select1").append(html);
+        console.log(xz1);
+        var mobileSelect = new MobileSelect({
+            trigger: '.xz1',
+            title: '请选择公证处',
+            wheels: [{
+                data: xz1
+            }],
+            position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+            transitionEnd: function(indexArr, data) {
+                //console.log(data);
+            },
+            callback: function(indexArr, data) {
+                console.log(data);
+                fgld = data + "";
+                $(".xz1").attr("value", data)
+                for (var i = 0; i < tk.length; i++) {       
+                    if (data == tk[i].jgmc) {
+                            gzc = tk[i].id;
+                        }
+                    }
+
+                    xz2s=[];
+                       $.ajax({
+                            type:'post',
+                            url:'http://sf.wokerr.com/index.php/home/Data/gzc',
+                            data:{
+                                id:gzc
+                            },
+                            dataType:'json', 
+                            async: false,   //同步异步
+                            success:function(data){
+                                console.log(data);
+                                // var html1="";
+                                var tk1=data.data;
+                                for(var i=0;i<data.data.length;i++){
+                                    // html1+=`<option value="" id="${data.data[i].id}" ur="${data.data[i].zp}" lxdh="${data.data[i].lxdh}">${data.data[i].xm}</option>`;
+                                    xz2s.push(data.data[i].xm)
+                                }
+                                // $(".select2").append(html1);
+                                var mobileSelect1 = new MobileSelect({
+                                    trigger: '#xz2',
+                                    title: '请选择公证元',
+                                    wheels: [{
+                                        data:xz2s
+                                    }],
+                                    position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                    transitionEnd: function(indexArr, data) {
+                                        //console.log(data);
+                                    },
+                                    callback: function(indexArr, data) {
+                                        console.log(data);
+                                        fgld = data + "";
+                                        $("#xz2").attr("value", data)
+                                        for (var i = 0; i < tk1.length; i++) {
+                                            if (data == tk1[i].xm) {
+                                                    lk1 = tk1[i].id;
+                                                    lxdh=tk1[i].lxdh;
+                                                    zp=tk1[i].zp;
+                                                }
+                                        }
+
+                                            $(".gz_lianxi").val(lxdh);
+                                            $(".gz_tupian").attr("src",zp); 
+
+                                    }
+                                })
+
+
+                            }
+                        })
+
+
+
+            }
+        })
+
+
+    }
+})
+
+
+console.log(xz1);
+$(".select1").change(function(){
+        gzc=$(this).find("option:selected").attr("id");
+        gzc_name=$(this).find("option:selected").text();
+})
+// =============第二个select
+
+// $("#xz2").click(function(){
+//     if(gzc==undefined||gzc==""){
+//         $(".tishi").text("请先选择公证处");
+//         $(".tishi").fadeIn().delay(800).fadeOut(); 
+//     }else{
+//    $.ajax({
+//         type:'post',
+//         url:'http://sf.wokerr.com/index.php/home/Data/gzc',
+//         data:{
+//             id:gzc
+//         },
+//         dataType:'json', 
+//         async: false,   //同步异步
+//         success:function(data){
+//             console.log(data);
+//             // var html1="";
+//             var tk1=data.data;
+//             for(var i=0;i<data.data.length;i++){
+//                 // html1+=`<option value="" id="${data.data[i].id}" ur="${data.data[i].zp}" lxdh="${data.data[i].lxdh}">${data.data[i].xm}</option>`;
+//                 xz2s.push(data.data[i].xm)
+//             }
+//             // $(".select2").append(html1);
+//             var mobileSelect1 = new MobileSelect({
+//                 trigger: '#xz2',
+//                 title: '请选择公证元',
+//                 wheels: [{
+//                     data:xz2s
+//                 }],
+//                 position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+//                 transitionEnd: function(indexArr, data) {
+//                     //console.log(data);
+//                 },
+//                 callback: function(indexArr, data) {
+//                     console.log(data);
+//                     fgld = data + "";
+//                     $("#xz2").attr("value", data)
+//                     for (var i = 0; i < tk1.length; i++) {
+//                         if (data == tk1[i].xm) {
+//                                 lk1 = tk1[i].id;
+//                                 lxdh=tk1[i].lxdh;
+//                                 zp=tk1[i].zp;
+//                             }
+//                     }
+//                 }
+//             })
+
+
+//         }
+//     })
+// } 
+//     console.log(lxdh)  
+//     $(".gz_lianxi").val(lxdh);
+//     $(".gz_tupian").attr("src",zp); 
+// })
+
+
+
+
+
+// ===========选择前两个之后 出现用户电话 照片
+$(".select2").change(function(){
+        gzy=$(this).find("option:selected").attr("id");
+        gzy_name=$(this).find("option:selected").text();
+        var ur=$(this).find("option:selected").attr("ur");
+        var gz_phone=$(this).find("option:selected").attr("lxdh");
+        $(".gz_lianxi").val(gz_phone);
+        $(".gz_tupian").attr("src",ur);
+})
+
+
+// ===============第二页  业务类型
+
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Data/business',
+    data:{},
+    dataType:'json', 
+    async: true,   //同步异步
+    success:function(data){
+        console.log(data);
+        var html="";
+        for(var i=0;i<data.data.length;i++){
+            html+=`<label><input name="Fruit" type="radio" id="${data.data[i].id}">${data.data[i].title}</label>`;
+        }
+        $(".yewuleixing").html(html);
+    }
+})
+
+// ============使用地
+var lk3   //下拉框id；
+var xz3=[]; // 下拉框数组
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Data/area',
+    data:{},
+    dataType:'json', 
+    async: false,   //同步异步
+    success:function(data){
+        console.log(data);
+        // var html="";
+        var tk3=data.data;
+        for(var i=0;i<data.data.length;i++){
+            // html+=`<option value="" id="${data.data[i].id}">${data.data[i].name}</option>`;
+            xz3.push(data.data[i].name)
+        }
+        // $(".select3").append(html);
+        var mobileSelect3 = new MobileSelect({
+                trigger: '.xz3',
+                title: '请选择公证元',
+                wheels: [{
+                    data:xz3
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".xz3").attr("value", data)
+                    for (var i = 0; i < tk3.length; i++) {
+                        if (data == tk3[i].name) {
+                                lk3 = tk3[i].id;
+                            }
+                    }
+                }
+            })
+
+    }
+})
+$(".select3").change(function(){
+    syd=$(this).find("option:selected").attr("id");
+    console.log(syd)
+})
+
+//==============用途
+var lk4;
+var xz4=[];
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Data/usedata',
+    data:{},
+    dataType:'json', 
+    async: false,   //同步异步
+    success:function(data){
+        console.log(data);
+        // var html="";
+        var tk4=data.data;
+        for(var i=0;i<data.data.length;i++){
+            // html+=`<option value="" id="${data.data[i].id}">${data.data[i].title}</option>`;
+            xz4.push(data.data[i].title)
+        }
+        // $(".select4").append(html);
+        var mobileSelect4 = new MobileSelect({
+                trigger: '.xz4',
+                title: '请选择公证元',
+                wheels: [{
+                    data:xz4
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".xz4").attr("value", data)
+                    for (var i = 0; i < tk4.length; i++) {
+                        if (data == tk4[i].title) {
+                                lk4 = tk4[i].id;
+                            }
+                    }
+                }
+            })
+    }
+})
+$(".select4").change(function(){
+    yt=$(this).find("option:selected").attr("id");
+    console.log(yt)
+})
+
+// =============翻译语言
+var lk5;    //翻译语言id；
+var xz5=[]; // 翻译语言数组
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Data/language',
+    data:{},
+    dataType:'json', 
+    async: false,   //同步异步
+    success:function(data){
+        console.log(data);
+        // var html="";
+        var tk5=data.data;
+        for(var i=0;i<data.data.length;i++){
+            // html+=`<option value="" id="${data.data[i].id}">${data.data[i].title}</option>`;
+             xz5.push(data.data[i].title)
+        }
+        // $(".select5").append(html);
+        var mobileSelect5 = new MobileSelect({
+                trigger: '.xz5',
+                title: '请选择公证元',
+                wheels: [{
+                    data:xz5
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    console.log(data);
+                    fgld = data + "";
+                    $(".xz5").attr("value", data)
+                    for (var i = 0; i < tk5.length; i++) {
+                        if (data == tk5[i].title) {
+                                lk5 = tk5[i].id;
+                            }
+                    }
+                }
+            })
+    }
+})
+$(".select5").change(function(){
+    yuyan=$(this).find("option:selected").attr("id");
+    console.log(yuyan)
+})
+
+// ===================用户信息
+
+$.ajax({
+    type:'post',
+    url:'http://sf.wokerr.com/index.php/home/Personal/mine',
+    data:{
+        access_token:access_token
+    },
+    dataType:'json', 
+    async: true,   //同步异步
+    success:function(data){
+        console.log(data);
+        ID_number=data.data.zjh;
+        Full_name=data.data.xm;
+        phone_number=data.data.lxdh;
+    }
+})
+
+// ===============图片上传0
+var imgde1;
+var imgde2;
+var imgde3;
+var imgde4;
+$(".file1").change(function(){
+    var img_file=document.getElementsByClassName("file1")[0];
+    fileObj=img_file.files[0];
+         var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+               // 图片base64
+               // var  dd = e.target.result.indexOf(",");
+                imgde1=e.target.result.split(",")[1];
+
+                console.log(imgde1)
+               $(".img1").attr("src",e.target.result)
+            };    
+       }
+})
+$(".file2").change(function(){
+    var img_file=document.getElementsByClassName("file2")[0];
+    fileObj1=img_file.files[0];
+    var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+               // 图片base64
+               // var  dd = e.target.result.indexOf(",");
+                imgde2=e.target.result.split(",")[1];
+                console.log(imgde1)
+               $(".img2").attr("src",e.target.result)
+            };    
+       }
+})
+$(".file3").change(function(){
+    var img_file=document.getElementsByClassName("file3")[0];
+    fileObj2=img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+               // 图片base64
+               // var  dd = e.target.result.indexOf(",");
+                imgde3=e.target.result.split(",")[1];
+                console.log(imgde1)
+               $(".img3").attr("src",e.target.result)
+            };    
+       }
+})
+$(".file4").change(function(){
+    var img_file=document.getElementsByClassName("file4")[0];
+    fileObj3=img_file.files[0];
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();    
+            reader.readAsDataURL(file);    
+            //监听文件读取结束后事件    
+          reader.onloadend = function (e) {
+               // 图片base64
+               // var  dd = e.target.result.indexOf(",");
+                imgde4=e.target.result.split(",")[1];
+                console.log(imgde1)
+               $(".img4").attr("src",e.target.result)
+            };    
+       }
+})
+
+
+// ===========提交信息
+
+
+$("#mid_lit").click(function(){
+    gz_phone=$(".gz_lianxi").val();
+
+    if($(".yewuleixing label").find("input").is(":checked")==true){
+        leixing=$(".yewuleixing label").find("input").attr("id");
+    }
+    if($(".fuwu1 input").is(":checked")==true){
+        fw=$(".fuwu1 input").attr("id");
+        console.log(fw);
+    }
+    var gzc_name1=$(".xz1").text();
+    var gzy_name1=$("#xz2").text();
+    console.log(gzc_name1);
+    console.log(gzy_name1);
+$.ajax({
+        type:'post',
+        url:'http://sf.wokerr.com/index.php/home/Handle/gzc_bid',
+        data:{
+            is_call:fw,
+            language_id:lk5,
+            use_id:lk4,
+            area_id:lk3,
+            bussiness_id:leixing,
+            jgry_tel:gz_phone,
+            jgry_name:gzy_name1,
+            jgry_id:lk1,
+            jg_id:gzc,
+            jg_name:gzc_name1,
+            access_token:access_token,
+            front_img:imgde1,
+            contrary_img:imgde2,
+            household_img:imgde3,
+            birth_img:imgde2
+
+        },
+        dataType:'json', 
+        async: false,   //同步异步
+        success:function(data){
+            console.log(data);
+            if(data.status==1){
+                $(".tishi").text(data.msg);
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                setTimeout(function(){
+                    window.location.reload()
+                },1000) 
+            }else{
+                $(".tishi").text(data.msg);
+                $(".tishi").fadeIn().delay(500).fadeOut();
+            }
+        }
+})
+
+})
+
+
+
+
+
+ 
+
+
+</script>
+<script src="js/select.js"></script>
+
+</html>

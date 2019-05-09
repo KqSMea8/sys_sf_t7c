@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑司法要闻';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑司法要闻</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">司法要闻标题：</th>
+                            <td>
+                                <input type="text" name="title" class="input uname" size="40" value="{$list.title}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">司法要闻类型：</th>
+                            <td>
+                                <select name="type_id">
+                                    <option value="0">请选择</option>
+                                <volist name="type" id="vo">
+                                    <option value="{$vo.id}" <if condition="$vo['id'] eq $list['type_id']">selected</if>>{$vo.name}</option>
+                                </volist>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">司法要闻封面：</th>
+                            <td>
+                                <input type="file" name="img_url">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120"></th>
+                            <td>
+                                <if condition="$list['img_url'] neq ''">
+                                <div style="width:300px;height:200px;">
+                                    <img src="{$list.img_url}" style="width:200px;height:200px;">
+                                </div>
+                                </if>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">区域：</th>
+                            <td>
+                                <select name="qy">
+                                <option value="0">请选择</option>
+                                    <volist name="qy" id="vo">
+                                        <option value="{$vo.id}" <if condition="$vo['id'] eq $list['qy']">selected</if>>{$vo.name}</option>
+                                    </volist>
+                                 </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">司法要闻简介：</th>
+                            <td>
+                                <textarea style="height: 150px; width: 30%;" name="intro">{$list['intro']}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">司法要闻内容：</th>
+                            <td>
+                                <textarea class="content" style="height: 300px; width: 50%;" name="content">{$list['content']}</textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+        $(function(){
+
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+
+            $(".submit").click(function(){
+                
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });
+            });
+</script>
+</body>
+</html>
+

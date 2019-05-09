@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+		<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<meta name="renderer" content="ie-comp" />
+		<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+		<link rel="stylesheet" href="css/index.css"/>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" href="css/sale.css">
+		<style>
+		html{
+			background-color: #ffffff;
+		}
+body {
+		background-color: #ffffff;
+	height: 100%;
+	position: relative;
+}
+.header {
+	background-color: #196394;
+	height: 0.9rem;
+	width: 100%;
+	display: flex;
+	position: relative;
+	padding: 0 0.15rem;
+	font-size: 0.32rem;
+	line-height: 0.9rem;
+}
+.nav_txt_zuo {
+	position: absolute;
+	left: 0.2rem;
+	top: 0.25rem;
+}
+.nav_txt_you {
+	position: absolute;
+	right: 0.2rem;
+}
+.fooder {
+	height: 1rem;
+	width: 100%;
+	background-color: white;
+	position: fixed;
+	bottom: 0;
+}
+.content {
+	margin-bottom: 1rem;
+	padding-top: 0.1rem;
+	margin-bottom: 1rem;
+}
+.shenban_title {
+	display: block;
+	font-size: 0.32rem;
+	position: absolute;
+	left: 3rem;
+	right: 3rem;
+	color: white;
+}
+.hang {
+	height: 0.8rem;
+	width: 100%;
+	display: flex;
+}
+.zuo {
+	color: #000000;
+	height: 0.8rem;
+	width: 2.8rem;
+	text-align: right;
+	padding-right: 0.2rem;
+	line-height: 0.8rem;
+}
+.you {
+	height: 0.8rem;
+	width: 4.8rem;
+	line-height: 0.8rem;
+}
+
+.select2 {
+	width: 4.3rem;
+	line-height: 0.8rem;
+}
+.input {
+	width: 3.6rem;
+	text-align: left;
+}
+.tijiao {
+	width: 5.5rem;
+	height: 2rem;
+	margin: 0 auto;/*			line-height: 2rem;*/
+}
+.tijiao>div:nth-child(2) {
+	margin-top: 0.3rem;
+	width: 100%;
+	border-radius: 5px;
+	background-color: #196394;
+	color: white;
+	height: 0.6rem;
+	text-align: center;
+	line-height: 0.6rem;
+}
+</style>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+		</script>
+		<title>司法</title>
+		</head>
+<body>
+<header class="header">
+	<a href="javascript::">
+		<img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+	</a>
+	<div class="shenban_title">在线申办</div>
+</header>
+<div class="content">
+	<div class="hang">
+		<div class="zuo">选择调解类别</div>
+		<div class="you">
+				<select name="" id="" class="select2" style="width: 4.3rem">
+					<option value="123">你好</option>
+					<option value="456">456</option>
+					<option value="758">789</option>
+				</select>
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">所在区域</div>
+		<div class="you">
+			<select name="" id="" class="select2" style="width: 4.3rem">
+				<option value=""></option>
+				<option value="123">123</option>
+				<option value="456">456</option>
+				<option value="758">789</option>
+			</select>
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">选择调解机构 </div>
+		<div class="you">
+			<select name="" id="" class="select2" style="width: 4.3rem">
+				<option value="123">123</option>
+				<option value="456">456</option>
+				<option value="758">789</option>
+			</select>
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo" style="padding-right: 0rem">当事人姓名：</div>
+		<div class="you">牡丹江</div>
+	</div>
+	<div class="hang">
+		<div class="zuo" style="padding-right: 0rem">当事人身份证号：</div>
+		<div class="you">123465463549816549816</div>
+	</div>
+	<div class="hang">
+		<div class="zuo" style="padding-right: 0rem">当事人手机号：</div>
+		<div class="you">15346513219</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">对方当事人姓名</div>
+		<div class="you">
+			<input type="text" class="input" >
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">对方当事人身份证号 </div>
+		<div class="you">
+			<input type="text" class="input">
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">对方当事人手机号 </div>
+		<div class="you">
+			<input type="text" class="input">
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">当事人照片</div>
+		<div class="you" style="text-align: center">对方当事人照片</div>
+	</div>
+	<div class="hang">
+		<div class="zuo">
+			<img src="img/dagshirenzp.png" alt="" style="width: 1.2rem;" >
+		</div>
+		<div class="you">
+			<img src="img/zhaopian.png" alt="" style="width: 1.5rem;margin-left: 1.6rem">
+		</div>
+	</div>
+	<div class="hang">
+		<div class="zuo" style="padding-top: 0.2rem;color: #666666;text-align: right;margin-right: 0.3rem"> 上传照片 </div>
+		<div class="you"> </div>
+	</div>
+</div>
+<div class="tijiao">
+	<div onclick="window.location.href= 'gonggao.html';return false">
+		<input type="radio">
+			我已阅读公示内容
+	</div>
+	<div>提交</div>
+</div>
+</body>
+</html>

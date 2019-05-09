@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查询列表</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reserve.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/table_Down.css">
+</head>
+
+<body>
+    <div id="header">
+        <span>查询列表</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="table_down" style="padding-bottom:3rem;" id="_20">
+        <!-- <a href="Sbiddintgquery.html" title="">
+            <div class="each">
+                <span>鉴定类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="Sbiddintgquery.html" title="">
+            <div class="each">
+                <span>鉴定类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a>
+        <a href="Sbiddintgquery.html" title="">
+            <div class="each">
+                <span>鉴定类型</span>
+                <span class="right">2018-8-8</span>
+            </div>
+        </a> -->
+    </div>
+    <div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    var access_token = localStorage.getItem("access_token");
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Handle/jd_bid_list',
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            if (data.state == "-2") {
+                // alert("请登录")
+                window.location.href = "login.html";
+            }
+            var html = "";
+            if (data.data != null) {
+                var status = ['待审核', '审核中', '审核通过', '补充材料', '已撤销', '未评价', '已评价', '未通过'];
+                for (var i = 0; i < data.data.length; i++) {
+                    html += `<a href="#" id="${data.data[i].id}" class="list" title="">
+                            <div class="each">
+                                <span>${data.data[i].name}</span>
+                                <span class="jgryName">${data.data[i].jgry_name}</span>
+                                <span>${data.data[i].jgry_mobile}</span>
+                                <span>${status[data.data[i].status]}</span>
+                                <span class="right">${data.data[i].ct_time}</span>
+                            </div>
+                        </a>`;
+                }
+                $(".table_down").html(html);
+            } else {
+                $(".table_down").html('<div style="line-height:2rem;font-size:.9rem;">暂无数据</div>');
+            }
+            $(".list").click(function() {
+                var list_id = $(this).attr("id");
+                window.location.href = "Sbiddintgquery.html?id=" + list_id;
+            })
+        }
+    })
+    $(".footer").load("footer2.html")
+</script>
+
+</html>

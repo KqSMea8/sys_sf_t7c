@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />  
+    <meta name="renderer" content="ie-comp" /> 
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+
+	<link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+ document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+    </script>
+
+    <title></title>
+    <style>
+		html,body{
+			background-color: white;
+		}
+		.tou{
+			height: 1.7rem;
+			width: 100%;
+			background-color: #196394;
+			position: relative;
+			text-align: center;
+		}
+		.tou>div>img:nth-child(1){
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+	.act {
+	color: #196394;
+	border-bottom: #196394 2px solid;
+}
+		.items{
+			background-color: white;
+		display: flex;
+			justify-content: space-between;
+			padding: 0 0.25rem;
+			height: 0.8rem;
+			line-height: 0.7rem;
+		}.items>li{
+			text-align: center;
+			padding: 0 0.1rem;
+		}
+		.hang{
+			height: 0.7rem;
+			width: 100%;
+			background-color:#fff;
+			padding: 0 0.2rem;
+			line-height: 0.7rem;
+			border-bottom: 1px solid #d3d1d1;
+		}
+	</style>
+</head>
+<body>
+<header class="header">
+	<a href="gerenxinxi.html">
+		<img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+	</a>
+	<span class="shenban_title"></span>
+	<span class="nav_txt_you"></span>
+</header>
+	<div class="tou">
+	<div>
+		<img src="img/tx.png" alt=""><br>
+	</div>
+	</div>
+    <div class="container">
+       	<ul class="items">
+	       	<li class="act">待审批</li>
+	       	<li>审批通过</li>
+	       	<li>审批未通过</li>
+	       	<li>补充材料</li>
+       	</ul>
+		<div class="con">
+			<div>
+				<div class="hang" onclick="window.location.href= 'senpixiangqing.html';return false">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+			</div>
+			<div style="display: none">
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+			</div>
+			<div style="display: none">
+				<div class="hang" onclick="window.location.href= 'senpiweitongguo.html';return false">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+			</div>
+			<div style="display: none">
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+				<div class="hang">
+					&#42;&#42;&#42;公证申办
+				</div>
+			</div>
+		</div>
+    </div>
+<div style="width: 100%;height: 1rem"></div>
+<div class="fooder"></div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+</script>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+
+$(function () {
+
+
+		
+        $(".items li").each(function () {
+
+           var index = $(this).index();
+
+            $(".items  li").eq(0).addClass("act");
+
+            $(this).click(function () {
+
+               // alert(index);
+
+                $(this).addClass("act").siblings().removeClass("act");
+
+                $(".con>div").eq(index).stop(true).show().siblings().stop(true).hide();
+                
+            })
+
+        })
+
+    })
+	
+
+
+</script>

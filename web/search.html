@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		
+
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		
+		 <script type="text/javascript">
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+        </script>
+		<title>搜索页</title>
+		<style type="text/css">
+          .head{
+          	width: 100%;background:#196394;height: 1rem;
+          }
+          .search{
+          	margin:.2rem .65rem;
+          	display: block;
+          }
+	     .tishi{
+	      position: fixed;
+	      top: 50%;
+	      left: 50%;
+	      width: 4rem;
+	      height: auto;
+	      padding: .2rem .3rem;
+	      display: none;
+	      background: rgba(0,0,0,.5);
+	      text-align: center;
+	      color: #fff;
+	      border-radius: .25rem;
+	      margin-left: -2rem;
+	      z-index: 999999;
+	      }
+	      #div_items {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border: 1px solid #66afe9;
+            border-top: 0px;
+            overflow: auto;
+            display: none;
+            top:50px;
+            padding:0 30px 0 70px;
+        }
+ 
+        .div_item {
+            width: 100%;
+            height: 20px;
+            margin-top: 1px;
+            font-size: 13px;
+            line-height: 20px;
+        }
+	    </style>
+	</head>
+	<body>
+	  <div class="wrap">
+	   <div class="head">
+		   
+		    <div class="sousuo search">
+				<form action="javascript:return true;">
+					<input class="name" id="txt1" type="search" placeholder="请输入关键字搜索">
+				</form>
+				<i class="but"></i>
+				<!--模糊匹配窗口-->
+				
+			</div>
+					<!--<div id="div_items">
+	                    <div class="div_item">周杰伦</div>
+	                    <div class="div_item">周杰</div>
+	                    <div class="div_item">林俊杰</div>
+	                    <div class="div_item">林宥嘉</div>
+	                    <div class="div_item">林妙可</div>
+	                    <div class="div_item">唐嫣</div>
+	                    <div class="div_item">唐家三少</div>
+	                    <div class="div_item">唐朝盛世</div>
+	                    <div class="div_item">奥迪A4L</div>
+	                    <div class="div_item">奥迪A6L</div>
+	                    <div class="div_item">奥迪A8L</div>
+	                    <div class="div_item">奥迪R8</div>
+	                    <div class="div_item">宝马GT</div>
+                	</div>-->
+			
+	   </div>
+	    
+	  	
+		
+		<div class="tuijian-list">
+			
+			<div>
+				<ul class="list">
+				
+					<!-- <a href="index-nav.html/fenleixiangqing.html">
+					  <li>
+						<img src="img/vip@3x.png" alt="照片" />
+						<div>
+							<h2>淘宝商城</h2>
+						    <h3>淘宝商城购物app淘宝商城购物app淘宝商城购物app</h3>
+						    <h4>总数量 <span>68</span> /已接数量 <span>68</span></h4>
+						    <p>
+							   ￥<span class="money">16.00</span> 
+							   <span class="buttn">立即查看</span>
+						    </p>
+						</div>
+					    <h5>截止时间：2018-10-22</h5>
+					  </li>
+					</a>
+					<a href="index-nav.html/fenleixiangqing.html">
+					  <li>
+						<img src="img/vip@3x.png" alt="照片" />
+						<div>
+							<h2>淘宝商城</h2>
+						    <h3>淘宝商城购物app淘宝商城购物app淘宝商城购物app</h3>
+						    <h4>总数量 <span>68</span> /已接数量 <span>68</span></h4>
+						    <p>
+							   ￥<span class="money" >16.00</span> 
+							   <span class="buttn">立即查看</span>
+						    </p>
+						</div>
+					    <h5>截止时间：2018-10-22</h5>
+					  </li>
+					</a> -->
+				</ul>
+			</div>
+		</div>
+	  </div>
+		
+	
+		<!-- <footer>
+			<ul>
+				<a href="index.html">
+					<li>
+					<img src="img/ico-home@2x.png" alt="" />
+					<span class="active">首页</span>
+				    </li>
+				</a><a href="fenlei.html">
+					<li>
+					<img src="img/分类未选中@2x.png" alt="" />
+					<span>分类</span>
+		            </li>
+				</a><a href="vip.html/a-vindex.html">
+					<li>
+					<img src="img/vip@2x.png" alt="" class="vip"/>
+					<span>VIP</span>
+				    </li>
+				</a><a href="paihang.html">
+					<li>
+					<img src="img/排行榜未选中@2x.png" alt=""/>
+					<span>排行榜</span>
+				    </li>
+				</a><a href="my.html">
+					<li>
+					<img src="img/我的未选中@2x.png" alt="" />
+					<span>我的</span>
+				    </li>
+				</a>
+				
+			</ul>
+		</footer> -->
+		<div class="tishi"></div>
+	</body>
+</html>
+<script type="text/javascript">
+    $('.name').keydown(function(event){
+    	 if(event.keyCode==13){
+       search();
+
+    	 }
+    })
+    $(".but").click(function(){
+    	search();
+    })
+    var access_token = localStorage.getItem("access_token");
+	function search(){
+		var name=$(".name").val();
+    	$.ajax({
+            type:"POST",
+            url:"https://sys.t7c.net/index.php/home/Index/search",
+            data:{keyword:name},
+            dataType:'json',
+            success:function(data){
+                  console.log(data)
+                var html="";
+                
+                if(data.state==1){
+	                for(var i=0;i<data.data.fw.jg.length;i++){
+	                	html+=`<li id="${data.data.fw.jg[i].id}" title="1" index="7">
+	                	   ${data.data.fw.jg[i].jgmc}
+						  </li>`
+	                }
+	                for(var i=0;i<data.data.fw.jgry.length;i++){
+	                 		html+=`<li id="${data.data.fw.jgry[i].id}" title="2" index="7">
+		                	   ${data.data.fw.jgry[i].xm}
+							  </li>`
+	                }
+
+	                for(var i=0;i<data.data.gzc.jg.length;i++){
+	                	html+=`<li id="${data.data.gzc.jg[i].id}" title="1" index="1">
+	                	   ${data.data.gzc.jg[i].jgmc}
+						  </li>`
+	                }
+	                for(var i=0;i<data.data.gzc.jgry.length;i++){
+	                 		html+=`<li id="${data.data.gzc.jgry[i].id}" title="2" index="1">
+		                	   ${data.data.gzc.jgry[i].xm}
+							  </li>`
+	                }
+
+	                for(var i=0;i<data.data.jd.jg.length;i++){
+	                	html+=`<li id="${data.data.jd.jg[i].id}" title="1" index="6">
+	                	   ${data.data.jd.jg[i].jgmc}
+						  </li>`
+	                }
+	                for(var i=0;i<data.data.jd.jgry.length;i++){
+	                 		html+=`<li id="${data.data.jd.jgry[i].id}" title="2" index="6">
+		                	   ${data.data.jd.jgry[i].xm}
+							  </li>`
+	                }
+
+	                for(var i=0;i<data.data.ls.jgry.length;i++){
+	                 		html+=`<li id="${data.data.ls.jgry[i].id}" title="2" index="2">
+		                	   ${data.data.ls.jgry[i].xm}
+							  </li>`
+	                }
+	                for(var i=0;i<data.data.ls.jg.length;i++){
+	                	html+=`<li id="${data.data.ls.jg[i].id}" title="1" index="2">
+	                	   ${data.data.ls.jg[i].jgmc}
+						  </li>`
+	                }
+
+	                for(var i=0;i<data.data.sfs.jgry.length;i++){
+	                 		html+=`<li id="${data.data.sfs.jgry[i].id}" title="2" index="5">
+		                	   ${data.data.sfs.jgry[i].xm}
+							  </li>`
+	                }
+	                for(var i=0;i<data.data.sfs.jg.length;i++){
+	                	html+=`<li id="${data.data.sfs.jg[i].id}" title="1" index="5">
+	                	   ${data.data.sfs.jg[i].jgmc}
+						  </li>`
+	                }
+                    for(var i=0;i<data.data.tj.jg.length;i++){
+	                	html+=`<li id="${data.data.tj.jg[i].id}" title="1" index="4">
+	                	   ${data.data.tj.jg[i].jgmc}
+						  </li>`
+	                }
+	                for(var i=0;i<data.data.tj.jgry.length;i++){
+	                 		html+=`<li id="${data.data.tj.jgry[i].id}" title="2" index="4">
+		                	   ${data.data.tj.jgry[i].xm}
+							  </li>`
+	                }
+	               
+
+	                for(var i=0;i<data.data.xzjg.jgry.length;i++){
+	                 		html+=`<li id="${data.data.xzjg.jgry[i].id}" title="2" index="8">
+		                	   ${data.data.xzjg.jgry[i].xm}
+							  </li>`
+	                }
+	                for(var i=0;i<data.data.xzjg.jg.length;i++){
+	                	html+=`<li id="${data.data.xzjg.jg[i].id}" title="1" index="8">
+	                	   ${data.data.xzjg.jg[i].jgmc}
+						  </li>`
+	                }
+	                
+	                for(var i=0;i<data.data.yz.jg.length;i++){
+	                	html+=`<li id="${data.data.yz.jg[i].id}" title="1" index="3">
+	                	   ${data.data.yz.jg[i].jgmc}
+						  </li>`
+	                }
+	                for(var i=0;i<data.data.yz.jgry.length;i++){
+	                 		html+=`<li id="${data.data.yz.jgry[i].id}" title="2" index="3">
+		                	   ${data.data.yz.jgry[i].xm}
+							  </li>`
+	                }
+
+	                for(var i=0;i<data.data.affair.length;i++){
+	                	html+=`<li id="${data.data.affair[i].id}" title="3">
+		                	   ${data.data.affair[i].title}
+							  </li>`
+	                }
+	                 for(var i=0;i<data.data.case.length;i++){
+	                	html+=`<li id="${data.data.case[i].id}" title="4">
+		                	   ${data.data.case[i].title}
+							  </li>`
+	                }
+	                 for(var i=0;i<data.data.judicial.length;i++){
+	                	html+=`<li id="${data.data.judicial[i].id}" title="5">
+		                	   ${data.data.judicial[i].title}
+							  </li>`
+	                }
+	                 for(var i=0;i<data.data.popularizelaw.length;i++){
+	                	html+=`<li id="${data.data.popularizelaw[i].id}" title="6">
+		                	   ${data.data.popularizelaw[i].title}
+							  </li>`
+	                }
+            	}else{
+            		$(".tishi").text(data.msg);
+                  	$(".tishi").fadeIn().delay(500).fadeOut();
+            	}
+                $(".list").html(html);
+                 $(".list li").click(function(){
+			       var id=$(this).attr("id");
+                   var title=$(this).attr("title");
+                   var type=$(this).attr("index")
+                   if(title=="1"){
+                   	 window.location.href="sousuo_xq.html?id="+id+"&cate=1"+"&access_token="+access_token+"&type="+type;
+                   	}else if(title=="2"){
+                   		 window.location.href="sousuory_xq.html?id="+id+"&cate=2"+"&access_token="+access_token+"&type="+type;
+                   	}else if(title=="3"){
+                   		 window.location.href="affair_xq.html?id="+id;
+                   	}else if(title=="4"){
+                   		 window.location.href="case_xq.html?id="+id;
+                   	}else if(title=="5"){
+                   		 window.location.href="judicial_xq.html?id="+id;
+                   	}else if(title=="6"){
+                   		 window.location.href="popularizelaw_xq.html?id="+id;
+                   	}
+                   //console.log(id,name)
+			       //window.location.href="sousuo_xq.html?id="+id;
+			      
+				 })
+            }
+        })
+	}
+	
+//  //弹出列表框
+//  $("#txt1").click(function () {
+//      $("#div_items").css('display', 'block');
+//      return false;
+//  });
+// 
+//  //隐藏列表框
+//  $("body").click(function () {
+//      $("#div_items").css('display', 'none');
+//  });
+// 
+//  //移入移出效果
+//  $(".div_item").hover(function () {
+//      $(this).css('background-color', '#1C86EE').css('color', 'white');
+//  }, function () {
+//      $(this).css('background-color', 'white').css('color', 'black');
+//  });
+// 
+//  //文本框输入
+//  $("#txt1").keyup(function () {
+//      $("#div_items").css('display', 'block');//只要输入就显示列表框
+// 
+//      if ($("#txt1").val().length <= 0) {
+//          $(".div_item").css('display', 'block');//如果什么都没填，跳出，保持全部显示状态
+//          return;
+//      }
+// 
+//      $(".div_item").css('display', 'none');//如果填了，先将所有的选项隐藏
+// 
+//      for (var i = 0; i < $(".div_item").length; i++) {
+//          //模糊匹配，将所有匹配项显示
+//          if ($(".div_item").eq(i).text().substr(0, $("#txt1").val().length) == $("#txt1").val()) {
+//              $(".div_item").eq(i).css('display', 'block');
+//          }
+//      }
+//  });
+// 
+//  //项点击
+//  $(".div_item").click(function () {
+//      $("#txt1").val($(this).text());
+//  });
+//  
+// $.ajax({
+// 	type:"post",
+// 	url:"",
+// 	async:false;
+// 	dataType:"json",
+// 	data:{
+// 		
+// 	},
+// 	success:function(res){
+// 		
+// 	}
+// });
+</script>

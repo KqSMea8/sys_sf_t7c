@@ -1,0 +1,33 @@
+<div id="Left">
+    <div id="control" class=""></div>
+    <div class="subMenuList">
+        <div class="itemTitle"><!-- <if condition="CONTROLLER_NAME eq 'Index'">常用操作<else/>子菜单</if> --> </div>
+        <ul>
+            <foreach name="sub_menu" item="sv">
+            	<if condition="$sv.sub3 neq 'false'">
+                    <li class="togellernav"><a>{$sv.title}</a>
+                        <ul style="margin-top: 0;margin-left: 40px;">
+                            <foreach name="sv['sub3']" item="s">
+                                <!-- <li><a href="{$s.url}">{$s.title}</a></li> -->
+                                <!--  四级菜单开始-->
+                                <if condition="$s.sub4 neq 'false'">
+                                    <li class="togellernav"><a>{$s.title}</a></li>
+                                    <ul style="margin-top: 0;margin-left: 30px;">
+                                        <foreach name="s['sub4']" item="s4">
+                                            <li><a href="{$s4.url}">{$s4.title}</a></li>
+                                        </foreach>
+                                    </ul>
+                                <else/>
+                                    <li><a href="{$s.url}">{$s.title}</a></li>
+                                </if>
+                                <!--  四级菜单结束-->
+                            </foreach>
+                        </ul>
+                    </li>
+                <else/>
+                    <li><a href="{$sv.url}">{$sv.title}</a></li>
+            	</if>
+            </foreach>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='活动管理 > 添加活动';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">添加货币汇率</div>
+                </div>
+                <form action="{:U('product/indexhb')}" method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                         <tr>
+                                <th>基金汇率：</th>
+                                <td>
+                                    <select name="cid">
+                                        <volist name="info" id="vo">
+                                            <if condition="$vo[cid] eq $info[cid]">
+                                                <option value="{$vo.cid}">{$vo.name}</option>
+                                                <else/>
+                                                <option value="{$vo.cid}">{$vo.name}</option>
+                                            </if>
+                                        </volist>
+                                    </select>==>
+                                    <select name="pcid">
+                                        <volist name="info" id="vo">
+                                            <if condition="$vo[cid] eq $info[cid]">
+                                                <option value="{$vo.cid}">{$vo.name}</option>
+                                                <else/>
+                                                <option value="{$vo.cid}">{$vo.name}</option>
+                                            </if>
+                                        </volist>
+                                    </select>==
+                                        <input type="text" name="huilv" value="" />
+                                    </td>
+                            </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$info.id}"/>
+                    <div class="commonBtnArea" >
+                        <button class="btn submit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<script type="text/javascript">
+    $(function(){
+        $(".submit").click(function(){
+            commonAjaxSubmit();
+        });
+    });
+    // $(function(){
+    //     var i = $(".info option:selected").text();
+    //         if(i != "比赛"){
+    //             $(".tr").css("display","none");
+    //         }else{
+    //             $(".tr").css("display","table-row");
+    //         }
+    //     $(".info").change(function(){
+    //         var info = $(".info option:selected").text();
+    //         if(info != "比赛"){
+    //             $(".tr").css("display","none");
+    //         }else{
+    //             $(".tr").css("display","table-row");
+    //         } 
+    //     })
+    // })
+</script>
+</body>
+</html>
+

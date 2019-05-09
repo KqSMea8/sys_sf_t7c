@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="renderer" content="ie-comp" />
+<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/sale.css">
+<!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+<link rel="stylesheet" href="css/header.css">
+<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+</script>
+<title>在线申办</title>
+<style>
+body, html {
+	background-color: white;
+}
+.act {
+	color: #196394;
+	border-bottom: #196394 2px solid;
+}
+.items {
+	display: flex;
+	justify-content: space-around;
+	line-height: 0.6rem;
+}
+.items>li {
+	width: 1.9rem;
+	text-align: center;
+}
+.rengong {
+	width: 100%;
+	height: 0.6rem;
+	border-bottom: 1px solid #d3d1d1
+}
+.item {
+	width: 6rem;
+	height: 2rem;
+	margin: 0 auto;
+}
+.selects {
+	width: 6rem;
+	margin: 1rem 0.8rem;
+	height: 0.8rem;
+}
+.queding {
+	width: 5rem;
+	background-color: #196394;
+	height: 0.8rem;
+	text-align: center;
+	color: white;
+	font-size: 0.32rem;
+	line-height: 0.8rem;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.quediv {
+	margin: 3rem auto 1rem;
+	text-align: center;
+}
+.hang {
+	height: 0.8rem;
+	width: 100%;
+	display: flex;
+		padding-left: 0.2rem;
+		padding-right:0.2rem;
+}
+		.hang_1{
+	height: 2.2rem;
+	width: 100%;
+	display: flex;
+	padding-left: 0.2rem;
+		padding-right:0.2rem;
+}  .hang_1>.you>div>div>img {
+
+	width: 2.8rem;
+		height: 2.3rem;
+
+
+}
+.zuo {
+	color: #000000;
+	height: 0.8rem;
+	width: 2.4rem;
+	text-align: left;
+	padding-right: 0.2rem;
+	line-height: 0.8rem;
+}.zuo_1 {
+	color: #000000;
+	height: 0.8rem;
+	width: 100%;
+	text-align: left;
+	padding-right: 0.2rem;
+	line-height: 0.8rem;
+}
+.you {
+	height: 0.8rem;
+	width: 4.8rem;
+	line-height: 0.8rem;
+}
+	.sbxm>div:nth-child(3){
+		height: 0.5rem;
+		line-height: 0.5rem;
+	}
+	.sbxm>div:nth-child(4){
+/*		height: 2rem;*/
+		line-height: 0.5rem;
+	}
+		.sbxm>div:nth-child(4)>.you>div{
+			display: flex;
+	}		.sbxm>div:nth-child(4)>.you>div>div{
+			position: relative
+	}.sbxm>div:nth-child(4)>.you>div>div>input.file{
+			position: absolute;
+			left: 0;
+			top:0.5rem;
+	}
+	.sbxm>div:nth-child(4)>.you>div>div>img{
+		width: 1.3rem;
+		height: 1.5rem;
+		margin-right: 0.2rem;
+		line-height: 0.5rem;
+		margin-top: 0.2rem;
+	}
+	input.file {
+	 width: 1rem;
+		opacity: 0;
+}
+		.queding{
+			width: 4rem;
+			background-color:#196394;
+			height: 0.8rem;
+			text-align: center;
+			color: white;
+			font-size: 0.32rem;
+			line-height: 0.8rem;
+			border-radius: 5px;
+			margin: 0 auto;
+		}
+		.quediv{
+			margin: 3rem auto 1rem;
+			text-align: center;
+		}
+		th,td{
+				text-align: center;
+				height: 0.5rem;
+		}
+		#myselect{
+			width: 4rem;
+			height: 0.7rem;
+			margin-top: 0.1rem;
+		}
+		.hang1_box{
+			margin-top: 0.5rem;
+		}
+</style>
+</head>
+<body>
+<header class="header">
+	<a href="falvyuanzu.html">
+		<img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+	</a>
+	<div class="shenban_title">在线申办</div>
+</header>
+<div class="content">
+	<div class="rengong">
+		<ul class="items">
+			<li>
+				<a href="Fzaixianshenban.html">申办项目</a>
+			</li>
+			<li class="act">司法协同</li>
+		</ul>
+		<div class="con">
+			<div class="sbxm">
+				<div class="hang">
+					<div class="zuo">办案人员姓名</div>
+					<div class="you">
+					 	牡丹江
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">手机号</div>
+					<div class="you">
+					 	51651561231
+					</div>
+				</div>
+				<div class="hang" >
+					<div class="zuo">协同机构</div>
+					<select name="" id="myselect">
+						<option value="">请选择</option>
+						<option value="1">公安机关</option>
+						<option value="2">检查机关</option>
+						<option value="3">人民法院</option>
+					</select>
+				</div>
+			</div>
+			<div class="hang1_box"></div>
+		</div>
+	</div>
+</div>
+<div class="footer"></div>
+</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+	$('#myselect').click(function(){
+		var myselect = $('#myselect').val();
+		console.log(myselect);
+		if(myselect == '1'){
+			$('.hang1_box').load('Fshifaxietong4.html');
+		}else if( myselect == '2' ){
+
+			$('.hang1_box').load('Fshifaxietong2.html');
+		}else if( myselect == '3' ){
+			$('.hang1_box').load('Fshifaxietong3.html');
+		}
+	})
+		$(function () {
+
+				$("").each(function () {
+
+						var index = $(this).index();
+
+//            $(".rengong ul li").eq(0).addClass("act");
+
+						$(this).click(function () {
+
+								alert(index);
+
+								$(this).addClass("act").siblings().removeClass("act");
+
+								$(".con>div").eq(index).stop(true).show().siblings().stop(true).hide();
+
+						})
+
+				})
+
+		})
+
+</script>
+<script>
+//上传文件
+		$(".avator-btn-fake").click(function(){
+				$("#file1").click();
+		});
+		$("#file1").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});$(".avator-btn-fake2").click(function(){
+				$("#file2").click();
+		});
+		$("#file2").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake2").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});$(".avator-btn-fake3").click(function(){
+				$("#file3").click();
+		});
+		$("#file3").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake3").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});
+
+</script>
+<script>
+	$(".footer").load("footer.html")
+
+</script>

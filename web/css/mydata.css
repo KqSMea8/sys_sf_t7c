@@ -1,0 +1,122 @@
+@import url('reset.css');
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei";
+  color: #000;
+   }
+html {
+  font-size: 625%; }
+
+body {
+  font-size: .24rem; }
+
+a {
+  color: #000; text-decoration:none;}
+input{
+    outline:medium;
+}
+b{
+	font-weight: normal;
+}
+html, body{
+  width: 100%;
+  background: #f4f4f4;
+  height: 100%;
+ 
+}
+.header{
+  width: 100%;
+  height: .88rem;
+  background: #196394;
+  position: relative;
+  color: #fff;
+}
+.x{
+  width: .18rem;
+  height: .35rem;
+  position: absolute;
+  left:.2rem;
+  top:.27rem;
+}
+.x img{
+  width: 100%;
+  height: 100%;
+}
+.header h6{
+  padding:0 .8rem;
+  text-align: center;
+  line-height: .88rem;
+  font-size: .32rem;
+  color: #fff;
+}
+.keep{
+  position: absolute;
+  right:.2rem;
+  line-height: .88rem;
+  color: #fff;
+  top:0;
+  font-size: .28rem;
+}
+.data_head{
+  width: 100%;
+  background: #fff;
+  margin-top:.1rem;
+}
+.data_head h5{
+  padding:0 .2rem;
+  height: .8rem;
+  border-bottom: 1px solid #f5f3f6;
+  line-height: .8rem;
+  font-size: .28rem;
+}
+.data_m{
+  height: .8rem;
+  line-height: .8rem;
+  padding:0 .2rem;
+  border-bottom: 1px solid #f5f3f6;
+  font-size: .28rem;
+}
+.right{
+  float: right;
+  position: relative;
+}
+.right img{
+  width: .46rem;
+  height: .35rem;
+  margin-top: .25rem;
+}
+.file{
+  opacity: 0;
+  position: absolute;
+  width: .46rem;
+  height: .35rem;
+  left: -1rem;
+  top: .15rem;
+}
+.right input{
+  border: 0;
+  text-align: right;
+  line-height: .8rem;
+}
+.data_head p{
+  height: .8rem;
+  line-height: .8rem;
+  padding:0 .2rem;
+  border-bottom: 1px solid #f5f3f6;
+}
+.data_head p span{
+  float: right;
+}
+.data_head p span img{
+  width: .33rem;
+  height: .33rem;
+  margin-top: .25rem;
+}
+.data_head p label{
+  width: 1.3rem;
+  display: inline-block;
+}
+.data_head p input{
+  border: 0;
+}

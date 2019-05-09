@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线投诉</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/appointment.css">
+    <script src="./js/shipei.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;">
+                        <img onclick="javascript:window.history.go(-1);" src="./img/return_03.png" alt="">
+                    </a>
+                </div>
+                <div class="title">
+                    <p>在线投诉</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="iij">
+                <div class="region select">
+                    <p>所属区域</p>
+                    <select name="" id="">
+                        <option value="">
+                            请选择区域
+                        </option>
+                    </select>
+                </div>
+                <div class="region select">
+                    <p>调解机构</p>
+                    <select name="" id="">
+                        <option value="">
+                            请选择机构
+                        </option>
+                    </select>
+                </div>
+                <div class="region select">
+                    <p>选择类别</p>
+                    <select name="" id="">
+                        <option value="">
+                            请选择类别
+                        </option>
+                    </select>
+                </div>
+                <div class="region select">
+                    <p>选择时间</p>
+                    <select name="" id="">
+                        <option value="">
+                            请选择时间
+                        </option>
+                    </select>
+                </div>
+                <div class="region select">
+                    <p>填写备注</p>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="section_img">
+                <form action="">
+                    <div class="img-left">
+                        <p>
+                            当事人
+                        </p>
+                        <img class="img1" src="./img/shangchuan.png" alt="">
+                        <input class="filed1" type="file">
+                    </div>
+                </form>
+                <form action="">
+                    <div class="img-left">
+                        <p>
+                            对方当事人
+                        </p>
+                        <img class="img2" src="./img/shangchuan.png" alt="">
+                        <input class="filed2" type="file">
+                    </div>
+                </form>
+            </div>
+            <div class="button">
+                <input type="submit">
+            </div>
+        </div>
+    </section>
+    <div class="Modal-frame">
+        <p>预约成功</p>
+    </div>
+</body>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script>
+    $('.filed1').unbind().change(function() {
+        var file = $('.filed1').get(0).files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(e) {
+            // console.log(e);
+            $('.img1').get(0).src = e.target.result;
+        }
+    });
+    $('.filed2').unbind().change(function() {
+        var file = $('.filed2').get(0).files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(e) {
+            // console.log(e);
+            $('.img2').get(0).src = e.target.result;
+        }
+    });
+</script>
+</html>

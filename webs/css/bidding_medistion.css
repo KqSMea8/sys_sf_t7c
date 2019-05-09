@@ -1,0 +1,8 @@
+.section {
+    width: 20rem;
+    margin: 1rem auto;
+}
+
+.section p span {
+    margin-left: 1rem;
+}

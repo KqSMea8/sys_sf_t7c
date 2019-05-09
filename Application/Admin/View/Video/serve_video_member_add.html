@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{$site.SITE_INFO.name}</title>
+    <php>
+        $addCss="";
+        $addJs="";
+        $currentNav ='编辑视频人员';
+    </php>
+    <include file="Common:intoHead" />
+</head>
+<body>
+<div class="wrap"> <include file="Common:head" />
+    <div class="mainBody"> <include file="Common:left" />
+        <div id="Right">
+            <div class="contentArea">
+                <div class="Item hr">
+                    <div class="current">编辑视频人员</div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <!-- <tr>
+                            <th width="120">视频URL：</th>
+                            <td>
+                                <input type="text" name="url" class="input uname" size="40" >
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <th width="120">视频区域：</th>
+                            <td>
+                                <select name="area_id" class="areaa">
+                                <option value="0">请选择</option>
+                                    <volist name="sqy" id="vo">
+                                        <option value="{$vo.id}">{$vo.title}</option>
+                                    </volist>
+                                 </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">视频类别：</th>
+                            <td>
+                                <select name="type" class="type">
+                                <option value="0">请选择</option>
+                                 </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">机构区域：</th>
+                            <td>
+                                <select name="area" class="jgrear">
+                                <option value="0">请选择</option>
+                                    <volist name="qy" id="vo">
+                                        <option value="{$vo.id}">{$vo.name}</option>
+                                    </volist>
+                                 </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">机构类型：</th>
+                            <td>
+                                <select id="jg" class="jg">
+                                    <option value="0">请选择</option>
+                                    <option value="1">公证处</option>
+                                    <option value="2">律师事务所</option>
+                                    <option value="3">法律援助</option>
+                                    <option value="4">人民调解机构</option>
+                                    <option value="5">法律服务所</option>
+                                    <option value="6">司法鉴定所</option>
+                                    <option value="7">司法所</option>
+                                    <option value="8">司法行政机关</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">机构：</th>
+                            <td>
+                                <select name="area" class="jgg">
+                                <option value="0">请选择</option>
+                                 </select>
+                            </td>
+                        </tr>
+                        <tr class="aren" style="display: none;">
+                            <th width="120">人员：</th>
+                            <td>
+                                <select name="id" class="ry">
+                                <option value="0">请选择</option>
+                                 </select>
+                            </td>
+                        </tr>
+<!--                         <tr>
+                            <th width="120">IP：</th>
+                            <td>
+                                <input type="text" name="ip" class="input uname" size="40" value="{$list.ip}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">端口：</th>
+                            <td>
+                                <input type="text" name="sort" class="input uname" size="40" value="{$list.sort}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">房间ID：</th>
+                            <td>
+                                <input type="text" name="room_id" class="input uname" size="40" value="{$list.room_id}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">服务人员账号：</th>
+                            <td>
+                                <input type="text" name="service_account" class="input uname" size="40" value="{$list.service_account}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">服务人员密码：</th>
+                            <td>
+                                <input type="text" name="service_pwd" class="input uname" size="40" value="{$list.service_pwd}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">前台人员账号：</th>
+                            <td>
+                                <input type="text" name="account" class="input uname" size="40" value="{$list.account}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">前台人员密码：</th>
+                            <td>
+                                <input type="text" name="pwd" class="input uname" size="40" value="{$list.pwd}"/>
+                            </td>
+                        </tr> -->
+                    </table>
+                  	<div class="Item hr">
+                      <div class="current">编辑服务参数</div>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+                        <tr>
+                            <th width="120">IP：</th>
+                            <td>
+                                <input type="text" name="ip" class="input uname" size="40" value="{$list.ip}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">端口：</th>
+                            <td>
+                                <input type="text" name="sort" class="input uname" size="40" value="{$list.sort}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">房间ID：</th>
+                            <td>
+                                <input type="text" name="room_id" class="input uname" size="40" value="{$list.room_id}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">服务人员账号：</th>
+                            <td>
+                                <input type="text" name="service_account" class="input uname" size="40" value="{$list.service_account}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">服务人员密码：</th>
+                            <td>
+                                <input type="text" name="service_pwd" class="input uname" size="40" value="{$list.service_pwd}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">前台人员账号：</th>
+                            <td>
+                                <input type="text" name="account" class="input uname" size="40" value="{$list.account}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="120">前台人员密码：</th>
+                            <td>
+                                <input type="text" name="pwd" class="input uname" size="40" value="{$list.pwd}"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="id" value="{$list.id}"/>
+                    <div class="commonBtnArea" >
+                        <span class="btn submit">提交</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+<js href="--PUBLIC--/kindeditor/kindeditor.js,--PUBLIC--/kindeditor/lang/zh_CN.js"/>
+<script type="text/javascript">
+  var area=0;
+  are();
+  
+ $(".areaa").change(function(){
+     $(".type").html("<option value='0'>请选择</option>");
+            area=$(".areaa").find("option:selected").val();
+            are();
+ })
+
+ function are(){
+    $.get('{:U("Video/serve_video_area_type")}?area='+area,function(data){
+
+        if(data.status==1){
+           console.log(data)
+           var html="";
+           for(var i=0;i<data.data.length;i++){
+              html+=` <option value="${data.data[i].id}">${data.data[i].title}</option>`
+           }
+        $(".type").append(html)
+        }
+    });
+ }
+ //选择机构区域，类型
+ var jgarea=0,jgtype=0;
+ $(".jgrear").change(function(){
+    $(".jgg").html("<option value='0'>请选择</option>");
+            jgarea=$(".jgrear").find("option:selected").val();
+            console.log(jgarea,jgtype)
+            jgare()
+ })
+ $(".jg").change(function(){
+     $(".jgg").html("<option value='0'>请选择</option>");
+            jgtype=$(".jg").find("option:selected").val();
+            console.log(jgarea,jgtype)
+            jgare()
+ })
+ function jgare(){
+    $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Organ/choose",
+            data: {
+                area: jgarea,
+                type:jgtype
+            },
+            dataType: 'json',
+            success: function(data) {
+               console.log(data)
+               if(data.state==1){
+                var html="";
+                   for(var i=0;i<data.data.length;i++){
+                      html+=` <option value="${data.data[i].id}">${data.data[i].jgmc}</option>`
+                   }
+                $(".jgg").append(html)
+               }
+
+            }
+        })
+ }
+ //选择机构
+ var ryid=0;
+  $(".jgg").change(function(){
+     $(".ry").html("<option value='0'>请选择</option>");
+            ryid=$(".jgg").find("option:selected").val();
+     show();
+     ryy();
+
+ })
+  show();
+  function show(){
+    if(ryid!=0){
+      $(".aren").show();
+  }else{
+    $(".aren").hide();
+  }
+  }
+  //渲染人员数据
+  //
+  function ryy(){
+     $.get('{:U("Video/details")}?id='+ryid+"&type="+jgtype,function(data){
+        if(data.status==1){
+           // $(v).html(data.info);
+           console.log(data)
+           var html="";
+           for(var i=0;i<data.data.length;i++){
+              html+=` <option value="${data.data[i].id}" index="${data.data[i].uid}">${data.data[i].xm}</option>`
+           }
+        $(".ry").append(html)
+        }
+    });
+
+ }
+ var mid,uid,type;
+  $(".ry").change(function(){
+
+            mid=$(".ry").find("option:selected").val();
+            uid=$(".ry").find("option:selected").attr("index");
+
+ })
+  $(".type").change(function(){
+
+            type=$(".type").find("option:selected").val();
+
+ })
+ //https://sys.t7c.net/index.php/conist/Service/details
+ $(".submit").click(function(){
+    var ip=$("input[name='ip']").val();
+    var sort=$("input[name='sort']").val();
+    var room_id=$("input[name='room_id']").val();
+    var service_account=$("input[name='service_account']").val();
+    var service_pwd=$("input[name='service_pwd']").val();
+    var account=$("input[name='account']").val();
+    var pwd=$("input[name='pwd']").val();
+     $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/conist/Video/serve_video_member_add",
+            data: {
+                mid: mid,
+                uid:uid,
+                type:type,
+                cate:jgtype,
+                jg_id:ryid,
+                ip:ip,
+                sort:sort,
+                room_id:room_id,
+                service_account:service_account,
+                service_pwd:service_pwd,
+                account:account,
+                pwd:pwd
+            },
+            dataType: 'json',
+            success: function(data) {
+               console.log(data)
+               if(data.status==1){
+                //alert(1)
+                //console.log("https://sf.t7c.net"+data.url)
+                 window.location.href=data.url;
+               }else{
+                alert(data.info)
+            }
+
+            }
+        })
+ })
+
+        $(function(){
+             var  content ;
+             KindEditor.ready(function(K) {
+                 content = K.create('.content',{
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news',
+                     afterBlur: function () { this.sync(); },
+                 });
+             });
+
+             KindEditor.ready(function(K) {
+                 K.create();
+                 var editor = K.editor({
+                     allowFileManager : true,
+                     uploadJson:'--PUBLIC--/kindeditor/php/upload_json.php?dirname=news'
+                     //sdl:false
+                 });
+             });
+            /*$(".submit").click(function(){
+             if($('#title').val()==''){
+                 popup.error('标题不能为空！');
+                 return false;
+             }
+             commonAjaxSubmit();
+             return false;
+            });*/
+        });
+</script>
+</body>
+</html>
+

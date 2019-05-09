@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sale.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+    <link rel="stylesheet" href="css/header.css">
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>普法宣传</title>
+    <style>
+        body,
+        html {
+            background-color: white;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .25rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+        
+        .act {
+            color: #196394;
+            border-bottom: #196394 2px solid;
+        }
+        
+        .items {
+            display: flex;
+            justify-content: space-around;
+            line-height: 0.6rem;
+        }
+        
+        .items>li {
+            width: 1.9rem;
+            text-align: center;
+        }
+        
+        .rengong {
+            width: 100%;
+            height: 0.6rem;
+            border-bottom: 1px solid #d3d1d1
+        }
+        
+        .xinximulu {
+            margin-top: 0.03rem;
+        }
+        
+        .left {
+            width: 2.5rem;
+        }
+        
+        .right {
+            -webkit-flex: 1;
+        }
+        
+        .xinximulu>div {
+            background-color: white;
+            height: 1.75rem;
+            width: 100%;
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            display: -webkit-flex;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        
+        .xinximulu>div>div>img {
+            max-width: 2.4rem;
+            height: 1.5rem;
+            margin: 0.1rem;
+            display: block;
+            margin: 0 auto;
+            margin-top: .1rem;
+        }
+        
+        .xinwentit {
+            font-size: 0.32rem;
+            color: #333;
+            font-weight: bold;
+            padding: 0 .2rem;
+            display: block;
+            width: 4rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        p {
+            color: #666666;
+        }
+        
+        .bfsj {
+            float: right;
+            padding-right: .3rem;
+        }
+        
+        .huan {
+            width: 4.5rem;
+            height: .6rem;
+            line-height: .6rem;
+            word-wrap: break-word;
+            padding: 0 .2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .huan>p {
+            width: 4.5rem;
+            height: .6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .sousuo {
+            width: 100%;
+            height: 1rem;
+            text-align: center;
+            line-height: 1rem;
+            border-bottom: 1px solid #d3d1d1;
+        }
+        
+        .ss {
+            font-size: 0.32rem;
+            color: #333333;
+        }
+        
+        .input {
+            width: 5.6rem;
+            height: 0.6rem;
+            /*	background-color: #d1d1d1;*/
+            border: 0;
+            border-radius: 3px;
+            text-align: left;
+            padding-left: 0.1rem;
+            margin-right: 0.15rem;
+            border: 1px solid #999999;
+        }
+        
+        .hang {
+            width: 100%;
+            height: 4.2rem;
+            border-bottom: 1px solid #d3d1d1;
+            padding: 0 0.6rem;
+        }
+        
+        .hang>div:nth-child(1) {
+            font-size: 0.32rem;
+            margin-top: 0.2rem;
+            line-height: 0.5rem;
+        }
+        
+        .hang>div>img {
+            width: 6.4rem;
+            height: 3.3rem;
+        }
+        
+        .hang>div:nth-child(2) {
+            position: relative;
+        }
+        
+        .hang>div:nth-child(2)>img:nth-child(2) {
+            width: 1.2rem;
+            height: 1.2rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: .8rem;
+            width: 100%;
+            background: #fff;
+        }
+        
+        .content {
+            margin-bottom: 1.8rem;
+        }
+        
+        .bg {
+            color: #196394;
+        }
+        
+        .tit {
+            line-height: .6rem;
+            padding: 0 5%;
+            width: 7rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .tit video {
+            width: 100%;
+            height: 192px;
+        }
+        
+        .han {
+            width: 100%;
+            height: 259px;
+            position: relative;
+        }
+        
+        .vi {
+            width: 100%;
+            height: 198px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a onClick="javascript :history.back(-1);">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">普法宣传</div>
+    </header>
+    <p class="tishi"></p>
+    <div class="content">
+        <div class="rengong">
+            <ul class="items">
+                <li cclass="act">普法宣传</li>
+                <li>普法视频</li>
+                <li>普法考试</li>
+            </ul>
+        </div>
+        <div class="con">
+            <div>
+                <div class="sousuo">
+                    <input type="text" class="input inputs">
+                    <span class="ss">搜索</span>
+                </div>
+                <div class="xinximulu">
+                    <!-- <div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+					<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+						<img src="img/bofangslt.png" alt="" >
+					</div>
+					<div style="position: relative;padding-top: 0.05rem">
+						<span class="xinwentit">标题</span>
+						<p>内容概述内容概述内容概述内容概述内容概述</p>
+						<p class="bfsj">
+							<span style="color: #666666">2018-10-10</span>
+						</p>
+				  	</div>
+				</div>
+				<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+					<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+						<img src="img/bofangslt.png" alt="" >
+					</div>
+					<div style="position: relative;padding-top: 0.05rem">
+						<span class="xinwentit">标题</span>
+						<p>内容概述内容概述内容概述内容概述内容概述</p>
+						<p class="bfsj">
+							<span style="color: #666666">2018-10-10</span>
+						</p>
+					</div>
+				</div>
+				<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+					<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+						<img src="img/bofangslt.png" alt="" >
+					</div>
+					<div style="position: relative;padding-top: 0.05rem">
+						<span class="xinwentit">标题</span>
+						<p>内容概述内容概述内容概述内容概述内容概述</p>
+						<p class="bfsj">
+							<span style="color: #666666">2018-10-10</span>
+						</p>
+				  	</div>
+				</div>
+				<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+					<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+						<img src="img/bofangslt.png" alt="" >
+					</div>
+					<div style="position: relative;padding-top: 0.05rem">
+						<span class="xinwentit">标题</span>
+						<p>内容概述内容概述内容概述内容概述内容概述</p>
+						<p class="bfsj">
+							<span style="color: #666666">2018-10-10</span>
+						</p>
+				  	</div>
+				</div>
+				<div onclick="window.location.href= 'xinwenxiangqing.html';return false">
+					<div style="position: relative;width: 2.5rem;margin-right: 0.1rem">
+					 	<img src="img/bofangslt.png" alt="" >
+					</div>
+					<div style="position: relative;padding-top: 0.05rem">
+						<span class="xinwentit">标题</span>
+						<p>内容概述内容概述内容概述内容概述内容概述</p>
+						<p class="bfsj">
+							<span style="color: #666666">2018-10-10</span>
+						</p>
+				  	</div>
+				</div> -->
+                </div>
+            </div>
+            <div style="display: none">
+                <div class="sousuo">
+                    <input type="text" class="input inputh">
+                    <span class="ssh">搜索</span>
+                </div>
+                <div class="hangall">
+                    <!--   <div class="hang" >
+	          					<div>普法动漫</div>
+	          					<div>
+	          						<img src="img/b7b37a6c49cd54a1a8f6701b12f2c947.png" alt="">
+	          					 	<img src="img/bofang.png" alt="">
+	          					</div>
+	          				</div>
+	          				<div class="hang">
+	          					<div>普法讲座</div>
+	          					<div>
+	          						<img src="img/b7b37a6c49cd54a1a8f6701b12f2c947.png" alt="">
+	          				 	<img src="img/bofang.png" alt="">
+	          					</div>
+	          				</div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="footer"></div>
+    <div class="fooder"></div>
+</body>
+
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+    $(".footer").load("footer1.html");
+    $(".fooder").load("footer.html");
+    var access_token = localStorage.getItem("access_token");
+
+    
+    // 	if(access_token==""){
+    //     $(".tishi").text("请登录");
+    //      window.location.href="login.html";
+    // }else{
+    //     $.ajax({
+    //             type:"POST",
+    //             url:"https://sys.t7c.net/index.php/home/Personal/mine",
+    //             data:{access_token:access_token},
+    //             dataType:'json',
+    //             success:function(data){
+    //                  if(data.state!="1"){
+    //                      window.location.href="login.html";
+    //                  }
+
+
+    //             }
+    //       })
+    // }
+    var title, type = 2;
+    var cate = 1;
+    //默认为普法宣传
+    $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+            data: {
+                // access_token: access_token,
+                cate: 1,
+                title: title,
+                //type: type
+            },
+            dataType: 'json',
+            // async:false,
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    if (data.data == null) {
+                        html = "";
+                    } else {
+                        for (var i = 0; i < data.data.length; i++) {
+                            html += "<div class='bon' title='" + data.data[i].id + "'>" +
+                                "<div class='left'>" +
+                                "<img src='" + data.data[i].img_url + "' >" +
+
+                                "</div>" +
+                                "<div class='right'>" +
+                                "<span class='xinwentit'>" + data.data[i].title + "</span>" +
+                                "<div class='huan'>" + data.data[i].intro + "</div>" +
+                                "<p class='bfsj'><span style='color: #666666'>" + data.data[i].createtime + "</span></p>" +
+                                "</div>" +
+
+                                "</div>"
+                        }
+                        $(".xinximulu").html(html);
+
+                        bon();
+                    }
+
+
+                } else {
+                    $(".tishi").text(data.msg).fadeIn().delay(800).fadeOut();
+                }
+
+            }
+        })
+        //默认情况下的普法文章类型
+    typep();
+
+    function typep() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Data/text_type",
+            data: {},
+            dataType: 'json',
+            // async:false,
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    for (var i = 0; i < data.data.length; i++) {
+                        html += "<a class='ft_a' id='" + data.data[i].id + "'>" + data.data[i].name + "</a>"
+                    }
+                    $(".footer .ft_box").html(html);
+                    $(".footer .ft_box a").click(function() {
+                        $(this).addClass("bg").siblings().removeClass("bg");
+                        type = $(this).attr("id");
+                        $.ajax({
+                            type: "POST",
+                            url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+                            data: {
+                                // access_token: access_token,
+                                cate: "1",
+                                title: title,
+                                type: type
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                console.log(data);
+                                if (data.state == 1) {
+                                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                                    if (data.data == null) {
+                                        html = "";
+                                    } else {
+                                        for (var i = 0; i < data.data.length; i++) {
+                                            html += "<div class='bon' title='" + data.data[i].id + "'>" +
+                                                "<div class='left'>" +
+                                                "<img src='" + data.data[i].img_url + "' >" +
+
+                                                "</div>" +
+                                                "<div class='right'>" +
+                                                "<span class='xinwentit'>" + data.data[i].title + "</span>" +
+                                                "<div class='huan'>" + data.data[i].intro + "</div>" +
+                                                "<p class='bfsj'><span style='color: #666666'>" + data.data[i].createtime + "</span></p>" +
+                                                "</div>" +
+
+                                                "</div>"
+                                        }
+                                    }
+
+                                    $(".xinximulu").html(html);
+
+                                    bon();
+                                }
+
+                            }
+                        })
+                    })
+
+
+
+                } else {
+                    $(".tishi").text(data.msg).fadeIn().delay(800).fadeOut();
+                }
+
+
+
+
+
+            }
+        })
+    }
+    //视屏类型
+
+    function type2() {
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/Data/video_type",
+            data: {},
+            dataType: 'json',
+            // async:false,
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    for (var i = 0; i < data.data.length; i++) {
+                        html += "<a class='ft_a' id='" + data.data[i].id + "'>" + data.data[i].name + "</a>"
+                    }
+                    $(".footer .ft_box").html(html);
+                    $(".footer .ft_box a").click(function() {
+                        $(this).addClass("bg").siblings().removeClass("bg");
+                        type = $(this).attr("id");
+                        $.ajax({
+                            type: "POST",
+                            url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+                            data: {
+                                // access_token: access_token,
+                                cate: "2",
+                                title: title,
+                                type: type
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                console.log(data);
+                                if (data.state == 1) {
+                                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                                    if (data.data == null) {
+                                        html = "";
+
+                                    } else {
+
+                                        for (var i = 0; i < data.data.length; i++) {
+
+                                            html += "<div class='han' title='" + data.data[i].id + "'>" +
+                                                "<div class='tit'>" + data.data[i].title + "</div>" +
+                                                "<div>" +
+                                                "<video poster='https://sys.t7c.net/Uploads/News/2018-10-11/5bbeb760b8fd1.png' src='" + data.data[i].img_url + " ' style='width:90%;margin-left:5%'></video>" +
+
+                                                "</div><div style='width:100%; height:192px; background:red; position: absolute;top: .6rem;opacity: 0;'></div>" +
+                                                "</div>"
+                                        }
+                                    }
+
+                                    $(".hangall").html(html);
+
+                                    bon();
+                                }
+
+                            }
+                        })
+                    })
+
+
+
+                } else {
+                    $(".tishi").text(data.msg).fadeIn().delay(800).fadeOut();
+                }
+
+
+
+
+
+            }
+        })
+    }
+
+    //默认情况下点击搜索
+    $(".ss").click(function() {
+        title = $(".inputs").val();
+        console.log(title);
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+            data: {
+                // access_token: access_token,
+                cate: cate,
+                title: title,
+                type: type
+            },
+            dataType: 'json',
+            // async:false,
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    if (data.data == null) {
+                        html = "";
+                    } else {
+                        for (var i = 0; i < data.data.length; i++) {
+                            html += "<div class='bon' title='" + data.data[i].id + "'>" +
+                                "<div class='left'>" +
+                                "<img src='" + data.data[i].img_url + "' >" +
+
+                                "</div>" +
+                                "<div class='right'>" +
+                                "<span class='xinwentit'>" + data.data[i].title + "</span>" +
+                                "<p class='huan'>" + data.data[i].intro + "</p>" +
+                                "<p class='bfsj'><span style='color: #666666'>" + data.data[i].createtime + "</span></p>" +
+                                "</div>" +
+
+                                "</div>"
+                        }
+                    }
+
+                    $(".xinximulu").html(html);
+
+                    bon();
+                }
+
+            }
+        })
+    })
+    $(".ssh").click(function() {
+        title = $(".inputh").val();
+        console.log(title);
+        $.ajax({
+            type: "POST",
+            url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+            data: {
+                // access_token: access_token,
+                cate: cate,
+                title: title,
+                type: type
+            },
+            dataType: 'json',
+            // async:false,
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                    if (data.data == null) {
+                        html = "";
+                    } else {
+                        for (var i = 0; i < data.data.length; i++) {
+                            html += "<div class='han' title='" + data.data[i].id + "'>" +
+                                "<div class='tit'>" + data.data[i].title + "</div>" +
+                                "<div class='vi'>" +
+                                "<video poster='https://sft.t7c.netUploads/News/2018-10-11/5bbeb760b8fd1.png' src='" + data.data[i].img_url + " ' style='width:90%;margin-left:5%'></video>" +
+
+                                "</div><div style='width:100%; height:192px; background:red; position: absolute;top: .6rem;opacity: 0;'></div>" +
+                                "</div>"
+                        }
+                    }
+
+                    $(".hangall").html(html);
+
+                    bon();
+                }
+
+            }
+        })
+    })
+    $(".rengong ul li").each(function() {
+
+        var index = $(this).index();
+        var cate = index + 1;
+
+        $(".rengong ul li").eq(0).addClass("act");
+
+        $(this).click(function() {
+
+            $(this).addClass("act").siblings().removeClass("act");
+
+            $(".con>div").eq(index).stop(true).show().siblings().stop(true).hide();
+            console.log(cate)
+            if (cate == 1) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+                    data: {
+                        // access_token: access_token,
+                        cate: cate,
+                        title: title,
+                        //type: type
+                    },
+                    dataType: 'json',
+                    // async:false,
+                    success: function(data) {
+                        console.log(data);
+                        if (data.state == 1) {
+                            var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                            if (data.data == null) {
+                                html = "";
+                            } else {
+                                for (var i = 0; i < data.data.length; i++) {
+                                    html += "<div class='bon' title='" + data.data[i].id + "'>" +
+                                        "<div class='left'>" +
+                                        "<img src='" + data.data[i].img_url + "' >" +
+
+                                        "</div>" +
+                                        "<div class='right'>" +
+                                        "<span class='xinwentit'>" + data.data[i].title + "</span>" +
+                                        "<p class='huan'>" + data.data[i].intro + "</p>" +
+                                        "<p class='bfsj'><span style='color: #666666'>" + data.data[i].createtime + "</span></p>" +
+                                        "</div>" +
+
+                                        "</div>"
+                                }
+
+                            }
+                            $(".xinximulu").html(html);
+
+                            bon();
+
+
+                        }
+
+                    }
+                })
+                typep();
+            } else if (cate==3){
+                liaa();
+            }else if(cate==2) {
+                $.ajax({
+                    type: "POST",
+                    url: "https://sys.t7c.net/index.php/home/News/popularizelaw",
+                    data: {
+                        // access_token: access_token,
+                        cate: cate,
+                        title: title,
+                        //type: "2"
+                    },
+                    dataType: 'json',
+                    // async:false,
+                    success: function(data) {
+                        console.log(data);
+                        if (data.state == 1) {
+                            var html = ""; //onclick="window.location.href= 'xinwenxiangqing.html';return false"
+                            if (data.data == null) {
+                                html = "";
+                            } else {
+                                for (var i = 0; i < data.data.length; i++) {
+                                    html += "<div class='han' title='" + data.data[i].id + "'>" +
+                                        "<div class='tit'>" + data.data[i].title + "</div>" +
+                                        "<div class='vi'>" +
+                                        "<video poster="+data.data[i].cover+" src='" + data.data[i].img_url + " ' style='width:90%;margin-left:5%;height:100%'></video>" +
+
+                                        "</div><div style='width:100%; height:192px; background:red; position: absolute;top: .6rem;opacity: 0;'></div>" +
+                                        "</div>"
+                                }
+
+                            }
+                            $(".hangall").html(html);
+
+                            bon();
+                            type2();
+
+                        } else {
+                            $(".tishi").text(data.msg).fadeIn().delay(800).fadeOut();
+                        }
+                    }
+                })
+                type2();
+            } 
+
+
+        })
+
+    })
+    function liaa(){
+        $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Personal/mine",
+        data: {
+            access_token: access_token
+        },
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+            $(".hangall").html("");
+            if(data.state==-2){
+              $(".tishi").text(data.msg).fadeIn().delay(800).fadeOut();
+              window.location.href="login.html"
+            }else{
+                window.location.href= 'pufakaoshi.html';
+            }
+
+        }
+    })
+      
+    }
+
+    function bon() {
+        $(".bon").click(function() {
+            var id = $(this).attr("title");
+            window.location.href = "wenzhang.html?id=" + id + "&cate=" + 1;
+
+        })
+        $(".han").click(function() {
+            var id = $(this).attr("title");
+            window.location.href = "wenzhang.html?id=" + id + "&cate=" + 2;
+        })
+    }
+</script>

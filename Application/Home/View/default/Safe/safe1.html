@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>弘毅财智-安全保证</title>
+		<link rel="stylesheet" href="__CSS__/common.css">
+		<link rel="stylesheet" href="__CSS__/safe.css">
+		<!-- <script src="lib/jquery-1.11.3/jquery.js"></script> -->
+		<script src="__LIB__/jquery-1.9.1/jquery.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header_content">
+				<a href="../Index/index.html"><img src="__IMG__/logo.png" alt=""></a>
+				<div class="header_btn">
+					<a href="../Index/index.html" class="active">首页</a>
+					<a href="../Product/productDisplay.html" class="blur">产品展示</a>
+					<a href="../Promoter/extensionSystem.html" class="blur">推广员系统</a>
+					<a href="safe1.html" class="blur">安全保证</a>
+					<a href="../Problem/problem.html" class="blur">问题回答</a>
+					<a href="../Login/login1.html"  class="blur login">登录</a>
+					<a href="../Login/register1.html"  class="blur register">免费注册</a>		
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="bgimg">
+				<img src="__IMG__/banner.png" alt="">
+				<div class="honor">
+					<!--<p>荣誉证书</p>
+					<div>
+						<img src="images/hornor.png" alt="">
+					</div>-->
+				</div>
+				<div class="cooperate">
+					<p>合作银行</p>
+					<div class="bank">
+						<a href="javascript:void(0);"><img src="__IMG__/bank/jianshe.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/jiaotong.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/minsheng.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/pufa.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/youzheng.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/guangda.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/zhaoshang.png"/></a>
+						<a href="javascript:void(0);"><img src="__IMG__/bank/zhongxin.png"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="footer">
+			<div class="footer_content">
+				<div class="contact">
+					<div class="contact_our">
+						联系我们
+					</div>
+					<div class="contact_now"><span>电话 ：</span><span>000-000-0000</span></div>
+					<div class="contact_now"><span>邮编 ： </span><span>0000002145@qq.com</span></div>
+					<div class="contact_now"><span>工作时间 ：</span><span>周一周日（08:00-22：00）</span></div>
+				</div>
+				
+				<div class="address">©2017 马六甲 All rights reserved ICO CHIN PTE LTD</div>
+				
+				<div class="codeall">
+					<div class="code">
+					<img src="__IMG__/code.png" alt="">
+					<p>微信公众号</p>
+				</div>
+				<div class="code">
+					<img src="__IMG__/code.png" alt="">
+					<p>官方QQ群</p>
+				</div>
+				</div>
+			</div>
+		</div>
+		<script src="__JS__/operateCookie.js"></script>
+		<script src="__JS__/common.js"></script>
+	</body>
+</html>
+<script type="text/javascript">
+$.ajax({
+	type:"post",
+	url:"http://jr.wokerr.com/index.php/Home/Safe/safe",
+	data:{},
+	dataType:"json",
+	success:function(data){
+		console.log(data);
+		var tempHTML="";
+		for(var i=0;i<data.data.length;i++){
+			tempHTML+='<p>'+ data.data[i].name +'</p><div><img src="http://jr.wokerr.com/Uploads'+ data.data[i].loc +'" alt=""></div>';
+		}
+		$(".honor").html(tempHTML);
+	}
+})
+
+
+//版权
+$.ajax({
+	type:"post",
+	url:"http://jr.wokerr.com/index.php/Home/Index/cu_info",
+	async:false,
+	data:{},
+	dataType:"json",
+	success:function(data){
+		console.log(data);
+		var tempHTML="";
+		tempHTML='<div class="contact"><div class="contact_our">联系我们</div><div class="contact_now"><span>电话 ：</span><span>'+ data.data.tel +'</span></div><div class="contact_now"><span>邮编 ： </span><span>'+ data.data.email +'</span></div><div class="contact_now"><span>工作时间 ：</span><span>'+ data.data.work_time +'</span></div></div><div class="address">'+ data.data.copyright +'</div><div class="codeall"><div class="code"><img src="http://jr.wokerr.com/Uploads'+ data.data.weixin +'" alt=""><p>微信公众号</p></div><div class="code"><img src="http://jr.wokerr.com/Uploads'+ data.data.qq +'" alt=""><p>官方QQ群</p></div></div>';
+		$(".footer_content").html(tempHTML);
+	}
+});
+</script>

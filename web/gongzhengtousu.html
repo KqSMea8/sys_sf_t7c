@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>投诉查询</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/Reservation_query2.css">
+    <script src="./js/shipei.js"></script>
+    <style>
+        .information:nth-child(7) p {
+            height: auto;
+            float: left;
+        }
+        
+        .information:nth-child(8) p {
+            /*height: 4rem;*/
+            float: left;
+        }
+        
+        .tousu button {
+            font-size: 1rem;
+        }
+        
+        .ti {
+            margin-top: 1.5rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            padding: .5rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -3rem;
+            z-index: 999999;
+        }
+        
+        .section-information {
+            border: none;
+        }
+        /* .section {
+            border: 1px solid #ccc;
+        } */
+        
+        .status {
+            top: -0.5rem;
+            right: 0rem;
+        }
+        
+        body .information>span {
+            margin-left: .5rem;
+            font-size: .9rem;
+            display: inline-block;
+            line-height: 2rem;
+            width: 10rem;
+            height: 1.5rem;
+            height: auto;
+        }
+        
+        .section-information {
+            width: 100%;
+        }
+        
+        .kdfjs {
+            /* width: 2rem;
+            overflow: hidden;
+            height: 1.3rem;
+            line-height: 2rem;
+            text-overflow: ellipsis;
+            display: inline-block;
+            white-space: nowrap; */
+        }
+        
+        .dfdss {
+            background: gainsboro;
+            padding: .1rem .25rem;
+            border-radius: .2rem;
+        }
+        
+        #lkfda {
+            width: 10rem;
+            height: auto;
+            overflow: inherit;
+            vertical-align: top;
+            text-overflow: clip;
+            white-space: normal;
+            word-break: break-all;
+        }
+        
+        .information {
+            height: auto;
+        }
+        .information p{
+            width: 6.3rem;
+        }
+        body .section .information span:nth-child(2) {
+            width: 12.5rem;
+            vertical-align: top;
+            word-break: break-all;
+            margin-top: .25rem;
+            line-height: 1.5rem;
+        }
+        
+        body .information span {
+            vertical-align: top;
+        }
+      .refuse_cause{
+      	display:none;
+      }
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;"> <img onclick="javascript:window.history.go(-1);" src="./img/更多(1).png" alt="">
+                    </a>
+                </div>
+                <div class="title">
+                    <p>投诉查询</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="section-information">
+                <div class="status">
+                    <span>待处理</span>
+                </div>
+                <div class="information">
+                    <p>申请人：</p>
+                    <span>牡丹江公证处</span>
+                </div>
+                <div class="information">
+                    <p>被投诉公证处：</p>
+                    <span>牡丹江公证处</span>
+                </div>
+                <div class="information">
+                    <p>被投诉公证员：</p>
+                    <span>李小龙</span>
+                </div>
+                <div class="information">
+                    <p>投诉类别：</p>
+                    <span>财产援助</span>
+                </div>
+                <div class="information">
+                    <p>投诉标题：</p>
+                    <span>标题展示</span>
+                </div>
+                <div class="information">
+                    <p>投诉内容：</p>
+                    <div class="inf-text">
+                        <span>最近几天有些事情，希望可以预约在下个月的下旬</span>
+                    </div>
+                </div>
+                <div class="information jieguo">
+                    <p>处理结果：</p>
+                    <div class="inf-text">
+                        <span>已接受投诉丰东股份合同工</span>
+                    </div>
+                </div>
+                <div class="information ldfg">
+                    <p>满意度评价：</p>
+                    <div class="text-txt">
+                        <span>
+                            <input type="radio"name="evaluate">非常满意
+                        </span>
+                        <span>
+                            <input type="radio"name="evaluate">满意
+                        </span><br>
+                        <span>
+                            <input type="radio"name="evaluate">一般
+                        </span>
+                        <span>
+                            <input type="radio"name="evaluate">不满意
+                        </span>
+                    </div>
+                </div>
+                <div class="tousu">
+                    <button class="ti">确认提交</button>
+                    <button class="chexiao">撤销投诉</button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="width: 100%;height:3.125rem"></div>
+    <div class="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    $(".footer").load("footer2.html");
+
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var access_token = localStorage.getItem("access_token");
+    var ids = getUrlParms("id");
+    var type = getUrlParms("type");
+    $(".section").on("click", ".dfdss", function() {
+        localStorage.setItem("fujian", urlff);
+        window.location.href = "Enclosurezhiliao.html?id=" + ids + "&type=" + type;
+    })
+    var urlff;
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Handle/complain_list',
+        data: {
+            access_token: access_token,
+            id: ids,
+            type: type
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            urlff = "https://sys.t7c.net/index.php/home/Handle/complain_list";
+            var status;
+            var jieguo;
+            var evaluate = data.data.evaluate;
+            if (data.data.status == 0) {
+                status = "待审核";
+            } else if (data.data.status == 1) {
+                status = "审核中";
+            } else if (data.data.status == 2) {
+                status = "审核通过";
+            } else if (data.data.status == 3) {
+                status = "处理中";
+            } else if (data.data.status == 4) {
+                status = "已撤销";
+            } else if (data.data.status == 5) {
+                status = "未评价";
+            } else if (data.data.status == 6) {
+                status = "已完成";
+            } else if (data.data.status == 7) {
+                status = "审核未通过";
+            }
+            var html = "";
+            html += `<div class="section-information">
+                <div class="status">
+                    <span>${status}</span>
+                </div>
+                <div class="information">
+                    <p>申请人：</p>
+                    <span style="width: 8rem;">${data.data.personal_name}</span>
+                </div>
+                <div class="information">
+                    <p class="z1">被投诉法援中心：</p>
+                    <span>${data.data.jg_name}</span>
+                </div>
+                <div class="information">
+                    <p class="z2">被投诉人员：</p>
+                    <span>${data.data.jgry_name}</span>
+                </div>
+                
+                <div class="information">
+                    <p>投诉类别：</p>
+                    <span >${data.data.complain_type}</span>
+                </div>
+                <div class="information">
+                    <p>投诉标题：</p>
+                    <span >${data.data.title}</span>
+                </div>
+                <div class="information">
+                    <p>投诉内容：</p>
+                        <span id="lkfda" >${data.data.text}</span>
+                </div> 
+                <div class="information " style="clear:both;">
+                    <p>附件资料：</p>
+                    <div class="inf-text">
+                        <span class="dfdss"><span class="kdfjs">${data.data.personal_name[0]}...</span>的附件资料</span>
+                    </div>
+                </div>
+                <div class="information jieguo" style="clear:both;">
+                    <p>处理结果：</p>
+                    <div class="inf-text">
+                        <span>${data.data.result}</span>
+                    </div>
+                </div>
+             	<div class="information refuse_cause">
+                    <p>未通过理由：</p>
+                    <span>${data.data.refuse_cause}</span>
+                </div>
+                <div class="information ldfg">
+                    <p>满意度评价：</p>
+                    <div class="text-txt">
+                        <span>
+                            <input type="radio" class="ra" id="1" name="evaluate">非常满意
+                        </span>
+                        <span>
+                            <input type="radio" class="ra" id="2" name="evaluate">满意
+                        </span><br>
+                        <span>
+                            <input type="radio" class="ra" id="3" name="evaluate">一般
+                        </span>
+                        <span>
+                            <input type="radio" class="ra" id="4" name="evaluate">不满意
+                        </span>
+                    </div>
+                </div>
+                <div class="tousu">
+                    <button class="ti">确认提交</button>
+                    <button class="chexiao">撤销投诉</button>
+                    
+                </div>
+            </div>`;
+            $(".section").html(html);
+            if (type == 2) {
+                $(".z1").text("被投诉机构：");
+                $(".z2").text("被投诉人员：");
+            } else if (type == 1) {
+                $(".z1").text("被投诉机构：");
+                $(".z2").text("被投诉人员：");
+            } else if (type == 3) {
+                $(".z1").text("被投诉机构：");
+                $(".z2").text("被投诉人：");
+            } else if (type == 4) {
+                $(".z1").text("被投诉机构：");
+                $(".z2").text("被投诉人员：");
+            } else if (type == 5) {
+                $(".z1").text("被投诉机构：");
+                $(".z2").text("被投诉人");
+            }
+            //ldfg 评价  jieguo处理结果 ti确认提交   chexiao 撤销
+            if (data.data.status == 7) {
+                $(".ldfg p").hide();
+                $(".text-txt").hide();
+                $(".tousu").hide();
+              	$(".refuse_cause").css('display','block');
+            }
+            if (data.data.status == 6) {
+                // $(".ldfg p").hide();
+                // $(".text-txt").hide();
+                if (evaluate == 1) {
+                    $(".ldfg").find("div").find("span").hide();
+                    $(".ldfg").find("div").find("span").eq(0).show();
+                    $(".ldfg").find("div").css("margin-right", "5.9rem");
+
+                    $(".ldfg").find("div").css("margin-top", "-2rem");
+                    $(".ldfg").find("div").find("span").eq(0).find("input").attr("checked", "checked");
+
+                } else if (evaluate == 2) {
+                    $(".ldfg").find("div").find("span").hide();
+                    $(".ldfg").find("div").find("span").eq(1).show();
+                    $(".ldfg").find("div").css("margin-right", "5.9rem");
+                    $(".ldfg").find("div").find("span").eq(1).find("input").attr("checked", "checked");
+
+                } else if (evaluate == 3) {
+                    $(".ldfg").find("div").find("span").hide();
+                    $(".ldfg").find("div").find("span").eq(2).show();
+                    $(".ldfg").find("div").css("margin-right", "5.9rem");
+                    $(".ldfg").find("div").find("span").eq(2).find("input").attr("checked", "checked");
+
+                } else if (evaluate == 4) {
+                    $(".ldfg").find("div").find("span").hide();
+                    $(".ldfg").find("div").find("span").eq(3).show();
+                    $(".ldfg").find("div").css("margin-right", "5.9rem");
+                    $(".ldfg").find("div").find("span").eq(3).find("input").attr("checked", "checked");
+
+                } else {
+                    $(".ldfg").find("div").find("span").hide();
+                    $(".ldfg").find("div").find("span").eq(1).text("未评价").show();
+                    $(".ldfg").find("div").css("margin-right", "5.9rem");
+                    $(".ldfg").find("div").find("span").eq(1).find("input").attr("checked", "checked");
+                }
+                $(".tousu").hide();
+            }
+            if (data.data.status == 5) {
+                $(".chexiao").hide();
+                $(".tousu").css("text-align", "center");
+            }
+            if (data.data.status == 4) {
+                $(".ldfg p").hide();
+                $(".text-txt").hide();
+                $(".tousu").hide();
+                $(".jieguo").hide();
+            }
+            if (data.data.status == 3) {
+                $(".ldfg p").hide();
+                $(".text-txt").hide();
+                $(".tousu").hide();
+                $(".chexiao").hide();
+                $(".ti").hide();
+            }
+            if (data.data.status == 2) {
+                $(".ldfg").hide();
+                $(".ti").hide();
+                $(".jieguo").hide();
+                $(".tousu").css("text-align", "center");
+                if (type == 2) {
+                    $(".jieguo").show();
+                    $(".ldfg").show();
+                    $(".ti").show();
+                    $(".chexiao").hide();
+                }
+            }
+            if (data.data.status == 1) {
+                $(".ldfg").hide();
+                $(".ti").hide();
+                $(".jieguo").hide();
+                $(".tousu").css("text-align", "center");
+
+            }
+            if (data.data.status == 0) {
+                $(".ldfg").hide();
+                $(".ti").hide();
+                $(".jieguo").hide();
+                $(".tousu").css("text-align", "center")
+            }
+
+
+
+        }
+
+    })
+    $(".ti").click(function() {
+        var leixing;
+        for (var i = 0; i < $('input[type=radio]').length; i++) {
+            if ($(".ra").eq(i).is(":checked") == true) {
+                leixing = $(".ra").eq(i).attr("id");
+            }
+        }
+
+        // console.log(leixing);
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/complain_evaluate',
+            data: {
+                type: type,
+                access_token: access_token,
+                id: ids,
+                evaluate: leixing
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                    setTimeout(function() {
+                        // window.location.href="tscx.html";
+                        history.go(-1);
+                    }, 1000)
+                } else {
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                }
+            }
+        })
+    })
+    $(".chexiao").click(function() {
+        $.ajax({
+            type: 'post',
+            url: 'https://sys.t7c.net/index.php/home/Handle/complain_cancel',
+            data: {
+                type: type,
+                access_token: access_token,
+                id: ids,
+            },
+            dataType: 'json',
+            async: false, //同步异步
+            success: function(data) {
+                console.log(data);
+                if (data.state == 1) {
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                    window.location.reload();
+                } else {
+                    $(".tishi").text(data.msg);
+                    $(".tishi").fadeIn().delay(500).fadeOut();
+                }
+            }
+        })
+    })
+</script>
+
+</html>

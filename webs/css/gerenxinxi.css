@@ -1,0 +1,81 @@
+
+.header{
+	background: #196394;
+}
+.header_1{
+	width: 80%;
+	height: 6rem;
+	margin: .5rem auto;
+	text-align: center;
+}
+.header_1 img{
+	width: 100%;
+	height: 100%;
+}
+.header_1 span{
+	color: #fff;
+	font-size: 0.32rem;
+}
+.header_bj{
+	text-align: right;
+	padding-right: .2rem;
+	padding-top: .1rem;
+}
+.header_bj img{
+	width: 0.32rem;
+	height: 0.33rem;
+}
+.container{
+	margin-bottom: .6rem;
+}
+.container ul li{
+	width: 100%;
+	background: #fff;
+	height: 1rem;
+	padding-left: .2rem;
+	padding-right: .2rem;
+	line-height: 1rem;
+	border-bottom: 1px solid #d3d1d1;
+	position: relative;
+}
+.container ul li input{
+	height: .6rem;
+	width: 50%;
+	text-align: right;
+	border: none;
+	color: #999999;
+	position: absolute;
+	right: .2rem;
+	top: 50%;
+	margin-top: -0.3rem;
+}
+.container .map{
+	width: 80%;
+	height: 4rem;
+	margin:0 auto;
+	border:1px solid #000;
+	margin-top:.6rem;
+}
+.container a{
+	width: 3.75rem;
+	height: 0.9rem;
+	display: block;
+	text-align: center;
+	line-height: .9rem;
+	background: #196394;
+	color: #fff;
+	margin:0 auto;
+	border-radius: 4px;
+	margin-top: 1rem;
+}
+.con_text{
+	width: 80%;
+	height: 0.8rem;
+	margin: 0 auto;
+	border: 1px solid #000;
+}
+.con_p{
+	width: 80%;
+	height: .5rem;
+	margin: .5rem auto;
+}

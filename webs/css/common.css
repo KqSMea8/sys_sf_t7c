@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before{
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-webkit-tap-highlight-color:transparent;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;} 
+ html,body{ height:100%; width: 100%; font-size: 16px; font-family: "Microsoft YaHei";}
+ ol,ul,li {list-style: none}
+ h1, h2, h3, h4, h5, h6 {font-size: 100%; font-family: 'Microsoft YaHei';}
+ input{outline: none; border:none;}
+ a{text-decoration: none; color: #969696; outline: none;}
+ a:hover {text-decoration: none;}
+ img{border: none; vertical-align: middle;}
+ textarea{outline: none;}
+ /*图片自适应*/
+ img{width: .4rem;height: .4rem; }
+ /*取消链接高亮*/
+ body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/*文本单行溢出文字省略号代替*/
+.one-txt-cut{overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+/*解决a标签移动端点击出现蓝色背景*/
+a:link,a:active,a:visited,a:hover {background: none; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: transparent;}
+/*清楚IOS默认的按钮样式*/
+input[type="button"], input[type="submit"], input[type="reset"] {
+     -webkit-appearance: none;
+}
+textarea {  
+    -webkit-appearance: none;
+}   
+
+
+/*公共头部*/
+.header{
+	height: .9rem;
+	background:#196394;
+	position: relative;
+	text-align: center;
+	color: #fff;
+	line-height: .9rem;
+	font-size: .32rem;
+}
+.header a{
+	position: absolute;
+	left: .33rem;
+}
+.header a img{
+	width: .21rem;
+	height: .37rem;
+	margin-top: -.07rem;
+}

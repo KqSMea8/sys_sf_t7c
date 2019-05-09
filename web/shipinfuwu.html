@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="renderer" content="ie-comp" />
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/> -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/sale.css">
+    <link rel="stylesheet" href="./css/mobileSelect.css">
+
+    <script src="./js/mobileSelect.js"></script>
+    <!--
+    <link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/bootstrap-select.css">
+		<link rel="stylesheet" href="css/bootstrap-select.min.css">
+-->
+
+    <style>
+        html {
+            background-color: #ffffff;
+        }
+        
+        body {
+            background-color: #ffffff;
+            height: 100%;
+            position: relative;
+        }
+        
+        .header {
+            background-color: #196394;
+            height: 0.9rem;
+            width: 100%;
+            display: flex;
+            position: relative;
+            padding: 0 0.15rem;
+            font-size: 0.32rem;
+            line-height: 0.9rem;
+        }
+        
+        .nav_txt_zuo {
+            position: absolute;
+            left: 0.2rem;
+            top: 0.25rem;
+        }
+        
+        .nav_txt_you {
+            position: absolute;
+            right: 0.2rem;
+        }
+        
+        .fooder {
+            height: 1rem;
+            width: 100%;
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+        }
+        
+        .content {
+            margin-bottom: 1rem;
+            padding-top: 0.1rem;
+            margin-bottom: 1rem;
+            height: 60%;
+        }
+        
+        .shenban_title {
+            display: block;
+            font-size: 0.32rem;
+            position: absolute;
+            left: 3rem;
+            right: 3rem;
+            color: white;
+        }
+        
+        .hang {
+            height: 0.8rem;
+            width: 100%;
+            display: flex;
+            margin-top: 0.5rem;
+        }
+        
+        .zuo {
+            color: #000000;
+            height: 0.8rem;
+            width: 2.8rem;
+            text-align: right;
+            padding-right: 0.2rem;
+            line-height: 0.8rem;
+        }
+        
+        .you {
+            height: 0.8rem;
+            width: 4.8rem;
+            line-height: 0.8rem;
+        }
+        
+        .select2 {
+            width: 4.3rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+        }
+        
+        .input {
+            width: 3.6rem;
+            text-align: left;
+            height: .6rem;
+            border: #aaa solid 1px;
+        }
+        
+        .tijiao {
+            width: 5.5rem;
+            height: 2rem;
+            margin: 0 auto;
+            /*			line-height: 2rem;*/
+        }
+        
+        .tijiao>div:nth-child(2) {
+            margin-top: 0.3rem;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #196394;
+            color: white;
+            height: 0.6rem;
+            text-align: center;
+            line-height: 0.6rem;
+        }
+        
+        .queding {
+            width: 5rem;
+            background-color: #196394;
+            height: 0.8rem;
+            text-align: center;
+            color: white;
+            font-size: 0.32rem;
+            line-height: 0.8rem;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+        
+        .quediv {
+            margin: 1.5rem auto 1rem;
+            text-align: center;
+        }
+        
+        .input {
+            text-align: left;
+            line-height: .6rem;
+        }
+        
+        .mobileSelect-show .content {
+            bottom: -3rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 3rem;
+            height: auto;
+            padding: .3rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -1.5rem;
+            z-index: 999999;
+        }
+    </style>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';
+    </script>
+    <title>视频服务</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html"><img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;"></a>
+        <div class="shenban_title">视频服务</div>
+    </header>
+    <p class="tishi"></p>
+    <div class="content">
+        <div class="hang">
+            <div class="zuo">选择视频服务区域:</div>
+            <div class="you">
+                <!--  <select name="" id="" class="select2" >
+       	        <option value="123">你好</option>
+       	        <option value="456">456</option>
+       	        <option value="758">789</option>
+       	    </select> -->
+                <input type="text" readonly onfocus="this.blur();" class="input quyuj1" style="cursor: pointer;" />
+            </div>
+        </div>
+        <div class="hang">
+            <div class="zuo">服务类别:</div>
+            <div class="you">
+                <!-- <select name="" id="" class="select2" >
+                  <option value=""></option>
+                  <option value="123">123</option>
+                  <option value="456">456</option>
+                  <option value="758">789</option>
+                </select> -->
+                <input type="text" readonly onfocus="this.blur();" class="input jigouj1" style="cursor: pointer;" />
+            </div>
+        </div>
+    </div>
+    <div class="quediv">
+        <div class="queding success">确定</div>
+    </div>
+    <div style="width: 100%;height: 1rem"></div>
+    <div class="fooder"></div>
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(".fooder").load("footer.html");
+     var access_token = localStorage.getItem('access_token');
+        //服务区域
+    var quyu = [],
+        area, id,url;
+    $.ajax({
+        type: "POST",
+        url: "https://sys.t7c.net/index.php/home/Data/serve_video_area",
+        data: {},
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+            var index = data.data;
+            for (var i = 0; i < data.data.length; i++) {
+                quyu.push(data.data[i].title)
+            }
+            console.log(quyu);
+            var mobileSelect1 = new MobileSelect({
+                trigger: '.quyuj1',
+                title: '请选择区域',
+                wheels: [{
+                    data: quyu
+                }],
+                position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                transitionEnd: function(indexArr, data) {
+                    //console.log(data);
+                },
+                callback: function(indexArr, data) {
+                    //console.log(indexArr);
+                    $(".jigouj1").val("")
+                    $(".quyuj1").attr("value", data)
+                    for (i = 0; i < index.length; i++) {
+                        if (data == index[i].title) {
+                            area = index[i].id;
+
+                        }
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: "https://sys.t7c.net/index.php/home/Data/serve_video_type",
+                        data: {
+                            area_id: area
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+                            console.log(data);
+                            if (data.data != false && data.data != null) {
+                                var jindex = data.data;
+
+                                var jigou = [];
+                                if (data.state == 1) {
+                                    for (var i = 0; i < data.data.length; i++) {
+                                        jigou.push(data.data[i].title)
+                                    }
+                                    var mobileSelect1 = new MobileSelect({
+                                        trigger: '.jigouj1',
+                                        title: '请选择类别',
+                                        wheels: [{
+                                            data: jigou
+                                        }],
+                                        position: [0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+                                        transitionEnd: function(indexArr, data) {
+                                            //console.log(data);
+                                        },
+                                        callback: function(indexArr, data) {
+                                            console.log(data);
+                                            $(".jigouj1").val(data)
+                                            for (i = 0; i < jindex.length; i++) {
+                                                if (data == jindex[i].title) {
+                                                    id = jindex[i].id;
+                                                    url=jindex[i].url;
+
+                                                }
+                                            };
+                                            console.log(id)
+                                            //$('.mobileSelect').eq(1).remove();
+                                             $('.mobileSelect:last-child').remove();
+                                            /*$.ajax({
+                                                   type:"POST",
+                                                   url:"https://sys.t7c.net/index.php/home/Organ/details",
+                                                   data:{access_token:access_token,id:id,type:type,cate:1},
+                                                   dataType:'json',
+                                                   success:function(data){
+                                                       console.log(data);
+                                                      $(".mc").text(data.data.jgmc);
+                                                      $(".dz").text(data.data.dz);
+                                                      $(".phone").text(data.data.dh)
+                                                      // 百度地图API功能
+                                                       var map = new BMap.Map("allmaps");
+                                                       var point = new BMap.Point(data.data.jd, data.data.wd);
+                                                       map.centerAndZoom(point, 15);
+                                                       var marker = new BMap.Marker(point);  // 创建标注
+                                                       map.addOverlay(marker);               // 将标注添加到地图中
+                                                       marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                                                   }
+                                            })*/
+                                        }
+                                    });
+                                }
+                            } else {
+                                $('.jigouj1').val('');
+                                $(".tishi").text("该区域无相关服务");
+                                $(".tishi").fadeIn().delay(500).fadeOut();
+                            }
+                        }
+                    })
+                }
+            });
+        }
+    })
+//点击提交
+function encodeUnicode(str) {
+                var res = [];
+                for (var i = 0; i < str.length; i++) {
+                    res[i] = ("00" + str.charCodeAt(i).toString(16)).slice(-4);
+                }
+                return "\\u" + res.join("\\u");
+    }
+$('.success').click(function() {
+           
+            var quyuj1 = $('.quyuj1').val();
+            var jigouj1 = $('.jigouj1').val();
+            //console.log(id)
+            if (!quyuj1) {
+                $(".tishi").text("请选择区域");
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                return false;
+            } else if (!jigouj1) {
+                $(".tishi").text("请选择服务类别");
+                $(".tishi").fadeIn().delay(500).fadeOut();
+                return false;
+            } else {
+                $.ajax({
+                        type: "POST",
+                        url: "https://sys.t7c.net/index.php/home/Data/serve_video_message",
+                        data: {
+                            type: id,
+                            access_token:access_token
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+                            var ip=data.data.ip;
+                            var sort=data.data.sort;
+                            var room_id=data.data.room_id;
+                            var account=encodeUnicode(data.data.account);
+                            var accounts=data.data.account;
+                            var pwd=data.data.pwd;
+                            console.log(account)
+                            var u = navigator.userAgent;
+                              if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                                  
+                                  radio.gophoneweb(ip,sort,room_id,accounts,pwd)
+                              } else if (u.indexOf('iPhone') > -1) {
+                                  window.location.href = "objc://share"+":"+ip+":"+sort+":"+room_id+":"+account+":"+pwd+":"+"toentermeeting";
+                              };
+                            //window.location.href = url;
+                        }
+                })
+                
+            }
+        })
+</script>
+
+</html>

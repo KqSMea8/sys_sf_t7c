@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+<meta name="renderer" content="ie-comp" />
+<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/sale.css">
+<!--<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />-->
+<link rel="stylesheet" href="css/header.css">
+<!--<link rel="stylesheet" type="text/css" href="css/dialog.css">-->
+<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 750*100 + 'px';
+</script>
+<title>律师预约查询</title>
+<style>
+body, html {
+	background-color: white;
+}
+.act {
+	color: #196394;
+	border-bottom: #196394 2px solid;
+}
+.items {
+	display: flex;
+	justify-content: space-around;
+	line-height: 0.6rem;
+}
+.items>li {
+	width: 1.9rem;
+	text-align: center;
+}
+.rengong {
+	width: 100%;
+	height: 0.6rem;
+	border-bottom: 1px solid #d3d1d1
+}
+.item {
+	width: 6rem;
+	height: 2rem;
+	margin: 0 auto;
+}
+.selects {
+	width: 6rem;
+	margin: 1rem 0.8rem;
+	height: 0.8rem;
+}
+.queding {
+	width: 5rem;
+	background-color: #196394;
+	height: 0.8rem;
+	text-align: center;
+	color: white;
+	font-size: 0.32rem;
+	line-height: 0.8rem;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.quediv {
+	margin: 1rem auto 1rem;
+	text-align: center;
+}
+.hang {
+	height: 0.6rem;
+	width: 100%;
+	display: flex;
+}
+.zuo {
+	color: #000000;
+	height: 0.8rem;
+	width: 3.2rem;
+	width: 3.2rem;
+	text-align: right;
+	padding-right: 0.2rem;
+	line-height: 0.8rem;
+	font-weight: bold;
+}
+.you {
+	height: 0.8rem;
+	width: 4.8rem;
+	line-height: 0.8rem;
+	padding-right: 0.2rem;
+}
+	.con{
+		position: relative;
+		border: 1px solid #999999;
+		margin: 0.2rem;
+	}
+	.con>div:nth-child(8)>.you{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap:wrap;
+	}.con>div:nth-child(8)>.you>div{
+		width: 50%;
+		float: left;
+		height: 0.3rem;
+	}
+	p{
+		line-height: 0.35rem;
+		margin-top: 0.2rem;
+	}
+	.xuanz{
+		position: absolute;
+		right: 0.1rem;
+		top: 0.1rem;
+		display: inline-block;
+		width: 1.5rem;
+		height: 0.5rem;
+		background-color: #196394;
+		color: white;
+		text-align: center;
+		line-height: 0.5rem;
+		border-radius: 5px;
+	}
+.sousuo {
+	width: 100%;
+	height: 1rem;
+	text-align: center;
+	line-height: 1rem;
+	border-bottom: 1px solid #d3d1d1;
+}
+.ss {
+	font-size: 0.32rem;
+	color: #333333;
+}
+.input {
+	width: 5.6rem;
+	height: 0.5rem;
+	border: 0;
+	border-radius: 3px;
+	text-align: left;
+	padding-left: 0.1rem;
+	margin-right: 0.15rem;
+	border: 1px solid #999999;
+}
+.btn{
+	text-align: center;
+	line-height: 0.6rem;
+	
+	width: 2rem;
+	background: #196394;
+	border-radius: 4px;
+	color: white;
+	    display: inline-block;
+    margin-left: 1rem;
+}
+	.rd{
+		display: flex;
+		flex-wrap:wrap;
+		line-height: 0.5rem;
+		margin-top: 0.2rem;
+	}
+	.rd>div{
+		width: 45%;
+	}
+	.no{
+		width: .3rem;height: .3rem;
+	}
+</style>
+</head>
+<body style="overflow: scroll">
+	<header class="header">
+		<a onclick="history.go(-1)">
+			<img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+		</a>
+		<div class="shenban_title">预约查询</div>
+	</header>
+	<div class="content">
+		<div class="sousuo">
+			<input type="text" class="input">
+			<span class="ss">搜索</span>
+		</div>
+		<div class="lvshiyy">
+			<!-- <div class="con">
+				<span class="xuanz">等待接受</span>
+				<div class="hang">
+					<div class="zuo">预约律师事务所:</div>
+					<div class="you">
+						牡丹江公证处
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约当事人:</div>
+					<div class="you">
+						李小龙
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约律师:</div>
+						<div class="you">
+							李小龙
+						</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约的类别:</div>
+						<div class="you">
+							财产援助
+						</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约的时间:</div>
+					<div class="you">
+						2018年10月21日
+					</div>
+				</div>
+				<div class="hang" style="height: auto;">
+					<div class="zuo">预约的备注:</div>
+					<div class="you">
+						<p>最近几天有事情，希望可以预约在下个月的下旬</p>
+					</div>
+				</div>
+				<div class="hang" style="height: 1.2rem;">
+					<div class="zuo">满意度评价:</div>
+					<div class="you rd" >
+						<div>
+							<input type="radio" name="n1" checked>
+							<span>非常满意</span>
+						</div>
+						<div>
+							<input type="radio" name="n1">
+							<span>满意</span>
+						</div>
+						<div>
+							<input type="radio" name="n1">
+							<span>一般</span>
+						</div>
+						<div>
+							<input type="radio" name="n1">
+							<span>不满意</span>
+						</div>
+					</div>
+				</div>
+				<div class="btn">
+					确认提交
+				</div>
+				<div class="btn">
+					取消预约
+				</div>
+			</div> 
+			<div class="con">
+				<span class="xuanz">等待接受</span>
+				<div class="hang">
+					<div class="zuo">预约律师事务所:</div>
+					<div class="you">
+						牡丹江公证处
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约当事人:</div>
+					<div class="you">
+						李小龙
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约律师:</div>
+					<div class="you">
+						李小龙
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约的类别:</div>
+					<div class="you">
+						财产援助
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约的时间:</div>
+					<div class="you">
+						2018年10月21日
+					</div>
+				</div>
+				<div class="hang" style="height: auto;">
+					<div class="zuo">预约的备注:</div>
+					<div class="you">
+						<p>最近几天有事情，希望可以预约在下个月的下旬</p>
+					</div>
+				</div>
+				<div class="hang" style="height: 1.2rem;">
+					<div class="zuo">满意度评价:</div>
+					<div class="you rd" >
+						<div>
+							<img src="img/no.png">
+							<span>非常满意</span>
+						</div>
+						<div>
+							<input type="radio" name="n2">
+							<span>满意</span>
+						</div>
+						<div>
+							<input type="radio" name="n2">
+							<span>一般</span>
+						</div>
+						<div>
+							<input type="radio" name="n2">
+							<span>不满意</span>
+						</div>
+					</div>
+				</div>
+				<div class="btn">
+					确认提交
+				</div>
+				<div class="btn">
+					取消预约
+				</div>
+			</div>-->
+		</div>
+		
+	</div>
+	<div style="width: 100%;height: 1rem;"></div>
+<div class="footer"></div>
+</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+	$(".footer").load("footer.html");
+	var access_token=localStorage.getItem("access_token");
+	function timestampToTime(timestamp) {
+    var date = new Date(timestamp); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    Y = date.getFullYear() + '-';
+    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    D = date.getDate() + ' ';
+    h = date.getHours() + ':';
+    m = date.getMinutes() + ':';
+    s = date.getSeconds();
+    return Y + M + D + h + m + s;
+ }
+	 $.ajax({
+        type:'post',
+        url:'http://sf.wokerr.com/index.php/home/Handle/ls_order_list',
+        data:{
+            access_token:access_token
+           
+        },
+        dataType:'json', 
+        async: false,   //同步异步
+        success:function(data){
+          console.log(data);
+          var html="";
+          for(var i=0;i<data.data.length;i++){
+              html+=`<div class="con" id="${data.data[i].id}">
+				<span class="xuanz" title="${data.data[i].status}"></span>
+				<div class="hang">
+					<div class="zuo">预约律师事务所:</div>
+					<div class="you">
+						${data.data[i].jg_name}
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约当事人:</div>
+					<div class="you dsr">
+						
+					</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约律师:</div>
+						<div class="you">
+							${data.data[i].jgry_name}
+						</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约的类别:</div>
+						<div class="you">
+							${data.data[i].order_type}
+						</div>
+				</div>
+				<div class="hang">
+					<div class="zuo">预约的时间:</div>
+					<div class="you time" title="${data.data[i].order_time}">
+						
+					</div>
+				</div>
+				<div class="hang" style="height: auto;">
+					<div class="zuo">预约的备注:</div>
+					<div class="you">
+						<p>${data.data[i].order_note}</p>
+					</div>
+				</div>
+				<div class="hang" style="height: 1.2rem;">
+					<div class="zuo">满意度评价:</div>
+					<div class="you rd" >
+						<div>
+							<img src="img/no.png" class="no" title="1" />
+							<span>非常满意</span>
+						</div>
+						<div>
+							<img src="img/no.png" class="no" title="2" />
+							<span>满意</span>
+						</div>
+						<div>
+							<img src="img/no.png" class="no" title="3" />
+							<span>一般</span>
+						</div>
+						<div>
+							<img src="img/no.png" class="no" title="4" />
+							<span>不满意</span>
+						</div>
+					</div>
+				</div>
+				<div class="btn qrtj">
+					确认提交
+				</div>
+				<div class="btn tan_two">
+					取消预约
+				</div>
+			</div>`
+          }
+          $(".lvshiyy").html(html);
+          $(".dsr").text(localStorage.getItem("name"))
+          $(".time").each(function(){
+          	$(this).text(timestampToTime($(this).attr("title")*1000));
+	        
+          })
+         
+          $(".xuanz").each(function(){
+          	   if($(this).attr("title")=="0"){
+	           	$(this).text("待处理")
+	           }else if($(this).attr("title")=="1"){
+	           	$(this).text("待审批")
+	           }else if($(this).attr("title")=="2"){
+	           	$(this).text("已通过")
+	           }else if($(this).attr("title")=="3"){
+	           	$(this).text("补充材料")
+	           }else if($(this).attr("title")=="4"){
+	           	$(this).text("已撤销")
+	           }else if($(this).attr("title")=="5"){
+	           	$(this).text("已完成待评价")
+	           }else if($(this).attr("title")=="6"){
+	           	$(this).text("已完成")
+	           }else if($(this).attr("title")=="7"){
+	           	$(this).text("已评价")
+	           }
+          })
+           
+        }
+     })
+     $(".no").click(function(){
+
+        if($(this).attr("src")=="img/no.png"){ 
+            $(this).attr("src","img/yes.png");
+            $(this).parent().siblings().find("img").attr("src","img/no.png");
+            $(this).addClass("check").parent().siblings().find("img").removeClass('check');
+        }
+    })
+     //提交
+     $(".qrtj").click(function(){
+        var evaluat=$(this).parent().find(".check").attr("title");
+        var id=$(this).parent().attr("id");
+        // =============提交评价
+        $.ajax({
+            type:'post',
+            url:'http://sf.wokerr.com/index.php/home/Handle/ls_order_evaluate',
+            data:{
+                access_token:access_token,
+                id:id,
+                evaluat:evaluat
+            },
+            dataType:'json', 
+            async: false,   //同步异步
+            success:function(data){
+                console.log(data);
+                window.location.href= 'lvshiyuyue.html';
+            }
+        })
+    })
+     //撤销
+      $('.tan_two').click(function(){
+
+       
+        var id=$(this).parent().attr("id");
+       
+            $.ajax({
+                type:'post',
+                url:'http://sf.wokerr.com/index.php/home/Handle/ls_order_cancel ',
+                data:{
+                    id:id,
+                    access_token:access_token
+                   
+                },
+                dataType:'json', 
+                async: false,   //同步异步
+                success:function(data){
+                    console.log(data);
+                    if(data.status==1){
+                       window.location.href= 'lvshiyuyue.html';
+                    }
+                }
+            })
+       
+    })
+//上传文件
+		/*$(".avator-btn-fake").click(function(){
+				$("#file1").click();
+		});
+		$("#file1").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});$(".avator-btn-fake2").click(function(){
+				$("#file2").click();
+		});
+		$("#file2").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake2").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});$(".avator-btn-fake3").click(function(){
+				$("#file3").click();
+		});
+		$("#file3").change(function(){
+				var file = this.files[0] ? this.files[0] : null; //不晓得这里换成$(this)为什么不行
+				if(null == file){
+						return false;
+				}
+				var file_reader = new FileReader();
+				file_reader.onload = (function(){
+						var image_url = this.result;        // 这是图片的路径
+						$(".avator-btn-fake3").attr('src', image_url);
+				});
+				file_reader.readAsDataURL(file);
+		});
+*/
+</script>

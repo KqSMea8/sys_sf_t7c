@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交通事故调解 </title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/mediation.css">
+    <script src="./js/shipei.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a href="javascript:;"> <img src="./img/return_03.png" alt=""></a>
+                </div>
+                <div class="title">
+                    <p>交通事故调解</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="jiafang">
+                <p>
+                    乙方当事人请扫描以下二维码
+                </p>
+                <p><img class="erweima" src="./img/1536289363.png" alt=""></p>
+                <p>
+                    可通过扫描二维码来进行快捷立案
+                </p>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    };
+    var imgurl = localStorage.getItem("erweima");
+    $(".erweima").attr("src", imgurl);
+    console.log(imgurl)
+        // var imgurl = localStorage.getItem("")
+    var access_token = localStorage.getItem("access_token");
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Handle/tr_code',
+        data: {
+            access_token: access_token,
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            // $(".erweima").attr("src", data.data);
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>预约查询</title>
+		<link rel="stylesheet" href="./css/head.css">
+		<link rel="stylesheet" href="./css/Reservation_queryd.css">
+		<script src="./js/shipei.js"></script>
+	</head>
+	<style>
+		.tousu button {
+			height: 1.875rem;
+			width: 7.5rem;
+			position: absolute;
+			/*  top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0; 
+    margin: auto;*/
+			border-radius: .375rem;
+			border: #858585 .0625rem solid;
+			background: #196394;
+			color: #fff;
+			font-size: 1rem;
+		}
+		
+		.tousu button:nth-of-type(1) {
+			top: 1rem;
+			left: 2rem;
+		}
+		
+		.tousu button:nth-of-type(2) {
+			top: 1rem;
+			right: 2rem;
+		}
+		
+		.Satisfaction {
+			width: 1rem;
+			height: 1rem;
+			vertical-align: middle;
+		}
+		.tishi{
+	        position: fixed;
+	        top: 50%;
+	        left: 50%;
+	        width: 6rem;
+	        height: auto;
+	        padding: .5rem;
+	        display: none;
+	        background: rgba(0,0,0,.5);
+	        text-align: center;
+	        color: #fff;
+	        border-radius: .25rem;
+	        margin-left: -3rem;
+	        z-index: 999999;
+	    }
+	</style>
+
+	<body>
+		<header>
+			<div class="header">
+				<div class="head">
+					<div class="img">
+						<a href="javascript:;"> <img onclick="javascript:window.history.go(-1);" src="./img/更多(1).png" alt=""></a>
+					</div>
+					<div class="title">
+						<p>预约查询</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="seach">
+			<input type="text">
+			<span>搜索</span>
+		</div>
+		<section>
+			<div class="section" style="margin-bottom:3.5rem">
+				<!--<div class="section-information">
+					<div class="status">
+						<span>待处理</span>
+					</div>
+					<div class="information">
+						<p>预约调解机构：</p>
+						<span>牡丹江公证处</span>
+					</div>
+					<div class="information">
+						<p>预约当事人：</p>
+						<span class="myName">李小龙</span>
+					</div>
+					<div class="information">
+						<p>预约的类别：</p>
+						<span>财产援助</span>
+					</div>
+					<div class="information">
+						<p>预约的时间：</p>
+						<span>2018-10-21</span>
+					</div>
+					<div class="information">
+						<p>预约的备注：</p>
+						<div class="inf-text">
+							<span>最近几天有些事情，希望可以预约在下个月的下旬</span>
+						</div>
+					</div>
+					<div class="information ldfg">
+						<p>满意度评价：</p>
+						<div class="text-txt">
+							<span>
+                            <img class="Satisfaction" src="img/no.png"/> 非常满意
+                        </span>
+							<span>
+                            <img class="Satisfaction" src="img/no.png"/> 满意
+                        </span><br>
+							<span>
+                            <img class="Satisfaction" src="img/no.png"/> 一般
+                        </span>
+							<span>
+                            <img class="Satisfaction" src="img/no.png"/> 不满意
+                        </span>
+						</div>
+					</div>
+					<div class="tousu">
+						<button>确认提交</button>
+						<button>取消预约</button>
+					</div>
+				</div>-->
+			</div>
+		</section>
+		<div class="footer"></div>
+	</body>
+
+</html>
+<script src="js/jquery.js"></script>
+<script>
+	function showTips(text){
+		$('body').append('<p class="tishi" style="display: none;">'+ text +'</p>');
+		if($('.tishi').css('display')=='none'){
+			$('.tishi').stop(true).fadeIn();
+			setTimeout(function(){
+				$('.tishi').stop(true).fadeOut();
+				$('.tishi').remove();
+			},3000);
+		}
+	}
+	$(".footer").load("footer2.html");
+	var access_token = localStorage.getItem('access_token');
+	//用户信息
+	var myName;
+	$.ajax({
+		type: "post",
+		url: "http://sf.wokerr.com/index.php/home/Personal/mine",
+		async: false,
+		data: {
+			access_token: access_token
+		},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			myName = data.data.xm;
+		}
+	});
+	//预约列表
+	$.ajax({
+		type: "POST",
+		url: "http://sf.wokerr.com/index.php/home/Handle/tj_order_list",
+		async:false,
+		data: {
+			access_token: access_token
+		},
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			var tempHTML = "";
+			var typeHTML;
+			var btnHTML;
+			for(var i = 0; i < data.data.length; i++) {
+				var term = data.data[i].ct_time;
+				var date = new Date(term * 1000);
+				Y = date.getFullYear() + '-';
+				M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+				D = date.getDate() + ' ';
+				h = date.getHours() + ':';
+				m = date.getMinutes() + ':';
+				s = date.getSeconds();
+				if(data.data[i].status == 0) {
+					typeHTML = '未处理';
+					btnHTML='<button class="complete sureBtn" id="' + data.data[i].id + '">确认提交</button>'+
+					'<button class="complete close" id="' + data.data[i].id + '">取消预约</button>';
+				} else if(data.data[i].status == 1) {
+					typeHTML = '已处理';
+					btnHTML='<button class="complete sureBtn" id="' + data.data[i].id + '">确认提交</button>'+
+					'<button class="complete close" id="' + data.data[i].id + '">取消预约</button>';
+				} else if(data.data[i].status == 2) {
+					typeHTML = '已撤销';
+				} else if(data.data[i].status == 3) {
+					typeHTML = '已完成';
+					btnHTML='';
+				}
+				
+				tempHTML += '<div class="section-information">'+
+					'<div class="status">'+
+					'<span>' + typeHTML + '</span>'+
+					'</div>'+
+					'<div class="information">'+
+					'<p>预约调解机构：</p>'+
+					'<span>' + data.data[i].jg_name + '</span>'+
+					'</div>'+
+					'<div class="information">'+
+					'<p>预约当事人：</p>'+
+					'<span class="myName">' + myName + '</span>'+
+					'</div>'+
+					'<div class="information">'+
+					'<p>预约的类别：</p>'+
+					'<span>' + data.data[i].order_type + '</span>'+
+					'</div>'+
+					'<div class="information">'+
+					'<p>预约的时间：</p>'+
+					'<span>' + Y + M + D + '</span>'+
+					'</div>'+
+					'<div class="information">'+
+					'<p>预约的备注：</p>'+
+					'<div class="inf-text">'+
+					'<span>' + data.data[i].order_note + '</span>'+
+					'</div>'+
+					'</div>'+
+					'<div class="information ldfg">'+
+					'<p>满意度评价：</p>'+
+					'<div class="text-txt">'+
+					'<span>'+
+					'<img class="Satisfaction" index="1" src="img/no.png"/> 非常满意'+
+					'</span>'+
+					'<span>'+
+					'<img class="Satisfaction" index="2" src="img/no.png"/> 满意'+
+					'</span><br>'+
+					'<span>'+
+					'<img class="Satisfaction" index="3" src="img/no.png"/> 一般'+
+					'</span>'+
+					'<span>'+
+					'<img class="Satisfaction" index="4" src="img/no.png"/> 不满意'+
+					'</span>'+
+					'</div>'+
+					'</div>'+
+					'<div class="tousu">'+btnHTML+
+					
+					'</div>'+
+					'</div>';
+			}
+						$('.section').html(tempHTML);
+		}
+	})
+	$('.Satisfaction').click(function(){
+		if($(this).attr('src')=='img/no.png'){
+			$(this).attr('src','img/yes.png').parent().siblings().children('.Satisfaction').attr('src','img/no.png');
+		}else{
+			$(this).attr('src','img/no.png');
+		}
+	})
+	//确认提交
+	$('.sureBtn').click(function(){
+		var Satisfaction;
+		var id=$(this).attr('id');
+		for(var i=0;i<$('.Satisfaction').length;i++){
+			if($('.Satisfaction').eq(i).attr('src')=='img/yes.png'){
+				Satisfaction=$('.Satisfaction').eq(i).attr('index');
+			}
+		}
+		console.log(Satisfaction);
+		if(Satisfaction){
+			$.ajax({
+				type: "POST",
+				url: "http://sf.wokerr.com/index.php/home/Handle/tj_order_evaluate",
+				async:false,
+				data: {
+					access_token:access_token,
+					evaluate:Satisfaction,
+					id:id
+				},
+				dataType: 'json',
+				success: function(data) {
+					console.log(data);
+					if(data.status==1){
+						window.location.reload();
+					}else{
+						showTips(data.msg);
+					}
+				}
+			})
+		}else{
+			showTips('请选择满意度');
+		}
+	})
+	//取消预约
+	$('.close').click(function(){
+		var id=$(this).attr('id');
+		var Satisfaction;
+		for(var i=0;i<$('.Satisfaction').length;i++){
+			if($('.Satisfaction').eq(i).attr('src')=='img/yes.png'){
+				Satisfaction=$('.Satisfaction').eq(i).attr('index');
+			}
+		}
+		$.ajax({
+			type: "POST",
+			url: "http://sf.wokerr.com/index.php/home/Handle/tj_order_evaluate",
+			async:false,
+			data: {
+				access_token:access_token,
+				id:id
+			},
+			dataType: 'json',
+			success: function(data) {
+				console.log(data);
+				if(data.status==1){
+					window.location.reload();
+				}else{
+					showTips(data.msg);
+				}
+			}
+		})
+	})
+</script>

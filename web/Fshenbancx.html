@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>申办查询</title>
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/biddingquery.css">
+    <script src="./js/shipei.js"></script>
+    <style>
+        .bq_con>.right>div {
+            width: 50%;
+            line-height: 1.3rem;
+        }
+        
+        .btn {
+            margin-top: 1rem;
+        }
+        
+        .tishi {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 6rem;
+            height: auto;
+            padding: .5rem;
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: #fff;
+            border-radius: .25rem;
+            margin-left: -3rem;
+            z-index: 999999;
+        }
+        
+        .status {
+            position: absolute;
+            right: 1rem;
+            padding: .3rem;
+            border-radius: .2rem;
+            background: #196394;
+            color: #fff;
+        }
+        
+        .status span {
+            color: #fff;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="tishi"></p>
+    <header>
+        <div class="header">
+            <div class="head">
+                <div class="img">
+                    <a onClick="javascript:window.history.back(-1);">
+                        <img src="./img/return_03.png" alt="">
+                    </a>
+                </div>
+                <div class="title">
+                    <p>申办查询</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="section">
+            <div class="Applyname">
+                <div class="text">
+                    <p>申请人姓名</p><span class="time">张三丰</span>
+                </div>
+                <div class="text">
+                    <p>申请时间</p><span class="mechanism">2018-8-5</span>
+                </div>
+                <div class="text">
+                    <p>受理机构</p><span class="name">牡丹江</span>
+                </div>
+                <div class="text">
+                    <p>受理状态</p><span class="status">待审批</span>
+                </div>
+                <div class="text tts" style="height: 4rem">
+                    <p>申办详细信息</p>
+                    <div class="text-txt">
+                        <p>鉴定机构名称：北京公证处</p>
+                        <p>鉴定类别：类别1</p>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>包含附件</p><a href="Enclosurezhiliao.html"><span class="Enclosure">张**得附件资料</span></a>
+                </div>
+                <div class="text tts buchong">
+                    <p>补充材料</p>
+                    <div class="text-txt">
+                        <img src="img/tianjia.jpg" alt="">
+                    </div>
+                </div>
+                <div class="bq_con" style="display: flex;margin-bottom: 1rem;margin-left:2rem">
+                    <div class="left" style="font-size: 0.8rem">满意度评价</div>
+                    <div class="right" style="display: flex;flex-wrap:wrap;padding-left:1rem;font-size: 0.8rem">
+                        <div>
+                            <input type="radio" name="t">非诚满意</div>
+                        <div>
+                            <input type="radio" name="t">满意</div>
+                        <div>
+                            <input type="radio" name="t">一般</div>
+                        <div>
+                            <input type="radio" name="t">不满意</div>
+                    </div>
+                </div>
+                <div style="width: 90%;margin: 1rem auto;height: 2.5rem;">
+                    <div class="btn" onclick="window.location.href= 'shifajianding.html';return false" style="margin-top: 0.2rem;float: left;">
+                        确认提交
+                    </div>
+                    <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none; text-align: center;">
+                        撤销申办
+                    </div>
+                </div>
+                <div id="tan">
+                    <div class="tan_center">
+                        <p style="text-align:center;">
+                            撤销原因
+                        </p>
+                        <div class="tan_one">
+                            <textarea id="tar" name="" style="resize: none;width: 100%;height: 90%;border: none;outline: none;font-size: 1rem;" placeholder="请在此输入撤销原因"></textarea>
+                        </div>
+                        <div class="yuanyin">
+                            请输入撤销原因!
+                        </div>
+                        <div class="tan_two">
+                            <span class="tan_two_span2">确认撤销</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="footer"></div>
+</body>
+
+</html>
+<script src="js/jquery.js"></script>
+<script>
+    function getUrlParms(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        console.log(reg);
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return unescape(r[2]);
+        return null;
+    }
+
+    var list_id = getUrlParms("ID");
+    var access_token = localStorage.getItem("access_token");
+    $(".footer").load("footer2.html")
+        // ============详情默认信息页
+
+    // 转时间戳
+
+
+    $.ajax({
+        type: 'post',
+        url: 'https://sys.t7c.net/index.php/home/Handle/yz_bid_list',
+        data: {
+            access_token: access_token,
+            id: list_id
+        },
+        dataType: 'json',
+        async: false, //同步异步
+        success: function(data) {
+            console.log(data);
+            var status;
+            if (data.data.status == 0) {
+                status = "待审批"
+            } else if (data.data.status == 1) {
+                status = "审批中";
+            } else if (data.data.status == 2) {
+                status = "已通过";
+            } else if (data.data.status == 3) {
+                status = "补充材料"
+            } else if (data.data.status == 4) {
+                status = "已撤销";
+            } else if (data.data.status == 5) {
+                status = "未评价";
+            } else if (data.data.status == 6) {
+                status = "已完成";
+            } else if (data.data.status == 7) {
+                status = "审核未通过";
+            }
+            var html = "";
+            html += `<div class="status"><span>${status}</span></div>
+                    <div class="text">
+                    <p>申请人姓名</p><span class="time">${data.data.proposer_name}</span>
+                    </div>
+                    <div class="text">
+                        <p>申请时间</p><span class="mechanism">${data.data.ct_time}</span>
+                    </div>
+                    <div class="text">
+                        <p>受理机构</p><span class="name">${data.data.jg_name}</span>
+                    </div>
+                    <div class="text tts" style="height: 6rem">
+                        <p>申办详细信息</p>
+                        <div class="text-txt">
+                            <p style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 13rem;">法援中心名称：${data.data.jg_name}</p>
+                            <p style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 13rem;">申请人类型：${data.data.proposer_type}</p>
+                            <p style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis; width: 13rem;">申请事项：${data.data.item}</p>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p>包含附件</p><a><span class="Enclosure">${data.data.proposer_name[0]}...得附件资料</span></a>
+                    </div>
+					<div class="text tts buchong">
+                        <p>补充理由</p><span class="">${data.data.replenish_cause}</span>
+                    </div>
+                    <div class="text tts buchong">
+                        <p>补充材料</p>
+                        <div class="text-txt">
+                            <input class="img_1" type="file" style="position: absolute;width: 128px;height: 80px;opacity: 0;z-index: 20;" name="" value="">
+                            <img class="img1" style="position: absolute;top: -16px;" src="img/tianjia.jpg" alt="">
+                        </div>
+                    </div>
+					<div class="text refuse_cause" style="display:none;">
+                        <p>拒绝理由</p><span class="">${data.data.refuse_cause}</span>
+                    </div>
+                    <div class="bq_con" style="display: flex;margin-bottom: 1rem;margin-left:1rem">
+                        <div class="left" style="font-size: 0.8rem">满意度评价</div>
+                        <div class="right" id='rightdd' style="display: flex;flex-wrap:wrap;padding-left:1.1rem;font-size: 0.8rem">
+                            <div>
+                                <input type="radio" class="radio1" id="1" name="t">非常满意</div>
+                            <div>
+                                <input type="radio" class="radio1" id="2" name="t">满意</div>
+                            <div>
+                                <input type="radio" class="radio1" id="3" name="t">一般</div>
+                            <div>
+                                <input type="radio" class="radio1" id="4" name="t">不满意</div>
+                        </div>
+                    </div>
+                    <div style="width: 90%;margin: 1rem auto;height: 2.5rem;">
+                        <div class="btn qr_tijiao" style="margin-top: 0.2rem;float: left;">
+                            确认提交
+                        </div>
+                        <div class="btn cxsb" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+                            撤销申办
+                        </div>
+                    </div>
+                    <div id="tan">
+                        <div class="tan_center">
+                            <i style="font-size:28px;position: absolute;right: .8rem;top: .1rem;font-style: normal;">×</i>
+                            <p style="text-align:center;">
+                                撤销原因
+                            </p>
+                            <div class="tan_one">
+                                <textarea id="tar"  name="" style="resize: none;width: 100%;height: 90%;border: none;outline: none;font-size: 1rem;" placeholder="请在此输入撤销原因"></textarea>
+                            </div>
+                            <div class="yuanyin">
+                                请输入撤销原因!
+                            </div>
+                            <div class="tan_two">
+                                <span class="tan_two_span2">确认撤销</span>
+                            </div>
+                        </div>
+                    </div>`;
+
+            $(".Applyname").html(html);
+
+            if (data.data.status == 0) {
+                $(".bq_con").hide();
+                $(".qr_tijiao").hide();
+                $(".cxsb").css("float", "none");
+                $(".buchong").hide();
+            } else if (data.data.status == 1) {
+                $(".bq_con").hide();
+                $(".qr_tijiao").hide();
+                $(".cxsb").css("float", "none");
+                $(".buchong").hide();
+            } else if (data.data.status == 2) {
+                $(".bq_con").hide();
+                $(".qr_tijiao").hide();
+                $(".cxsb").css("float", "none");
+                $(".buchong").hide();
+            } else if (data.data.status == 3) {
+                $(".cxsb").hide();
+                $(".bq_con").hide();
+                $(".qr_tijiao").css("float", "none");
+            } else if (data.data.status == 4) {
+                $(".bq_con").hide();
+                $(".qr_tijiao").hide();
+                $(".cxsb").hide();
+                $(".buchong").hide();
+            } else if (data.data.status == 5) {
+                $(".cxsb").hide();
+                $(".qr_tijiao").css("float", "none");
+                $(".buchong").hide();
+            } else if (data.data.status == 6) {
+                var da = data.data.evaluate;
+                if (da == 1) {
+                    var th = "<div><input type='radio' checked name='radio' />非常满意</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+
+                } else if (da == 2) {
+                    var th = "<div><input type='radio' checked name='radio' />满意</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+
+                } else if (da == 3) {
+                    var th = "<div><input type='radio' checked name='radio' />一般</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+                } else if (da == 4) {
+                    var th = "<div><input type='radio' checked name='radio' />不满意</div>";
+                    $("#rightdd").html(th);
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+                } else if (da == 0) {
+                    $("#rightdd").html("未评价");
+                    $(".bq_con #rightdd").find("div").css("width", "100%");
+                    $("#rightdd").css("margin", "0rem 0px 0px 1rem");
+                }
+                $(".bq_con").show();
+                $(".qr_tijiao").hide();
+                $(".cxsb").hide();
+                $(".buchong").hide();
+            } else if (data.data.status == 7) {
+                $(".bq_con").hide();
+                $(".qr_tijiao").hide();
+                $(".cxsb").hide();
+                $(".buchong").hide();
+              	$(".refuse_cause").css('display','block');
+            }
+        }
+    })
+    $('.Enclosure').click(function() {
+            localStorage.setItem('fujian', 'https://sys.t7c.net/index.php/home/Handle/yz_bid_list');
+            window.location.href = 'Enclosurezhiliao.html?id=' + list_id + '&type=' + 2;
+        })
+        // ==========撤销
+    $('#btn').click(function() {
+        $('#tan').show();
+    })
+    $('.tan_two_span2').click(function() {
+        var tar = $("#tar").val();
+        if ($.trim($("#tar").val()) == "") {
+            $('.yuanyin').show();
+        } else {
+            $.ajax({
+                type: 'post',
+                url: 'https://sys.t7c.net/index.php/home/Handle/yz_bid_cancel',
+                data: {
+                    access_token: access_token,
+                    id: list_id,
+                    cause: tar
+                },
+                dataType: 'json',
+                async: false, //同步异步
+                success: function(data) {
+                    console.log(data);
+                    if (data.state == 1) {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 700)
+                        setTimeout(function() {
+                            window.location.href = "sbcx_1.html";
+                        }, 1000)
+                    } else {
+                        $(".tishi").text(data.msg);
+                        $(".tishi").fadeIn().delay(500).fadeOut();
+                    }
+                }
+            })
+        }
+    })
+
+    // ========满意度提交
+    var imgde1;
+    $(".img_1").change(function() {
+        var file = this.files[0];
+        if (window.FileReader) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            //监听文件读取结束后事件    
+            reader.onloadend = function(e) {
+                imgde1 = e.target.result.split(",")[1];
+                console.log(imgde1)
+                $(".img1").attr("src", e.target.result)
+            };
+        }
+    });
+
+    $(".qr_tijiao").click(function() {
+        console.log(imgde1);
+        if (imgde1 != undefined) {
+            // $(".qr_tijiao").click(function(){
+            $.ajax({
+                    type: 'post',
+                    url: 'https://sys.t7c.net/index.php/home/Handle/yz_bid_replenish',
+                    data: {
+                        access_token: access_token,
+                        id: list_id,
+                        upload: imgde1
+                    },
+                    dataType: 'json',
+                    async: false, //同步异步
+                    success: function(data) {
+                        console.log(data);
+                        if (data.state == 1) {
+                            $(".tishi").text(data.msg);
+                            $(".tishi").fadeIn().delay(500).fadeOut();
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 700)
+                            setTimeout(function() {
+                                window.location.href = "sbcx_1.html";
+                            }, 1000);
+                        } else {
+                            $(".tishi").text(data.msg);
+                            $(".tishi").fadeIn().delay(500).fadeOut();
+                        }
+                    }
+                })
+                // })
+
+        } else {
+            // ==============确认提交
+            // $(".qr_tijiao").click(function(){
+            var ids;
+            if ($(".radio1").is(":checked") == true) {
+                ids = $(".radio1").attr("id");
+            }
+            // =============提交评价
+            $.ajax({
+                    type: 'post',
+                    url: 'https://sys.t7c.net/index.php/home/Handle/yz_bid_evaluate',
+                    data: {
+                        access_token: access_token,
+                        id: list_id,
+                        evaluate: ids
+                    },
+                    dataType: 'json',
+                    async: false, //同步异步
+                    success: function(data) {
+                        console.log(data);
+
+                        if (data.state == 1) {
+                            $(".tishi").text(data.msg);
+                            $(".tishi").fadeIn().delay(500).fadeOut();
+                            setTimeout(function() {
+                                javascript: history.go(-1);
+                            }, 700)
+                        } else {
+                            $(".tishi").text(data.msg);
+                            $(".tishi").fadeIn().delay(500).fadeOut();
+                        }
+                    }
+                })
+                // })
+        }
+    })
+    $(".tan_center i").click(function() {
+        $("#tan").hide();
+    })
+</script>

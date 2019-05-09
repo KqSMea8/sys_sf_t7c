@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>在线预约</title>
+    <script src="./js/shipei.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/zaixian.css">
+</head>
+
+<body>
+    <div id="header">
+        <span>在线预约</span>
+        <img src="./img/更多(1).png" alt="" id="Return" onClick="javascript :history.back(-1);">
+    </div>
+    <div class="nav_fir">
+        <div class="nav_first">
+            <select>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select>
+            <span>法律援助中心</span>
+        </div>
+        <div class="nav_first">
+            <select>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select>
+            <span>申请人类型</span>
+        </div>
+    </div>
+   
+    <div class="nav_fir" style="padding-top:0">
+        <div class="nav_first">
+            <select>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select>
+            <span>选择人员</span>
+        </div>
+       <div class="nav_first" style="height:2rem">
+            <select id="myselect">
+                <option value="">请选择</option>
+                <option value="1">123</option>
+                <option value="2">123</option>
+                <option value="3">123</option>
+                <option value="4">123</option>
+            </select>
+            <span>选择类别</span>
+        </div>
+        <div class="yaojian" style="padding-left:8rem;line-height:1.5rem;color:#888;height:1.5rem;">
+         <p></p>
+        </div>
+        <div class="nav_first">
+            <select>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+                <option value="">123</option>
+            </select>
+            <span>选择时间</span>
+        </div>
+        <div class="nav_first">
+            <textarea></textarea>
+            <span>填写备注</span>
+        </div>
+    </div>
+   <div class="BidQuery" style="margin-top:2rem;">
+        <div class="bq_con">
+            <span class="left" style="float:left">上传照片</span>
+            <img src="./img/tianjia.jpg" alt="" style="margin-left:1%;">
+            <img src="./img/tianjia.jpg" alt="">
+            <img src="./img/tianjia.jpg" alt="">
+           
+        </div>
+    </div>
+    <div style="width: 70%;margin: 3rem auto 0;height: 2.5rem;margin-bottom:4rem;">
+        <div class="btn" onclick="window.location.href= 'falvyuanzu.html';return false" style="margin-top: 0.2rem;">
+            提交预约
+        </div>
+        <!-- <div class="btn" id="btn" style="margin-top: 0.2rem;float: right;clear: none;">
+            撤销预约
+        </div> -->
+    </div>
+<div class="footer"></div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script>
+    $(".footer").load("footer2.html")
+    $('#myselect').click(function(){
+        var myselect = $('#myselect').val();
+        console.log(myselect);
+        if(myselect == '1'){
+            $('.yaojian p').html('需上传要件1111');
+        }else if( myselect == '2' ){
+            $('.yaojian p').html('需上传要件2222');
+        }else if( myselect == '3' ){
+            $('.yaojian p').html('需上传要件3333');
+        }else if( myselect == '4' ){
+            $('.yaojian p').html('需上传要件4444');
+        }
+    })
+
+</script>

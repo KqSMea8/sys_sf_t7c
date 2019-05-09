@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#F2F2F2;font-size: 50px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=.mian-ul1 li, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hdwt.css">
+    <link href="css/rolldate.css" rel="stylesheet">
+    <title>交通事故</title>
+</head>
+
+<body>
+    <header class="header" style="padding:0;">
+        <button id="go_befer"onclick="javascript:window.history.go(-1);">上一页</button>
+        <a href="javascript::">
+            <img class="nav_txt_zuo" src="img/zuojiantou.png" alt="" style="width: 0.2rem;margin-left:0.05rem;">
+        </a>
+        <div class="shenban_title">交通事故</div>
+        <button id="chogntian">重填</button>
+    </header>
+    <div class="content">
+        <div class="neirong_con">
+            <div class="sele_each">
+                <div class="question">1.事故发生的时间：</div>
+                <!-- <input type="text" class="demo-input every " placeholder="请选择日期" id="test1" style="width:100%;height: 55px;"> -->
+                <input readonly type="text" id="date10" placeholder="请选择日期" style="width:100%;height: 55px;" class="every">
+                <button class="xiayiye" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">2.事故发生地点：</div>
+                <select class="form-control" id="cmbProvince" name="cmbProvince"></select>
+                <select class="form-control" id="cmbCity" name="cmbCity"></select>
+                <select class="form-control" id="cmbArea" name="cmbArea"></select>
+                <button class="address_three_sub" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">3.申请人在事故中属于：</div>
+                <div class="sele_each_list">伤者</div>
+                <div class="sele_each_list">肇事司机</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">4.伤者目前治疗状况：</div>
+                <div class="sele_each_list">住院</div>
+                <div class="sele_each_list">出院</div>
+                <div class="sele_each_list">死亡</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">5.此交通事故是否经过交警队事故责任认定 ：</div>
+                <div class="sele_each_list">已做出</div>
+                <div class="sele_each_list">交警队已受理尚未得出结论</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">6.申请人在事故中负责事故责任类型 ：</div>
+                <div class="sele_each_list">主要责任</div>
+                <div class="sele_each_list">次要责任</div>
+                <div class="sele_each_list">同等责任</div>
+                <div class="sele_each_list">无责任</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">7.肇事车辆的投保情况 ：</div>
+                <div class="sele_each_list">交强险</div>
+                <div class="sele_each_list">交强险+商业险</div>
+                <div class="sele_each_list">无保险</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">8.肇事方是否有垫付过医疗费或其他费用 ：</div>
+                <div class="sele_each_list">已付</div>
+                <div class="sele_each_list">未付</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">9.是否已做伤残等级鉴定：</div>
+                <div class="sele_each_list">已做</div>
+                <div class="sele_each_list">未做</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">10.是否已进入司法程序 ：</div>
+                <div class="sele_each_list">已进入</div>
+                <div class="sele_each_list">未进入</div>
+            </div>
+            <div class="sele_each">
+                <div class="question">11.该事故涉及的车辆数目 ：</div>
+                <select name="" id="rtyrt" class="user_select">
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6辆以上</option>
+                    </select>
+                <button class="user_select_submit" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">12.该事故涉及的受伤者人数 ：</div>
+                <select name="" id="rtyrt" class="user_select">
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6人以上</option>
+                        </select>
+                <button class="user_select_submit" id="rtyrt">下一页</button>
+            </div>
+            <div class="sele_each">
+                <div class="question">13.是否经过调解 ：</div>
+                <div class="sele_each_list">经过</div>
+                <div class="sele_each_list">未经过</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/szl/qweq.js"></script>
+    <script src="./js/szl/jsAddress.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($('.form-control').length) {
+                addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+            }
+        });
+    </script>
+    <script src="./js/szl/laydate.js"></script>
+    <!-- 改成你的路径 -->
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+    </script>
+    <script src="./js/szl/werw.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script type="text/javascript" src="./js/szl/rolldate.js"></script>
+</body>
+
+</html>
